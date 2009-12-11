@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	
+	<PropertyGroup>
+		<DebugMode>false</DebugMode> 
+		<!--Set DebugMode to True via /property:DebugMode=True 
+		     at either the cmd-line MSBuild or TSFBuild.rsp file, 
+			 never set it to true, only in RSP file-->
+	</PropertyGroup>
+
+	<Choose>
+		<When Condition="'$(DebugMode)' == 'true' ">
+			<PropertyGroup>
+				<HarleysvilleBuildTask>..\Harleysville.Build.Tasks\bin\Debug</HarleysvilleBuildTask>
+				<!--<Message Text="Message 1677.1: Harleysville.Build.Tasks set to Debug" />-->
+			</PropertyGroup>
+		</When>
+		<When Condition="'$(DebugMode)' != 'true' ">
+			<PropertyGroup>
+				<HarleysvilleBuildTask>..\Harleysville.Build.Tasks\bin\Release</HarleysvilleBuildTask>
+				<!--<Message Text="Message 1677.1: Harleysville.Build.Tasks set to Release" />-->
+			</PropertyGroup>
+		</When>
+	</Choose>
+
+
+	<UsingTask AssemblyFile="$(HarleysvilleBuildTask)\Harleysville.Build.Tasks.dll" 
+			   TaskName="Harleysville.Build.Tasks.WhoKickedIt" />
+	<UsingTask AssemblyFile="$(HarleysvilleBuildTask)\Harleysville.Build.Tasks.dll" 
+			   TaskName="Harleysville.Build.Tasks.BuildOutCome" />
+	<UsingTask AssemblyFile="$(HarleysvilleBuildTask)\Harleysville.Build.Tasks.dll" 
+			   TaskName="Harleysville.Build.Tasks.DeleteAll" />
+	<UsingTask AssemblyFile="$(HarleysvilleBuildTask)\Harleysville.Build.Tasks.dll"
+			   TaskName="Harleysville.Build.Tasks.ReturnHtmlLink" />
+	<UsingTask AssemblyFile="$(HarleysvilleBuildTask)\Harleysville.Build.Tasks.dll"
+			   TaskName="Harleysville.Build.Tasks.GetBuildNumber" />
+	<UsingTask AssemblyFile="$(HarleysvilleBuildTask)\Harleysville.Build.Tasks.dll"
+			   TaskName="Harleysville.Build.Tasks.TFSCheckin" />
+	<UsingTask AssemblyFile="$(HarleysvilleBuildTask)\Harleysville.Build.Tasks.dll"
+			   TaskName="Harleysville.Build.Tasks.TFSCheckout" />
+	<UsingTask AssemblyFile="$(HarleysvilleBuildTask)\Harleysville.Build.Tasks.dll"
+			   TaskName="Harleysville.Build.Tasks.GetWorkItem" />
+	<UsingTask AssemblyFile="$(HarleysvilleBuildTask)\Harleysville.Build.Tasks.dll"
+			   TaskName="Harleysville.Build.Tasks.UpdateWorkItem" />
+	<UsingTask AssemblyFile="$(HarleysvilleBuildTask)\Harleysville.Build.Tasks.dll"
+			   TaskName="Harleysville.Build.Tasks.GetChecksum" />
+	<UsingTask AssemblyFile="$(HarleysvilleBuildTask)\Harleysville.Build.Tasks.dll"
+			   TaskName="Harleysville.Build.Tasks.SaveWorkItemNumber" />
+	<UsingTask AssemblyFile="$(HarleysvilleBuildTask)\Harleysville.Build.Tasks.dll"
+			   TaskName="Harleysville.Build.Tasks.UpdateBuildQuality4PreviousBuilds" />
+	<UsingTask AssemblyFile="$(HarleysvilleBuildTask)\Harleysville.Build.Tasks.dll"
+			   TaskName="Harleysville.Build.Tasks.DropChangeSets" />
+	<UsingTask AssemblyFile="$(HarleysvilleBuildTask)\Harleysville.Build.Tasks.dll"
+			   TaskName="Harleysville.Build.Tasks.Check4PRDBuild" />
+	<UsingTask AssemblyFile="$(HarleysvilleBuildTask)\Harleysville.Build.Tasks.dll"
+			   TaskName="Harleysville.Build.Tasks.Check4Changesets" />
+	<UsingTask AssemblyFile="$(HarleysvilleBuildTask)\Harleysville.Build.Tasks.dll"
+			   TaskName="Harleysville.Build.Tasks.GetwM_Exports" />
+	<UsingTask AssemblyFile="$(HarleysvilleBuildTask)\Harleysville.Build.Tasks.dll"
+			   TaskName="Harleysville.Build.Tasks.Merge_Branches" />
+	<UsingTask AssemblyFile="$(HarleysvilleBuildTask)\Harleysville.Build.Tasks.dll"
+			   TaskName="Harleysville.Build.Tasks.AddBuildStep" />
+	<UsingTask AssemblyFile="$(HarleysvilleBuildTask)\Harleysville.Build.Tasks.dll"
+			   TaskName="Harleysville.Build.Tasks.UpdateBuildStep" />
+	<UsingTask AssemblyFile="$(HarleysvilleBuildTask)\Harleysville.Build.Tasks.dll"
+			   TaskName="Harleysville.Build.Tasks.Set_wMEnvConfig" />
+	<UsingTask AssemblyFile="$(HarleysvilleBuildTask)\Harleysville.Build.Tasks.dll"
+			   TaskName="Harleysville.Build.Tasks.Invoke_PSHScript" />
+
+</Project>

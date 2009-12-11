@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harleysville Database Projects", "Harleysville Database Projects\Harleysville Database Projects.csproj", "{7D30D045-1984-42B4-9CA6-F68033038AF2}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://as73tfs01:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Harleysville\u0020Database\u0020Projects\\Harleysville\u0020Database\u0020Projects.csproj
+		SccProjectName1 = Harleysville\u0020Database\u0020Projects
+		SccLocalPath1 = Harleysville\u0020Database\u0020Projects
+	EndGlobalSection
+	GlobalSection(TextTemplating) = postSolution
+		TextTemplating = 1
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D30D045-1984-42B4-9CA6-F68033038AF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D30D045-1984-42B4-9CA6-F68033038AF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D30D045-1984-42B4-9CA6-F68033038AF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D30D045-1984-42B4-9CA6-F68033038AF2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

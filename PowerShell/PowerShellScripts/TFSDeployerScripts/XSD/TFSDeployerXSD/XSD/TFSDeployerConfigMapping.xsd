@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://as73tfsbuild01/TFSDeployerConfigMapping.xsd" elementFormDefault="qualified" xmlns="http://as73tfsbuild01/TFSDeployerConfigMapping.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:attributeGroup name="PackageAttributes">
+		<xs:attribute name="Clean" type="Bool">
+			<xs:annotation>
+				<xs:appinfo>Package Level</xs:appinfo>
+				<xs:documentation>True if deploy location content should be deleted before deployment</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Confirm" type="Bool">
+			<xs:annotation>
+				<xs:appinfo>Package Level</xs:appinfo>
+				<xs:documentation>True if deploy location contents should be compared to build store package after Deployment.  This must be Fasle if Clean is set to false</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="PackageName" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:appinfo>Package Level</xs:appinfo>
+				<xs:documentation>This must match the package (directroy) name with in the build package (EX/ Web, or \Debug\_publishedWebsites\Webservcies </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Deploy" type="Bool" use="required">
+			<xs:annotation>
+				<xs:appinfo>Package Level</xs:appinfo>
+				<xs:documentation>True if this package should be deployed</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<!--<xs:attribute name="DeploymentType" type="xs:string"/>-->
+	</xs:attributeGroup>
+	<xs:element name="Settings">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="TFS" maxOccurs="1"  minOccurs="0"/>
+				<xs:element name="Packages" minOccurs="1" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Package" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DeploymentRegions" minOccurs="0" maxOccurs="1">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="DeploymentRegion" minOccurs="1" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="RegionLocations" minOccurs="0" maxOccurs="1">
+																	<xs:annotation>
+																		<xs:documentation>All Test regions have one to many deployment locations</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="Location" minOccurs="1" maxOccurs="unbounded">
+																				<xs:complexType>
+																					<xs:attribute name="Path" type="UNCPath">
+																						<xs:annotation>
+																							<xs:appinfo>Package Level</xs:appinfo>
+																							<xs:documentation>Full UNC path to Top directory where pacakge contents will be deployed;  CORP\TFSBUILD must have modify rights to this share</xs:documentation>
+																						</xs:annotation>
+																					</xs:attribute>
+																					<xs:attribute name="Deploy" type="Bool" default="true">
+																						<xs:annotation>
+																							<xs:appinfo>
+																								<xs:choice minOccurs="0" maxOccurs="1">
+																								</xs:choice>
+																							</xs:appinfo>
+																						</xs:annotation>
+																					</xs:attribute>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="RecycleAppPools" minOccurs="0" maxOccurs="1">
+																	<xs:annotation>
+																		<xs:documentation>Website, web Applications and Web service Application deployment should have its corresponing AppPool recycled.  There needs to be a one to one relationship, one appPool recycle for each deployment location in the each region.  Example is a deployment of a website with a location of \\ws73tstwebapps1\WebServicestst1\MyWebSite there should a AppPool recyle of IISServerName="ws73tstwebapps1" AppPoolName="MyWebsiteAppPool"</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="AppPool" minOccurs="1" maxOccurs="unbounded">
+																				<xs:complexType>
+																					<xs:sequence>
+																					</xs:sequence>
+																					<xs:attribute name="IISServerName" type="xs:string">
+																						<xs:annotation>
+																							<xs:appinfo>Test Region Level</xs:appinfo>
+																							<xs:documentation>The physical name of the IIS host server; CORP\TFSBUILD needs to have poweruser or admin admin to this Server</xs:documentation>
+																						</xs:annotation>
+																					</xs:attribute>
+																					<xs:attribute name="AppPoolName" type="xs:string">
+																						<xs:annotation>
+																							<xs:appinfo>Test Region Level</xs:appinfo>
+																							<xs:documentation>The exact AppPool Name that needs to be recycled </xs:documentation>
+																						</xs:annotation>
+																					</xs:attribute>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element maxOccurs="unbounded" minOccurs="0" ref="Options" />
+															</xs:sequence>
+															<xs:attribute name="Name" type="RegionNames">
+																<xs:annotation>
+																	<xs:documentation>The Full Test region name</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="WasSDLC" type="WasSDLC">
+																<xs:annotation>
+																	<xs:documentation>WasSDLC is used only for EAR deployments, you need to map the Deployment Region with a Websphere Application System SDLC </xs:documentation>
+																	<xs:appinfo>
+																		<xs:choice minOccurs="0" maxOccurs="1">
+																		</xs:choice>
+																	</xs:appinfo>
+																</xs:annotation>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" maxOccurs="unbounded" ref="Options" />
+									</xs:sequence>
+									<xs:attributeGroup ref="PackageAttributes" />
+									<xs:attribute name="DeploymentType">
+										<xs:annotation>
+											<xs:documentation>The deployment type is the category /type of build package being deployed. There are two basic types of deployments “Simple” and “Complex”.  Simple deployments are straightforward’ copy-to’ processes and do not require any additional steps. Currently, “.Net” and “Scripts” are considered simple deployments and therefore are interchangeable.  On the other hand, complex deployments have deployment type specific actions that are required to run for the deployment to be completed.  “webMethods”, “EAR”, “Documaker” and “PSHSnappin” are all complex types, meaning that they must to be specified if the build package is of that type.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="webMethods" />
+												<xs:enumeration value=".Net" />
+												<xs:enumeration value="Scripts" />
+												<xs:enumeration value="EAR" />
+												<xs:enumeration value="Documaker" />
+												<xs:enumeration value="Simple" />
+												<xs:enumeration value="PSHSnapin" />
+												<xs:enumeration value="Config" />
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="AddInScripts" minOccurs="0" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>Addin Scritps are Scripts that can be injected into the deployment process at specified times in the process.  These scripts must checked into the team build types deployment folder.  The scripts will be run at the specified actiontype and will have the SRM TFS Deployer object passed in as its first and only parameter.   Each script must return a Boolean to weather it ran successfully, script will fail if any other type is returned.  .   Addin Scripts will only be run on full deployments and not during configs update. </xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Script" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="Options" minOccurs="0" maxOccurs="unbounded" />
+									</xs:sequence>
+									<xs:attribute name="ScriptName" type="xs:string">
+										<xs:annotation>
+											<xs:documentation>The name including ps1 extention of the script within TFVC ($/TeamProject/TeamBuildTypes/BuildTypeName/Deployments) Naming Convention: Invoke-“ActionType” Exmaple of script name would be "Invoke-BeforeStart.ps1"</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="ContinueOnError" type="Bool">
+										<xs:annotation>
+											<xs:documentation>When true deployer process will continue to run and ignore the unsuccessful script, otherwise, deployer process will be stopped. </xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="ScriptType">
+										<xs:annotation>
+											<xs:documentation>The script type can currently only be file based, but future releases may allow in-line scripts to be used. </xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="File" />
+												<!--<xs:enumeration value="Inline" />-->
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="ActionType">
+										<xs:annotation>
+											<xs:documentation>The ActionType is where in the TFS Deployer process this addin script will run </xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="BeforeStart" />
+												<xs:enumeration value="AfterEnd" />
+												<xs:enumeration value="BeforePush" />
+												<xs:enumeration value="OverridePush" />
+												<xs:enumeration value="AfterPush" />
+												<xs:enumeration value="BeforeWorkItemUpdate" />
+												<xs:enumeration value="OverrideWorkItemUpdate" />
+												<xs:enumeration value="AfterWorkItemUpdate" />
+												<xs:enumeration value="BeforeDeploymentDBUpdate" />
+												<xs:enumeration value="OverrideDeploymentDBUpdate" />
+												<xs:enumeration value="AfterDeploymentDBUpdate" />
+												<xs:enumeration value="BeforeBuildQualityUpdate" />
+												<xs:enumeration value="OverrideBuildQualityUpdate" />
+												<xs:enumeration value="AfterBuildQualityUpdate" />
+												<xs:enumeration value="OverrideDeploymentConfig" />
+												<xs:enumeration value="BeforeSyncDB" />
+												<xs:enumeration value="AfterSyncDB" />
+												<xs:enumeration value="AfterGetDBScriptsFolder" />
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Databases" maxOccurs="1" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>This Element should be used for DB migration via RedGate's SQL Compare, a Scripts Folder must be in TFVC this process to work</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Database" minOccurs="1" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>
+									</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="Options" maxOccurs="unbounded" minOccurs="0" />
+									</xs:sequence>
+									<xs:attribute name="TFVCServerPath" type="TFVCServerPath" use="required">
+										<xs:annotation>
+											<xs:documentation>The Full Team Foundation Version Control Server path to scripts folder EX/ $/TeamProject/Branches/INTEGRATION/Databases/TeamDB</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="Region" type="RegionNames" use="required">
+										<xs:annotation>
+											<xs:documentation>The region that this DB is associated w/ and will be sync'd when a deployment to this region is made</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="Sync" type="Bool" use="required">
+										<xs:annotation>
+											<xs:documentation>True if the DB should sync'd w/ the Builds labeled TFVC scripts folder when a deployment to this region is made</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="SqlCompareArgsXmlName" type="XmlFileName" use="optional" default="SqlCompareArgs.xml">
+										<xs:annotation>
+											<xs:documentation>The name of the RedGate Sql Compare Command Line Arguments Xml file in the Env.Config DB folder for this Region that will be used in the Sync (Default: SqlCompareArgs.xml)</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="Name" type="xs:string">
+										<xs:annotation>
+											<xs:documentation>The name of the element can be anything this is used only for user readabilty</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="SearchAndReplace" type="Bool" use="optional">
+										<xs:annotation>
+											<xs:documentation>True if need to run search and replace on the Functions and Stored Procedures scripts before sync</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+                  <xs:attribute name="DropActions" type="DBDropActions" use="optional">
+                    <xs:annotation>
+                      <xs:documentation>Actions to be taken when table(s) and/or Column(s) will be dropped during the sync job.  Actions: Fail, which will stop the migration; Continue, which will continue the migration w/o any further actions tables will be dropped; Backup, which will create a full copy-only backup of the database before the sync job is run items will be dropped.  If this attribute is not set the default is Fail.</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="Options" maxOccurs="unbounded" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="RegionNames">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Dev" />
+			<xs:enumeration value="Assembly" />
+			<xs:enumeration value="QA2" />
+			<xs:enumeration value="TST1" />
+			<xs:enumeration value="End2End" />
+			<xs:enumeration value="Training" />
+			<xs:enumeration value="PrePrd" />
+			<xs:enumeration value="Production" />
+			<xs:enumeration value="Test" />
+			<xs:enumeration value="Staging" />
+			<xs:enumeration value="Test02" />
+			<xs:enumeration value="Dev02" />
+			<xs:enumeration value="QTE" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="XmlFileName">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[\w|_|-]+?\.xml" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TFVCServerPath">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\$/[\w|\.|_]+?/([\w|\.|_|-]+?[/|\w])+?" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="UNCPath">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\\\\\w+?\\(\w+?[\\|\w|\.|\-|_])+?" />
+			<xs:pattern value="http(|s)\://([\w|\.|_|-]+?[/|\w])+?(|\:\d+?)/([\w|\.|_|-]+?[/|\w])+?" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="URL">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="http(|s)\://([\w|\.|_|-]+?[/|\w])+?(|\:\d+?)/([\w|\.|_|-]+?[/|\w])+?" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Bool">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="true" />
+			<xs:enumeration value="false" />
+		</xs:restriction>
+	</xs:simpleType>
+  <xs:simpleType name="DBDropActions" >
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Fail" />
+      <xs:enumeration value="Continue" />
+      <xs:enumeration value="Backup" />
+    </xs:restriction>
+  </xs:simpleType>
+	<xs:simpleType name="WasSDLC">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="DVLT01" />
+			<xs:enumeration value="DVLT02" />
+			<xs:enumeration value="DVLT04" />
+			<xs:enumeration value="DVLT05" />
+			<xs:enumeration value="DVLT11" />
+			<xs:enumeration value="DVLT13" />
+			<xs:enumeration value="SYST01" />
+			<xs:enumeration value="SYST02" />
+			<xs:enumeration value="SYST04" />
+			<xs:enumeration value="SYST11" />
+			<xs:enumeration value="SYST12" />
+			<xs:enumeration value="WSPP" />
+			<xs:enumeration value="WSTT" />
+			<xs:enumeration value="WSTD" />
+			<xs:enumeration value="PRODUCTION" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Options">
+		<xs:annotation>
+			<xs:documentation>Options allow for custom key value pairs to be added for the Deployer to user. Options will most likely be used in AddinScripts</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Option" maxOccurs="unbounded" minOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+						</xs:sequence>
+						<xs:attribute name="Key" type="xs:string" />
+						<xs:attribute name="Value" type="xs:string" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Name" type="xs:string" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TFS">
+		<xs:complexType>
+			<xs:sequence />
+			<xs:attribute name="TeamBuildType" type="xs:string" />
+			<xs:attribute name="TeamProject" type="xs:string" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

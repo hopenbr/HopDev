@@ -1,0 +1,11 @@
+[System.Reflection.Assembly]::LoadWithPartialName("Microsoft.SharePoint")
+[System.Reflection.Assembly]::LoadWithPartialName("Microsoft.SharePoint.Administration")
+[System.Reflection.Assembly]::LoadWithPartialName("Microsoft.Office.InfoPath.Server")
+
+$spfarm = [Microsoft.SharePoint.Administration.SPFarm]::local
+
+$lsf = $spfarm.services | ?{$_.TypeName -eq "Forms Service"}
+
+$xsn = $lsf.Formtemplates | ?{$_.DisplayName -eq "BillingAccountSummary"}
+
+$file = $ls$xsnf.FormTemplates.ItemFromFile("\\AS73tfs01\BuildStore\GLBP\WSP\Drops\LGBP.InfoPath.STG.MultipleForms-20090201.075249\XSN\Inforce.xsn")

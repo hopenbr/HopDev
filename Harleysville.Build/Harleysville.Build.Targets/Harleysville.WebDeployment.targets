@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<Import Project=".\Harleysville.tasks.targets" />
+
+
+	<Target Name="Deploy2Drop" Condition=" '$(Deploy2Drop)' == 'true' ">
+		<GetBuildNumber VersionXmlPath="$(SolutionDir)\BuildNumber.xml" Update="false" Condition="'$(UseBuildNumber)' == 'true' ">
+			<Output TaskParameter="BuildNumber" PropertyName="BuildNumber" />
+		</GetBuildNumber>
+		<Copy DestinationFiles="@(PrecompiledOutput->'$(DropLocation)\$(BuildNumber)\$(WebSiteBuildPackagePath)\%(RecursiveDir)\%(Filename)%(Extension)')" SourceFiles="@(PrecompiledOutput)" ContinueOnError="true" />
+	</Target>
+
+	<Target Name="Deploy" Condition=" '$(Deploy)' == 'true' ">
+		<DeleteAll Dir="$(WebserverPath)" />
+		<Copy DestinationFiles="@(PrecompiledOutput->'$(WebserverPath)\%(RecursiveDir)\%(Filename)%(Extension)')" SourceFiles="@(PrecompiledOutput)" ContinueOnError="true" />
+	</Target>
+
+	<Target Name="AfterBuild" >
+		<CallTarget Targets="Deploy2Drop" />
+		<CallTarget Targets="Deploy" Condition="$(UseMSBuildDeploy) == 'true'"/>
+		<UpdateBuildStep BuildUri="$(BuildUri)" BuildStepName="WebDeploy" BuildStepResult="true" />
+	</Target>
+
+	<Target Name="GetReferences">
+		<Message Text="Message 111: Getting Project Assemblies" />
+
+		<ResolveAssemblyReference Assemblies="%(ProjectReference.Package)"
+								  SearchPaths="$(OutDir);{TargetFrameworkDirectory};{GAC}"
+								  TargetFrameworkDirectories="$(TargetFrameworkDirectory)"
+								  FindDependencies="true"
+								  FindSatellites="true"
+								  FindSerializationAssemblies="true"
+								  FindRelatedFiles="true">
+
+			<Output TaskParameter="CopyLocalFiles" ItemName="RefToCopy" />
+
+		</ResolveAssemblyReference>
+
+		<Copy SourceFiles="@(RefToCopy)" DestinationFiles="@(RefToCopy -> '$(SolutionDir)\$(WebSiteBinPath)\%(Filename)%(Extension)')" ContinueOnError="true" />
+
+	</Target>
+
+	<Target Name="BeforeBuild" >
+		<AddBuildStep BuildUri="$(BuildUri)" BuildStepName="WebDeploy" BuildStepText="Pre-compiling Website" />
+		<CallTarget Targets="GetReferences"/>
+	</Target>
+
+</Project>

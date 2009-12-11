@@ -1,0 +1,177 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFSeventClasses", "TFSeventClasses\TFSeventClasses.csproj", "{D96E17B9-072E-415B-A4CF-173FE5556845}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{2CFEAB61-6A3B-4EB8-B523-560B4BEEF521}") = "TFSevent_deploy", "TFSevent_deploy\TFSevent_deploy.wdproj", "{9F2885FD-ED60-45B6-8127-B15A54D93F7B}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "http://localhost:88/", "http://localhost:88", "{ABAA3406-C493-4AA0-8F69-F648265E2026}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		ProjectReferences = "{D96E17B9-072E-415B-A4CF-173FE5556845}|Harleysville.TFS.EventClasses.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost:88"
+		Debug.AspNetCompiler.PhysicalPath = "TeamFoundationServer.Services.Extensibility1\"
+		Debug.AspNetCompiler.TargetPath = "C:\Projects\ITportal\TFS\Branches\Development\TFSeventServices\PrecompiledWeb\localhost:88\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost:88"
+		Release.AspNetCompiler.PhysicalPath = "TeamFoundationServer.Services.Extensibility1\"
+		Release.AspNetCompiler.TargetPath = "C:\Projects\ITportal\TFS\Branches\Development\TFSeventServices\PrecompiledWeb\localhost:88\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "TeamFoundationServer.Services.Extensibility1\"
+	EndProjectSection
+	ProjectSection(ProjectDependencies) = postProject
+		{D96E17B9-072E-415B-A4CF-173FE5556845} = {D96E17B9-072E-415B-A4CF-173FE5556845}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFSEventServicesTester", "TFSEventServicesTester\TFSEventServicesTester.csproj", "{5E9E13BD-E2C7-4014-8465-E80BEC51233C}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2AFEB4D8-02A0-43D9-8A84-ACF420FF6BFE}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		BuildNumber.xml = BuildNumber.xml
+		localtestrun.testrunconfig = localtestrun.testrunconfig
+		TFSeventServices.vsmdi = TFSeventServices.vsmdi
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB9-8B4A-11D0-8D11-00A0C91BC942}") = "aspnet_setreg.exe", "ASP.NET_Encrypt\aspnet_setreg.exe", "{495BEA74-1310-42B1-829C-D0DCA363EE91}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Powershell Tester", "Powershell Tester", "{816C0792-82E4-4707-A6E1-B781B1B7943C}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		..\PowerShell\PowerShellScripts\Test-TFSEventServices.ps1 = ..\PowerShell\PowerShellScripts\Test-TFSEventServices.ps1
+		..\PowerShell\PowerShellScripts\TfsEventServicesTestData.xml = ..\PowerShell\PowerShellScripts\TfsEventServicesTestData.xml
+		..\PowerShell\PowerShellScripts\TfsEventServicesTestDataOne.xml = ..\PowerShell\PowerShellScripts\TfsEventServicesTestDataOne.xml
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PSH Scripts", "PSH Scripts", "{062733FC-E9B9-4C45-A8F3-079776BA4493}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		PSHScripts\Check4Labels.bat = PSHScripts\Check4Labels.bat
+		PSHScripts\Create-InfoLabel.ps1 = PSHScripts\Create-InfoLabel.ps1
+		PSHScripts\CreateLabel.bat = PSHScripts\CreateLabel.bat
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://as73tfs01:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = TFSeventClasses\\TFSeventClasses.csproj
+		SccProjectName1 = TFSeventClasses
+		SccLocalPath1 = TFSeventClasses
+		SccProjectUniqueName2 = TFSevent_deploy\\TFSevent_deploy.wdproj
+		SccProjectName2 = TFSevent_deploy
+		SccLocalPath2 = TFSevent_deploy
+		SccProjectUniqueName3 = TFSEventServicesTester\\TFSEventServicesTester.csproj
+		SccProjectName3 = TFSEventServicesTester
+		SccLocalPath3 = TFSEventServicesTester
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = TFSeventServices.vsmdi
+	EndGlobalSection
+	GlobalSection(TextTemplating) = postSolution
+		TextTemplating = 1
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Release|.NET = Release|.NET
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D96E17B9-072E-415B-A4CF-173FE5556845}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{D96E17B9-072E-415B-A4CF-173FE5556845}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D96E17B9-072E-415B-A4CF-173FE5556845}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D96E17B9-072E-415B-A4CF-173FE5556845}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D96E17B9-072E-415B-A4CF-173FE5556845}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D96E17B9-072E-415B-A4CF-173FE5556845}.Release|.NET.ActiveCfg = Release|Any CPU
+		{D96E17B9-072E-415B-A4CF-173FE5556845}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D96E17B9-072E-415B-A4CF-173FE5556845}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D96E17B9-072E-415B-A4CF-173FE5556845}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D96E17B9-072E-415B-A4CF-173FE5556845}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{9F2885FD-ED60-45B6-8127-B15A54D93F7B}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{9F2885FD-ED60-45B6-8127-B15A54D93F7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F2885FD-ED60-45B6-8127-B15A54D93F7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F2885FD-ED60-45B6-8127-B15A54D93F7B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9F2885FD-ED60-45B6-8127-B15A54D93F7B}.Release|.NET.ActiveCfg = Release|Any CPU
+		{9F2885FD-ED60-45B6-8127-B15A54D93F7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F2885FD-ED60-45B6-8127-B15A54D93F7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F2885FD-ED60-45B6-8127-B15A54D93F7B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{9F2885FD-ED60-45B6-8127-B15A54D93F7B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{ABAA3406-C493-4AA0-8F69-F648265E2026}.Debug|.NET.ActiveCfg = Debug|.NET
+		{ABAA3406-C493-4AA0-8F69-F648265E2026}.Debug|.NET.Build.0 = Debug|.NET
+		{ABAA3406-C493-4AA0-8F69-F648265E2026}.Debug|Any CPU.ActiveCfg = Debug|.NET
+		{ABAA3406-C493-4AA0-8F69-F648265E2026}.Debug|Mixed Platforms.ActiveCfg = Debug|.NET
+		{ABAA3406-C493-4AA0-8F69-F648265E2026}.Debug|Mixed Platforms.Build.0 = Debug|.NET
+		{ABAA3406-C493-4AA0-8F69-F648265E2026}.Release|.NET.ActiveCfg = Debug|.NET
+		{ABAA3406-C493-4AA0-8F69-F648265E2026}.Release|.NET.Build.0 = Debug|.NET
+		{ABAA3406-C493-4AA0-8F69-F648265E2026}.Release|Any CPU.ActiveCfg = Debug|.NET
+		{ABAA3406-C493-4AA0-8F69-F648265E2026}.Release|Mixed Platforms.ActiveCfg = Debug|.NET
+		{ABAA3406-C493-4AA0-8F69-F648265E2026}.Release|Mixed Platforms.Build.0 = Debug|.NET
+		{5E9E13BD-E2C7-4014-8465-E80BEC51233C}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{5E9E13BD-E2C7-4014-8465-E80BEC51233C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E9E13BD-E2C7-4014-8465-E80BEC51233C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E9E13BD-E2C7-4014-8465-E80BEC51233C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5E9E13BD-E2C7-4014-8465-E80BEC51233C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5E9E13BD-E2C7-4014-8465-E80BEC51233C}.Release|.NET.ActiveCfg = Release|Any CPU
+		{5E9E13BD-E2C7-4014-8465-E80BEC51233C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E9E13BD-E2C7-4014-8465-E80BEC51233C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E9E13BD-E2C7-4014-8465-E80BEC51233C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5E9E13BD-E2C7-4014-8465-E80BEC51233C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{495BEA74-1310-42B1-829C-D0DCA363EE91}.Debug|.NET.ActiveCfg = Debug
+		{495BEA74-1310-42B1-829C-D0DCA363EE91}.Debug|Any CPU.ActiveCfg = Debug
+		{495BEA74-1310-42B1-829C-D0DCA363EE91}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{495BEA74-1310-42B1-829C-D0DCA363EE91}.Release|.NET.ActiveCfg = Debug
+		{495BEA74-1310-42B1-829C-D0DCA363EE91}.Release|Any CPU.ActiveCfg = Debug
+		{495BEA74-1310-42B1-829C-D0DCA363EE91}.Release|Mixed Platforms.ActiveCfg = Debug
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

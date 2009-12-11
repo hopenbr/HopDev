@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Settings xmlns="urn:schema-Harleysvillegroup-com:TFSDeployerConfig">
+  <Packages>
+    <Package Deploy="true" DeploymentType=".Net" SyncType="Full" PackageName="">
+      <DeploymentRegions>
+        <DeploymentRegion Name="Dev">
+          <RegionLocations>
+            <Location Path=""/>
+          </RegionLocations>
+        </DeploymentRegion>
+        <DeploymentRegion Name="Assembly">
+          <RegionLocations>
+            <Location Path=""/>
+          </RegionLocations>
+        </DeploymentRegion>
+        <DeploymentRegion Name="QA2">
+          <RegionLocations>
+            <Location Path=""/>
+          </RegionLocations>
+        </DeploymentRegion>
+        <DeploymentRegion Name="TST1">
+          <RegionLocations>
+            <Location Path=""/>
+          </RegionLocations>
+        </DeploymentRegion>
+        <DeploymentRegion Name="End2End">
+          <RegionLocations>
+            <Location Path=""/>
+          </RegionLocations>
+        </DeploymentRegion>
+        <DeploymentRegion Name="Training">
+          <RegionLocations>
+            <Location Path=""/>
+          </RegionLocations>
+        </DeploymentRegion>
+        <DeploymentRegion Name="PrePrd">
+          <RegionLocations>
+            <Location Path=""/>
+          </RegionLocations>
+        </DeploymentRegion>
+        <DeploymentRegion Name="Production">
+          <RegionLocations>
+            <Location Path=""/>
+          </RegionLocations>
+        </DeploymentRegion>
+      </DeploymentRegions>
+    </Package>
+  </Packages>
+</Settings>

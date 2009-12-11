@@ -1,0 +1,152 @@
+<WHEN field="HIC.Project" value="AgentPortal">
+  <ALLOWEDVALUES>
+    <GLOBALLIST name="Builds - AgentPortal.Project" />
+    <GLOBALLIST name="List - DefaultBuildNumbers" />
+    <GLOBALLIST name="Builds - WmProjects" />
+  </ALLOWEDVALUES>
+</WHEN>
+<WHEN field="HIC.Project" value="URE">
+  <ALLOWEDVALUES>
+    <GLOBALLIST name="Builds - UREProject" />
+    <GLOBALLIST name="List - DefaultBuildNumbers" />
+    <GLOBALLIST name="Builds - WmProjects" />
+    <GLOBALLIST name="Builds - RuleServices.Projects" />
+  </ALLOWEDVALUES>
+</WHEN>
+<WHEN field="HIC.Project" value="Agency">
+  <ALLOWEDVALUES>
+    <GLOBALLIST name="Builds - Agency.Projects" />
+    <GLOBALLIST name="List - DefaultBuildNumbers" />
+    <GLOBALLIST name="Builds - WmProjects" />
+  </ALLOWEDVALUES>
+</WHEN>
+<WHEN field="HIC.Project" value="Ivans">
+  <ALLOWEDVALUES>
+    <GLOBALLIST name="Builds - Agency.Projects" />
+    <GLOBALLIST name="List - DefaultBuildNumbers" />
+  </ALLOWEDVALUES>
+</WHEN>
+<WHEN field="HIC.Project" value="HIEDMS">
+  <ALLOWEDVALUES>
+    <GLOBALLIST name="Builds - HIEDMS" />
+    <GLOBALLIST name="List - DefaultBuildNumbers" />
+    <GLOBALLIST name="Builds - WmProjects" />
+  </ALLOWEDVALUES>
+</WHEN>
+<WHEN field="HIC.Project" value="IntegratedServices">
+  <ALLOWEDVALUES>
+    <GLOBALLIST name="List - DefaultBuildNumbers" />
+    <GLOBALLIST name="Builds - IntegratedServices.Projects" />
+    <GLOBALLIST name="Builds - WmProjects" />
+  </ALLOWEDVALUES>
+</WHEN>
+<WHEN field="HIC.Project" value="PersonalLines.Projects">
+  <ALLOWEDVALUES>
+    <GLOBALLIST name="Builds - PersonalLines.Projects" />
+    <GLOBALLIST name="List - DefaultBuildNumbers" />
+    <GLOBALLIST name="Builds - WmProjects" />
+  </ALLOWEDVALUES>
+</WHEN>
+<WHEN field="HIC.Project" value="CommercialLines.Projects">
+  <ALLOWEDVALUES>
+    <GLOBALLIST name="Builds - CommercialLines.Projects" />
+    <GLOBALLIST name="List - DefaultBuildNumbers" />
+    <GLOBALLIST name="Builds - WmProjects" />
+  </ALLOWEDVALUES>
+</WHEN>
+<WHEN field="HIC.Project" value="PredictiveModelingService">
+  <ALLOWEDVALUES>
+    <GLOBALLIST name="List - DefaultBuildNumbers" />
+    <GLOBALLIST name="Builds - PredictiveModeling.Projects" />
+    <GLOBALLIST name="Builds - WmProjects" />
+  </ALLOWEDVALUES>
+</WHEN>
+<WHEN field="HIC.Project" value="PolicyOutput">
+  <ALLOWEDVALUES>
+    <GLOBALLIST name="Builds - CommercialLines.Projects" />
+    <GLOBALLIST name="List - DefaultBuildNumbers" />
+    <GLOBALLIST name="Builds - WmProjects" />
+  </ALLOWEDVALUES>
+</WHEN>
+<WHEN field="HIC.Deployment.Type" value="DataBase">
+  <ALLOWEXISTINGVALUE />
+</WHEN>
+<WHENNOT field="HIC.Fields.Lock" value="0">
+  <READONLY for="[project]\Contributors" />
+  <READONLY not="[global]\Team Foundation Administrators" />
+</WHENNOT>
+<WHEN field="HIC.Project" value="WC Reporting">
+  <ALLOWEDVALUES>
+    <GLOBALLIST name="Builds - CommercialLines.Projects" />
+    <GLOBALLIST name="List - DefaultBuildNumbers" />
+  </ALLOWEDVALUES>
+</WHEN>
+<WHEN field="HIC.Project" value="GroupLife">
+  <ALLOWEDVALUES>
+    <GLOBALLIST name="Builds - LifeGroup" />
+    <GLOBALLIST name="Builds - Life.Projects" />
+    <GLOBALLIST name="List - DefaultBuildNumbers" />
+  </ALLOWEDVALUES>
+</WHEN>
+<WHEN field="HIC.Deployment.Type" value="Informatica">
+  <ALLOWEDVALUES>
+    <GLOBALLIST name="List - InformaticaBuildType" />
+  </ALLOWEDVALUES>
+</WHEN>
+<WHEN field="HIC.Project" value="AQSHelp">
+  <SUGGESTEDVALUES>
+    <GLOBALLIST name="Builds - HIC.Projects" />
+  </SUGGESTEDVALUES>
+</WHEN>
+<WHEN field="HIC.Project" value="HostIntegrationServer">
+  <ALLOWEDVALUES>
+    <GLOBALLIST name="Builds - HostIntegrationServer" />
+    <GLOBALLIST name="Builds - WmProjects" />
+  </ALLOWEDVALUES>
+</WHEN>
+<WHEN field="HIC.Project" value="LGBP">
+  <ALLOWEDVALUES>
+    <GLOBALLIST name="Builds - WmProjects" />
+    <GLOBALLIST name="Builds - Life.Projects" />
+  </ALLOWEDVALUES>
+</WHEN>
+<WHEN field="HIC.Project" value="AccessCL">
+  <ALLOWEDVALUES>
+    <GLOBALLIST name="Builds - WmProjects" />
+    <GLOBALLIST name="Builds - AQS.Projects" />
+    <GLOBALLIST name="Builds - CommercialLines.Projects" />
+  </ALLOWEDVALUES>
+</WHEN>
+<WHEN field="HIC.Project" value="Documaker">
+  <ALLOWEDVALUES>
+    <GLOBALLIST name="Builds - Documaker.Projects" />
+  </ALLOWEDVALUES>
+</WHEN>
+<WHEN field="HIC.Project" value="CLPolicyOutput">
+  <ALLOWEDVALUES>
+    <GLOBALLIST name="Builds - CommercialLines.Projects" />
+  </ALLOWEDVALUES>
+</WHEN>
+<WHEN field="HIC.Deployment.Type" value="webMethods">
+  <ALLOWEXISTINGVALUE />
+  <REQUIRED />
+</WHEN>
+<WHEN field="HIC.Deployment.Type" value=".Net">
+  <ALLOWEXISTINGVALUE />
+  <REQUIRED />
+</WHEN>
+<WHEN field="HIC.Deployment.Type" value="MOSS">
+  <ALLOWEXISTINGVALUE />
+  <REQUIRED />
+</WHEN>
+<WHEN field="HIC.Deployment.Type" value="Vendor">
+  <ALLOWEXISTINGVALUE />
+  <REQUIRED />
+</WHEN>
+<WHEN field="HIC.Deployment.Type" value="EAR">
+  <SUGGESTEDVALUES>
+    <GLOBALLIST name="Builds - HIC.Projects" />
+  </SUGGESTEDVALUES>
+  <ALLOWEXISTINGVALUE />
+  <REQUIRED />
+</WHEN>

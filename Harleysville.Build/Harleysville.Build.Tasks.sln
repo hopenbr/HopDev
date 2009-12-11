@@ -1,0 +1,75 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harleysville.Build.Tasks", "Harleysville.Build.Tasks\Harleysville.Build.Tasks.csproj", "{185F9CFC-0D39-4608-8644-0D73D62F1B93}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Targets", "Targets", "{63719519-2618-43BF-A458-CDBEB2A8143E}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		Harleysville.Build.Targets\Harleysville.tasks.targets = Harleysville.Build.Targets\Harleysville.tasks.targets
+		Harleysville.Build.Targets\Harleysville.teambuild.targets = Harleysville.Build.Targets\Harleysville.teambuild.targets
+		Harleysville.Build.Targets\Harleysville.WebDeployment.targets = Harleysville.Build.Targets\Harleysville.WebDeployment.targets
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1B58F553-D4E2-41AF-8F3D-1089CF2CDFF1}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		..\..\INTEGRATION\Harleysville.Build\BuildNumber.xml = ..\..\INTEGRATION\Harleysville.Build\BuildNumber.xml
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harleysville.Build.Utilities", "Harleysville.Build.Utilities\Harleysville.Build.Utilities.csproj", "{6C02AB86-FD17-4E38-B9CA-9465C3EE2FE6}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://as73tfs01:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Harleysville.Build.Tasks\\Harleysville.Build.Tasks.csproj
+		SccProjectName1 = Harleysville.Build.Tasks
+		SccLocalPath1 = Harleysville.Build.Tasks
+		SccProjectUniqueName2 = Harleysville.Build.Utilities\\Harleysville.Build.Utilities.csproj
+		SccProjectName2 = Harleysville.Build.Utilities
+		SccLocalPath2 = Harleysville.Build.Utilities
+	EndGlobalSection
+	GlobalSection(TextTemplating) = postSolution
+		TextTemplating = 1
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{185F9CFC-0D39-4608-8644-0D73D62F1B93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{185F9CFC-0D39-4608-8644-0D73D62F1B93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{185F9CFC-0D39-4608-8644-0D73D62F1B93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{185F9CFC-0D39-4608-8644-0D73D62F1B93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C02AB86-FD17-4E38-B9CA-9465C3EE2FE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C02AB86-FD17-4E38-B9CA-9465C3EE2FE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C02AB86-FD17-4E38-B9CA-9465C3EE2FE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C02AB86-FD17-4E38-B9CA-9465C3EE2FE6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

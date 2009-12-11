@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Settings>
+	<EventSource>Harleysville.TFS.LGBP.SQLBak.Importer</EventSource>
+	<CommonScriptsLocation>E:\TFS\HICPowerPlatform</CommonScriptsLocation>
+  <SleepTime>120</SleepTime>
+	<TFSUrl>Http://as73tfs01:8080</TFSUrl>
+	<ErrorRecipient>SRM@HarleysvilleGroup.com</ErrorRecipient>
+	<CheckInComment>Daily SQL Backup import</CheckInComment>
+  <AddOrphans>False</AddOrphans>
+  <Workspace>
+    <!--Name: The Name of the local TFVC workspace -->
+    <Name>LGBP_SQLBackupImport</Name>
+
+    <!--BaseDir: The Base directory for the Workspace, for the importer to work all mappings must be 
+			  under same parent directory pointing to diffect sub-directories-->
+    <BaseDir>C:\TFSWorkspaces\LGBP_Importer</BaseDir>
+
+  </Workspace>
+
+  <Shares>
+		<Share>
+			<Target>C:\Temp\LGBP\BackUp\Pre01</Target>
+			<Tfvc>
+				<ServerPath>$/LGBP.Projects/Servers/DS73SQLPRE01/Backups</ServerPath>
+				<SubFolder>Backups</SubFolder>
+			</Tfvc>
+		</Share>
+	</Shares>
+</Settings>

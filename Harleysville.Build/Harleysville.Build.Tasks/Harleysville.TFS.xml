@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project Name="Harleysville.TFS.Config" xmlns="http://www.w3.org/TR/xptr-xmlns/">
+
+	<Server Name="TFS.Server" Value="AS73TFS01" />
+	<Server Name="SMTP.Server" Value="XS73EMAIL1.CORP.HGICNET.NET" />
+	<Email Name="Provider" Value="@harleysvillesgroup.com" />
+	
+	
+</Project>

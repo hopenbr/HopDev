@@ -1,0 +1,1088 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="TfsOlapReportDS">
+      <DataSourceReference>TfsOlapReportDS</DataSourceReference>
+      <rd:DataSourceID>8c2221b9-e412-4337-b375-a869411ca5af</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="TfsReportDS">
+      <DataSourceReference>TfsReportDS</DataSourceReference>
+      <rd:DataSourceID>96d7e5d2-7af4-46b6-8a5f-b695a67b1d04</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>1in</BottomMargin>
+  <RightMargin>1in</RightMargin>
+  <PageWidth>11in</PageWidth>
+  <ReportParameters>
+    <ReportParameter Name="ExplicitProject">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>AdaptersAgileProject0</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ExplicitProject</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Project">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=IIF(LEN(Parameters!ExplicitProject.Value) &gt; 0,
+	Parameters!ExplicitProject.Value,
+	SPLIT(Globals!ReportFolder, "/").GetValue(IIF(split(Globals!ReportFolder, "/").Length &gt; 1, 1, 0)))</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Project</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="DefaultNumberOfBuildsToSelect">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>25</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>DefaultNumberOfBuildsToSelect</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="PlatformParam">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>[Platform].[Platform].[All]</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Platform</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>PlatformParam</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+          <LabelField>ParameterCaption</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="FlavorParam">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>[Flavor].[Build Flavor].[All]</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Flavor</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>FlavorParam</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+          <LabelField>ParameterCaption</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="MaxNumberOfBuildsToDisplay">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>100</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>MaxNumberOfBuildsToDisplay</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="BuildParam">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>DefaultBuilds</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Build</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>BuildParam</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+          <LabelField>ParameterCaption</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <Table Name="table1">
+        <Footer>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>6</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="textbox3">
+                      <rd:DefaultName>textbox3</rd:DefaultName>
+                      <ZIndex>8</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>tahoma</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=IIF(Count(Fields!Build.Value) = Parameters!MaxNumberOfBuildsToDisplay.Value, "Last " + Str(Parameters!MaxNumberOfBuildsToDisplay.Value) + " builds are shown.", "")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox13">
+                      <rd:DefaultName>textbox13</rd:DefaultName>
+                      <ZIndex>7</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+          </TableRows>
+        </Footer>
+        <Left>0.125in</Left>
+        <DataSetName>dsBuilds</DataSetName>
+        <Top>0.625in</Top>
+        <ZIndex>3</ZIndex>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox42">
+                      <ZIndex>6</ZIndex>
+                      <Action>
+                        <Hyperlink>=Fields!Build_Url.Value</Hyperlink>
+                      </Action>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <LineHeight>12.8pt</LineHeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <Color>Blue</Color>
+                        <TextDecoration>Underline</TextDecoration>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!Build.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox7">
+                      <ZIndex>5</ZIndex>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <LineHeight>12.8pt</LineHeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>tahoma</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!Build_Flavor.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox5">
+                      <ZIndex>4</ZIndex>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <LineHeight>12.8pt</LineHeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>tahoma</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!Platform.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox44">
+                      <ZIndex>3</ZIndex>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <LineHeight>12.8pt</LineHeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>tahoma</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!Build_Quality.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox46">
+                      <rd:DefaultName>textbox46</rd:DefaultName>
+                      <ZIndex>2</ZIndex>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>tahoma</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <Format>#0.### %</Format>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=IIf(IsNothing(Fields!ID__Test_Pass.Value) Or (Double.IsNan(CDbl(Fields!ID__Test_Pass.Value))), "No Data", Fields!ID__Test_Pass.Value)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox54">
+                      <rd:DefaultName>textbox54</rd:DefaultName>
+                      <ZIndex>1</ZIndex>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>tahoma</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <Format>#0.### %</Format>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=IIf(IsNothing(Fields!ID__Code_Coverage.Value), "No Data", Fields!ID__Code_Coverage.Value)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox51">
+                      <rd:DefaultName>textbox51</rd:DefaultName>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>tahoma</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=IIf(IsNothing(Fields!Total_Churn.Value), "No Data", Fields!Total_Churn.Value)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox50">
+                      <ZIndex>15</ZIndex>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <LineHeight>12.8pt</LineHeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BackgroundColor>#f1efe2</BackgroundColor>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!Build.Value</SortExpression>
+                      </UserSort>
+                      <Value>Build Name</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox4">
+                      <rd:DefaultName>textbox4</rd:DefaultName>
+                      <ZIndex>14</ZIndex>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <LineHeight>12.8pt</LineHeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BackgroundColor>#f1efe2</BackgroundColor>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!Build_Flavor.Value</SortExpression>
+                      </UserSort>
+                      <Value>Flavor</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox2">
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <ZIndex>13</ZIndex>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <LineHeight>12.8pt</LineHeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BackgroundColor>#f1efe2</BackgroundColor>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!Platform.Value</SortExpression>
+                      </UserSort>
+                      <Value>Platform</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox34">
+                      <ZIndex>12</ZIndex>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <LineHeight>12.8pt</LineHeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BackgroundColor>#f1efe2</BackgroundColor>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!Build_Quality.Value</SortExpression>
+                      </UserSort>
+                      <Value>Build Quality</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox56">
+                      <ZIndex>11</ZIndex>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <LineHeight>12.8pt</LineHeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>tahoma</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BackgroundColor>#f1efe2</BackgroundColor>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>% Tests Passed</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox43">
+                      <ZIndex>10</ZIndex>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <LineHeight>12.8pt</LineHeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>tahoma</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BackgroundColor>#f1efe2</BackgroundColor>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>% Code Coverage</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox53">
+                      <ZIndex>9</ZIndex>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <LineHeight>12.8pt</LineHeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>tahoma</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BackgroundColor>#f1efe2</BackgroundColor>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Code Churn</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>2.375in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.875in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.25in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.125in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.125in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.125in</Width>
+          </TableColumn>
+        </TableColumns>
+      </Table>
+      <Textbox Name="textbox1">
+        <Left>0.125in</Left>
+        <Top>0.125in</Top>
+        <ZIndex>2</ZIndex>
+        <Width>6in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>8pt</FontSize>
+          <Color>Gray</Color>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.125in</Height>
+        <Value>="Report Generated: " + Globals!ExecutionTime + " by " + User!UserID + ";  Last Warehouse Update: " + CDate(First(Fields!LastProcessedTime.Value, "dsLastProcessedTime")).ToLocalTime()</Value>
+      </Textbox>
+      <Textbox Name="textbox6">
+        <Left>0.125in</Left>
+        <ZIndex>1</ZIndex>
+        <Width>6in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontFamily>tahoma</FontFamily>
+          <FontWeight>700</FontWeight>
+          <Color>Gray</Color>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.125in</Height>
+        <Value>=Globals!ReportName</Value>
+      </Textbox>
+      <Textbox Name="textbox33">
+        <Left>0.125in</Left>
+        <Top>0.375in</Top>
+        <Width>6in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontFamily>tahoma</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.125in</Height>
+        <Value>="What are the details for the builds?"</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>1.375in</Height>
+  </Body>
+  <rd:ReportID>0ef40693-7983-4a96-b7a1-6684cb07a3b3</rd:ReportID>
+  <LeftMargin>1in</LeftMargin>
+  <EmbeddedImages>
+    <EmbeddedImage Name="pass">
+      <ImageData>R0lGODlhEAAQAPeIAMP0t5LNgovHea3cp22xVr3vsVqiP2CmRmWrTGKoSKXcmDVuH7Pmpj6OHz2MHDZ/GazjoGyTYEKNJEiWK4vNgV2gRkORI6DXknmXbjZ+GGm4YjJpHWKpSY/Kf0uYLZvRlbDjome1YFCbM67joYK/crzvsLLlpXvEc3i5Y3CzWnu6cHfDcGWuXDtgL6XfmmCnRpnRiZi/kIPKe7DlpDyLGkWAMnbBbj2JHk+XM26uW2GnWESSJTBSJjJXKI28hIywglWfOZ/ImEWHK5bKkJbQh1KcNkWSJU6ZMGSrTKXcmXmXbXe7cKPall2lQ5TOhazjoUNsNlWRRFaOTKLZlLzusGetTzVlI4G/bWKEVlSWPTdfLVegPG6tZYzPgqzioDqKGUWPKGipX019QojFdlykQkh4PE2ZMFKdNne9cLXpqTyBIbLnp1igPGSIV0eUKEGPIWquU1eQSWyqX53VjTtmMoPBcJLOh4fDeTZ7GzVcKpzUlnGxXmikXFqUUVWeOZO6i0uXLTNYKaXdmkBoNI3JfHeibVSeSP///////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAIgALAAAAAAQABAAAAjMABEJHEiwoEE9JzSEWDLEoMABK7q4SOPFjoowQQoOkPEEQAEGCmAEIMEnBkEbEDyaYEKkgyFDe6QM/EABQIkZU5wQMnToEIEohQSiEUQFxIUAAngegpMgixiBLNaMeDlGaZUXbHDQEagjyZyeShE08XMEjBaBXO4IqNPzEAcDRTwYUTNIoA85V1CkOHRgi4gJFhwsaDOwTw4CSMgAMePmDY0HeQj+iVPBwBlAOxp8yWAFQ8EfZWoIkXADz4ZAShwiigClB48WWFTLJhgQADs=</ImageData>
+      <MIMEType>image/gif</MIMEType>
+    </EmbeddedImage>
+    <EmbeddedImage Name="fail">
+      <ImageData>R0lGODlhEAAQAOZoAOA3AM8zAN+6r8ptUdq2raEmA28wKIFRTf9IDG0yLMIwAqtcR+zCtaaIhu87AMMxAvQ8AOazo4QfCMdrT96tn9Y1AMSclK+amtw1AP9wQXo4Lv9dKKoqBdCGcNeLc51kWf27pbUyCtxrR9h+YqY2F6c3GP6vlex3Uv22nec5AMxSLP+JY9iAY/+dfdVEF+xnO+BIGP+NZ+uCX84zALYyC+x/XNhzU7FOMcBpUf+cfP6Ydv+be8c8Ev+BWMg+E/+AV/9DBf+kh/NyR+I3AP+wl2UaEP+jhv6hg/Y9ALJQNOZcL95xT/+Sb/lzSvp/V/9jL/94S/h6Uv6beu06ANEzAP3Gsux3Ud02AMVMJv9gLPl7U/9JD8FrUv97Uf+lh/6Ucb05D/o9AP+Yd+19WtM0AP3FscsyAPz+/P///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAGgALAAAAAAQABAAAAe5gGiCg4SFhhEeAxMdFIaCDCxLVk5RSipcAoUMNjU5QTsrWQguSQSEI2NeRC09GRtbSDwLgxEiYkZnZ0dSuRAAJRaCHicxTCa5uV8OGDQfggNaP10ZZbkgYSkVDxqCE01QTxtVuShTVwEKBoIdMEAIOshnMmRmHAeCFFgOELlCL7lmzEhoMAiHDwBDAGCoECBggQSEBNwAQyXAjIBmChS5UIjAAhIhHijgICEBR0cWPmgwcICgo5eFAgEAOw==</ImageData>
+      <MIMEType>image/gif</MIMEType>
+    </EmbeddedImage>
+    <EmbeddedImage Name="alert">
+      <ImageData>R0lGODlhEAAQAPeXAJN2BpJ2Bv/mAP//bpR4BebOCeK6AuK4Av//Dv/zGpB2Cv7/OefCAZJ2Bd+1Af//Ev78QY6LMOLgHf/tANXQCpF2DU9NB2FjPP//QOfZBv//D//yHOzXBp6KQObNOaCIKf3+HvLkjbOYBffzSv/aBurPHpqLJ6OWBJ2FJsTCFejOR//zGP//afzwFNjCZ9DIr//pBeS7Av/9cK6PF6CiTv/gB7KhB9TEDvDiJAAAXt3UEfzkEeTKNPniDSwfXte3OPXpC6iMA///fffmAPr2cyAPgcm2O5R7Gd3Yx+rWOwIAYFRKO6eYXenPPvrNAP7sA9HEIvrOAOXPCdy0AZZ6BqqZWQAATf/9D/rvGf//Gf//RqWHBf76gu3ckvDflbeXD6eLAnNkYebNSNPJpf/oAP//jezaTP//Ju/eQOjDBv/zAs/EmrqyHs+sNmBJLOTJRPLjm/7/VZF/P///ReK8C8a5CZZ7CfnUApV7C491CePIOf3tFf/8BP/cAPrwFSEfKzo1AYuGMei+AeXBAvLfTf//SfXaDJV5BZZ6BfXnqOO8Af/aA/33F/fOAefk3PfcG5h8B5uELPj2UffqpnpkRr+sAv/wAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAJcALAAAAAAQABAAAAjNAC8JHEiwoEGBejwYGXOQYBcckm4caTiQB4RCWfCsoRgCTRwJIOqgoNhEBo0/ERDYeXHQCyEhF6wseVAp0sE3XFgEUmJCAxAFSArCMVNmDpsiUPgwEtGhoBgiA86k8KHDkh8OeRwNnJRkAIYrFNxkENCjRZAqA1WM0LIChpoCE/rcwSKlgsBEJRZsqPHkhAUbAqIY2rOFyaUfjxKQWDQEUI4wZJw02jFIzqUvdNLEOMAADKU2iqY4MCBoxiUXkAAACACACiICDVgDOPQhIAA7</ImageData>
+      <MIMEType>image/gif</MIMEType>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <DataSets>
+    <DataSet Name="dsBuilds">
+      <Query>
+        <rd:SuppressAutoUpdate>true</rd:SuppressAutoUpdate>
+        <CommandText>WITH
+MEMBER [Measures].[% Test Pass] AS
+    ([Outcome].[Outcome Passing].&amp;[True],[Measures].[Cumulative Result Count])/[Cumulative Result Count]
+
+MEMBER [Measures].[% Code Coverage] AS
+    [Measures].[Blocks Covered] / ([Measures].[Blocks Covered] + [Measures].[Blocks Not Covered])
+
+SELECT
+{
+    [Measures].[Build Url],
+    [Measures].[% Test Pass],
+    [Measures].[% Code Coverage],
+    [Measures].[Total Churn]
+} ON COLUMNS,
+BOTTOMCOUNT(
+    NONEMPTYCROSSJOIN
+    (
+        NONEMPTYCROSSJOIN
+        (
+          GENERATE(STRTOSET(@BuildParam) AS s, DESCENDANTS(s.CURRENTMEMBER,[Build].[Build].[Build])),
+          GENERATE(STRTOSET(@PlatformParam) AS s, DESCENDANTS(s.CURRENTMEMBER,[Platform].[Platform].[Platform])),
+          GENERATE(STRTOSET(@FlavorParam) AS s, DESCENDANTS(s.CURRENTMEMBER,[Flavor].[Build Flavor].[Build Flavor])),
+          [Measures].[Build Project Count],3
+        ),
+        [Build Quality].[Build Quality].[Build Quality],
+        [Measures].[Build Details Count],2
+    ),
+    @MaxNumberOfBuildsToDisplay
+) ON ROWS
+FROM [Team System]
+WHERE
+(
+    STRTOSET( "[Team Project].[Team Project].[" + @Project + "]")
+)
+</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="Project">
+            <Value>=Parameters!Project.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="PlatformParam">
+            <Value>=Parameters!PlatformParam.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="FlavorParam">
+            <Value>=Parameters!FlavorParam.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="MaxNumberOfBuildsToDisplay">
+            <Value>=Parameters!MaxNumberOfBuildsToDisplay.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="BuildParam">
+            <Value>=Parameters!BuildParam.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <DataSourceName>TfsOlapReportDS</DataSourceName>
+        <rd:MdxQuery><QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition"><CommandType>MDX</CommandType><Type>Query</Type><QuerySpecification xsi:type="MDXQuerySpecification"><Select><Items><Item><ID xsi:type="Level"><DimensionName>Build</DimensionName><HierarchyName>Build</HierarchyName><HierarchyUniqueName>[Build].[Build]</HierarchyUniqueName><LevelName>Build</LevelName><UniqueName>[Build].[Build].[Build]</UniqueName></ID><ItemCaption>Build</ItemCaption></Item><Item><ID xsi:type="Level"><DimensionName>Platform</DimensionName><HierarchyName>Platform</HierarchyName><HierarchyUniqueName>[Platform].[Platform]</HierarchyUniqueName><LevelName>Platform</LevelName><UniqueName>[Platform].[Platform].[Platform]</UniqueName></ID><ItemCaption>Platform</ItemCaption></Item><Item><ID xsi:type="Level"><DimensionName>Flavor</DimensionName><HierarchyName>Build Flavor</HierarchyName><HierarchyUniqueName>[Flavor].[Build Flavor]</HierarchyUniqueName><LevelName>Build Flavor</LevelName><UniqueName>[Flavor].[Build Flavor].[Build Flavor]</UniqueName></ID><ItemCaption>Build Flavor</ItemCaption></Item><Item><ID xsi:type="Level"><DimensionName>Build Quality</DimensionName><HierarchyName>Build Quality</HierarchyName><HierarchyUniqueName>[Build Quality].[Build Quality]</HierarchyUniqueName><LevelName>Build Quality</LevelName><UniqueName>[Build Quality].[Build Quality].[Build Quality]</UniqueName></ID><ItemCaption>Build Quality</ItemCaption></Item><Item><ID xsi:type="Measure"><MeasureName>Build Url</MeasureName><UniqueName>[Measures].[Build Url]</UniqueName></ID><ItemCaption>Build Url</ItemCaption><FormattedValue>true</FormattedValue></Item><Item><ID xsi:type="Measure"><MeasureName>% Test Pass</MeasureName><UniqueName>[Measures].[% Test Pass]</UniqueName></ID><ItemCaption>% Test Pass</ItemCaption><FormattedValue>true</FormattedValue></Item><Item><ID xsi:type="Measure"><MeasureName>% Code Coverage</MeasureName><UniqueName>[Measures].[% Code Coverage]</UniqueName></ID><ItemCaption>% Code Coverage</ItemCaption><FormattedValue>true</FormattedValue></Item><Item><ID xsi:type="Measure"><MeasureName>Total Churn</MeasureName><UniqueName>[Measures].[Total Churn]</UniqueName></ID><ItemCaption>Total Churn</ItemCaption><FormattedValue>true</FormattedValue></Item></Items></Select><From>Team System</From><Filter><FilterItems /></Filter><Calculations /><Aggregates /><QueryProperties /></QuerySpecification><Query><Statement>WITH
+MEMBER [Measures].[% Test Pass] AS
+    ([Outcome].[Outcome Passing].&amp;[True],[Measures].[Cumulative Result Count])/[Cumulative Result Count]
+
+MEMBER [Measures].[% Code Coverage] AS
+    [Measures].[Blocks Covered] / ([Measures].[Blocks Covered] + [Measures].[Blocks Not Covered])
+
+SELECT
+{
+    [Measures].[Build Url],
+    [Measures].[% Test Pass],
+    [Measures].[% Code Coverage],
+    [Measures].[Total Churn]
+} ON COLUMNS,
+BOTTOMCOUNT(
+    NONEMPTYCROSSJOIN
+    (
+        NONEMPTYCROSSJOIN
+        (
+          GENERATE(STRTOSET(@BuildParam) AS s, DESCENDANTS(s.CURRENTMEMBER,[Build].[Build].[Build])),
+          GENERATE(STRTOSET(@PlatformParam) AS s, DESCENDANTS(s.CURRENTMEMBER,[Platform].[Platform].[Platform])),
+          GENERATE(STRTOSET(@FlavorParam) AS s, DESCENDANTS(s.CURRENTMEMBER,[Flavor].[Build Flavor].[Build Flavor])),
+          [Measures].[Build Project Count],3
+        ),
+        [Build Quality].[Build Quality].[Build Quality],
+        [Measures].[Build Details Count],2
+    ),
+    @MaxNumberOfBuildsToDisplay
+) ON ROWS
+FROM [Team System]
+WHERE
+(
+    STRTOSET( "[Team Project].[Team Project].[" + @Project + "]")
+)
+</Statement><ParameterDefinitions><ParameterDefinition><Name>Project</Name><DefaultValues><DefaultValue>AdaptersAgileProject0</DefaultValue></DefaultValues><Caption>Project</Caption><ParameterValuesQuery><ParameterizedStatement><ReferencedParameters /></ParameterizedStatement></ParameterValuesQuery></ParameterDefinition><ParameterDefinition><Name>PlatformParam</Name><DefaultValues><DefaultValue>[Platform].[Platform].[All]</DefaultValue></DefaultValues><Caption>PlatformParam</Caption><HierarchyUniqueName>[Platform].[Platform]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS '[Platform].[Platform].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[Platform].[Platform].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[Platform].[Platform].CURRENTMEMBER.LEVEL.ORDINAL' SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Platform].[Platform].ALLMEMBERS ON ROWS FROM [Team System]</Statement><ParameterizedStatement><ReferencedParameters /></ParameterizedStatement></ParameterValuesQuery><MultipleValues>true</MultipleValues></ParameterDefinition><ParameterDefinition><Name>FlavorParam</Name><DefaultValues><DefaultValue>[Flavor].[Build Flavor].[All]</DefaultValue></DefaultValues><Caption>FlavorParam</Caption><HierarchyUniqueName>[Flavor].[Build Flavor]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS '[Flavor].[Build Flavor].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[Flavor].[Build Flavor].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[Flavor].[Build Flavor].CURRENTMEMBER.LEVEL.ORDINAL' SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Flavor].[Build Flavor].ALLMEMBERS ON ROWS FROM [Team System]</Statement><ParameterizedStatement><ReferencedParameters /></ParameterizedStatement></ParameterValuesQuery><MultipleValues>true</MultipleValues></ParameterDefinition><ParameterDefinition><Name>MaxNumberOfBuildsToDisplay</Name><DefaultValues><DefaultValue>100</DefaultValue></DefaultValues><Caption>MaxNumberOfBuildsToDisplay</Caption><ParameterValuesQuery><ParameterizedStatement><ReferencedParameters /></ParameterizedStatement></ParameterValuesQuery></ParameterDefinition><ParameterDefinition><Name>BuildParam</Name><DefaultValues><DefaultValue>[Build].[Build].[All]</DefaultValue></DefaultValues><Caption>BuildParam</Caption><HierarchyUniqueName>[Build].[Build]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS '[Build].[Build].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[Build].[Build].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[Build].[Build].CURRENTMEMBER.LEVEL.ORDINAL' SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Build].[Build].ALLMEMBERS ON ROWS FROM [Team System]</Statement><ParameterizedStatement><ReferencedParameters /></ParameterizedStatement></ParameterValuesQuery><MultipleValues>true</MultipleValues></ParameterDefinition></ParameterDefinitions></Query></QueryDefinition></rd:MdxQuery>
+      </Query>
+      <Fields>
+        <Field Name="Build">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Build].[Build].[Build]" /&gt;</DataField>
+        </Field>
+        <Field Name="Platform">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Platform].[Platform].[Platform]" /&gt;</DataField>
+        </Field>
+        <Field Name="Build_Flavor">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Flavor].[Build Flavor].[Build Flavor]" /&gt;</DataField>
+        </Field>
+        <Field Name="Build_Quality">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Build Quality].[Build Quality].[Build Quality]" /&gt;</DataField>
+        </Field>
+        <Field Name="Build_Url">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Build Url]" /&gt;</DataField>
+        </Field>
+        <Field Name="ID__Test_Pass">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[% Test Pass]" /&gt;</DataField>
+        </Field>
+        <Field Name="ID__Code_Coverage">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[% Code Coverage]" /&gt;</DataField>
+        </Field>
+        <Field Name="Total_Churn">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Total Churn]" /&gt;</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="BuildParam">
+      <Query>
+        <rd:SuppressAutoUpdate>true</rd:SuppressAutoUpdate>
+        <CommandText>
+WITH
+MEMBER [Measures].[ParameterCaption] AS
+    Iif([Build].[Build].CURRENTMEMBER IS [Build].[Build].[All],
+        "All (No Filter)",
+           [Build].[Build].CURRENTMEMBER.MEMBER_CAPTION
+    )
+MEMBER [Measures].[ParameterValue] AS
+    [Build].[Build].CURRENTMEMBER.UNIQUENAME
+MEMBER [Measures].[ParameterLevel] AS
+    [Build].[Build].CURRENTMEMBER.LEVEL.ORDINAL
+SELECT
+{
+    [Measures].[ParameterCaption],
+    [Measures].[ParameterValue],
+    [Measures].[ParameterLevel]
+} ON COLUMNS,
+{
+    NONEMPTYCROSSJOIN
+    (
+        [Build].[Build].[Build],
+        [Measures].[Build Project Count],
+        1
+    ),
+    [Build].[Build].[All].UnknownMember
+} ON ROWS
+FROM [Team System]
+WHERE
+(
+    STRTOSET("[Team Project].[Team Project].[" + @Project + "]"),
+    STRTOSET(@PlatformParam),
+    STRTOSET(@FlavorParam)
+)
+</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="Project">
+            <Value>=Parameters!Project.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="PlatformParam">
+            <Value>=Parameters!PlatformParam.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="FlavorParam">
+            <Value>=Parameters!FlavorParam.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <DataSourceName>TfsOlapReportDS</DataSourceName>
+        <rd:MdxQuery><QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition"><CommandType>MDX</CommandType><Type>Query</Type><QuerySpecification xsi:type="MDXQuerySpecification"><Select><Items><Item><ID xsi:type="Level"><DimensionName>Build</DimensionName><HierarchyName>Build</HierarchyName><HierarchyUniqueName>[Build].[Build]</HierarchyUniqueName><LevelName>Build</LevelName><UniqueName>[Build].[Build].[Build]</UniqueName></ID><ItemCaption>Build</ItemCaption></Item><Item><ID xsi:type="Measure"><MeasureName>ParameterCaption</MeasureName><UniqueName>[Measures].[ParameterCaption]</UniqueName></ID><ItemCaption>ParameterCaption</ItemCaption><FormattedValue>true</FormattedValue></Item><Item><ID xsi:type="Measure"><MeasureName>ParameterValue</MeasureName><UniqueName>[Measures].[ParameterValue]</UniqueName></ID><ItemCaption>ParameterValue</ItemCaption><FormattedValue>true</FormattedValue></Item><Item><ID xsi:type="Measure"><MeasureName>ParameterLevel</MeasureName><UniqueName>[Measures].[ParameterLevel]</UniqueName></ID><ItemCaption>ParameterLevel</ItemCaption><FormattedValue>true</FormattedValue></Item></Items></Select><From>Team System</From><Filter><FilterItems /></Filter><Calculations /><Aggregates /><QueryProperties /></QuerySpecification><Query><Statement>
+WITH
+MEMBER [Measures].[ParameterCaption] AS
+    Iif([Build].[Build].CURRENTMEMBER IS [Build].[Build].[All],
+        "All (No Filter)",
+           [Build].[Build].CURRENTMEMBER.MEMBER_CAPTION
+    )
+MEMBER [Measures].[ParameterValue] AS
+    [Build].[Build].CURRENTMEMBER.UNIQUENAME
+MEMBER [Measures].[ParameterLevel] AS
+    [Build].[Build].CURRENTMEMBER.LEVEL.ORDINAL
+SELECT
+{
+    [Measures].[ParameterCaption],
+    [Measures].[ParameterValue],
+    [Measures].[ParameterLevel]
+} ON COLUMNS,
+{
+    NONEMPTYCROSSJOIN
+    (
+        [Build].[Build].[Build],
+        [Measures].[Build Project Count],
+        1
+    ),
+    [Build].[Build].[All].UnknownMember
+} ON ROWS
+FROM [Team System]
+WHERE
+(
+    STRTOSET("[Team Project].[Team Project].[" + @Project + "]"),
+    STRTOSET(@PlatformParam),
+    STRTOSET(@FlavorParam)
+)
+</Statement><ParameterDefinitions><ParameterDefinition><Name>Project</Name><DefaultValues><DefaultValue>Agile_1029c</DefaultValue></DefaultValues><Caption>Project</Caption><ParameterValuesQuery><ParameterizedStatement><ReferencedParameters /></ParameterizedStatement></ParameterValuesQuery></ParameterDefinition><ParameterDefinition><Name>PlatformParam</Name><DefaultValues><DefaultValue>[Platform].[Platform].[All]</DefaultValue></DefaultValues><Caption>PlatformParam</Caption><HierarchyUniqueName>[Platform].[Platform]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS '[Platform].[Platform].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[Platform].[Platform].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[Platform].[Platform].CURRENTMEMBER.LEVEL.ORDINAL' SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Platform].[Platform].ALLMEMBERS ON ROWS FROM [Team System]</Statement><ParameterizedStatement><ReferencedParameters /></ParameterizedStatement></ParameterValuesQuery></ParameterDefinition><ParameterDefinition><Name>FlavorParam</Name><DefaultValues><DefaultValue>[Flavor].[Build Flavor].[All]</DefaultValue></DefaultValues><Caption>FlavorParam</Caption><HierarchyUniqueName>[Flavor].[Build Flavor]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS '[Flavor].[Build Flavor].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[Flavor].[Build Flavor].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[Flavor].[Build Flavor].CURRENTMEMBER.LEVEL.ORDINAL' SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Flavor].[Build Flavor].ALLMEMBERS ON ROWS FROM [Team System]</Statement><ParameterizedStatement><ReferencedParameters /></ParameterizedStatement></ParameterValuesQuery></ParameterDefinition></ParameterDefinitions></Query></QueryDefinition></rd:MdxQuery>
+      </Query>
+      <Fields>
+        <Field Name="Build">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Build].[Build].[Build]" /&gt;</DataField>
+        </Field>
+        <Field Name="ParameterCaption">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+        </Field>
+        <Field Name="ParameterValue">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+        </Field>
+        <Field Name="ParameterLevel">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="dsLastProcessedTime">
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText>SELECT Setting AS LastProcessedTime
+FROM _WarehouseConfig
+WHERE ID = 'LastProcessTimeStamp'</CommandText>
+        <DataSourceName>TfsReportDS</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="LastProcessedTime">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>LastProcessedTime</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="PlatformParam">
+      <Query>
+        <rd:SuppressAutoUpdate>true</rd:SuppressAutoUpdate>
+        <CommandText>
+WITH
+MEMBER [Measures].[ParameterCaption] AS
+    Iif([Platform].[Platform].CURRENTMEMBER IS [Platform].[Platform].[All],
+        "All (No Filter)",
+           [Platform].[Platform].CURRENTMEMBER.MEMBER_CAPTION
+    )
+MEMBER [Measures].[ParameterValue] AS
+    Iif([Platform].[Platform].CURRENTMEMBER IS [Platform].[Platform].[All].UNKNOWNMEMBER,
+        "[Platform].[Platform].[All].[" + [Platform].[Platform].CURRENTMEMBER.MEMBER_CAPTION + "]",
+        "[Platform].[Platform].[" + [Platform].[Platform].CURRENTMEMBER.MEMBER_CAPTION + "]"
+    )
+MEMBER [Measures].[ParameterLevel] AS
+    [Platform].[Platform].CURRENTMEMBER.LEVEL.ORDINAL
+SELECT
+{
+    [Measures].[ParameterCaption],
+    [Measures].[ParameterValue],
+    [Measures].[ParameterLevel]
+} ON COLUMNS,
+{
+    [Platform].[Platform].AllMembers
+} ON ROWS
+FROM [Team System]
+</CommandText>
+        <DataSourceName>TfsOlapReportDS</DataSourceName>
+        <rd:AutoGenerated>true</rd:AutoGenerated>
+        <rd:MdxQuery><QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition"><CommandType>MDX</CommandType><Type>Query</Type><QuerySpecification xsi:type="MDXQuerySpecification"><Select><Items><Item><ID xsi:type="Level"><DimensionName>Platform</DimensionName><HierarchyName>Platform</HierarchyName><HierarchyUniqueName>[Platform].[Platform]</HierarchyUniqueName><LevelName>Platform</LevelName><UniqueName>[Platform].[Platform].[Platform]</UniqueName></ID><ItemCaption>Platform</ItemCaption></Item><Item><ID xsi:type="Measure"><MeasureName>ParameterCaption</MeasureName><UniqueName>[Measures].[ParameterCaption]</UniqueName></ID><ItemCaption>ParameterCaption</ItemCaption><FormattedValue>true</FormattedValue></Item><Item><ID xsi:type="Measure"><MeasureName>ParameterValue</MeasureName><UniqueName>[Measures].[ParameterValue]</UniqueName></ID><ItemCaption>ParameterValue</ItemCaption><FormattedValue>true</FormattedValue></Item><Item><ID xsi:type="Measure"><MeasureName>ParameterLevel</MeasureName><UniqueName>[Measures].[ParameterLevel]</UniqueName></ID><ItemCaption>ParameterLevel</ItemCaption><FormattedValue>true</FormattedValue></Item></Items></Select><From>Team System</From><Filter><FilterItems /></Filter><Calculations /><Aggregates /><QueryProperties /></QuerySpecification><Query><Statement>
+WITH
+MEMBER [Measures].[ParameterCaption] AS
+    Iif([Platform].[Platform].CURRENTMEMBER IS [Platform].[Platform].[All],
+        "All (No Filter)",
+           [Platform].[Platform].CURRENTMEMBER.MEMBER_CAPTION
+    )
+MEMBER [Measures].[ParameterValue] AS
+    Iif([Platform].[Platform].CURRENTMEMBER IS [Platform].[Platform].[All].UNKNOWNMEMBER,
+        "[Platform].[Platform].[All].[" + [Platform].[Platform].CURRENTMEMBER.MEMBER_CAPTION + "]",
+        "[Platform].[Platform].[" + [Platform].[Platform].CURRENTMEMBER.MEMBER_CAPTION + "]"
+    )
+MEMBER [Measures].[ParameterLevel] AS
+    [Platform].[Platform].CURRENTMEMBER.LEVEL.ORDINAL
+SELECT
+{
+    [Measures].[ParameterCaption],
+    [Measures].[ParameterValue],
+    [Measures].[ParameterLevel]
+} ON COLUMNS,
+{
+    [Platform].[Platform].AllMembers
+} ON ROWS
+FROM [Team System]
+</Statement><ParameterDefinitions /></Query></QueryDefinition></rd:MdxQuery>
+        <rd:Hidden>true</rd:Hidden>
+      </Query>
+      <Fields>
+        <Field Name="Platform">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Platform].[Platform].[Platform]" /&gt;</DataField>
+        </Field>
+        <Field Name="ParameterCaption">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+        </Field>
+        <Field Name="ParameterValue">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+        </Field>
+        <Field Name="ParameterLevel">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="FlavorParam">
+      <Query>
+        <rd:SuppressAutoUpdate>true</rd:SuppressAutoUpdate>
+        <CommandText>
+WITH
+MEMBER [Measures].[ParameterCaption] AS
+    Iif([Flavor].[Build Flavor].CURRENTMEMBER IS [Flavor].[Build Flavor].[All],
+        "All (No Filter)",
+            [Flavor].[Build Flavor].CURRENTMEMBER.MEMBER_CAPTION
+    )
+MEMBER [Measures].[ParameterValue] AS
+    Iif([Flavor].[Build Flavor].CURRENTMEMBER IS [Flavor].[Build Flavor].[All].UNKNOWNMEMBER,
+        "[Flavor].[Build Flavor].[All].[" + [Flavor].[Build Flavor].CURRENTMEMBER.MEMBER_CAPTION + "]",
+        "[Flavor].[Build Flavor].[" + [Flavor].[Build Flavor].CURRENTMEMBER.MEMBER_CAPTION + "]"
+    )
+MEMBER [Measures].[ParameterLevel] AS
+    [Flavor].[Build Flavor].CURRENTMEMBER.LEVEL.ORDINAL
+SELECT
+{
+    [Measures].[ParameterCaption],
+    [Measures].[ParameterValue],
+    [Measures].[ParameterLevel]
+} ON COLUMNS,
+{
+    [Flavor].[Build Flavor].AllMembers
+} ON ROWS
+FROM [Team System]
+</CommandText>
+        <DataSourceName>TfsOlapReportDS</DataSourceName>
+        <rd:AutoGenerated>true</rd:AutoGenerated>
+        <rd:MdxQuery><QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition"><CommandType>MDX</CommandType><Type>Query</Type><QuerySpecification xsi:type="MDXQuerySpecification"><Select><Items><Item><ID xsi:type="Level"><DimensionName>Flavor</DimensionName><HierarchyName>Build Flavor</HierarchyName><HierarchyUniqueName>[Flavor].[Build Flavor]</HierarchyUniqueName><LevelName>Build Flavor</LevelName><UniqueName>[Flavor].[Build Flavor].[Build Flavor]</UniqueName></ID><ItemCaption>Build Flavor</ItemCaption></Item><Item><ID xsi:type="Measure"><MeasureName>ParameterCaption</MeasureName><UniqueName>[Measures].[ParameterCaption]</UniqueName></ID><ItemCaption>ParameterCaption</ItemCaption><FormattedValue>true</FormattedValue></Item><Item><ID xsi:type="Measure"><MeasureName>ParameterValue</MeasureName><UniqueName>[Measures].[ParameterValue]</UniqueName></ID><ItemCaption>ParameterValue</ItemCaption><FormattedValue>true</FormattedValue></Item><Item><ID xsi:type="Measure"><MeasureName>ParameterLevel</MeasureName><UniqueName>[Measures].[ParameterLevel]</UniqueName></ID><ItemCaption>ParameterLevel</ItemCaption><FormattedValue>true</FormattedValue></Item></Items></Select><From>Team System</From><Filter><FilterItems /></Filter><Calculations /><Aggregates /><QueryProperties /></QuerySpecification><Query><Statement>
+WITH
+MEMBER [Measures].[ParameterCaption] AS
+    Iif([Flavor].[Build Flavor].CURRENTMEMBER IS [Flavor].[Build Flavor].[All],
+        "All (No Filter)",
+            [Flavor].[Build Flavor].CURRENTMEMBER.MEMBER_CAPTION
+    )
+MEMBER [Measures].[ParameterValue] AS
+    Iif([Flavor].[Build Flavor].CURRENTMEMBER IS [Flavor].[Build Flavor].[All].UNKNOWNMEMBER,
+        "[Flavor].[Build Flavor].[All].[" + [Flavor].[Build Flavor].CURRENTMEMBER.MEMBER_CAPTION + "]",
+        "[Flavor].[Build Flavor].[" + [Flavor].[Build Flavor].CURRENTMEMBER.MEMBER_CAPTION + "]"
+    )
+MEMBER [Measures].[ParameterLevel] AS
+    [Flavor].[Build Flavor].CURRENTMEMBER.LEVEL.ORDINAL
+SELECT
+{
+    [Measures].[ParameterCaption],
+    [Measures].[ParameterValue],
+    [Measures].[ParameterLevel]
+} ON COLUMNS,
+{
+    [Flavor].[Build Flavor].AllMembers
+} ON ROWS
+FROM [Team System]
+</Statement><ParameterDefinitions /></Query></QueryDefinition></rd:MdxQuery>
+        <rd:Hidden>true</rd:Hidden>
+      </Query>
+      <Fields>
+        <Field Name="Build_Flavor">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Flavor].[Build Flavor].[Build Flavor]" /&gt;</DataField>
+        </Field>
+        <Field Name="ParameterCaption">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+        </Field>
+        <Field Name="ParameterValue">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+        </Field>
+        <Field Name="ParameterLevel">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DefaultBuilds">
+      <Query>
+        <rd:SuppressAutoUpdate>true</rd:SuppressAutoUpdate>
+        <CommandText>
+WITH
+MEMBER [Measures].[ParameterCaption] AS
+    Iif([Build].[Build].CURRENTMEMBER IS [Build].[Build].[All],
+        "All (No Filter)",
+	        [Build].[Build].CURRENTMEMBER.MEMBER_CAPTION
+    )
+MEMBER [Measures].[ParameterValue] AS
+    [Build].[Build].CURRENTMEMBER.UNIQUENAME
+MEMBER [Measures].[ParameterLevel] AS
+    [Build].[Build].CURRENTMEMBER.LEVEL.ORDINAL
+SELECT
+{
+    [Measures].[ParameterCaption],
+    [Measures].[ParameterValue],
+    [Measures].[ParameterLevel]
+} ON COLUMNS,
+{
+    TAIL
+    (
+        NONEMPTYCROSSJOIN
+        (
+            [Build].[Build].[Build],
+            [Measures].[Build Project Count],
+            1
+        ),
+        @DefaultNumberOfBuildsToSelect
+    ),
+    [Build].[Build].[All].UnknownMember
+} ON ROWS
+FROM [Team System]
+WHERE
+(
+    STRTOSET("[Team Project].[Team Project].[" + @Project + "]"),
+    STRTOSET(@PlatformParam),
+    STRTOSET(@FlavorParam)
+)
+</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="Project">
+            <Value>=Parameters!Project.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="DefaultNumberOfBuildsToSelect">
+            <Value>=Parameters!DefaultNumberOfBuildsToSelect.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="PlatformParam">
+            <Value>=Parameters!PlatformParam.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="FlavorParam">
+            <Value>=Parameters!FlavorParam.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <DataSourceName>TfsOlapReportDS</DataSourceName>
+        <rd:MdxQuery><QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition"><CommandType>MDX</CommandType><Type>Query</Type><QuerySpecification xsi:type="MDXQuerySpecification"><Select><Items><Item><ID xsi:type="Level"><DimensionName>Build</DimensionName><HierarchyName>Build</HierarchyName><HierarchyUniqueName>[Build].[Build]</HierarchyUniqueName><LevelName>Build</LevelName><UniqueName>[Build].[Build].[Build]</UniqueName></ID><ItemCaption>Build</ItemCaption></Item><Item><ID xsi:type="Measure"><MeasureName>ParameterCaption</MeasureName><UniqueName>[Measures].[ParameterCaption]</UniqueName></ID><ItemCaption>ParameterCaption</ItemCaption><FormattedValue>true</FormattedValue></Item><Item><ID xsi:type="Measure"><MeasureName>ParameterValue</MeasureName><UniqueName>[Measures].[ParameterValue]</UniqueName></ID><ItemCaption>ParameterValue</ItemCaption><FormattedValue>true</FormattedValue></Item><Item><ID xsi:type="Measure"><MeasureName>ParameterLevel</MeasureName><UniqueName>[Measures].[ParameterLevel]</UniqueName></ID><ItemCaption>ParameterLevel</ItemCaption><FormattedValue>true</FormattedValue></Item></Items></Select><From>Team System</From><Filter><FilterItems /></Filter><Calculations /><Aggregates /><QueryProperties /></QuerySpecification><Query><Statement>
+WITH
+MEMBER [Measures].[ParameterCaption] AS
+    Iif([Build].[Build].CURRENTMEMBER IS [Build].[Build].[All],
+        "All (No Filter)",
+	        [Build].[Build].CURRENTMEMBER.MEMBER_CAPTION
+    )
+MEMBER [Measures].[ParameterValue] AS
+    [Build].[Build].CURRENTMEMBER.UNIQUENAME
+MEMBER [Measures].[ParameterLevel] AS
+    [Build].[Build].CURRENTMEMBER.LEVEL.ORDINAL
+SELECT
+{
+    [Measures].[ParameterCaption],
+    [Measures].[ParameterValue],
+    [Measures].[ParameterLevel]
+} ON COLUMNS,
+{
+    TAIL
+    (
+        NONEMPTYCROSSJOIN
+        (
+            [Build].[Build].[Build],
+            [Measures].[Build Project Count],
+            1
+        ),
+        @DefaultNumberOfBuildsToSelect
+    ),
+    [Build].[Build].[All].UnknownMember
+} ON ROWS
+FROM [Team System]
+WHERE
+(
+    STRTOSET("[Team Project].[Team Project].[" + @Project + "]"),
+    STRTOSET(@PlatformParam),
+    STRTOSET(@FlavorParam)
+)
+</Statement><ParameterDefinitions><ParameterDefinition><Name>Project</Name><DefaultValues><DefaultValue>Agile_1029c</DefaultValue></DefaultValues><Caption>Project</Caption><ParameterValuesQuery><ParameterizedStatement><ReferencedParameters /></ParameterizedStatement></ParameterValuesQuery></ParameterDefinition><ParameterDefinition><Name>DefaultNumberOfBuildsToSelect</Name><DefaultValues><DefaultValue>25</DefaultValue></DefaultValues><Caption>DefaultNumberOfBuildsToSelect</Caption><ParameterValuesQuery><ParameterizedStatement><ReferencedParameters /></ParameterizedStatement></ParameterValuesQuery></ParameterDefinition><ParameterDefinition><Name>PlatformParam</Name><DefaultValues><DefaultValue>[Platform].[Platform].[All]</DefaultValue></DefaultValues><Caption>PlatformParam</Caption><HierarchyUniqueName>[Platform].[Platform]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS '[Platform].[Platform].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[Platform].[Platform].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[Platform].[Platform].CURRENTMEMBER.LEVEL.ORDINAL' SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Platform].[Platform].ALLMEMBERS ON ROWS FROM [Team System]</Statement><ParameterizedStatement><ReferencedParameters /></ParameterizedStatement></ParameterValuesQuery><MultipleValues>true</MultipleValues></ParameterDefinition><ParameterDefinition><Name>FlavorParam</Name><DefaultValues><DefaultValue>[Flavor].[Build Flavor].[All]</DefaultValue></DefaultValues><Caption>FlavorParam</Caption><HierarchyUniqueName>[Flavor].[Build Flavor]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS '[Flavor].[Build Flavor].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[Flavor].[Build Flavor].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[Flavor].[Build Flavor].CURRENTMEMBER.LEVEL.ORDINAL' SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Flavor].[Build Flavor].ALLMEMBERS ON ROWS FROM [Team System]</Statement><ParameterizedStatement><ReferencedParameters /></ParameterizedStatement></ParameterValuesQuery><MultipleValues>true</MultipleValues></ParameterDefinition></ParameterDefinitions></Query></QueryDefinition></rd:MdxQuery>
+      </Query>
+      <Fields>
+        <Field Name="Build">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Build].[Build].[Build]" /&gt;</DataField>
+        </Field>
+        <Field Name="ParameterCaption">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+        </Field>
+        <Field Name="ParameterValue">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+        </Field>
+        <Field Name="ParameterLevel">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>9in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>=User!Language</Language>
+  <TopMargin>1in</TopMargin>
+  <PageHeight>8.5in</PageHeight>
+</Report>

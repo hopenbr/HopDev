@@ -1,0 +1,36 @@
+<xs:schema id="DeploymentMappings" targetNamespace="http://www.readify.net/TFSDeployer/DeploymentMappings20061026" xmlns="http://www.readify.net/TFSDeployer/DeploymentMappings20061026" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="DeploymentMappings">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="Mapping">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ScriptParameter" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="name" form="unqualified" type="xs:string" />
+									<xs:attribute name="value" form="unqualified" type="xs:string" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="Computer" form="unqualified" type="xs:string" />
+						<xs:attribute name="OriginalQuality" form="unqualified" type="xs:string" />
+						<xs:attribute name="NewQuality" form="unqualified" type="xs:string" />
+						<xs:attribute name="Script" form="unqualified" type="xs:string" />
+						<xs:attribute name="RunnerType" type="RunnerType" />
+						<xs:attribute name="NotificationAddress" type="xs:string" form="unqualified" />
+						<xs:attribute name="PermittedUsers" type="xs:string" form="unqualified" />
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="RunnerType">
+		<xs:annotation>
+			<xs:documentation>Which runner to use to execute the script</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PowerShell" />
+			<xs:enumeration value="BatchFile" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

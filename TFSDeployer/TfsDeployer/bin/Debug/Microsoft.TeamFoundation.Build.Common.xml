@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<assembly>
+		<name>Microsoft.TeamFoundation.Build.Common</name>
+	</assembly>
+	<members>
+		<member name="P:Microsoft.TeamFoundation.Build.Common.BuildConstants.BuildStatus.BuildFailed">
+			<returns>Returns a string to express that the build failed.</returns>
+		</member>
+		<member name="P:Microsoft.TeamFoundation.Build.Common.BuildConstants.BuildStatus.BuildInitializing">
+			<returns>Returns a string to express that the build is initializing.</returns>
+		</member>
+		<member name="P:Microsoft.TeamFoundation.Build.Common.BuildConstants.BuildStatus.BuildStopped">
+			<returns>Returns a string to express that the build has stopped.</returns>
+		</member>
+		<member name="P:Microsoft.TeamFoundation.Build.Common.BuildConstants.BuildStatus.BuildSucceeded">
+			<returns>Returns a string to express that the build has succeeded.</returns>
+		</member>
+		<member name="P:Microsoft.TeamFoundation.Build.Common.BuildConstants.BuildStatus.FinishedCompilation">
+			<returns>Returns a string to express that the compilation has finished.</returns>
+		</member>
+		<member name="P:Microsoft.TeamFoundation.Build.Common.BuildConstants.BuildStatus.StartedCompilation">
+			<returns>Returns a string to express that the compilation has begun.</returns>
+		</member>
+		<member name="P:Microsoft.TeamFoundation.Build.Common.BuildConstants.BuildStatus.StartedTesting">
+			<returns>Returns a string to express that the test pass has begun.</returns>
+		</member>
+		<member name="P:Microsoft.TeamFoundation.Build.Common.BuildConstants.BuildStatus.Sync">
+			<returns>Returns a string to express that the sources are being synchronized.</returns>
+		</member>
+		<member name="P:Microsoft.TeamFoundation.Build.Common.BuildConstants.BuildStatus.SyncCompleted">
+			<returns>Returns a string to express that the sources have finished being synchronized.</returns>
+		</member>
+		<member name="P:Microsoft.TeamFoundation.Build.Common.BuildConstants.BuildStatus.TestCompleted">
+			<returns>Returns a string to express that the test pass has finished.</returns>
+		</member>
+		<member name="F:Microsoft.TeamFoundation.Build.Common.BuildConstants.BuildStatusIconID.BuildFailed">
+			<summary>Used to indicate the build failed.</summary>
+		</member>
+		<member name="F:Microsoft.TeamFoundation.Build.Common.BuildConstants.BuildStatusIconID.BuildStopped">
+			<summary>Used to indicate the build was stopped.</summary>
+		</member>
+		<member name="F:Microsoft.TeamFoundation.Build.Common.BuildConstants.BuildStatusIconID.BuildSucceeded">
+			<summary>Used to indicate the build succeeded.</summary>
+		</member>
+		<member name="F:Microsoft.TeamFoundation.Build.Common.BuildConstants.BuildStatusIconID.Default">
+			<summary>Used to indicate a default state.</summary>
+		</member>
+	</members>
+</doc>

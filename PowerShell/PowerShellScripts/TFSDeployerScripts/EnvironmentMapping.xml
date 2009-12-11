@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="EnvironmentMapping.xsl"?>
+<Environments LastUpdated="Monday, May 05, 2008 5:10:29 PM">
+  <Environment Name="Assembly">
+    <Builds>
+      <Build TeamProject="CommercialLines.Projects" Key="PO.BJC.Release" BuildNumber="BatchJobCleanup-1.1.0.2" />
+      <Build TeamProject="CommercialLines.Projects" Key="PO.ABS.Release" BuildNumber="AgencyBilledSchedule-1.0.0.2" TimeStamp="10/11/2007 18:47:35" />
+      <Build TeamProject="PersonalLines.Projects" Key="DCTFileServices.Release" BuildNumber="PL.FileServices-2.1.0.3" TimeStamp="04/02/2008 16:10:12" RollBackBuild="PL.FileServices-2.1.0.2" />
+      <Build TeamProject="Software.Release.Management" Key="BTasks.Release" BuildNumber="Harleysville.Build.Tasks-7.6.1.1" TimeStamp="04/22/2008 14:02:06" RollBackBuild="Harleysville.Build.Tasks-7.6.0.1" />
+      <Build TeamProject="CommercialLines.Projects" Key="PO.BatchPrint.Release" BuildNumber="BatchPrint-1.7.0.3" TimeStamp="01/18/2008 13:44:58" RollBackBuild="BatchPrint-1.7.0.2" />
+      <Build TeamProject="UserSecurityLoad" Key="SecurityOverride.Release" BuildNumber="UserSecurityOverride-1.2.0.1" TimeStamp="01/04/2008 14:19:50" RollBackBuild="UserSecurityOverride-1.1.0.4" />
+      <Build TeamProject="BillingAdminProject" Key="BillingAdmin.Release" BuildNumber="BillingAdminProject-1.2.4.1" TimeStamp="01/18/2008 17:15:59" RollBackBuild="BillingAdminProject-1.2.3.10" />
+      <Build TeamProject="WmProjects" Key="wM.CL.Release" BuildNumber="CL.webMethods-1.0.0.37" TimeStamp="12/04/2007 22:39:36" />
+      <Build TeamProject="WmProjects" Key="wM.PL.Release" BuildNumber="PL.webMethods-1.9.0.10" TimeStamp="03/11/2008 12:06:22" RollBackBuild="PL.webMethods-1.9.0.9" />
+      <Build TeamProject="HostIntegrationServer" Key="MF2HIS.Release" BuildNumber="GatewayServices.MF2HIS-1.2.0.2" TimeStamp="03/14/2008 16:43:35" RollBackBuild="GatewayServices.MF2HIS-1.1.0.3" />
+      <Build TeamProject="Agency.Projects" Key="AIS.Release" BuildNumber="AIS-1.2.0.7" TimeStamp="03/19/2008 10:28:34" RollBackBuild="AIS-1.2.0.6" />
+      <Build TeamProject="WmProjects" Key="wM.Agency.Release" BuildNumber="Agency.webMethods-1.2.0.5" TimeStamp="02/29/2008 12:41:40" RollBackBuild="Agency.webMethods-1.2.0.4" />
+      <Build TeamProject="CommercialLines.Projects" Key="WC.PICSArchive.Release" BuildNumber="WC.PICSArchive-1.0.0.13" TimeStamp="10/30/2007 17:47:18" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.QS.Release" BuildNumber="IS.QuoteServices-1.9.0.1" TimeStamp="05/01/2008 11:55:23" RollBackBuild="IS.QuoteServices-1.8.0.2" />
+      <Build TeamProject="Software.Release.Management" Key="TFSES.Release" BuildNumber="Harleysville.TFS.EventServices-4.0.0.2" TimeStamp="04/03/2008 17:02:08" RollBackBuild="Harleysville.TFS.EventServices-3.6.1.1" />
+      <Build TeamProject="UREProject" Key="URE.Release" BuildNumber="URE-1.6.0.4" TimeStamp="04/24/2008 13:23:16" RollBackBuild="URE-1.6.0.3" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.Core.Release" BuildNumber="IS.CoreIntegrationServices-1.3.0.11" TimeStamp="04/23/2008 14:10:31" RollBackBuild="IS.CoreIntegrationServices-1.3.0.7" />
+      <Build TeamProject="PersonalLines.Projects" Key="AddressCheck.Release" BuildNumber="PL.AddressCheck-1.0.1.2" TimeStamp="12/03/2007 15:45:30" />
+      <Build TeamProject="WmProjects" Key="wM.QS.Release" BuildNumber="CL.QuoteServices.webMethods-1.1.0.1" TimeStamp="02/15/2008 15:57:00" RollBackBuild="CL.QuoteServices.webMethods-1.0.0.10" />
+      <Build TeamProject="WmProjects" Key="wM.URE.Release" BuildNumber="CL.URE.webMethods-1.2.0.6" TimeStamp="03/05/2008 16:12:14" RollBackBuild="CL.URE.webMethods-1.2.0.5" />
+      <Build TeamProject="PersonalLines.Projects" Key="SSOWebsite.Release" BuildNumber="PL.SSOWebsite-1.0.1.6" TimeStamp="12/27/2007 15:37:23" RollBackBuild="PL.SSOWebsite-1.0.1.5" />
+      <Build TeamProject="WmProjects" Key="wM.AQS.Release" BuildNumber="CL.AQS.webMethods-1.2.0.3" TimeStamp="02/22/2008 13:54:02" RollBackBuild="CL.AQS.webMethods-1.2.0.2" />
+      <Build TeamProject="WmProjects" Key="wM.IS.Release" BuildNumber="CL.IntegratedServices.webMethods-1.3.0.5" TimeStamp="03/05/2008 16:11:33" RollBackBuild="CL.IntegratedServices.webMethods-1.3.0.4" />
+      <Build TeamProject="WmProjects" Key="wM.SecLoad.Release" BuildNumber="CL.HmiSecurityLoad.webMethods-1.1.0.7" TimeStamp="03/10/2008 12:05:56" RollBackBuild="CL.HmiSecurityLoad.webMethods-1.1.0.6" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.SA.Release" BuildNumber="IS.SearchApp-1.3.0.2" TimeStamp="01/31/2008 13:33:17" RollBackBuild="IS.SearchApp-1.3.0.1" />
+      <Build TeamProject="AgentPortal.Project" Key="AgentPortal.Release" BuildNumber="AgentPortal-4.10.0.2" TimeStamp="05/05/2008 15:39:18" RollBackBuild="AgentPortal-4.10.0.1" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.BS.Release" BuildNumber="IS.BillingServices-1.3.0.1" TimeStamp="03/20/2008 16:19:42" RollBackBuild="IS.BillingServices-1.3.0.5" />
+      <Build TeamProject="HIEDMS" Key="HIEDMS.Release" BuildNumber="HIEDMS-1.1.0.4" TimeStamp="04/17/2008 14:27:36" RollBackBuild="HIEDMS-1.1.0.3" />
+      <Build TeamProject="HIC.Projects" Key="CL.Help.Release" BuildNumber="AccessHarleysville.CL.Help-1.10.0.1" TimeStamp="05/05/2008 11:07:03" RollBackBuild="AccessHarleysville.CL.Help-1.9.0.3" />
+      <Build TeamProject="WmProjects" Key="wM.Common.Release" BuildNumber="Common.webMethods-1.0.0.4" TimeStamp="02/19/2008 10:33:27" RollBackBuild="Common.webMethods-1.0.0.3" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.CP.Release" BuildNumber="CL.Portal-1.0.0.27" TimeStamp="05/01/2008 12:31:11" RollBackBuild="CL.Portal-1.0.0.26" />
+      <Build TeamProject="WmProjects" Key="wM.3P.Release" BuildNumber="CL.ThirdParty.webMethods-1.0.0.3" TimeStamp="02/26/2008 09:59:00" RollBackBuild="CL.ThirdParty.webMethods-1.0.0.1" />
+      <Build TeamProject="WmProjects" Key="wM.Renewal.Release" BuildNumber="CL.Renewal.webMethods-1.0.0.16" TimeStamp="03/06/2008 14:33:29" RollBackBuild="CL.Renewal.webMethods-1.0.0.15" />
+      <Build TeamProject="WmProjects" Key="wM.MVR.Release" BuildNumber="CL.MVR.webMethods-1.1.0.1" TimeStamp="02/22/2008 09:30:30" />
+      <Build TeamProject="WmProjects" Key="wM.Agency.HmiPLDownload.Release" BuildNumber="wM.Agency.HmiPLDownload-2.2.0.2" TimeStamp="04/23/2008 14:48:52" RollBackBuild="wM.Agency.HmiPLDownload-2.2.0.1" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiDctDocuMaker.Release" BuildNumber="wM.PL.HmiDctDocuMaker-2.7.0.3" TimeStamp="05/01/2008 17:01:09" RollBackBuild="wM.PL.HmiDctDocuMaker-2.7.0.2" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiProxixGEOcode.Release" BuildNumber="wM.PL.HmiProxixGEOcode-2.1.0.3" TimeStamp="04/23/2008 14:39:45" RollBackBuild="wM.PL.HmiProxixGEOcode-2.1.0.2" />
+      <Build TeamProject="CommercialLines.Projects" Key="AQS.PolicyXML.Release" BuildNumber="AQS.Tools.PolicyXML-1.0.0.2" TimeStamp="03/13/2008 11:16:02" RollBackBuild="AQS.Tools.PolicyXML-1.0.0.1" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiDuckCreekCommon.Release" BuildNumber="wM.PL.HmiDuckCreekCommon-2.4.0.2" TimeStamp="04/18/2008 18:30:52" RollBackBuild="wM.PL.HmiDuckCreekCommon-2.4.0.1" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiQuoteService.Release" BuildNumber="wM.CL.HmiQuoteService-2.1.0.7" TimeStamp="04/22/2008 12:21:43" RollBackBuild="wM.CL.HmiQuoteService-2.1.0.6" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiDownStreamCommon.Release" BuildNumber="wM.PL.HmiDownStreamCommon-2.4.0.1" TimeStamp="04/30/2008 10:55:19" RollBackBuild="wM.PL.HmiDownStreamCommon-2.3.0.2" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiInsuredAccount.Release" BuildNumber="wM.CL.HmiInsuredAccount-2.0.0.3" TimeStamp="04/25/2008 14:51:37" RollBackBuild="wM.CL.HmiInsuredAccount-2.0.0.2" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiClLegacy.Release" BuildNumber="wM.CL.HmiClLegacy-2.0.0.3" TimeStamp="03/21/2008 14:02:52" RollBackBuild="wM.CL.HmiClLegacy-2.0.0.2" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiDCTUWRefReport.Release" BuildNumber="wM.PL.HmiDCTUWRefReport-2.0.0.3" TimeStamp="03/19/2008 10:16:03" />
+      <Build TeamProject="PersonalLines.Projects" Key="DCT.AdminInterface.Release" BuildNumber="DCT.AdminInterface-1.0.0.5" TimeStamp="03/19/2008 16:28:23" RollBackBuild="DCT.AdminInterface-1.0.0.4" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiClAccountProposal.Release" BuildNumber="wM.CL.HmiClAccountProposal-2.0.0.7" TimeStamp="04/17/2008 15:55:07" RollBackBuild="wM.CL.HmiClAccountProposal-2.0.0.6" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiChoicePointReport.Release" BuildNumber="wM.PL.HmiChoicePointReport-2.2.0.1" TimeStamp="04/09/2008 21:52:07" RollBackBuild="wM.PL.HmiChoicePointReport-2.1.0.1" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiSecurityLoad.Release" BuildNumber="wM.CL.HmiSecurityLoad-2.0.0.2" TimeStamp="04/03/2008 11:33:16" />
+      <Build TeamProject="WmProjects" Key="wM.Agency.HmiAgencyService.Release" BuildNumber="wM.Agency.HmiAgencyService-2.0.0.4" TimeStamp="04/25/2008 15:10:01" RollBackBuild="wM.Agency.HmiAgencyService-2.0.0.3" />
+      <Build TeamProject="CommercialLines.Projects" Key="AQS.IssuedPolicy.Release" BuildNumber="AQS.IssuedPolicy-1.0.0.5" TimeStamp="04/25/2008 10:50:40" RollBackBuild="AQS.IssuedPolicy-1.0.0.4" />
+      <Build TeamProject="PredictiveModeling.Projects" Key="PM.AWS.Release" BuildNumber="PM.AQSWebServices-1.1.0.1" TimeStamp="04/30/2008 11:51:33" RollBackBuild="PM.AQSWebServices-1.0.0.5" />
+      <Build TeamProject="PersonalLines.Projects" Key="POLK.Release" BuildNumber="PL.Callvin-1.0.1.1" TimeStamp="04/16/2008 13:57:12" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiPolicyService.Release" BuildNumber="wM.CL.HmiPolicyService-2.0.0.5" TimeStamp="04/25/2008 14:53:39" RollBackBuild="wM.CL.HmiPolicyService-2.0.0.4" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiClpolPredictiveModeling.Release" BuildNumber="wM.CL.HmiClpolPredictiveModeling-2.0.0.4" TimeStamp="05/02/2008 11:54:50" RollBackBuild="wM.CL.HmiClpolPredictiveModeling-2.0.0.3" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiPolicyTransactionUpload.Release" BuildNumber="wM.CL.HmiPolicyTransactionUpload-2.0.0.2" TimeStamp="04/22/2008 14:45:35" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiOrderMVR.Release" BuildNumber="wM.CL.HmiOrderMVR-2.0.0.2" TimeStamp="04/25/2008 14:18:16" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiPolicyOutput.Release" BuildNumber="wM.CL.HmiPolicyOutput-2.0.0.2" TimeStamp="04/25/2008 14:52:09" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiDCTISOPPC.Release" BuildNumber="wM.PL.HmiDCTISOPPC-2.0.0.1" TimeStamp="04/30/2008 09:54:28" />
+    </Builds>
+  </Environment>
+  <Environment Name="QA2">
+    <Builds>
+      <Build TeamProject="Agency.Projects" Key="AIS.Release" BuildNumber="AIS-1.0.1.4" TimeStamp="09/20/2007 07:57:43" />
+      <Build TeamProject="AgentPortal.Project" Key="AgentPortal.Release" BuildNumber="AgentPortal-4.9.0.7" TimeStamp="04/24/2008 13:22:42" RollBackBuild="AgentPortal-4.9.0.4" />
+      <Build TeamProject="BillingAdminProject" Key="BillingAdmin.Release" BuildNumber="BillingAdminProject-1.2.3.10" TimeStamp="11/19/2007 13:03:34" />
+      <Build TeamProject="PersonalLines.Projects" Key="DCTFileServices.Release" BuildNumber="PL.FileServices-2.0.2.3" TimeStamp="11/06/2007 10:24:40" />
+      <Build TeamProject="WmProjects" Key="wM.CL.Release" BuildNumber="CL.Hotfix.webMethods-1.2.1.1" TimeStamp="03/07/2008 12:30:04" RollBackBuild="CL.webMethods-1.0.0.35" />
+      <Build TeamProject="WmProjects" Key="wM.PL.Release" BuildNumber="PL.webMethods-1.4.6.6" TimeStamp="02/01/2008 12:30:13" RollBackBuild="PL.webMethods-1.4.4.1" />
+      <Build TeamProject="HostIntegrationServer" Key="MF2HIS.Release" BuildNumber="GatewayServices.MF2HIS-1.2.0.2" TimeStamp="03/18/2008 10:03:41" RollBackBuild="GatewayServices.MF2HIS-1.1.0.2" />
+      <Build TeamProject="HIEDMS" Key="HIEDMS.Release" BuildNumber="HIEDMS-1.1.0.4" TimeStamp="04/18/2008 10:09:57" RollBackBuild="HIEDMS-1.1.0.3" />
+      <Build TeamProject="CommercialLines.Projects" Key="PO.BatchPrint.Release" BuildNumber="BatchPrint-1.5.0.1" TimeStamp="11/21/2007 11:11:11" />
+      <Build TeamProject="WmProjects" Key="wM.Agency.Release" BuildNumber="Agency.webMethods-1.0.0.9" TimeStamp="10/24/2007 16:19:04" />
+      <Build TeamProject="UREProject" Key="URE.Release" BuildNumber="URE-1.6.0.4" TimeStamp="04/24/2008 13:48:43" RollBackBuild="URE-1.6.0.3" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.QS.Release" BuildNumber="IS.QuoteServices-1.9.0.1" TimeStamp="05/01/2008 13:27:18" RollBackBuild="IS.QuoteServices-1.8.0.2" />
+      <Build TeamProject="WmProjects" Key="wM.URE.Release" BuildNumber="CL.URE.webMethods-1.1.0.4" TimeStamp="01/07/2008 13:34:06" RollBackBuild="CL.URE.webMethods-1.1.0.3" />
+      <Build TeamProject="WmProjects" Key="wM.QS.Release" BuildNumber="CL.QuoteServices.webMethods-1.0.0.10" TimeStamp="02/11/2008 16:50:33" RollBackBuild="CL.QuoteServices.webMethods-1.0.0.9" />
+      <Build TeamProject="WmProjects" Key="wM.IS.Release" BuildNumber="CL.IntegratedServices.webMethods-1.2.0.13" TimeStamp="02/22/2008 14:46:21" RollBackBuild="CL.IntegratedServices.webMethods-1.2.0.11" />
+      <Build TeamProject="WmProjects" Key="wM.AQS.Release" BuildNumber="CL.AQS.webMethods-1.2.0.3" TimeStamp="02/22/2008 15:26:59" RollBackBuild="CL.AQS.webMethods-1.1.0.3" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.Core.Release" BuildNumber="IS.CoreIntegrationServices-1.3.0.11" TimeStamp="04/23/2008 14:19:22" RollBackBuild="CoreIntegrationServices-1.3.0.8" />
+      <Build TeamProject="HIC.Projects" Key="CL.Help.Release" BuildNumber="AccessHarleysville.CL.Help-1.10.0.1" TimeStamp="05/05/2008 11:38:09" RollBackBuild="AccessHarleysville.CL.Help-1.9.0.3" />
+      <Build TeamProject="WmProjects" Key="wM.3P.Release" BuildNumber="CL.ThirdParty.webMethods-1.0.0.3" TimeStamp="02/26/2008 14:17:04" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiClLegacy.Release" BuildNumber="wM.CL.HmiClLegacy-2.0.0.3" TimeStamp="03/21/2008 15:45:32" RollBackBuild="wM.CL.HmiClLegacy-2.0.0.2" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiInsuredAccount.Release" BuildNumber="wM.CL.HmiInsuredAccount-2.0.0.3" TimeStamp="05/02/2008 13:34:10" RollBackBuild="wM.CL.HmiInsuredAccount-2.0.0.2" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiQuoteService.Release" BuildNumber="wM.CL.HmiQuoteService-2.1.0.7" TimeStamp="04/30/2008 13:23:52" RollBackBuild="wM.CL.HmiQuoteService-2.1.0.6" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiClAccountProposal.Release" BuildNumber="wM.CL.HmiClAccountProposal-2.0.0.7" TimeStamp="04/18/2008 09:50:11" RollBackBuild="wM.CL.HmiClAccountProposal-2.0.0.3" />
+      <Build TeamProject="WmProjects" Key="wM.Agency.HmiAgencyService.Release" BuildNumber="wM.Agency.HmiAgencyService-2.0.0.4" TimeStamp="05/02/2008 13:38:14" RollBackBuild="wM.Agency.HmiAgencyService-2.0.0.2" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiDuckCreekCommon.Release" BuildNumber="wM.PL.HmiDuckCreekCommon-2.3.0.3" TimeStamp="04/09/2008 14:06:10" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiChoicePointReport.Release" BuildNumber="wM.PL.HmiChoicePointReport-2.1.0.1" TimeStamp="04/09/2008 14:08:01" />
+      <Build TeamProject="CommercialLines.Projects" Key="AQS.IssuedPolicy.Release" BuildNumber="AQS.IssuedPolicy-1.0.0.5" TimeStamp="04/25/2008 10:54:52" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.SA.Release" BuildNumber="IS.SearchApp-1.3.0.1" TimeStamp="04/16/2008 13:28:18" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.BS.Release" BuildNumber="IS.BillingServices-1.3.0.1" TimeStamp="04/16/2008 13:43:36" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiPolicyService.Release" BuildNumber="wM.CL.HmiPolicyService-2.0.0.5" TimeStamp="05/02/2008 13:37:05" RollBackBuild="wM.CL.HmiPolicyService-2.0.0.4" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiPolicyTransactionUpload.Release" BuildNumber="wM.CL.HmiPolicyTransactionUpload-2.0.0.2" TimeStamp="04/22/2008 15:03:39" />
+      <Build TeamProject="PredictiveModeling.Projects" Key="PM.AWS.Release" BuildNumber="PM.AQSWebServices-1.1.0.1" TimeStamp="04/30/2008 14:13:42" RollBackBuild="PM.AQSWebServices-1.0.0.4" />
+      <Build TeamProject="PersonalLines.Projects" Key="POLK.Release" BuildNumber="PL.Callvin-1.0.1.1" TimeStamp="04/23/2008 15:09:32" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiClpolPredictiveModeling.Release" BuildNumber="wM.CL.HmiClpolPredictiveModeling-2.0.0.4" TimeStamp="05/02/2008 12:18:22" RollBackBuild="wM.CL.HmiClpolPredictiveModeling-2.0.0.3" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiDCTISOPPC.Release" BuildNumber="wM.PL.HmiDCTISOPPC-2.0.0.1" TimeStamp="05/02/2008 13:22:22" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiPolicyOutput.Release" BuildNumber="wM.CL.HmiPolicyOutput-2.0.0.2" TimeStamp="05/02/2008 13:35:40" />
+    </Builds>
+  </Environment>
+  <Environment Name="End2End">
+    <Builds>
+      <Build TeamProject="Agency.Projects" Key="AIS.Release" BuildNumber="AIS-1.0.1.4" TimeStamp="09/20/2007 07:57:43" />
+      <Build TeamProject="PersonalLines.Projects" Key="DCTFileServices.Release" BuildNumber="PL.FileServices-2.1.0.3" TimeStamp="04/02/2008 17:20:23" RollBackBuild="PL.FileServices-2.1.0.2" />
+      <Build TeamProject="BillingAdminProject" Key="BillingAdmin.Release" BuildNumber="BillingAdminProject-1.2.3.10" TimeStamp="11/19/2007 15:49:01" />
+      <Build TeamProject="CommercialLines.Projects" Key="PO.BJC.Release" BuildNumber="BatchJobCleanup-1.1.0.2" />
+      <Build TeamProject="CommercialLines.Projects" Key="PO.BatchPrint.Release" BuildNumber="BatchPrint-1.7.0.3" TimeStamp="01/23/2008 15:08:29" RollBackBuild="BatchPrint-1.6.0.2" />
+      <Build TeamProject="UserSecurityLoad" Key="SecurityOverride.Release" BuildNumber="UserSecurityOverride-1.2.0.1" TimeStamp="01/04/2008 15:12:50" RollBackBuild="UserSecurityOverride-1.1.0.5" />
+      <Build TeamProject="CommercialLines.Projects" Key="WC.BR.Release" BuildNumber="WC.BatchReporting-1.3.0.3" TimeStamp="04/16/2008 15:49:05" RollBackBuild="WC.BatchReporting-1.2.0.2" />
+      <Build TeamProject="WmProjects" Key="wM.CL.Release" BuildNumber="CL.Hotfix.webMethods-1.2.1.1" TimeStamp="03/07/2008 15:22:35" RollBackBuild="CL.webMethods-1.0.0.37" />
+      <Build TeamProject="WmProjects" Key="wM.PL.Release" BuildNumber="PL.webMethods-1.9.0.10" TimeStamp="03/11/2008 12:19:01" RollBackBuild="PL.webMethods-1.9.0.8" />
+      <Build TeamProject="HostIntegrationServer" Key="MF2HIS.Release" BuildNumber="GatewayServices.MF2HIS-1.2.0.2" TimeStamp="03/20/2008 17:52:16" RollBackBuild="GatewayServices.MF2HIS-1.1.0.1" />
+      <Build TeamProject="HIEDMS" Key="HIEDMS.Release" BuildNumber="HIEDMS-1.1.0.4" TimeStamp="04/21/2008 14:59:42" RollBackBuild="HIEDMS-1.1.0.3" />
+      <Build TeamProject="WmProjects" Key="wM.Agency.Release" BuildNumber="Agency.webMethods-1.2.0.4" TimeStamp="02/26/2008 15:19:07" RollBackBuild="Agency.webMethods-1.2.0.3" />
+      <Build TeamProject="CommercialLines.Projects" Key="WC.PICSArchive.Release" BuildNumber="WC.PICSArchive-1.0.0.13" TimeStamp="10/31/2007 12:00:02" />
+      <Build TeamProject="AgentPortal.Project" Key="AgentPortal.Release" BuildNumber="AgentPortal-4.9.0.7" TimeStamp="04/24/2008 13:25:20" RollBackBuild="AgentPortal-4.9.0.4" />
+      <Build TeamProject="UREProject" Key="URE.Release" BuildNumber="URE-1.6.0.4" TimeStamp="04/24/2008 13:49:06" RollBackBuild="URE-1.6.0.3" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.QS.Release" BuildNumber="IS.QuoteServices-1.8.0.2" TimeStamp="04/29/2008 14:54:30" RollBackBuild="IS.QuoteServices-1.8.0.1" />
+      <Build TeamProject="WmProjects" Key="wM.URE.Release" BuildNumber="CL.URE.webMethods-1.1.0.4" TimeStamp="01/10/2008 15:07:58" RollBackBuild="CL.URE.webMethods-1.1.0.3" />
+      <Build TeamProject="WmProjects" Key="wM.QS.Release" BuildNumber="CL.QuoteServices.webMethods-1.0.0.9" TimeStamp="01/18/2008 14:40:56" RollBackBuild="CL.QuoteServices.webMethods-1.0.0.4" />
+      <Build TeamProject="WmProjects" Key="wM.IS.Release" BuildNumber="CL.IntegratedServices.webMethods-1.2.0.13" TimeStamp="02/25/2008 17:26:59" RollBackBuild="CL.IntegratedServices.webMethods-1.2.0.5" />
+      <Build TeamProject="WmProjects" Key="wM.AQS.Release" BuildNumber="CL.AQS.webMethods-1.2.0.3" TimeStamp="02/22/2008 16:17:51" RollBackBuild="CL.AQS.webMethods-1.1.0.3" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.Core.Release" BuildNumber="IS.CoreIntegrationServices-1.3.0.11" TimeStamp="04/23/2008 14:20:12" RollBackBuild="CoreIntegrationServices-1.3.0.1" />
+      <Build TeamProject="CommercialLines.Projects" Key="IR.FU.Release" BuildNumber="ImageRight.FileUtility-1.0.0.1" TimeStamp="01/09/2008 11:01:06" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.SA.Release" BuildNumber="IS.SearchApp-1.3.0.1" TimeStamp="03/14/2008 19:07:14" RollBackBuild="IS.SearchApp-1.3.0.2" />
+      <Build TeamProject="HIC.Projects" Key="CL.Help.Release" BuildNumber="AccessHarleysville.CL.Help-1.10.0.1" TimeStamp="05/05/2008 11:47:57" RollBackBuild="AccessHarleysville.CL.Help-1.9.0.3" />
+      <Build TeamProject="WmProjects" Key="wM.Common.Release" BuildNumber="Common.webMethods-1.0.0.4" TimeStamp="02/20/2008 16:35:22" RollBackBuild="Common.webMethods-1.0.0.3" />
+      <Build TeamProject="WmProjects" Key="wM.MVR.Release" BuildNumber="CL.MVR.webMethods-1.1.0.1" TimeStamp="02/22/2008 11:32:37" />
+      <Build TeamProject="WmProjects" Key="wM.3P.Release" BuildNumber="CL.ThirdParty.webMethods-1.0.0.3" TimeStamp="02/26/2008 15:20:54" />
+      <Build TeamProject="WmProjects" Key="wM.SecLoad.Release" BuildNumber="CL.HmiSecurityLoad.webMethods-1.1.0.7" TimeStamp="03/10/2008 14:01:27" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiDctDocuMaker.Release" BuildNumber="wM.PL.HmiDctDocuMaker-2.7.0.3" TimeStamp="05/01/2008 17:56:51" RollBackBuild="wM.PL.HmiDctDocuMaker-2.7.0.2" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiProxixGEOcode.Release" BuildNumber="wM.PL.HmiProxixGEOcode-2.1.0.3" TimeStamp="04/24/2008 10:42:26" RollBackBuild="wM.PL.HmiProxixGEOcode-2.1.0.2" />
+      <Build TeamProject="WmProjects" Key="wM.Agency.HmiPLDownload.Release" BuildNumber="wM.Agency.HmiPLDownload-2.2.0.2" TimeStamp="04/24/2008 15:56:19" RollBackBuild="wM.Agency.HmiPLDownload-2.2.0.1" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiDuckCreekCommon.Release" BuildNumber="wM.PL.HmiDuckCreekCommon-2.4.0.2" TimeStamp="04/21/2008 09:06:54" RollBackBuild="wM.PL.HmiDuckCreekCommon-2.4.0.1" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiQuoteService.Release" BuildNumber="wM.CL.HmiQuoteService-2.1.0.7" TimeStamp="04/30/2008 13:10:57" RollBackBuild="wM.CL.HmiQuoteService-2.1.0.6" />
+      <Build TeamProject="CommercialLines.Projects" Key="AQS.PolicyXML.Release" BuildNumber="AQS.Tools.PolicyXML-1.0.0.2" TimeStamp="03/25/2008 13:46:35" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiDownStreamCommon.Release" BuildNumber="wM.PL.HmiDownStreamCommon-2.4.0.1" TimeStamp="04/30/2008 13:15:40" RollBackBuild="wM.PL.HmiDownStreamCommon-2.3.0.2" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiInsuredAccount.Release" BuildNumber="wM.CL.HmiInsuredAccount-2.0.0.2" TimeStamp="03/20/2008 15:04:39" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiClLegacy.Release" BuildNumber="wM.CL.HmiClLegacy-2.0.0.3" TimeStamp="03/21/2008 15:47:19" RollBackBuild="wM.CL.HmiClLegacy-2.0.0.2" />
+      <Build TeamProject="PersonalLines.Projects" Key="DCT.AdminInterface.Release" BuildNumber="DCT.AdminInterface-1.0.0.5" TimeStamp="03/26/2008 16:09:26" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiChoicePointReport.Release" BuildNumber="wM.PL.HmiChoicePointReport-2.1.0.1" TimeStamp="04/07/2008 16:51:40" RollBackBuild="wM.PL.HmiChoicePointReport-2.0.0.1" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiSecurityLoad.Release" BuildNumber="wM.CL.HmiSecurityLoad-2.0.0.2" TimeStamp="04/03/2008 15:38:02" />
+      <Build TeamProject="WmProjects" Key="wM.Agency.HmiAgencyService.Release" BuildNumber="wM.Agency.HmiAgencyService-2.0.0.2" TimeStamp="04/07/2008 15:06:53" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiClAccountProposal.Release" BuildNumber="wM.CL.HmiClAccountProposal-2.0.0.7" TimeStamp="04/21/2008 15:29:22" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiPolicyService.Release" BuildNumber="wM.CL.HmiPolicyService-2.0.0.4" TimeStamp="04/22/2008 14:43:34" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiPolicyTransactionUpload.Release" BuildNumber="wM.CL.HmiPolicyTransactionUpload-2.0.0.2" TimeStamp="04/22/2008 15:07:02" />
+      <Build TeamProject="PredictiveModeling.Projects" Key="PM.AWS.Release" BuildNumber="PM.AQSWebServices-1.0.0.4" TimeStamp="04/23/2008 17:27:36" />
+      <Build TeamProject="PersonalLines.Projects" Key="POLK.Release" BuildNumber="PL.Callvin-1.0.1.1" TimeStamp="04/23/2008 17:29:28" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiOrderMVR.Release" BuildNumber="wM.CL.HmiOrderMVR-2.0.0.2" TimeStamp="04/29/2008 15:16:08" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiDCTISOPPC.Release" BuildNumber="wM.PL.HmiDCTISOPPC-2.0.0.1" TimeStamp="04/30/2008 10:33:55" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiClpolPredictiveModeling.Release" BuildNumber="wM.CL.HmiClpolPredictiveModeling-2.0.0.4" TimeStamp="05/02/2008 12:22:07" RollBackBuild="wM.CL.HmiClpolPredictiveModeling-2.0.0.3" />
+    </Builds>
+  </Environment>
+  <Environment Name="Training">
+    <Builds>
+      <Build TeamProject="Agency.Projects" Key="AIS.Release" BuildNumber="AIS-1.0.1.4" TimeStamp="09/20/2007 07:57:43" />
+      <Build TeamProject="AgentPortal.Project" Key="AgentPortal.Release" BuildNumber="AgentPortal-4.9.0.7" TimeStamp="04/25/2008 15:41:46" RollBackBuild="AgentPortal-4.8.0.35" />
+      <Build TeamProject="BillingAdminProject" Key="BillingAdmin.Release" BuildNumber="BillingAdminProject-1.2.4.1" TimeStamp="01/21/2008 12:03:22" RollBackBuild="BillingAdminProject-1.2.3.10" />
+      <Build TeamProject="PersonalLines.Projects" Key="DCTFileServices.Release" BuildNumber="PL.FileServices-2.0.2.2" TimeStamp="11/02/2007 17:03:06" />
+      <Build TeamProject="WmProjects" Key="wM.CL.Release" BuildNumber="CL.Hotfix.webMethods-1.2.1.1" TimeStamp="03/13/2008 16:04:27" RollBackBuild="CL.webMethods-1.0.0.35" />
+      <Build TeamProject="WmProjects" Key="wM.PL.Release" BuildNumber="PL.webMethods-1.9.0.7" TimeStamp="03/10/2008 13:53:01" RollBackBuild="PL.webMethods-1.9.0.6" />
+      <Build TeamProject="HostIntegrationServer" Key="MF2HIS.Release" BuildNumber="GatewayServices.MF2HIS-1.2.0.2" TimeStamp="03/20/2008 17:32:43" RollBackBuild="GatewayServices.MF2HIS-1.1.0.2" />
+      <Build TeamProject="WmProjects" Key="wM.SecLoad.Release" BuildNumber="CL.HmiSecurityLoad.webMethods-1.1.0.6" TimeStamp="01/10/2008 11:05:20" RollBackBuild="CL.HmiSecurityLoad.webMethods-1.1.0.2" />
+      <Build TeamProject="HIC.Projects" Key="CL.Help.Release" BuildNumber="AccessHarleysville.CL.Help-1.10.0.1" TimeStamp="05/05/2008 11:59:30" RollBackBuild="AccessHarleysville.CL.Help-1.9.0.3" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.QS.Release" BuildNumber="IS.QuoteServices-1.8.0.2" TimeStamp="04/29/2008 16:03:39" RollBackBuild="IS.QuoteServices-1.7.0.9" />
+      <Build TeamProject="WmProjects" Key="wM.AQS.Release" BuildNumber="CL.AQS.webMethods-1.2.0.3" TimeStamp="02/22/2008 17:34:21" RollBackBuild="CL.AQS.webMethods-1.1.0.3" />
+      <Build TeamProject="WmProjects" Key="wM.QS.Release" BuildNumber="CL.QuoteServices.webMethods-1.0.0.9" TimeStamp="02/15/2008 12:10:44" />
+      <Build TeamProject="WmProjects" Key="wM.URE.Release" BuildNumber="CL.URE.webMethods-1.1.0.4" TimeStamp="02/15/2008 12:12:56" />
+      <Build TeamProject="UREProject" Key="URE.Release" BuildNumber="URE-1.6.0.4" TimeStamp="04/25/2008 15:20:18" RollBackBuild="URE-1.6.0.1" />
+      <Build TeamProject="WmProjects" Key="wM.IS.Release" BuildNumber="CL.IntegratedServices.webMethods-1.2.0.5" TimeStamp="03/13/2008 21:51:46" RollBackBuild="CL.IntegratedServices.webMethods-1.2.0.13" />
+      <Build TeamProject="WmProjects" Key="wM.Common.Release" BuildNumber="Common.webMethods-1.0.0.4" TimeStamp="02/22/2008 18:23:13" />
+      <Build TeamProject="WmProjects" Key="wM.3P.Release" BuildNumber="CL.ThirdParty.webMethods-1.0.0.3" TimeStamp="02/26/2008 16:22:55" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiQuoteService.Release" BuildNumber="wM.CL.HmiQuoteService-2.1.0.6" TimeStamp="04/25/2008 15:37:04" RollBackBuild="wM.CL.HmiQuoteService-2.0.0.2" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiProxixGEOcode.Release" BuildNumber="wM.PL.HmiProxixGEOcode-2.1.0.3" TimeStamp="04/24/2008 13:15:48" RollBackBuild="wM.PL.HmiProxixGEOcode-2.0.0.2" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiInsuredAccount.Release" BuildNumber="wM.CL.HmiInsuredAccount-2.0.0.2" TimeStamp="03/20/2008 17:19:13" />
+      <Build TeamProject="HIEDMS" Key="HIEDMS.Release" BuildNumber="HIEDMS-1.1.0.4" TimeStamp="04/25/2008 15:22:16" RollBackBuild="HIEDMS-1.1.0.3" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiDctDocuMaker.Release" BuildNumber="wM.PL.HmiDctDocuMaker-2.5.0.12" TimeStamp="04/25/2008 11:34:55" RollBackBuild="wM.PL.HmiDctDocuMaker-2.3.0.2" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiDownStreamCommon.Release" BuildNumber="wM.PL.HmiDownStreamCommon-2.2.0.3" TimeStamp="04/25/2008 11:40:56" RollBackBuild="wM.PL.HmiDownStreamCommon-2.1.0.1" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiDCTUWRefReport.Release" BuildNumber="wM.PL.HmiDCTUWRefReport-2.0.0.3" TimeStamp="03/21/2008 13:11:25" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiDuckCreekCommon.Release" BuildNumber="wM.PL.HmiDuckCreekCommon-2.4.0.2" TimeStamp="04/25/2008 11:28:05" RollBackBuild="wM.PL.HmiDuckCreekCommon-2.3.0.3" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiClLegacy.Release" BuildNumber="wM.CL.HmiClLegacy-2.0.0.3" TimeStamp="03/21/2008 15:48:13" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiChoicePointReport.Release" BuildNumber="wM.PL.HmiChoicePointReport-2.1.0.1" TimeStamp="04/09/2008 16:12:20" RollBackBuild="wM.PL.HmiChoicePointReport-2.0.0.1" />
+      <Build TeamProject="PersonalLines.Projects" Key="DCT.AdminInterface.Release" BuildNumber="DCT.AdminInterface-1.0.0.5" TimeStamp="04/10/2008 13:21:52" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiPolicyTransactionUpload.Release" BuildNumber="wM.CL.HmiPolicyTransactionUpload-2.0.0.2" TimeStamp="04/24/2008 13:05:01" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiPolicyService.Release" BuildNumber="wM.CL.HmiPolicyService-2.0.0.4" TimeStamp="04/24/2008 13:07:07" />
+      <Build TeamProject="PersonalLines.Projects" Key="POLK.Release" BuildNumber="PL.Callvin-1.0.1.1" TimeStamp="04/24/2008 16:36:27" />
+      <Build TeamProject="PredictiveModeling.Projects" Key="PM.AWS.Release" BuildNumber="PM.AQSWebServices-1.0.0.5" TimeStamp="04/25/2008 15:59:18" RollBackBuild="PM.AQSWebServices-1.0.0.4" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiClAccountProposal.Release" BuildNumber="wM.CL.HmiClAccountProposal-2.0.0.7" TimeStamp="04/25/2008 15:36:18" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.Core.Release" BuildNumber="IS.CoreIntegrationServices-1.3.0.11" TimeStamp="04/25/2008 15:44:51" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiDCTISOPPC.Release" BuildNumber="wM.PL.HmiDCTISOPPC-2.0.0.1" TimeStamp="05/02/2008 16:26:07" />
+    </Builds>
+  </Environment>
+  <Environment Name="PrePrd">
+    <Builds>
+      <Build TeamProject="Agency.Projects" Key="AIS.Release" BuildNumber="AIS-1.0.1.4" TimeStamp="09/20/2007 07:57:43" />
+      <Build TeamProject="BillingAdminProject" Key="BillingAdmin.Release" BuildNumber="BillingAdminProject-1.2.3.10" TimeStamp="11/20/2007 14:05:21" />
+      <Build TeamProject="AgentPortal.Project" Key="AgentPortal.Release" BuildNumber="AgentPortal-4.9.0.7" TimeStamp="04/25/2008 15:56:35" RollBackBuild="AgentPortal-4.8.0.35" />
+      <Build TeamProject="CommercialLines.Projects" Key="PO.BJC.Release" BuildNumber="BatchJobCleanup-1.1.0.2" />
+      <Build TeamProject="CommercialLines.Projects" Key="PO.BatchPrint.Release" BuildNumber="BatchPrint-1.6.0.2" TimeStamp="01/16/2008 12:50:26" RollBackBuild="BatchPrint-1.5.0.1" />
+      <Build TeamProject="PersonalLines.Projects" Key="DCTFileServices.Release" BuildNumber="PL.FileServices-2.0.3.1" TimeStamp="11/15/2007 14:39:42" />
+      <Build TeamProject="WmProjects" Key="wM.CL.Release" BuildNumber="CL.Hotfix.webMethods-1.2.1.1" TimeStamp="03/27/2008 15:26:26" RollBackBuild="CL.webMethods-1.0.0.36" />
+      <Build TeamProject="WmProjects" Key="wM.PL.Release" BuildNumber="PL.webMethods-1.8.0.2" TimeStamp="02/20/2008 10:29:22" RollBackBuild="PL.webMethods-1.7.0.6" />
+      <Build TeamProject="HostIntegrationServer" Key="MF2HIS.Release" BuildNumber="GatewayServices.MF2HIS-1.2.0.2" TimeStamp="03/20/2008 17:53:48" RollBackBuild="GatewayServices.MF2HIS-1.1.0.2" />
+      <Build TeamProject="CommercialLines.Projects" Key="WC.PICSArchive.Release" BuildNumber="WC.PICSArchive-1.0.0.13" TimeStamp="11/02/2007 11:23:06" />
+      <Build TeamProject="WmProjects" Key="wM.IS.Release" BuildNumber="CL.IntegratedServices.webMethods-1.2.0.13" TimeStamp="02/22/2008 18:05:38" RollBackBuild="CL.IntegratedServices.webMethods-1.1.0.9" />
+      <Build TeamProject="HIC.Projects" Key="CL.Help.Release" BuildNumber="AccessHarleysville.CL.Help-1.10.0.1" TimeStamp="05/05/2008 12:23:39" RollBackBuild="AccessHarleysville.CL.Help-1.9.0.3" />
+      <Build TeamProject="UREProject" Key="URE.Release" BuildNumber="URE-1.6.0.4" TimeStamp="04/25/2008 09:36:04" RollBackBuild="URE-1.6.0.1" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.QS.Release" BuildNumber="IS.QuoteServices-1.8.0.2" TimeStamp="04/30/2008 10:07:17" RollBackBuild="IS.QuoteServices-1.7.0.9" />
+      <Build TeamProject="WmProjects" Key="wM.AQS.Release" BuildNumber="CL.AQS.webMethods-1.2.0.3" TimeStamp="02/22/2008 22:17:28" RollBackBuild="CL.AQS.webMethods-1.1.0.3" />
+      <Build TeamProject="WmProjects" Key="wM.URE.Release" BuildNumber="CL.URE.webMethods-1.1.0.4" TimeStamp="01/29/2008 16:41:37" />
+      <Build TeamProject="WmProjects" Key="wM.QS.Release" BuildNumber="CL.QuoteServices.webMethods-1.0.0.9" TimeStamp="01/30/2008 10:13:24" />
+      <Build TeamProject="WmProjects" Key="wM.Common.Release" BuildNumber="Common.webMethods-1.0.0.4" TimeStamp="02/22/2008 12:36:48" />
+      <Build TeamProject="WmProjects" Key="wM.3P.Release" BuildNumber="CL.ThirdParty.webMethods-1.0.0.3" TimeStamp="02/27/2008 10:18:36" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiDctDocuMaker.Release" BuildNumber="wM.PL.HmiDctDocuMaker-2.5.0.12" TimeStamp="04/25/2008 11:40:06" RollBackBuild="wM.PL.HmiDctDocuMaker-2.3.0.2" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiDownStreamCommon.Release" BuildNumber="wM.PL.HmiDownStreamCommon-2.2.0.3" TimeStamp="04/25/2008 11:41:23" RollBackBuild="wM.PL.HmiDownStreamCommon-2.1.0.1" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiDCTUWRefReport.Release" BuildNumber="wM.PL.HmiDCTUWRefReport-2.0.0.3" TimeStamp="03/19/2008 13:51:03" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiInsuredAccount.Release" BuildNumber="wM.CL.HmiInsuredAccount-2.0.0.2" TimeStamp="03/20/2008 15:06:14" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiClLegacy.Release" BuildNumber="wM.CL.HmiClLegacy-2.0.0.3" TimeStamp="03/21/2008 15:49:15" RollBackBuild="wM.CL.HmiClLegacy-2.0.0.2" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiDuckCreekCommon.Release" BuildNumber="wM.PL.HmiDuckCreekCommon-2.4.0.2" TimeStamp="04/25/2008 11:37:29" RollBackBuild="wM.PL.HmiDuckCreekCommon-2.3.0.3" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiQuoteService.Release" BuildNumber="wM.CL.HmiQuoteService-2.1.0.6" TimeStamp="04/23/2008 11:35:23" RollBackBuild="wM.CL.HmiQuoteService-2.0.0.2" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiChoicePointReport.Release" BuildNumber="wM.PL.HmiChoicePointReport-2.1.0.1" TimeStamp="04/09/2008 14:19:38" RollBackBuild="wM.PL.HmiChoicePointReport-2.0.0.1" />
+      <Build TeamProject="PersonalLines.Projects" Key="DCT.AdminInterface.Release" BuildNumber="DCT.AdminInterface-1.0.0.5" TimeStamp="04/10/2008 13:25:17" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiClAccountProposal.Release" BuildNumber="wM.CL.HmiClAccountProposal-2.0.0.7" TimeStamp="04/23/2008 11:36:03" />
+      <Build TeamProject="PredictiveModeling.Projects" Key="PM.AWS.Release" BuildNumber="PM.AQSWebServices-1.0.0.4" TimeStamp="04/24/2008 15:15:31" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiProxixGEOcode.Release" BuildNumber="wM.PL.HmiProxixGEOcode-2.1.0.3" TimeStamp="04/24/2008 15:18:11" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiPolicyTransactionUpload.Release" BuildNumber="wM.CL.HmiPolicyTransactionUpload-2.0.0.2" TimeStamp="04/24/2008 15:49:18" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiPolicyService.Release" BuildNumber="wM.CL.HmiPolicyService-2.0.0.4" TimeStamp="04/24/2008 15:53:03" />
+      <Build TeamProject="HIEDMS" Key="HIEDMS.Release" BuildNumber="HIEDMS-1.1.0.4" TimeStamp="04/24/2008 15:59:24" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.Core.Release" BuildNumber="IS.CoreIntegrationServices-1.3.0.11" TimeStamp="04/24/2008 16:35:24" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiDCTISOPPC.Release" BuildNumber="wM.PL.HmiDCTISOPPC-2.0.0.1" TimeStamp="05/02/2008 10:36:45" />
+    </Builds>
+  </Environment>
+  <Environment Name="IRB">
+    <Builds>
+      <Build TimeStamp="No builds in IRB" />
+      <Build TeamProject="PersonalLines.Projects" Key="MessageService.Release" BuildNumber="PL.MessageService-1.0.2.8" TimeStamp="03/20/2008 10:30:43" />
+      <Build TeamProject="PredictiveModeling.Projects" Key="PM.AWS.Release" BuildNumber="PM.AQSWebServices-1.0.0.4" TimeStamp="04/25/2008 15:28:41" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiSecurityLoad.Release" BuildNumber="wM.CL.HmiSecurityLoad-2.0.0.2" TimeStamp="05/05/2008 12:05:53" />
+      <Build TeamProject="HIC.Projects" Key="CL.Help.Release" BuildNumber="AccessHarleysville.CL.Help-1.10.0.1" TimeStamp="05/05/2008 12:33:38" />
+    </Builds>
+  </Environment>
+  <Environment Name="Production">
+    <Builds>
+      <Build TeamProject="Agency.Projects" Key="AIS.Release" BuildNumber="AIS-1.0.1.4" TimeStamp="09/20/2007 07:57:43" />
+      <Build TeamProject="BillingAdminProject" Key="BillingAdmin.Release" BuildNumber="BillingAdminProject-1.2.4.1" TimeStamp="01/23/2008 19:58:13" RollBackBuild="BillingAdminProject-1.2.3.10" />
+      <Build TeamProject="AgentPortal.Project" Key="AgentPortal.Release" BuildNumber="AgentPortal-4.9.0.7" TimeStamp="04/28/2008 18:12:43" RollBackBuild="AgentPortal-4.8.0.35" />
+      <Build TeamProject="CommercialLines.Projects" Key="PO.BJC.Release" BuildNumber="BatchJobCleanup-1.1.0.2" TimeStamp="10/09/2007 11:44:35" />
+      <Build TeamProject="CommercialLines.Projects" Key="PO.BatchPrint.Release" BuildNumber="BatchPrint-1.6.0.2" TimeStamp="01/17/2008 15:03:54" RollBackBuild="BatchPrint-1.5.0.1" />
+      <Build TeamProject="PersonalLines.Projects" Key="DCTFileServices.Release" BuildNumber="PL.FileServices-2.0.3.1" TimeStamp="11/16/2007 15:38:04" />
+      <Build TeamProject="HIEDMS" Key="HIEDMS.Release" BuildNumber="HIEDMS-1.1.0.4" TimeStamp="04/24/2008 21:27:25" RollBackBuild="HIEDMS-1.0.0.71" />
+      <Build TeamProject="CommercialLines.Projects" Key="WC.BR.Release" BuildNumber="WC.BatchReporting-1.2.0.2" TimeStamp="03/27/2008 12:13:00" RollBackBuild="WC.BatchReporting-1.1.0.1" />
+      <Build TeamProject="HostIntegrationServer" Key="MF2HIS.Release" BuildNumber="GatewayServices.MF2HIS-1.1.0.2" TimeStamp="02/27/2008 16:25:22" RollBackBuild="MF2HIS.Gateway-1.0.0.2" />
+      <Build TeamProject="CommercialLines.Projects" Key="WC.PICSArchive.Release" BuildNumber="WC.PICSArchive-1.0.0.13" TimeStamp="11/02/2007 14:09:00" />
+      <Build TeamProject="WmProjects" Key="wM.Agency.Release" BuildNumber="Agency.webMethods-1.2.0.4" TimeStamp="03/06/2008 15:02:01" RollBackBuild="Agency.webMethods-1.1.0.2" />
+      <Build TeamProject="WmProjects" Key="wM.PL.Release" BuildNumber="PL.webMethods-1.8.0.2" TimeStamp="02/20/2008 18:02:14" RollBackBuild="PL.webMethods-1.7.0.6" />
+      <Build TeamProject="WmProjects" Key="wM.CL.Release" BuildNumber="CL.Hotfix.webMethods-1.2.1.1" TimeStamp="03/30/2008 10:49:28" RollBackBuild="CL.webMethods-1.0.1.2" />
+      <Build TeamProject="UserSecurityLoad" Key="SecurityOverride.Release" BuildNumber="UserSecurityOverride-1.2.0.1" TimeStamp="01/18/2008 13:58:32" RollBackBuild="UserSecurityOverride-1.1.0.5" />
+      <Build TeamProject="WmProjects" Key="wM.IS.Release" BuildNumber="CL.IntegratedServices.webMethods-1.2.0.13" TimeStamp="02/27/2008 16:26:23" RollBackBuild="CL.IntegratedServices.webMethods-1.1.0.9" />
+      <Build TeamProject="HIC.Projects" Key="CL.Help.Release" BuildNumber="AccessHarleysville.CL.Help-1.9.0.3" TimeStamp="05/04/2008 10:16:33" RollBackBuild="AccessHarleysville.CL.Help-1.9.0.2" />
+      <Build TeamProject="LifeGroup" Key="GroupLife.Release" BuildNumber="GroupLife-1.22.0.1" TimeStamp="01/30/2008 13:02:42" />
+      <Build TeamProject="UREProject" Key="URE.Release" BuildNumber="URE-1.6.0.4" TimeStamp="04/27/2008 10:40:07" RollBackBuild="URE-1.5.0.4" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.QS.Release" BuildNumber="IS.QuoteServices-1.8.0.2" TimeStamp="04/30/2008 18:00:19" RollBackBuild="IS.QuoteServices-1.7.0.9" />
+      <Build TeamProject="WmProjects" Key="wM.AQS.Release" BuildNumber="CL.AQS.webMethods-1.2.0.3" TimeStamp="02/24/2008 14:08:09" RollBackBuild="CL.AQS.webMethods-1.1.0.3" />
+      <Build TeamProject="WmProjects" Key="wM.QS.Release" BuildNumber="CL.QuoteServices.webMethods-1.0.0.9" TimeStamp="02/03/2008 11:49:04" />
+      <Build TeamProject="WmProjects" Key="wM.URE.Release" BuildNumber="CL.URE.webMethods-1.1.0.4" TimeStamp="02/03/2008 11:56:14" />
+      <Build TeamProject="WmProjects" Key="wM.Common.Release" BuildNumber="Common.webMethods-1.0.0.4" TimeStamp="02/24/2008 09:21:44" />
+      <Build TeamProject="WmProjects" Key="wM.3P.Release" BuildNumber="CL.ThirdParty.webMethods-1.0.0.3" TimeStamp="02/27/2008 16:27:05" />
+      <Build TeamProject="WmProjects" Key="wM.MVR.Release" BuildNumber="CL.MVR.webMethods-1.1.0.1" TimeStamp="03/03/2008 13:49:18" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiDctDocuMaker.Release" BuildNumber="wM.PL.HmiDctDocuMaker-2.7.0.2" TimeStamp="05/01/2008 18:03:08" RollBackBuild="wM.PL.HmiDctDocuMaker-2.6.0.1" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiDownStreamCommon.Release" BuildNumber="wM.PL.HmiDownStreamCommon-2.4.0.1" TimeStamp="05/01/2008 18:01:11" RollBackBuild="wM.PL.HmiDownStreamCommon-2.3.0.2" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiDuckCreekCommon.Release" BuildNumber="wM.PL.HmiDuckCreekCommon-2.4.0.2" TimeStamp="04/25/2008 18:54:17" RollBackBuild="wM.PL.HmiDuckCreekCommon-2.3.0.3" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiProxixGEOcode.Release" BuildNumber="wM.PL.HmiProxixGEOcode-2.1.0.3" TimeStamp="04/25/2008 18:53:08" RollBackBuild="wM.PL.HmiProxixGEOcode-2.0.0.2" />
+      <Build TeamProject="WmProjects" Key="wM.Agency.HmiPLDownload.Release" BuildNumber="wM.Agency.HmiPLDownload-2.2.0.2" TimeStamp="04/28/2008 15:00:37" RollBackBuild="wM.Agency.HmiPLDownload-2.1.0.2" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiDCTUWRefReport.Release" BuildNumber="wM.PL.HmiDCTUWRefReport-2.0.0.3" TimeStamp="03/21/2008 18:05:46" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiChoicePointReport.Release" BuildNumber="wM.PL.HmiChoicePointReport-2.2.0.1" TimeStamp="04/09/2008 22:12:36" RollBackBuild="wM.PL.HmiChoicePointReport-2.1.0.1" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiQuoteService.Release" BuildNumber="wM.CL.HmiQuoteService-2.1.0.6" TimeStamp="04/24/2008 10:51:59" RollBackBuild="wM.CL.HmiQuoteService-2.0.0.2" />
+      <Build TeamProject="PersonalLines.Projects" Key="DCT.AdminInterface.Release" BuildNumber="DCT.AdminInterface-1.0.0.5" TimeStamp="04/14/2008 13:52:55" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiClAccountProposal.Release" BuildNumber="wM.CL.HmiClAccountProposal-2.0.0.7" TimeStamp="04/24/2008 10:54:03" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.Core.Release" BuildNumber="IS.CoreIntegrationServices-1.3.0.11" TimeStamp="04/25/2008 19:00:06" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiPolicyService.Release" BuildNumber="wM.CL.HmiPolicyService-2.0.0.4" TimeStamp="04/27/2008 13:41:17" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiPolicyTransactionUpload.Release" BuildNumber="wM.CL.HmiPolicyTransactionUpload-2.0.0.2" TimeStamp="04/27/2008 13:42:30" />
+      <Build TeamProject="WmProjects" Key="wM.PL.HmiDCTISOPPC.Release" BuildNumber="wM.PL.HmiDCTISOPPC-2.0.0.1" TimeStamp="05/02/2008 18:01:35" />
+    </Builds>
+  </Environment>
+  <Environment Name="TST1">
+    <Builds>
+      <Build TeamProject="Agency.Projects" Key="AIS.Release" BuildNumber="AIS-1.2.0.7" TimeStamp="03/20/2008 13:06:27" RollBackBuild="AIS-1.2.0.6" />
+      <Build TeamProject="Agency.Projects" Key="AISCLPLLoad.Release" BuildNumber="AISCLPLLoad-1.0.1.2" TimeStamp="01/25/2008 12:54:52" />
+      <Build TeamProject="Agency.Projects" Key="PL.AgencyDownload.Web.Release" BuildNumber="Agency.PLDownload-1.0.1.2" TimeStamp="01/08/2008 12:35:33" />
+      <Build TeamProject="AgentPortal.Project" Key="AgentPortal.Release" BuildNumber="AgentPortal-4.8.0.17" TimeStamp="02/29/2008 15:58:22" RollBackBuild="AgentPortal-4.7.0.7" />
+      <Build TeamProject="BillingAdminProject" Key="BillingAdmin.Release" BuildNumber="BillingAdminProject-1.2.4.1" TimeStamp="01/25/2008 15:34:45" RollBackBuild="BillingAdminProject-1.2.3.10" />
+      <Build TeamProject="CommercialLines.Projects" Key="PO.ABS.Release" BuildNumber="AgencyBilledSchedule-1.0.0.1" TimeStamp="02/27/2008 13:16:47" />
+      <Build TeamProject="UserSecurityLoad" Key="SecurityOverride.Release" BuildNumber="UserSecurityOverride-1.2.0.1" TimeStamp="01/25/2008 16:07:59" />
+      <Build TeamProject="WmProjects" Key="wM.Agency.Release" BuildNumber="Agency.webMethods-1.0.0.9" TimeStamp="01/14/2008 16:56:29" />
+      <Build TeamProject="WmProjects" Key="wM.Common.Release" BuildNumber="Common.webMethods-1.0.0.2" TimeStamp="01/14/2008 17:07:16" />
+      <Build TeamProject="WmProjects" Key="wM.PL.Release" BuildNumber="PL.webMethods-1.9.0.8" TimeStamp="03/11/2008 12:27:12" RollBackBuild="PL.webMethods-1.4.2.1" />
+      <Build TeamProject="WmProjects" Key="wM.QS.Release" BuildNumber="CL.QuoteServices.webMethods-1.1.0.1" TimeStamp="02/19/2008 17:29:59" RollBackBuild="CL.QuoteServices.webMethods-1.0.0.9" />
+      <Build TeamProject="WmProjects" Key="wM.SecLoad.Release" BuildNumber="CL.HmiSecurityLoad.webMethods-1.1.0.6" TimeStamp="01/14/2008 17:17:28" />
+      <Build TeamProject="WmProjects" Key="wM.URE.Release" BuildNumber="CL.URE.webMethods-1.2.0.6" TimeStamp="03/05/2008 16:33:46" RollBackBuild="CL.URE.webMethods-1.2.0.4" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.BS.Release" BuildNumber="IS.BillingServices-1.3.0.8" TimeStamp="03/31/2008 13:33:15" RollBackBuild="IS.BillingServices-1.3.0.7" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.Core.Release" BuildNumber="IS.CoreIntegrationServices-1.3.0.6" TimeStamp="02/14/2008 11:33:32" RollBackBuild="IS.CoreIntegrationServices-1.3.0.3" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.SA.Release" BuildNumber="IS.SearchApp-1.3.0.2" TimeStamp="03/14/2008 19:08:00" RollBackBuild="IS.SearchApp-1.3.0.1" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.QS.Release" BuildNumber="IS.QuoteServices-1.7.0.12" TimeStamp="04/25/2008 12:16:12" RollBackBuild="IS.QuoteServices-1.7.0.9" />
+      <Build TeamProject="HIC.Projects" Key="CL.Help.Release" BuildNumber="AccessHarleysville.CL.Help-1.10.0.1" TimeStamp="05/05/2008 12:10:27" RollBackBuild="AccessHarleysville.CL.Help-1.9.0.3" />
+      <Build TeamProject="CommercialLines.Projects" Key="PO.BatchPrint.Release" BuildNumber="BatchPrint-1.7.0.3" TimeStamp="02/26/2008 15:14:25" RollBackBuild="BatchPrint-1.6.0.2" />
+      <Build TeamProject="CommercialLines.Projects" Key="PO.BJC.Release" BuildNumber="BatchJobCleanup-1.1.0.2" TimeStamp="02/26/2008 15:11:50" />
+      <Build TeamProject="CommercialLines.Projects" Key="WC.PICSArchive.Release" BuildNumber="WC.PICSArchive-1.0.0.13" TimeStamp="01/25/2008 15:59:30" />
+      <Build TeamProject="HIEDMS" Key="HIEDMS.Release" BuildNumber="HIEDMS-1.0.0.71" TimeStamp="01/25/2008 16:01:28" />
+      <Build TeamProject="HostIntegrationServer" Key="MF2HIS.Release" BuildNumber="GatewayServices.MF2HIS-1.1.0.3" TimeStamp="02/29/2008 10:09:10" RollBackBuild="MF2HIS.Gateway-1.0.0.2" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.CP.Release" BuildNumber="CL.Portal-1.0.0.27" TimeStamp="05/01/2008 12:46:50" RollBackBuild="CL.Portal-1.0.0.26" />
+      <Build TeamProject="WmProjects" Key="wM.AQS.Release" BuildNumber="CL.AQS.webMethods-1.2.0.3" TimeStamp="02/27/2008 16:00:56" RollBackBuild="CL.AQS.webMethods-1.2.0.2" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.BID38.Release" BuildNumber="IS.BID38.Release_20080402.3" TimeStamp="04/04/2008 10:42:49" RollBackBuild="IS.BID38.Release_20080318.3" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.SRP.Release" BuildNumber="IS.StartRenewalConversion-1.0.0.3" TimeStamp="03/18/2008 13:20:27" RollBackBuild="IS.StartRenewalConversion-1.0.0.2" />
+      <Build TeamProject="UREProject" Key="URE.Release" BuildNumber="URE-1.4.0.5" TimeStamp="02/28/2008 13:58:36" RollBackBuild="URE-1.4.0.4" />
+      <Build TeamProject="PredictiveModeling.Projects" Key="PM.ARS.Release" BuildNumber="PM.AQSRenewalServices-1.0.0.11" TimeStamp="04/24/2008 15:57:50" RollBackBuild="PM.AQSRenewalServices-1.0.0.10" />
+      <Build TeamProject="WmProjects" Key="wM.IS.Release" BuildNumber="CL.IntegratedServices.webMethods-1.3.0.5" TimeStamp="03/05/2008 16:36:48" RollBackBuild="CL.IntegratedServices.webMethods-1.3.0.4" />
+      <Build TeamProject="WmProjects" Key="wM.Renewal.Release" BuildNumber="CL.Renewal.webMethods-1.0.0.16" TimeStamp="03/10/2008 16:44:25" RollBackBuild="CL.Renewal.webMethods-1.0.0.15" />
+      <Build TeamProject="WmProjects" Key="wM.3P.Release" BuildNumber="CL.ThirdParty.webMethods-1.0.0.3" TimeStamp="02/26/2008 13:06:50" RollBackBuild="CL.ThirdParty.webMethods-1.0.0.1" />
+      <Build TeamProject="UREProject" Key="URE.TST1" BuildNumber="URE.TST1_20080502.1" TimeStamp="05/02/2008 15:40:48" RollBackBuild="URE.TST1_20080430.1" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiBillingAutoRenewal.TST1" BuildNumber="wM.CL.HmiBillingAutoRenewal.TST1_20080430.1" TimeStamp="04/30/2008 14:35:07" RollBackBuild="wM.CL.HmiBillingAutoRenewal.TST1_20080418.1" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiRenewalConversion.TST1" BuildNumber="wM.CL.HmiRenewalConversion.TST1_20080501.1" TimeStamp="05/02/2008 14:56:24" RollBackBuild="wM.CL.HmiRenewalConversion.TST1_20080429.2" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiClTip.TST1" BuildNumber="wM.CL.HmiClTip.TST1_20080313.1" TimeStamp="03/13/2008 13:05:58" />
+      <Build TeamProject="WmProjects" Key="wM.Agency.HmiAgencyService.TST1" BuildNumber="wM.Agency.HmiAgencyService.TST1_20080313.1" TimeStamp="03/13/2008 13:13:13" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.Core.TST1" BuildNumber="IS.Core.TST1_20080429.1" TimeStamp="04/30/2008 10:04:10" RollBackBuild="IS.Core.TST1_20080428.2" />
+      <Build TeamProject="HostIntegrationServer" Key="MF2HIS.TST1" BuildNumber="MF2HIS.TST1_20080314.1" TimeStamp="03/18/2008 10:02:59" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiClLegacy.Release" BuildNumber="wM.CL.HmiClLegacy-2.0.0.3" TimeStamp="03/21/2008 15:42:48" RollBackBuild="wM.CL.HmiClLegacy-2.0.0.2" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiInsuredAccount.Release" BuildNumber="wM.CL.HmiInsuredAccount-2.0.0.2" TimeStamp="03/20/2008 13:13:24" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiInsuredAccount.TST1" BuildNumber="wM.CL.HmiInsuredAccount.TST1_20080501.1" TimeStamp="05/02/2008 14:58:05" RollBackBuild="wM.CL.HmiInsuredAccount.TST1_20080428.1" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiClpolPredictiveModeling.TST1" BuildNumber="wM.CL.HmiClpolPredictiveModeling.TST1_20080402.1" TimeStamp="04/04/2008 10:30:12" RollBackBuild="wM.CL.HmiClpolPredictiveModeling.TST1_20080321.1" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiQuoteService.TST1" BuildNumber="wM.CL.HmiQuoteService.TST1_20080320.1" TimeStamp="03/20/2008 13:25:53" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiPolicyTransactionUpload.TST1" BuildNumber="wM.CL.HmiPolicyTransactionUpload.TST1_20080501.1" TimeStamp="05/02/2008 14:55:10" RollBackBuild="wM.CL.HmiPolicyTransactionUpload.TST1_20080428.1" />
+      <Build TeamProject="WmProjects" Key="wM.Agency.HmiAgencyService.Release" BuildNumber="wM.Agency.HmiAgencyService-2.0.0.2" TimeStamp="04/07/2008 16:42:32" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiRuleEngineServices.TST1" BuildNumber="wM.CL.HmiRuleEngineServices.TST1_20080424.1" TimeStamp="04/24/2008 14:41:43" RollBackBuild="wM.CL.HmiRuleEngineServices.TST1_20080410.1" />
+      <Build TeamProject="AgentPortal.Project" Key="AgentPortal.TST1" BuildNumber="AgentPortal.TST1_20080501.2" TimeStamp="05/01/2008 17:46:49" RollBackBuild="AgentPortal.TST1_20080430.1" />
+      <Build TeamProject="WmProjects" Key="wM.CL.HmiPolicyService.TST1" BuildNumber="wM.CL.HmiPolicyService.TST1_20080428.1" TimeStamp="04/28/2008 16:16:25" />
+    </Builds>
+  </Environment>
+  <Environment Name="Dev">
+    <Builds>
+      <Build TeamProject="UREProject" Key="URE.Builds2Dev" BuildNumber="URE.Builds2Dev_20080424.3" TimeStamp="04/24/2008 21:10:31" RollBackBuild="URE.Builds2Dev_20080424.2" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.BS.Build" BuildNumber="IS.BS.Build_20080314.2" TimeStamp="03/14/2008 16:12:25" RollBackBuild="IS.BS.Build_20080314.1" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.QS.Build" BuildNumber="IS.QS.Build_20080501.2" TimeStamp="05/01/2008 10:08:59" RollBackBuild="IS.QS.Build_20080501.1" />
+      <Build TeamProject="IntegratedServices.Projects" Key="IS.Core.Build" BuildNumber="IS.Core.Build_20080505.3" TimeStamp="05/05/2008 12:00:12" RollBackBuild="IS.Core.Build_20080505.2" />
+      <Build TeamProject="Software.Release.Management" Key="TFS.EventServices.Build" BuildNumber="TFS.EventServices.Build_20080505.2" TimeStamp="05/05/2008 15:35:57" RollBackBuild="TFS.EventServices.Build_20080505.1" />
+      <Build TeamProject="Software.Release.Management" Key="TFS.ES.TST" BuildNumber="TFS.ES.TST_20080327.1" TimeStamp="03/27/2008 21:16:23" />
+      <Build TeamProject="Software.Release.Management" Key="TFSES.Release" BuildNumber="Harleysville.TFS.EventServices-4.1.0.1" TimeStamp="05/05/2008 17:10:29" RollBackBuild="Harleysville.TFS.EventServices-4.0.1.1" />
+    </Builds>
+  </Environment>
+</Environments>

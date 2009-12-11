@@ -1,0 +1,320 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common Scripts", "Common Scripts", "{469AA157-ADA1-4F1A-BEEC-EBF4658396B6}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		Add-2TFVC.ps1 = Add-2TFVC.ps1
+		Catch-Error.ps1 = Catch-Error.ps1
+		Clean-DropFolders.ps1 = Clean-DropFolders.ps1
+		Compare-Directories.ps1 = Compare-Directories.ps1
+		Config.xml = Config.xml
+		Create-Logger.ps1 = Create-Logger.ps1
+		Get-FromTFVC.ps1 = Get-FromTFVC.ps1
+		Get-Tfs.ps1 = Get-Tfs.ps1
+		Get-TfsWorkspace.ps1 = Get-TfsWorkspace.ps1
+		Invoke-SearchAndReplace.ps1 = Invoke-SearchAndReplace.ps1
+		Label-TFVCFolders.ps1 = Label-TFVCFolders.ps1
+		New-Cab.ps1 = New-Cab.ps1
+		Recycle-AppPool.ps1 = Recycle-AppPool.ps1
+		Remove-All.ps1 = Remove-All.ps1
+		Replace-InFile.ps1 = Replace-InFile.ps1
+		Run-SQLNonQuery.ps1 = Run-SQLNonQuery.ps1
+		Run-SQLQuery.ps1 = Run-SQLQuery.ps1
+		Search-Checkins.ps1 = Search-Checkins.ps1
+		Send-Email.ps1 = Send-Email.ps1
+		Sync-Directories.ps1 = Sync-Directories.ps1
+		Test-Syntax.ps1 = Test-Syntax.ps1
+		TFVC-Merge.ps1 = TFVC-Merge.ps1
+		Update-BuildQuality.ps1 = Update-BuildQuality.ps1
+		Update-Version.ps1 = Update-Version.ps1
+		Validate-Xml.ps1 = Validate-Xml.ps1
+		wMCnfEnvComparer.ps1 = wMCnfEnvComparer.ps1
+		Write-EventLog.ps1 = Write-EventLog.ps1
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestData", "TestData", "{58E2557E-B85A-41D7-942F-725F73A3BA54}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		TFSDeployerScripts\TestBed\DeploymentConfig.xml = TFSDeployerScripts\TestBed\DeploymentConfig.xml
+		TFSDeployerScripts\TestBed\Set-TestBed.ps1 = TFSDeployerScripts\TestBed\Set-TestBed.ps1
+		TFSDeployerScripts\TestBed\Start-Deployer.ps1 = TFSDeployerScripts\TestBed\Start-Deployer.ps1
+		TFSDeployerScripts\TestBed\TfsDeployer-BuildData.txt = TFSDeployerScripts\TestBed\TfsDeployer-BuildData.txt
+		TFSDeployerScripts\TestBed\TfsDeployer-BuildData.xml = TFSDeployerScripts\TestBed\TfsDeployer-BuildData.xml
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{750897AA-C730-40CE-974F-12A107421070}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		BuildNumber.xml = BuildNumber.xml
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TFSdeployerScripts", "TFSdeployerScripts", "{2A23BD1B-F82A-4343-860D-0EB931BC34CE}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		TFSDeployerScripts\Config.xml = TFSDeployerScripts\Config.xml
+		TFSDeployerScripts\Create-Deployer.ps1 = TFSDeployerScripts\Create-Deployer.ps1
+		TFSDeployerScripts\Create-DeploymentReport.ps1 = TFSDeployerScripts\Create-DeploymentReport.ps1
+		TFSDeployerScripts\XSD\DBDeployScipts.xsd = TFSDeployerScripts\XSD\DBDeployScipts.xsd
+		DBDeployScipts.xsx = DBDeployScipts.xsx
+		TFSDeployerScripts\Deploy-Documaker.ps1 = TFSDeployerScripts\Deploy-Documaker.ps1
+		TFSDeployerScripts\Deploy-Ear.ps1 = TFSDeployerScripts\Deploy-Ear.ps1
+		TFSDeployerScripts\Deployer.ps1 = TFSDeployerScripts\Deployer.ps1
+		TFSDeployerScripts\TestBed\DocumakerConfig.xml = TFSDeployerScripts\TestBed\DocumakerConfig.xml
+		TFSDeployerScripts\EnvironmentMapping.xml = TFSDeployerScripts\EnvironmentMapping.xml
+		TFSDeployerScripts\EnvironmentMapping.xsl = TFSDeployerScripts\EnvironmentMapping.xsl
+		TFSDeployerScripts\Get-BuildPackageFromTFVC.ps1 = TFSDeployerScripts\Get-BuildPackageFromTFVC.ps1
+		TFSDeployerScripts\Get-RollbackBuildNumber.ps1 = TFSDeployerScripts\Get-RollbackBuildNumber.ps1
+		TFSDeployerScripts\Import-ReleaseChanges.ps1 = TFSDeployerScripts\Import-ReleaseChanges.ps1
+		Insert-DatabaseRow.ps1 = Insert-DatabaseRow.ps1
+		TFSDeployerScripts\invoke-SqlDeploymentScripts.ps1 = TFSDeployerScripts\invoke-SqlDeploymentScripts.ps1
+		TFSDeployerScripts\Invoke-SqlSearchAndReplace.ps1 = TFSDeployerScripts\Invoke-SqlSearchAndReplace.ps1
+		TFSDeployerScripts\New-TSQLBackup.ps1 = TFSDeployerScripts\New-TSQLBackup.ps1
+		TFSDeployerScripts\Prepare4-Rollback.ps1 = TFSDeployerScripts\Prepare4-Rollback.ps1
+		TFSDeployerScripts\Push-Packages.ps1 = TFSDeployerScripts\Push-Packages.ps1
+		TFSDeployerScripts\XSD\SearchAndReplace.xsd = TFSDeployerScripts\XSD\SearchAndReplace.xsd
+		TFSDeployerScripts\XSD\SearchAndReplace.xsx = TFSDeployerScripts\XSD\SearchAndReplace.xsx
+		TFSDeployerScripts\XSD\SRMEnvironmentMappings.xsd = TFSDeployerScripts\XSD\SRMEnvironmentMappings.xsd
+		TFSDeployerScripts\XSD\SRMEnvironmentMappings.xsx = TFSDeployerScripts\XSD\SRMEnvironmentMappings.xsx
+		TFSDeployerScripts\Sync-Database.ps1 = TFSDeployerScripts\Sync-Database.ps1
+		TFSDeployerScripts\XSD\TFSDeployerConfigMapping.xsd = TFSDeployerScripts\XSD\TFSDeployerConfigMapping.xsd
+		TFSDeployerScripts\XSD\TFSDeployerConfigMapping.xsx = TFSDeployerScripts\XSD\TFSDeployerConfigMapping.xsx
+		TFSDeployerScripts\Update-BatchFiles.ps1 = TFSDeployerScripts\Update-BatchFiles.ps1
+		TFSDeployerScripts\Update-EnvConfig.ps1 = TFSDeployerScripts\Update-EnvConfig.ps1
+		TFSDeployerScripts\Update-EnvironmentMapping.ps1 = TFSDeployerScripts\Update-EnvironmentMapping.ps1
+		TFSDeployerScripts\Update-EnvMapDB.ps1 = TFSDeployerScripts\Update-EnvMapDB.ps1
+		TFSDeployerScripts\Update-WorkItem.ps1 = TFSDeployerScripts\Update-WorkItem.ps1
+		TFSDeployerScripts\WAS_TFSBUILD.ps1 = TFSDeployerScripts\WAS_TFSBUILD.ps1
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "webMethodsDeployerScripts", "webMethodsDeployerScripts", "{FEC1B222-6DF2-45D6-95C1-48F9B69632F6}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		Csv2Xml.ps1 = Csv2Xml.ps1
+		webMethodsScripts\wM-Deployer.ps1 = webMethodsScripts\wM-Deployer.ps1
+		webMethodsScripts\wM_Deploy.ps1 = webMethodsScripts\wM_Deploy.ps1
+		webMethodsScripts\wM_EP.csv.old = webMethodsScripts\wM_EP.csv.old
+		webMethodsScripts\wMEnvSearchAndReplaceMappings.xml = webMethodsScripts\wMEnvSearchAndReplaceMappings.xml
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harleysville.Deployment.SnapIn", "..\Harleysville.Deployment.SnapIn\Harleysville.Deployment.SnapIn\Harleysville.Deployment.SnapIn.csproj", "{29F45531-4D50-43A4-88E1-6CEFD8746F3E}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ImportScripts", "ImportScripts", "{3108BCF3-C91A-45F2-BC85-32F7254F908A}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DevImporter", "DevImporter", "{2EE26639-3476-4403-94D4-6334F5B5C71E}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\PL\Branches\DEVELOPMENT\DCT\Importer\Config.xml = ..\..\..\..\..\PL\Branches\DEVELOPMENT\DCT\Importer\Config.xml
+		ImportScripts\DevImporter\DevImporter.ps1 = ImportScripts\DevImporter\DevImporter.ps1
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildScripts", "BuildScripts", "{AC9C89D1-945C-495A-BD2E-809D4F5FC2A5}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		BuildScripts\Add-CloakedItem2WSMapping.ps1 = BuildScripts\Add-CloakedItem2WSMapping.ps1
+		BuildScripts\add-wMConfig.ps1 = BuildScripts\add-wMConfig.ps1
+		BuildScripts\Generate-TfsEarBuildPackage.ps1 = BuildScripts\Generate-TfsEarBuildPackage.ps1
+		BuildScripts\Import-EAR.ps1 = BuildScripts\Import-EAR.ps1
+		BuildScripts\IvansImporter.ps1 = BuildScripts\IvansImporter.ps1
+		BuildScripts\Label-ParentTFVCFolders.ps1 = BuildScripts\Label-ParentTFVCFolders.ps1
+		Label-TFVCFolders.ps1 = Label-TFVCFolders.ps1
+		BuildScripts\New-wMBuildPackage.ps1 = BuildScripts\New-wMBuildPackage.ps1
+		BuildScripts\pop-EnvConfig.ps1 = BuildScripts\pop-EnvConfig.ps1
+		BuildScripts\Publish-Xsn.ps1 = BuildScripts\Publish-Xsn.ps1
+		BuildScripts\Start-TeamBuild.ps1 = BuildScripts\Start-TeamBuild.ps1
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TeamBuildTypes", "TeamBuildTypes", "{1103589B-AD57-4989-8E64-E59499F2A015}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Build", ".Build", "{FD1DA517-4E98-4643-9E1E-465BB034E41A}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\TeamBuildTypes\PS.Scripts.Build\Deployment\Config.xml = ..\..\..\..\TeamBuildTypes\PS.Scripts.Build\Deployment\Config.xml
+		..\..\..\..\TeamBuildTypes\PS.Scripts.Build\Deployment\Deploy.ps1 = ..\..\..\..\TeamBuildTypes\PS.Scripts.Build\Deployment\Deploy.ps1
+		..\..\..\..\TeamBuildTypes\PS.Scripts.Build\Deployment\DeploymentMappings.xml = ..\..\..\..\TeamBuildTypes\PS.Scripts.Build\Deployment\DeploymentMappings.xml
+		..\..\..\..\TeamBuildTypes\PS.Scripts.Build\TFSBuild.proj = ..\..\..\..\TeamBuildTypes\PS.Scripts.Build\TFSBuild.proj
+		..\..\..\..\TeamBuildTypes\PS.Scripts.Build\TFSBuild.rsp = ..\..\..\..\TeamBuildTypes\PS.Scripts.Build\TFSBuild.rsp
+		..\..\..\..\TeamBuildTypes\PS.Scripts.Build\WorkspaceMapping.xml = ..\..\..\..\TeamBuildTypes\PS.Scripts.Build\WorkspaceMapping.xml
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Release", ".Release", "{A59BF0FF-AC1D-45D0-B897-858C0E829D56}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\TeamBuildTypes\PS.Scripts.Release\Deployment\Config.xml = ..\..\..\..\TeamBuildTypes\PS.Scripts.Release\Deployment\Config.xml
+		..\..\..\..\TeamBuildTypes\PS.Scripts.Release\Deployment\Deploy.ps1 = ..\..\..\..\TeamBuildTypes\PS.Scripts.Release\Deployment\Deploy.ps1
+		..\..\..\..\TeamBuildTypes\PS.Scripts.Release\Deployment\DeploymentMappings.xml = ..\..\..\..\TeamBuildTypes\PS.Scripts.Release\Deployment\DeploymentMappings.xml
+		..\..\..\..\TeamBuildTypes\PS.Scripts.Release\TFSBuild.proj = ..\..\..\..\TeamBuildTypes\PS.Scripts.Release\TFSBuild.proj
+		..\..\..\..\TeamBuildTypes\PS.Scripts.Release\TFSBuild.rsp = ..\..\..\..\TeamBuildTypes\PS.Scripts.Release\TFSBuild.rsp
+		..\..\..\..\TeamBuildTypes\PS.Scripts.Release\WorkspaceMapping.xml = ..\..\..\..\TeamBuildTypes\PS.Scripts.Release\WorkspaceMapping.xml
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MOSS", "MOSS", "{8EF7AF53-921B-4ABC-9F56-AAB27C3924D1}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", "{031DFCDB-E30E-46DD-A776-F397D2C30358}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harleysville.Deployment.Utilities", "..\Harleysville.Deployment.Utilities\Harleysville.Deployment.Utilities.csproj", "{1D4F3EA0-72C6-4244-BADD-BA4B1CAD02BE}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harleysville.Deployment.WebServices", "..\Harleysville.Deployment.WebServices\Harleysville.Deployment.WebServices.csproj", "{5383CC36-50EC-41B3-9008-F2E6CFB6EF7F}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harleysville.Deployment.WebApp", "Harleysville.Deployment.WebApp\Harleysville.Deployment.WebApp.csproj", "{A2B15FBF-7DA3-40DE-BE4F-E9DA2CED32FF}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://as73tfs01:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\Harleysville.Deployment.SnapIn\\Harleysville.Deployment.SnapIn\\Harleysville.Deployment.SnapIn.csproj
+		SccProjectName1 = ../Harleysville.Deployment.SnapIn/Harleysville.Deployment.SnapIn
+		SccLocalPath1 = ..\\Harleysville.Deployment.SnapIn\\Harleysville.Deployment.SnapIn
+		SccProjectUniqueName2 = ..\\Harleysville.Deployment.Utilities\\Harleysville.Deployment.Utilities.csproj
+		SccProjectName2 = ../Harleysville.Deployment.Utilities
+		SccLocalPath2 = ..\\Harleysville.Deployment.Utilities
+		SccProjectUniqueName3 = ..\\Harleysville.Deployment.WebServices\\Harleysville.Deployment.WebServices.csproj
+		SccProjectName3 = ../Harleysville.Deployment.WebServices
+		SccLocalPath3 = ..\\Harleysville.Deployment.WebServices
+		SccProjectUniqueName4 = Harleysville.Deployment.WebApp\\Harleysville.Deployment.WebApp.csproj
+		SccProjectName4 = Harleysville.Deployment.WebApp
+		SccLocalPath4 = Harleysville.Deployment.WebApp
+	EndGlobalSection
+	GlobalSection(TextTemplating) = postSolution
+		TextTemplating = 1
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Default|Any CPU = Default|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29F45531-4D50-43A4-88E1-6CEFD8746F3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29F45531-4D50-43A4-88E1-6CEFD8746F3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29F45531-4D50-43A4-88E1-6CEFD8746F3E}.Default|Any CPU.ActiveCfg = Debug|Any CPU
+		{29F45531-4D50-43A4-88E1-6CEFD8746F3E}.Default|Any CPU.Build.0 = Debug|Any CPU
+		{29F45531-4D50-43A4-88E1-6CEFD8746F3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29F45531-4D50-43A4-88E1-6CEFD8746F3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D4F3EA0-72C6-4244-BADD-BA4B1CAD02BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D4F3EA0-72C6-4244-BADD-BA4B1CAD02BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D4F3EA0-72C6-4244-BADD-BA4B1CAD02BE}.Default|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D4F3EA0-72C6-4244-BADD-BA4B1CAD02BE}.Default|Any CPU.Build.0 = Debug|Any CPU
+		{1D4F3EA0-72C6-4244-BADD-BA4B1CAD02BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D4F3EA0-72C6-4244-BADD-BA4B1CAD02BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5383CC36-50EC-41B3-9008-F2E6CFB6EF7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5383CC36-50EC-41B3-9008-F2E6CFB6EF7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5383CC36-50EC-41B3-9008-F2E6CFB6EF7F}.Default|Any CPU.ActiveCfg = Debug|Any CPU
+		{5383CC36-50EC-41B3-9008-F2E6CFB6EF7F}.Default|Any CPU.Build.0 = Debug|Any CPU
+		{5383CC36-50EC-41B3-9008-F2E6CFB6EF7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5383CC36-50EC-41B3-9008-F2E6CFB6EF7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2B15FBF-7DA3-40DE-BE4F-E9DA2CED32FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2B15FBF-7DA3-40DE-BE4F-E9DA2CED32FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2B15FBF-7DA3-40DE-BE4F-E9DA2CED32FF}.Default|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2B15FBF-7DA3-40DE-BE4F-E9DA2CED32FF}.Default|Any CPU.Build.0 = Debug|Any CPU
+		{A2B15FBF-7DA3-40DE-BE4F-E9DA2CED32FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2B15FBF-7DA3-40DE-BE4F-E9DA2CED32FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2EE26639-3476-4403-94D4-6334F5B5C71E} = {3108BCF3-C91A-45F2-BC85-32F7254F908A}
+		{FD1DA517-4E98-4643-9E1E-465BB034E41A} = {1103589B-AD57-4989-8E64-E59499F2A015}
+		{A59BF0FF-AC1D-45D0-B897-858C0E829D56} = {1103589B-AD57-4989-8E64-E59499F2A015}
+	EndGlobalSection
+EndGlobal

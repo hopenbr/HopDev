@@ -1,0 +1,9 @@
+<?xml version="1.0"  encoding="utf-8" ?>
+<Powershell>
+	<CommonScriptsLocation>C:\Projects\SRM\Branches\DEVELOPMENT\PowerShell\PowerShellScripts</CommonScriptsLocation>
+	<CommonEmailAddress>@HarleysvilleGroup.com</CommonEmailAddress>
+	<TFSServerUrl>http://As73tfs01:8080</TFSServerUrl>
+	<TFSSever>As73tfs01</TFSSever>
+	<TFSBuild>AS73tfsbuild01</TFSBuild>
+	<EventSource>Harleysville.Common.PSScripts</EventSource>
+</Powershell>

@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFrename", "TFrename\TFrename.csproj", "{719A0DB6-6A1E-49CC-AC92-8E47F025973A}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://as73tfs01:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = TFrename\\TFrename.csproj
+		SccProjectName1 = TFrename
+		SccLocalPath1 = TFrename
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{719A0DB6-6A1E-49CC-AC92-8E47F025973A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{719A0DB6-6A1E-49CC-AC92-8E47F025973A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{719A0DB6-6A1E-49CC-AC92-8E47F025973A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{719A0DB6-6A1E-49CC-AC92-8E47F025973A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

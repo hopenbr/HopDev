@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workflow BBs", "Workflow BBs", "{F037AFCA-CB49-4570-9FD1-BE7490C85FC4}"
+	ProjectSection(SolutionItems) = preProject
+		Add-ContentType-To-SPList.ps1 = Add-ContentType-To-SPList.ps1
+		Clear-Alerts-From-SPWeb.ps1 = Clear-Alerts-From-SPWeb.ps1
+		Clear-SPList.ps1 = Clear-SPList.ps1
+		Create-WF-Association.ps1 = Create-WF-Association.ps1
+		Delete-ContentType.ps1 = Delete-ContentType.ps1
+		Delete-SPField.ps1 = Delete-SPField.ps1
+		Get-WFAssociation-By-Name.ps1 = Get-WFAssociation-By-Name.ps1
+		Remove-WFAssociation.ps1 = Remove-WFAssociation.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Adding Lists BBs", "Adding Lists BBs", "{3469CFE6-B7DA-441D-A9BA-1F67A22F60DD}"
+	ProjectSection(SolutionItems) = preProject
+		Add-Announcements.ps1 = Add-Announcements.ps1
+		Add-AnnouncementsCalendarLinks.ps1 = Add-AnnouncementsCalendarLinks.ps1
+		Add-Calendar.ps1 = Add-Calendar.ps1
+		Add-Links.ps1 = Add-Links.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Zach Rosenfeld's Function Library", "Zach Rosenfeld's Function Library", "{D1BCB889-9A6E-4F7C-903A-6744CA6F7DEA}"
+	ProjectSection(SolutionItems) = preProject
+		Define-SharePoint-Functions.ps1 = Define-SharePoint-Functions.ps1
+	EndProjectSection
+EndProject
+Project("{4F174C21-8C12-11D0-8340-0000F80270F8}") = "APADB", "..\..\..\..\..\..\..\AgentPortal\Branches\DEVELOPMENT\APADB\APADB.dbp", "{FBFDE0B2-20F9-48C1-82A2-A56425D52C17}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://as73tfs01:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\..\\..\\..\\..\\..\\..\\AgentPortal\\Branches\\DEVELOPMENT\\APADB\\APADB.dbp
+		SccProjectName1 = ../../../../../../AgentPortal.Project/Branches/DEVELOPMENT/APADB
+		SccLocalPath1 = ..\\..\\..\\..\\..\\..\\..\\AgentPortal\\Branches\\DEVELOPMENT\\APADB
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

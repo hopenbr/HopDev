@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <BuildNumber Name="SRM.WorkItem.DBI">
+    <Major>4</Major>
+    <Minor>2</Minor>
+    <Fix>0</Fix>
+    <Build>0</Build>
+  </BuildNumber>
+</project>

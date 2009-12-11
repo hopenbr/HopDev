@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://tempuri.org/XMLSchema.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/XMLSchema.xsd" xmlns:mstns="http://tempuri.org/XMLSchema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:attributeGroup name="BuildAttributes">
+		<xs:attribute name="TeamProject" type="xs:string" />
+		<xs:attribute type="xs:string" name="TeamBuildType" />
+		<xs:attribute name="TimeStamp" type="xs:dateTime" />
+		<xs:attribute name="RollBackBuild" type="xs:string" />
+		<xs:attribute name="DeployedBy" type="xs:string" />
+	</xs:attributeGroup>
+	<xs:element name="Environments">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Environment">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Name" type="xs:string" />
+							<xs:element name="Builds">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Build">
+											<xs:complexType>
+												<xs:sequence>
+												</xs:sequence>
+												<xs:attributeGroup ref="BuildAttributes" />
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="LastUpdated" type="xs:dateTime" />
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key name="BuildKey">
+			<xs:selector xpath=".//mstns:Build" />
+			<xs:field xpath="@TeamBuildType" />
+		</xs:key>
+		<xs:key name="EnvironmentKey">
+			<xs:selector xpath=".//mstns:Environment" />
+			<xs:field xpath="mstns:Name" />
+		</xs:key>
+	</xs:element>
+</xs:schema>

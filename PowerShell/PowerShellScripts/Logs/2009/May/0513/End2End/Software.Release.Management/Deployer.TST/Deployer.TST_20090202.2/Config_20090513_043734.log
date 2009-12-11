@@ -1,0 +1,45 @@
+
+Sync 2.1   Copyright 2007 Zach Scrivena   2007-12-09
+
+DIRECTORY SYNCHRONIZATION
+
+Source directory: "\\as73tfs01\BuildStore\SRM\TFSEventServices\Drops\Deployer.TST_20090202.2\Env.Config\In-End2End\Bat\"
+Target directory: "\\as73tfstst01\TDA\BAT\"
+
+File-matching attributes: (name,size,crc)
+
+
+SUBDIRECTORY: ".\"
+
+ No. of source files matched: 2 of 2
+ [M1:nstc] "Script2.bat"
+ [M2:nstc] "Test.bat"
+
+ No. of unmatched target files/directories to be deleted: 16
+ [D1] Skipping "Actual Quality vs Planned Velocity.rdl"
+ [D2] Skipping "Bug Rates.rdl"
+ [D3] Skipping "Bugs by Priority.rdl"
+ [D4] Skipping "Bugs Found Without Corresponding Tests.rdl"
+ [D5] Skipping "Builds.rdl"
+ [D6] Skipping "Load Test Comparison.rdl"
+ [D7] Skipping "Load Test Detail.rdl"
+ [D8] Skipping "Load Test Summary.rdl"
+ [D9] Skipping "Load Tests.rdl"
+ [D10] Skipping "PRD.txt"
+ [D11] Skipping "Project Velocity.rdl"
+ [D12] Skipping "Quality Indicators.rdl"
+ [D13] Skipping "Reactivations.rdl"
+ [D14] Skipping "Regressions.rdl"
+ [D15] Skipping "Related Work Items.rdl"
+ [D16] Skipping "Remaining Work.rdl"
+
+SYNCHRONIZATION REPORT
+ No. of source subdirectories scanned          : 1
+ No. of source files scanned                   : 2
+ No. of target files scanned                   : 18
+ No. of source files matched [M]               : 2
+ No. of unmatched source files [C]             : 0 (0 copied)
+ No. of unmatched target files/directories [D] : 16 (0 deleted)
+
+Sync is done!
+

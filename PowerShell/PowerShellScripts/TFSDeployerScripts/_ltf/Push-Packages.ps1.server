@@ -1,0 +1,564 @@
+trap 
+{
+	$script = get-script
+	$msgLog = "Error trapped in $script`n`n$_"
+	$script_folder = split-path $script
+	Push-Location $script_folder
+	..\Write-EventLog.ps1 $msgLog $config.Deployment.EventSource $eventLogErrorNumber "Error";
+	break;
+} 
+
+function get-script
+{
+   if($myInvocation.ScriptName) { $myInvocation.ScriptName }
+   else { $myInvocation.MyCommand.Definition }
+} 
+
+function write-InfoLog ([string] $_msg)
+{
+    .\Write-EventLog.ps1 $_msg $config.Deployment.EventSource "4200"
+}
+
+function clean-deployArea ($_cleanPath)
+{
+	if ($deploymentOptions.Clean)
+	{
+		get-childitem $_cleanPath | remove-item -force -recurse
+	}
+	
+}
+
+function push-Xml([string] $path, [string] $env1)
+{
+	$ConfigPath = $path + "\Configs";
+	$Xml2Copy = $TfsDeployerBuildData.DropLocation + "\Env.Config\" + $env1 + "\XML"
+	get-childitem  $Xml2Copy | copy-item -force -recurse -destination $ConfigPath
+	return $Xml2Copy
+}
+
+function copy-Files ($_sourceList, [string] $_targetDir)
+{
+	if ($_sourceList)
+	{
+		foreach ($item in  $_sourceList)
+		{
+			if (!$item.Mode.Contains('d'))
+			{
+				$targetFile = $(Join-Path $_targetDir $item.Name)
+				
+				if (Test-Path $targetFile)
+				{			
+					Remove-item -force $targetFile
+				}
+				
+				Copy-Item -Path $item.FullName -force -Dest $targetFile 
+			}
+		}
+	}
+}
+
+function check-Environment ([string] $_e)
+{
+	if ($_e.Equals("In-QA2") -or $_e.Equals("In-TST1"))
+	{
+		if (!(Test-Path (Join-Path $TFSDeployerBuildData.DropLocation $("Env.Config\" + $_e))))
+		{
+			if ($_e.Equals("In-QA2"))
+			{
+				$_e = "In-SystemTest02"
+			}
+			elseif ( $_e.Equals("In-TST1"))
+			{
+				$_e = "In-SystemTest01"
+			}
+		}  
+		
+	}
+	
+	return $_e
+}
+
+function push-Package([string] $path, [string] $_env)
+{
+	[int] $untilCount = 0
+	[bool] $deploymentConfirmed = $false
+	
+	if (!$deploymentOptions.Confirm)
+	{
+		$deploymentConfirmed = $true
+	}
+	
+	$_env = check-Environment $_env
+		
+	do 
+	{
+		clean-deployArea $path
+		[bool] $isPushNeeded = $true
+		[bool] $isHintPathNeeded = $false
+		[string] $hintPath;
+		$Files2Copy = $TfsDeployerBuildData.DropLocation + "\Precompiled\" + $key
+		[int] $whileCount = 0;
+		while (!(resolve-path $Files2Copy -ea silentlycontinue).path -and $whileCount -le 1)
+		{
+			switch ($whileCount)
+			{
+				0 
+				{ 
+					$Files2Copy = $TfsDeployerBuildData.DropLocation + "\" + $key	            
+				}
+				Default 
+				{#should only get this is the two options are not found this means that the move is 
+				 #only configurable (Env.Config) deploys
+		        
+					if ($_env.Contains("IRB"))
+					{ #now we need to check to ensure it is not a IRB deploy if so we need to create the 
+					  #folder in TFVC  which will get the config pushed to it below
+						mkdir $($path + "\" + $key)
+						$path += "\" + $key
+						$isPushNeeded = $false
+					}
+					
+					$whileCount = 2
+					$isPushNeeded = $false
+				}
+			}
+		    
+			$whileCount++
+		         
+		}
+		
+		if ($isPushNeeded)
+		{
+			if ($iswebMethodsPush)
+			{
+				push-wM $path $Files2Copy
+			}
+			else
+			{
+				#get-childitem  $Files2Copy | copy-item -force -recurse -destination $path
+				Get-Childitem $Files2Copy | foreach-object { Copy-item $_.FullName -force -recurse -destination $path }
+			}
+		}
+		
+		if ($key.Equals("Web") -and $TFSDeployerBuildData.TeamProject.Contains("AgentPortal"))
+		{
+			$hintPath = push-Xml $path $_env
+			$isHintPathNeeded = $true
+		}
+		
+		[bool] $isConfigs2CopyRecursive = $true
+		$Configs2Copy = $TfsDeployerBuildData.DropLocation + "\Env.Config\" + $_env + "\" + $key
+		$whileCount = 0;
+		
+		while (!(resolve-path $Configs2Copy -ea silentlycontinue).path -and $whileCount -le 2)
+		{
+			switch ($whileCount)
+			{
+				0 
+				{ 
+					$Configs2Copy = $TfsDeployerBuildData.DropLocation + "\Env.Config\" + $_env + "\" + $key + "site"	            
+				}
+				1 
+				{
+					$Configs2Copy = $TfsDeployerBuildData.DropLocation + "\Env.Config\" + $_env + "site"
+				}  
+				2
+				{
+					$Configs2Copy = $TfsDeployerBuildData.DropLocation + "\Env.Config\" + $_env
+					$isConfigs2CopyRecursive = $False
+				}
+			}
+		    
+			$whileCount++
+		         
+		}
+				
+		if (Test-Path $Configs2Copy)
+		{
+			if ($isConfigs2CopyRecursive)
+			{
+				 copy-Files $(get-childitem $Configs2Copy -recurse) $path
+			}
+			else
+			{
+				 copy-Files $(get-childitem  $Configs2Copy | where {!$_.Mode.Contains("d")}) $path
+			}
+		}
+		
+		$untilCount++
+		if ($isPushNeeded -and !$deploymentConfirmed)
+		{
+			write-InfoLog $("Confirming Deployment to " + $path + " by comparing to source directory " + $Files2Copy + "`n`nDAta Info:`nConfig ==> " + $configs2Copy + "`nHintPAth ==> " + $hintPath)
+			
+			if ($isHintPathNeeded -and $hintPath)
+			{
+				$deploymentConfirmed = Compare-Directories -SourceDirectory $Files2Copy -DeploymentDirectory $path -EnvConfigPath $Configs2Copy -ConfigHintPath $hintPath -deployment $true 
+			}
+			else
+			{
+				$deploymentConfirmed = Compare-Directories -SourceDirectory $Files2Copy -DeploymentDirectory $path -EnvConfigPath $Configs2Copy -deployment $true
+			}
+		}
+		else
+		{
+			$deploymentConfirmed = $true
+		}
+		
+	} until ($deploymentConfirmed -or $untilCount -gt 2)
+	
+	if (!$deploymentConfirmed)
+	{
+		throw $("Error: TFS Deployer could not comfirm the Deployment area, " +
+		        "by comparing it to the deployment source area, Three deployment attempts were made." +
+		        "`n`nError info:`n" +
+		        "Path ==> " + $path + "`n" +
+		        "ENV ==> " + $_env + "`n" +
+		        "Key ==> " + $key + "`n")
+	}
+	else
+	{
+		write-InfoLog "Deployment confirmed"
+	}
+} 
+
+function push-Package2TFVC([string] $path)
+{
+	#push file to local temp area where workspace will be mapped and used to added to TFVC
+	$path, $_cleanCmd = $path.split(";")
+	$pushPath = $path + "\" + $TfsDeployerBuildData.BuildNumber 
+	$isThere = (resolve-path $pushPath -ea silentlycontinue).path
+	if (!$isThere)
+	{
+		new-item -path $path -name $TfsDeployerBuildData.BuildNumber -type directory 
+	}
+	
+	new-item -path $pushPath -name $key -type directory
+	$pushPath += "\" + $key 
+	
+	push-Package $pushPath "In-Production"
+	
+}
+
+function push-wM ([string] $_pushPath, [string] $_files2copy)
+{
+	[bool] $_compare = $false
+	[int] $fileCount = $($(Get-Item $_files2Copy).GetFiles("*.zip")).Count 
+	
+	if ($fileCount -gt 1)
+	{
+		$_compare = $true
+	}
+	elseif ($fileCount -eq 0)
+	{
+		throw $("Error: wM Build package folder (" + $_files2copy + ") is empty"
+	}
+	
+	foreach ($file in (Get-Childitem $_files2copy))
+	{
+		$wMDeployMapping = @{}
+		if ($env.Equals("In-IRB"))
+		{
+			Copy-item $file.FullName -force -recurse -destination $_pushPath
+		}
+		else
+		{
+			[bool] $pushNeeded = $true
+			
+			$targetfile = $($_pushPath + "\" + $file.Name)
+			
+			if (Test-Path $targetfile)
+			{
+				if ($_compare)
+				{
+					if((Compare-files $targetfile $file.FullName))
+					{
+						$pushNeeded = $false
+					}
+					else
+					{
+						Remove-Item $targetfile -force
+					}
+				}
+				else
+				{
+					Remove-Item $targetfile -force
+				}
+			} 
+			
+			if ($pushNeeded)
+			{
+				$package_name = $file.Name.Remove($($file.Name.Length - $file.Extension.length))
+				
+				if($wMDeployHash.ContainsKey($package_name))
+				{
+					$wMDeployHash.$package_name.Target += $("," + $_pushPath)
+				}
+				else
+				{
+					$wMDeployMapping.Add("Source", $file.FullName)
+					$wMDeployMapping.Add("Target", $_pushPath)
+					$wMDeployHash.Add($package_name, $wMDeployMapping)
+				}
+				
+			}
+		}			
+	}
+	
+	if ($env.Equals("In-IRB"))
+	{
+		copy-item -Path (Join-Path $TFSDeployerBuildData.DropLocation "Env.Config") -Destination (Split-Path $_pushPath -parent) -recurse
+	}
+	
+	 
+}
+
+function push-PackageFromTFVC( [string] $_pushPath)
+{
+	[bool] $deploymentConfirmed = $false;
+	[int] $doCount = 0;
+	[bool] $isConfirmationNeeded = $deploymentOptions.Confirm
+	
+	clean-deployArea $_pushPath
+	$Files2Copy = $ws + "\" + $key
+	
+	do 
+	{
+		if ($iswebMethodsPush)
+		{
+			push-wM $_pushPath $Files2Copy
+		}
+		else
+		{
+			Get-Childitem $Files2Copy | foreach-object { Copy-item $_.FullName -force -recurse -destination $_pushPath }
+		}
+			
+		$doCount++
+		if ($isConfirmationNeeded)
+		{
+			write-InfoLog $("Confirming deployment:`nDeploy area => " + $_pushPath + "`nSource area => " + $Files2Copy)
+			$deploymentConfirmed = Compare-Directories -SourceDirectory $Files2Copy -DeploymentDirectory $_pushPath
+		}
+		else
+		{
+			write-InfoLog "No deployment confirmation: May be a deployment to a non-cleaned area"
+			$deploymentConfirmed = $true
+		}
+		
+	}until ($deploymentConfirmed -or $doCount -gt 2)
+	
+	if (!$deploymentConfirmed)
+	{
+		throw $("Error: TFS Deployer could not comfirm the Deployment area, " +
+		        "by comparing it to the deployment source area, Three deployment attempts were made." +
+		        "`n`nError info:`n" +
+		        "Deploy Path ==> " + $_pushPath + "`n" +
+		        "Source Path ==> " + $Files2Copy + "`n" +
+		        "ENV ==> In-Production`n" +
+		        "Key ==> " + $key + "`n")
+	}
+	else
+	{
+		write-InfoLog "Deployment confirmed"
+	}
+}
+
+function recycle-AppPool ([string] $serverName)
+{
+    write-InfoLog $($TfsDeployerBuildData.BuildNumber + "Checking to see if appPool needs to be recyled")
+	$appPoolName = $deployConfig.Deployment.Environments.$($env.Split('-')[1]).$key.AppPoolName
+	#using scope here since $deployConfig is set in the team's gateway deployer scripts
+	#therefore it's a parent (actually a great-great grand parent) scope. 
+	 
+	if ($appPoolName)
+	{
+		if (!$serverName)
+		{
+			$returnStr += "AppPool recycle skipped:`n AppPoolName => $appPoolName `n Server => $serverName"
+		}
+		else
+		{ 
+			$returnStr += "`n"
+			$returnStr += .\Recycle-AppPool.ps1 $serverName $appPoolName	
+		}
+	}
+	else
+	{
+		$returnStr = "No AppPools to recycle on $serverName"
+	}
+	
+	write-InfoLog $returnStr
+	
+	return $returnStr                                                                                                                                                                                                                 
+}
+
+
+function which-Push ([string] $_pushPath)
+{
+			
+	if ($env.Equals("In-IRB"))
+	{
+		push-Package2TFVC $_pushPath
+	}
+	elseif ($env.Equals("In-Production"))
+	{
+		push-PackageFromTFVC $_pushPath
+	}
+	else
+	{
+		push-Package $_pushPath $env 
+	}
+}
+
+
+function parse-DeploymentPath ([string] $path2parse)
+{
+
+	 write-InfoLog $("Parsing: " + $path2parse)
+	 
+	$opts = @{"Clean" = $true;
+			 "Confirm" = $true;
+			 "Path" = $path2parse}
+		
+			 
+	if ($path2parse.Contains(";"))
+	{
+		$path, $options = $path2parse.split(";")
+		
+		$opts.Path = $path
+		
+		foreach ($opt in $options)
+		{
+			$key, $val = $opt.split("=")
+			
+			if ($val -ieq "True")
+			{
+				$val = $true
+			}
+			elseif ($val -ieq "False")
+			{
+				$val = $false
+			}
+			else
+			{
+				throw ("Option parse error: " + $key + " is not in a form of a boolean")
+			}
+			
+			if ($opts.ContainsKey($key))
+			{
+				$opts.$key = $val
+			}
+			else
+			{
+				$opts.Add($key, $val)
+			}
+			
+		}
+		
+	}
+	
+	 write-InfoLog $("Parsed:`n" + $($opts.keys | foreach-object {$_ + " => " + $opts.$_ + "`n"}) )
+	
+	return $opts
+	
+}
+
+##MAIN####
+
+#needed to comfirm the deploy
+add-pssnapin Harleysville.Deployment.SnapIn -ea silentlycontinue
+#regular express to get servername for deployment path
+[regex] $regex = "\\\\(\w+?)\\"
+$wMDeployHash = @{}
+$deploymentOptions = @{}
+
+if ($env.Equals("In-Production"))
+{
+    write-InfoLog $($TfsDeployerBuildData.BuildNumber + " being deployed to PRD, build package being downloaded form TFVC")
+	[string] $ws = .\TFSDeployerScripts\Get-BuildPackageFromTFVC.ps1 $TfsDeployerBuildData.TeamProject $TfsDeployerBuildData.BuildNumber
+	if (!$ws -or !(Test-Path $ws))
+	{
+		Throw "ERROR: There was an error getting code from TFVC; Please ensure build package was properly deploy to IRB"
+	}
+}
+
+foreach ($key in $webservices.keys)
+{
+	if ($webservices.$key.Contains(","))
+	{
+	   foreach ($path in $webservices.$key.split(","))
+	   {
+			$deploymentOptions = parse-DeploymentPath $path
+	
+			$path = $deploymentOptions.Path 
+			
+	        write-InfoLog $($TfsDeployerBuildData.BuildNumber + " Deploying to " + $path)
+			which-Push $path 
+			
+			if (!$env.equals("In-IRB"))
+			{
+				$path -match $regex 
+				#first [0] match is whole match ie \\serverName\ all others are regex called matches ()
+				#might want to loop through all the matches to ensure no other whole matches have been grabbed
+				#don't think it is neccessary b/c it would error out before this b/c a UNC path w/ multiple 
+				#whole matches would be an invalid UNC path
+				$_mailMessage += recycle-AppPool $matches[1]
+			}		
+	   }
+	}
+	else
+	{
+		$deploymentOptions = parse-DeploymentPath $webservices.$key
+		$path = $deploymentOptions.Path 
+	 
+	    write-InfoLog $($TfsDeployerBuildData.BuildNumber + " Deploying to " + $path)
+		which-Push $path
+		write-InfoLog $("Finished Deploying " + $TfsDeployerBuildData.BuildNumber + " to " + $path)
+		
+		if (!$env.equals("In-IRB"))
+		{
+			$path -match $regex 
+			if ($matches.lenght -gt 0)
+			{
+			    $_mailMessage += recycle-AppPool $matches[1]
+			}
+		}
+		
+	}
+	write-InfoLog $("End Deployment for " + $key + " in " + $TfsDeployerBuildData.BuildNumber)
+}
+
+if ($env.Equals("In-IRB"))
+{
+	
+	foreach ($key in $webservices.keys)
+	{
+		$localPath = $webservices.$key
+		
+		if ($localPath.Contains(";"))
+		{
+			$localPath, $_cleanCmd = $localPath.split(";")
+		}
+		break
+	}
+	
+	$localPath = $localPath + "\" + $TfsDeployerBuildData.BuildNumber
+	$serverPath = "$/" + $TfsDeployerBuildData.TeamProject + "/Releases/" + $TfsDeployerBuildData.BuildNumber
+	$success = .\Add-2TFVC.ps1 $localPath $serverPath
+	if (!$success)
+	{
+		throw "Error: There was a problem adding the code to TFVC"
+	}
+	
+	write-InfoLog $($TfsDeployerBuildData.BuildNumber + " Build package build deployed to TFVC Release area (" + $serverPath + ")")
+	
+}
+else
+{
+	if ($iswebMethodsPush)
+	{
+		write-InfoLog "webMethods deployment; calling webMethods deployment scripts"
+		.\webMethodsScripts\wM-deployer.ps1
+	}
+}
+
+return $_mailMessage

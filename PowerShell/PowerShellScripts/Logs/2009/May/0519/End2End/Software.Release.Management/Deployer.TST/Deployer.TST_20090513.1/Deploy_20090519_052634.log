@@ -1,0 +1,80 @@
+
+Sync 2.1   Copyright 2007 Zach Scrivena   2007-12-09
+
+DIRECTORY SYNCHRONIZATION
+
+Source directory: "\\as73tfs01\BuildStore\SRM\TFSEventServices\Drops\Deployer.TST_20090513.1\Precompiled\Web\"
+Target directory: "\\as73tfstst01\TDA\E2E\"
+
+File-matching attributes: (name,size,crc)
+
+
+SUBDIRECTORY: ".\"
+
+ No. of source files matched: 21 of 22
+ [M1:ns c] "AclChangedEndpoint.asmx"
+ [M2:ns c] "AppSetting.config"
+ [M3:ns c] "BranchMovedEndpoint.asmx"
+ [M4:ns c] "BuildCompletionEndpoint.asmx"
+ [M5:ns c] "BuildStatusChangeEndpoint.asmx"
+ [M6:ns c] "CheckInEndpoint.asmx"
+ [M7:ns c] "CommonStructureChangedEndpoint.asmx"
+ [M8:ns c] "DataChangedEndpoint.asmx"
+ [M9:ns c] "Default.aspx"
+ [M10:ns c] "IdentityChangedEndpoint.asmx"
+ [M11:ns c] "IdentityCreatedEndpoint.asmx"
+ [M12:ns c] "IdentityDeletedEndpoint.asmx"
+ [M13:ns c] "MembershipChangedEndpoint.asmx"
+ [M14:ns c] "NodeCreatedEndpoint.asmx"
+ [M15:ns c] "NodeRenamedEndpoint.asmx"
+ [M16:ns c] "NodesDeletedEndpoint.asmx"
+ [M17:ns c] "PrecompiledApp.config"
+ [M18:ns c] "ProjectCreatedEndpoint.asmx"
+ [M19:ns c] "ProjectDeletedEndpoint.asmx"
+ [M20:ns c] "WorkItemChangedEndpoint.asmx"
+ [M21:ns c] "vwd.webinfo"
+
+ Skipping last-modified time synchronization of 21 matched target files
+
+ No. of unmatched source files to be copied: 1
+ [C1] "web.config" (9.3 kb)
+  Overwriting existing file "Web.config"
+
+SUBDIRECTORY: "bin\"
+
+ No. of source files matched: 22 of 22
+ [M22:ns c] "App_Code.compiled"
+ [M23:nstc] "App_global.asax.compiled"
+ [M24:ns c] "Harleysville.Powershell.Utilities.dll"
+ [M25:ns c] "Harleysville.Powershell.Utilities.pdb"
+ [M26:nstc] "Harleysville.TFS.EventClasses.dll"
+ [M27:nstc] "Harleysville.TFS.EventClasses.pdb"
+ [M28:nstc] "Harleysville.TFS.EventServices.dll"
+ [M29:nstc] "Microsoft.TeamFoundation.Build.Common.dll"
+ [M30:nstc] "Microsoft.TeamFoundation.Client.dll"
+ [M31:nstc] "Microsoft.TeamFoundation.Common.Library.dll"
+ [M32:nstc] "Microsoft.TeamFoundation.Common.dll"
+ [M33:nstc] "Microsoft.TeamFoundation.VersionControl.Client.dll"
+ [M34:nstc] "Microsoft.TeamFoundation.VersionControl.Common.Integration.dll"
+ [M35:nstc] "Microsoft.TeamFoundation.VersionControl.Common.dll"
+ [M36:nstc] "Microsoft.TeamFoundation.WorkItemTracking.Client.Cache.dll"
+ [M37:nstc] "Microsoft.TeamFoundation.WorkItemTracking.Client.DataStore.dll"
+ [M38:nstc] "Microsoft.TeamFoundation.WorkItemTracking.Client.Provision.dll"
+ [M39:nstc] "Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.dll"
+ [M40:nstc] "Microsoft.TeamFoundation.WorkItemTracking.Client.RuleEngine.dll"
+ [M41:nstc] "Microsoft.TeamFoundation.WorkItemTracking.Client.dll"
+ [M42:nstc] "Microsoft.TeamFoundation.WorkItemTracking.Proxy.dll"
+ [M43:nstc] "Microsoft.TeamFoundation.dll"
+
+ Skipping last-modified time synchronization of 3 matched target files
+
+SYNCHRONIZATION REPORT
+ No. of source subdirectories scanned          : 2
+ No. of source files scanned                   : 44
+ No. of target files scanned                   : 44
+ No. of source files matched [M]               : 43
+ No. of unmatched source files [C]             : 1 (1 copied)
+ No. of unmatched target files/directories [D] : 0 (0 deleted)
+
+Sync is done!
+

@@ -1,0 +1,8 @@
+aspnet_setreg.exe -k:SOFTWARE\MY_SECURE_APP\identity -u:"yourdomainname\username" -p:"password"
+
+Changes needed after this is run 
+Need to give local PC "NetworkServices" account read rights to folder is Registy
+ie HKLM\SOFTWARE\MY_SECURE_APP\identity
+
+
+

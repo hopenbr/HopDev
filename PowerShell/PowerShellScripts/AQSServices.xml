@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Regions>
+  <Region name="REL">
+    <services>
+      <service name="AQS Integrator Alerter Service" server="WS73AQSDEV01"  />
+      <service name="AQS Integrator Monitor Service" server="WS73AQSDEV01"  />
+      <service name="AQS Integrator Notifier Service" server="WS73AQSDEV01"  />
+      <service name="AQS/advantage Transaction Gateway Event Router" server="WS73AQSDEV01"  />
+      <service name="AQS/advantage Transaction Gateway Transaction Coordinator" server="WS73AQSDEV01"  />
+      <service name="AQS/advantage Transaction Gateway Transaction Processor" server="WS73AQSDEV01"  />
+    </services>
+  </Region>
+  <Region name="MTT">
+    <services>
+      <service name="AQS Integrator Alerter Service" server="WS73AQSMTT01"  />
+      <service name="AQS Integrator Monitor Service" server="WS73AQSMTT01"  />
+      <service name="AQS Integrator Notifier Service" server="WS73AQSMTT01"  />
+      <service name="AQS/advantage Transaction Gateway Event Router" server="WS73AQSMTT01"  />
+      <service name="AQS/advantage Transaction Gateway Transaction Coordinator" server="WS73AQSMTT01"  />
+      <service name="AQS/advantage Transaction Gateway Transaction Processor" server="WS73AQSMTT01"  />
+    </services>
+  </Region>
+  <Region name="ASY">
+    <services>
+      <service name="AQS Integrator Alerter Service" server="WS73AQSASY01"  />
+      <service name="AQS Integrator Monitor Service" server="WS73AQSASY01"  />
+      <service name="AQS Integrator Notifier Service" server="WS73AQSASY01"  />
+      <service name="AQS/advantage Transaction Gateway Event Router" server="WS73AQSASY01"  />
+      <service name="AQS/advantage Transaction Gateway Transaction Coordinator" server="WS73AQSASY01"  />
+      <service name="AQS/advantage Transaction Gateway Transaction Processor" server="WS73AQSASY01"  />
+    </services>
+  </Region>
+  <Region name="QA2">
+    <services>
+      <service name="AQS Integrator Alerter Service" server="WS73AQSTST02"  />
+      <service name="AQS Integrator Monitor Service" server="WS73AQSTST02"  />
+      <service name="AQS Integrator Notifier Service" server="WS73AQSTST02"  />
+      <service name="AQS/advantage Transaction Gateway Event Router" server="WS73AQSTST02"  />
+      <service name="AQS/advantage Transaction Gateway Transaction Coordinator" server="WS73AQSTST02"  />
+      <service name="AQS/advantage Transaction Gateway Transaction Processor" server="WS73AQSTST02"  />
+    </services>
+  </Region>
+  <Region name="E2E">
+    <services>
+      <service name="AQS Integrator Alerter Service" server="WS73AQSE2E02"  />
+      <service name="AQS Integrator Monitor Service" server="WS73AQSE2E02"  />
+      <service name="AQS Integrator Notifier Service" server="WS73AQSE2E02"  />
+      <service name="AQS/advantage Transaction Gateway Event Router" server="WS73AQSE2E02"  />
+      <service name="AQS/advantage Transaction Gateway Transaction Coordinator" server="WS73AQSE2E02"  />
+      <service name="AQS/advantage Transaction Gateway Transaction Processor" server="WS73AQSE2E02"  />
+    </services>
+  </Region>
+  <Region name="CNV">
+    <services>
+      <service name="AQS Integrator Alerter Service" server="WS73AQSCNV01"  />
+      <service name="AQS Integrator Monitor Service" server="WS73AQSCNV01"  />
+      <service name="AQS Integrator Notifier Service" server="WS73AQSCNV01"  />
+      <service name="AQS/advantage Transaction Gateway Event Router" server="WS73AQSCNV01"  />
+      <service name="AQS/advantage Transaction Gateway Transaction Coordinator" server="WS73AQSCNV01"  />
+      <service name="AQS/advantage Transaction Gateway Transaction Processor" server="WS73AQSCNV01"  />
+    </services>
+  </Region>
+  <Region name="TRN">
+    <services>
+      <service name="AQS Integrator Alerter Service" server="AS73AQSINTTRN01"  />
+      <service name="AQS Integrator Monitor Service" server="AS73AQSINTTRN01"  />
+      <service name="AQS Integrator Notifier Service" server="AS73AQSINTTRN01"  />
+      <service name="AQS/advantage Transaction Gateway Event Router" server="AS73AQSTGWTRN01"  />
+      <service name="AQS/advantage Transaction Gateway Transaction Coordinator" server="AS73AQSTGWTRN01"  />
+      <service name="AQS/advantage Transaction Gateway Transaction Processor" server="AS73AQSTGWTRN01"  />
+    </services>
+  </Region>
+  <Region name="TST1">
+    <services>
+      <service name="AQS Integrator Alerter Service" server="WS73AQSTST01"  />
+      <service name="AQS Integrator Monitor Service" server="WS73AQSTST01"  />
+      <service name="AQS Integrator Notifier Service" server="WS73AQSTST01"  />
+      <service name="AQS/advantage Transaction Gateway Event Router" server="WS73AQSTST01"  />
+      <service name="AQS/advantage Transaction Gateway Transaction Coordinator" server="WS73AQSTST01"  />
+      <service name="AQS/advantage Transaction Gateway Transaction Processor" server="WS73AQSTST01"  />
+    </services>
+  </Region>
+  <Region name="PRE">
+    <services>
+      <service name="AQS Integrator Alerter Service" server="AS73AQSINTPRE01"  />
+      <service name="AQS Integrator Monitor Service" server="AS73AQSINTPRE01"  />
+      <service name="AQS Integrator Notifier Service" server="AS73AQSINTPRE01"  />
+      <service name="AQS/advantage Transaction Gateway Event Router" server="AS73AQSTGWPRE01"  />
+      <service name="AQS/advantage Transaction Gateway Transaction Coordinator" server="AS73AQSTGWPRE01"  />
+      <service name="AQS/advantage Transaction Gateway Transaction Processor" server="AS73AQSTGWPRE01"  />
+    </services>
+  </Region>
+  <Region name="PRD">
+    <services>
+      <service name="AQS Integrator Alerter Service" server="AS73AQSINTPRD01"  />
+      <service name="AQS Integrator Monitor Service" server="AS73AQSINTPRD01"  />
+      <service name="AQS Integrator Notifier Service" server="AS73AQSINTPRD01"  />
+      <service name="AQS/advantage Transaction Gateway Event Router" server="AS73AQSTGWPRD01"  />
+      <service name="AQS/advantage Transaction Gateway Transaction Coordinator" server="AS73AQSTGWPRD01"  />
+      <service name="AQS/advantage Transaction Gateway Transaction Processor" server="AS73AQSTGWPRD01"  />
+    </services>
+  </Region>
+</Regions>

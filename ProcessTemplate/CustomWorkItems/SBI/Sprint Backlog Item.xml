@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WITD application="Work item type editor" version="1.0">
+  <WORKITEMTYPE name="Sprint Backlog Item">
+    <DESCRIPTION>Includes information about a particular Sprint Backlog Item</DESCRIPTION>
+    <FIELDS>
+      <FIELD reportable="dimension" type="String" name="Title" refname="System.Title">
+        <HELPTEXT>Short description of the item used to differentiate it in a list or report.</HELPTEXT>
+        <REQUIRED />
+        <CANNOTLOSEVALUE />
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="State" refname="System.State">
+        <HELPTEXT>This is the status of the product backlog item as selected by the user. The choices are: Done / Not Done / In Progress / Deferred</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="dimension" type="Integer" name="Rev" refname="System.Rev" />
+      <FIELD reportable="dimension" type="String" name="Changed By" refname="System.ChangedBy" />
+      <FIELD type="String" name="Audit" refname="Conchango.VSTS.Scrum.Audit">
+        <HELPTEXT>This is a hidden field used as a work around for the requirements of the workflow section</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="detail" type="Integer" name="Estimated Effort" refname="Conchango.VSTS.Scrum.EstimatedEffort">
+        <HELPTEXT>The estimated effort needed to complete the feature</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="detail" type="Integer" name="Work Remaining" refname="Conchango.VSTS.Scrum.WorkRemaining">
+        <HELPTEXT>The amount of hours worth of development required to complete the feature</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="detail" type="Integer" name="Sprint Number" refname="Conchango.VSTS.Scrum.SprintNumber">
+        <HELPTEXT>The sprint to which the item is assigned</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="Reason" refname="System.Reason" />
+      <FIELD reportable="dimension" type="TreePath" name="Iteration Path" refname="System.IterationPath" />
+      <FIELD type="Integer" name="IterationID" refname="System.IterationId" />
+      <FIELD reportable="dimension" type="String" name="Assigned To" refname="System.AssignedTo">
+        <HELPTEXT>The person assigned to act on the item, either to fix it or to verify the fix</HELPTEXT>
+        <ALLOWEDVALUES filteritems="excludegroups">
+          <LISTITEM value="[project]\Project Administrators" />
+          <LISTITEM value="[project]\Contributors" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="Work Item Type" refname="System.WorkItemType" />
+      <FIELD reportable="dimension" type="String" name="Found In" refname="Microsoft.VSTS.Build.FoundIn">
+        <HELPTEXT>The build in which the bug was found</HELPTEXT>
+        <SUGGESTEDVALUES>
+          <LISTITEM value="&lt;None&gt;" />
+        </SUGGESTEDVALUES>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="Environment" refname="Conchango.VSTS.Scrum.Build.Environment">
+        <HELPTEXT>The Environment in which the bug was found</HELPTEXT>
+        <ALLOWEDVALUES>
+          <GLOBALLIST name="Environments - TestProject" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD reportable="detail" type="String" name="Severity" refname="Conchango.VSTS.Scrum.Severity">
+        <HELPTEXT>The severity of the bug (1=highest, 5=lowest)</HELPTEXT>
+        <WHEN field="Conchango.VSTS.Scrum.SprintBacklogItemType" value="Bug">
+          <REQUIRED />
+        </WHEN>
+        <ALLOWEDVALUES>
+          <LISTITEM value="1" />
+          <LISTITEM value="2" />
+          <LISTITEM value="3" />
+          <LISTITEM value="4" />
+          <LISTITEM value="5" />
+        </ALLOWEDVALUES>
+        <WHEN field="HIC.VSTF.Scrum.Defect.Severity" value="Critical">
+          <COPY from="value" value="1" />
+        </WHEN>
+        <WHEN field="HIC.VSTF.Scrum.Defect.Severity" value="High">
+          <COPY from="value" value="2" />
+        </WHEN>
+        <WHEN field="HIC.VSTF.Scrum.Defect.Severity" value="Medium">
+          <COPY from="value" value="3" />
+        </WHEN>
+        <WHEN field="HIC.VSTF.Scrum.Defect.Severity" value="Low">
+          <COPY from="value" value="4" />
+        </WHEN>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="Integration Build" refname="Microsoft.VSTS.Build.IntegrationBuild">
+        <HELPTEXT>The build in which the bug was fixed</HELPTEXT>
+        <SUGGESTEDVALUES>
+          <LISTITEM value="&lt;None&gt;" />
+        </SUGGESTEDVALUES>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="Sprint Backlog Item Type" refname="Conchango.VSTS.Scrum.SprintBacklogItemType">
+        <HELPTEXT>Defines whether the Sprint Backlog Item represents a Task, a Bug or an Impediment</HELPTEXT>
+        <ALLOWEDVALUES>
+          <LISTITEM value="Task" />
+          <LISTITEM value="Bug" />
+          <LISTITEM value="Impediment" />
+        </ALLOWEDVALUES>
+        <DEFAULT from="value" value="Task" />
+      </FIELD>
+      <FIELD reportable="dimension" type="DateTime" name="Created Date" refname="System.CreatedDate" />
+      <FIELD reportable="dimension" type="String" name="Created By" refname="System.CreatedBy" />
+      <FIELD type="PlainText" name="Description" refname="System.Description">
+        <HELPTEXT>The description of the task / impediment / bug</HELPTEXT>
+      </FIELD>
+      <FIELD type="History" name="History" refname="System.History">
+        <HELPTEXT>Discussion thread and other historical information</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="measure" type="Integer" name="ExternalLinkCount" refname="System.ExternalLinkCount" />
+      <FIELD type="Integer" name="RelatedLinkCount" refname="System.RelatedLinkCount" />
+      <FIELD reportable="dimension" type="String" name="Team Project" refname="System.TeamProject" />
+      <FIELD reportable="measure" type="Integer" name="HyperLinkCount" refname="System.HyperLinkCount" />
+      <FIELD reportable="measure" type="Integer" name="AttachedFileCount" refname="System.AttachedFileCount" />
+      <FIELD type="String" name="Node Name" refname="System.NodeName" />
+      <FIELD reportable="dimension" type="TreePath" name="Area Path" refname="System.AreaPath">
+        <HELPTEXT>The area of the product with which this bug is associated</HELPTEXT>
+      </FIELD>
+      <FIELD type="DateTime" name="Revised Date" refname="System.RevisedDate" />
+      <FIELD reportable="dimension" type="DateTime" name="Changed Date" refname="System.ChangedDate" />
+      <FIELD reportable="dimension" type="Integer" name="ID" refname="System.Id">
+        <HELPTEXT>Human readable, auto-populated numeric Id</HELPTEXT>
+      </FIELD>
+      <FIELD type="Integer" name="AreaID" refname="System.AreaId" />
+      <FIELD type="String" name="Authorized As" refname="System.AuthorizedAs" />
+      <FIELD type="String" name="HIC Defect Severity" refname="HIC.VSTF.Scrum.Defect.Severity">
+        <HELPTEXT>The severity of defect/bug</HELPTEXT>
+        <ALLOWEDVALUES>
+          <LISTITEM value="Critical" />
+          <LISTITEM value="High" />
+          <LISTITEM value="Medium" />
+          <LISTITEM value="Low" />
+        </ALLOWEDVALUES>
+        <WHEN field="Conchango.VSTS.Scrum.SprintBacklogItemType" value="Bug">
+          <REQUIRED />
+        </WHEN>
+      </FIELD>
+    </FIELDS>
+    <WORKFLOW>
+      <STATES>
+        <STATE value="Not Done" />
+        <STATE value="In Progress" />
+        <STATE value="Done" />
+        <STATE value="Deferred" />
+        <STATE value="Deleted" />
+      </STATES>
+      <TRANSITIONS>
+        <TRANSITION from="" to="Not Done">
+          <REASONS>
+            <DEFAULTREASON value="New" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Not Done" to="In Progress">
+          <REASONS>
+            <DEFAULTREASON value="Work has commenced" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Not Done" to="Deleted">
+          <REASONS>
+            <DEFAULTREASON value="Item has been marked for deletion" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Deleted" to="Not Done">
+          <REASONS>
+            <DEFAULTREASON value="Item has been marked for restoration" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Not Done" to="Deferred">
+          <REASONS>
+            <DEFAULTREASON value="Descoped from Sprint" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="In Progress" to="Done">
+          <REASONS>
+            <DEFAULTREASON value="Work has been completed" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="In Progress" to="Deferred">
+          <REASONS>
+            <DEFAULTREASON value="Descoped from Sprint" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="In Progress" to="Deleted">
+          <REASONS>
+            <DEFAULTREASON value="Item has been marked for deletion" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Deferred" to="In Progress">
+          <REASONS>
+            <DEFAULTREASON value="Rescoped to Sprint" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Done" to="In Progress">
+          <REASONS>
+            <DEFAULTREASON value="Work not yet completed" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+      </TRANSITIONS>
+    </WORKFLOW>
+    <FORM>
+      <Layout>
+        <Group>
+          <Column PercentWidth="100">
+            <Control FieldName="System.Title" Type="FieldControl" Label="Title" LabelPosition="Left" />
+          </Column>
+        </Group>
+        <Group>
+          <Column PercentWidth="50">
+            <Group Label="Planning">
+              <Column PercentWidth="100">
+                <Control FieldName="Conchango.VSTS.Scrum.SprintNumber" Type="FieldControl" Label="Sprint Number" LabelPosition="Left" />
+                <Control FieldName="System.AreaPath" Type="WorkItemClassificationControl" Label="&amp;Area:" LabelPosition="Left" />
+                <Control FieldName="Conchango.VSTS.Scrum.EstimatedEffort" Type="FieldControl" Label="Estimated Effort" LabelPosition="Left" />
+                <Control FieldName="Conchango.VSTS.Scrum.WorkRemaining" Type="FieldControl" Label="Work Remaining" LabelPosition="Left" />
+              </Column>
+            </Group>
+          </Column>
+          <Column PercentWidth="50">
+            <Group Label="Status">
+              <Column PercentWidth="100">
+                <Control FieldName="Conchango.VSTS.Scrum.SprintBacklogItemType" Type="FieldControl" Label="Backlog Item Type" LabelPosition="Left" />
+                <Control FieldName="System.AssignedTo" Type="FieldControl" Label="Owned By" LabelPosition="Left" />
+                <Control FieldName="System.State" Type="FieldControl" Label="Current Status" LabelPosition="Left" />
+              </Column>
+            </Group>
+          </Column>
+        </Group>
+        <TabGroup>
+          <Tab Label="Description">
+            <Control FieldName="System.Description" Type="HtmlFieldControl" Label="Description" LabelPosition="Top" Dock="Fill" />
+          </Tab>
+          <Tab Label="History">
+            <Control FieldName="System.History" Type="WorkItemLogControl" Label="Detailed Description and History" LabelPosition="Top" Dock="Fill" />
+          </Tab>
+          <Tab Label="Links">
+            <Control Type="LinksControl" LabelPosition="Top" />
+          </Tab>
+          <Tab Label="File Attachments">
+            <Control Type="AttachmentsControl" LabelPosition="Top" />
+          </Tab>
+          <Tab Label="Bug Details">
+            <Group>
+              <Column PercentWidth="50">
+                <Group Label="Found In">
+                  <Column PercentWidth="50">
+                    <Control FieldName="Microsoft.VSTS.Build.FoundIn" Type="FieldControl" Label="Build:" LabelPosition="Left" />
+                    <Control FieldName="Conchango.VSTS.Scrum.Build.Environment" Type="FieldControl" Label="Environment:" LabelPosition="Left" />
+                    <Control FieldName="HIC.VSTF.Scrum.Defect.Severity" Type="FieldControl" Label="Severity:" LabelPosition="Left" />
+                    <!--<Control FieldName="Conchango.VSTS.Scrum.Severity" Type="FieldControl" Label="Severity:" LabelPosition="Left" />-->
+                  </Column>
+                </Group>
+              </Column>
+              <Column PercentWidth="50">
+                <Group Label="Fixed In">
+                  <Column PercentWidth="50">
+                    <Control FieldName="Microsoft.VSTS.Build.IntegrationBuild" Type="FieldControl" Label="Build:" LabelPosition="Left" />
+                  </Column>
+                </Group>
+              </Column>
+            </Group>
+          </Tab>
+        </TabGroup>
+      </Layout>
+    </FORM>
+  </WORKITEMTYPE>
+</WITD>

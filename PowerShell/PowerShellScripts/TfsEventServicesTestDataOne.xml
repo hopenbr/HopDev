@@ -1,0 +1,51 @@
+<?xml version="1.0"  encoding="utf-8" ?>
+<TfsEventServicesTestData>
+	<Tests>
+		<Test name="TestDBATask2Test" sleeptime="15">
+			<Create>
+				<Fields>
+					<Field name="Title" value="[TEST]:DBA Task Deployment to Test" />
+					<Field name="Deployment Type" value="DataBase" />
+					<Field name="HIC Project" value="DBA" />
+					<Field name="HIC Deployment Impact" value="None" />
+					<Field name="Current Test Environment" value="Dev" />
+					<Field name="New Test Environment" value="Test" />
+					<Field name="HIC Deployment Priority" value="1 - Normal" />
+					<Field name="Deployment Date" value="[TODAY]" />
+					<Field name="HIC Deployment Time" value="After 5 pm" />
+					<Field name="Dependency" value="No" />
+					<Field name="HIC DBA Type" value="DB2" />
+					<Field name="HIC DBA Subsystem" value="DSNP" />
+					<Field name="HIC DBA Name" value="CC390" />
+					<Field name="Description" value="[TEST]" />
+				</Fields>
+				<Verify>
+					<Fields>
+						<Field name="HIC Deployment Approver" value="TFSBUILD" erroraction="fail"/>
+						<!--<Field name="HIC Deployment Approver" value="[USERNAME]" erroraction="Warn"/>-->
+						<Field name="HIC Test Environment Structure" value="Harleysville" erroraction="fail"/>
+						<Field name="HIC Auto Fill Count" value="[ID]" erroraction="fail"/>
+						<Field name="Area Path" value="TestII.Projects\DBI\Deployment" erroraction="fail"/>
+						<Field name="RelatedLinkCount" value="0" erroraction="fail"/>
+						<Field name="Assigned To" value="System DBA Group" erroraction="fail"/>
+						<Field name="Description" value="[NOTNULL]" erroraction="Warn"/>
+					</Fields>`
+				</Verify>
+			</Create>
+			<LifeCycle>
+				<!--cycle must in asending order first is run first -->
+				<!--Auto approval DBI -->
+				<Cycle name="Deployed">
+					<Fields>
+						<Field name="State" value="Deployed" />
+					</Fields>
+					<Verify>
+						<Fields>
+							<Field name="Area Path" value="TestII.Projects\DBI\Closed" erroraction="fail"/>
+						</Fields>
+					</Verify>
+				</Cycle>
+			</LifeCycle>
+		</Test>
+	</Tests>
+</TfsEventServicesTestData>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="urn:schema-Harleysvillegroup-com:SearchAndReplace" 
+           elementFormDefault="qualified" 
+           xmlns="urn:schema-Harleysvillegroup-com:SearchAndReplace" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Searches">
+		<xs:annotation>
+			<xs:documentation>SRM Search and Replace XML is used in conjenction with the Harleysville PowerPlatform</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Search" maxOccurs="unbounded" minOccurs="1">
+					<xs:annotation>
+						<xs:documentation>Element is for single item to search and replace</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+						</xs:sequence>
+						<xs:attribute name="searchfor" type="xs:string">
+							<xs:annotation>
+								<xs:documentation>Regular Expression (.Net) statement that is used in the search</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="replacewith" type="xs:string">
+							<xs:annotation>
+								<xs:documentation>String that will be used as the replacement value when the searchfor regex is found</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

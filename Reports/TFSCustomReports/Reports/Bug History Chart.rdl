@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="TfsReportDS">
+      <DataSourceReference>TfsReportDS</DataSourceReference>
+      <rd:DataSourceID>87d2e8e1-1753-4c53-8a75-cf05d5befd76</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>2.5cm</BottomMargin>
+  <RightMargin>2.5cm</RightMargin>
+  <PageWidth>27.9cm</PageWidth>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:GridSpacing>0.25cm</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <ReportItems>
+      <Textbox Name="textbox2">
+        <Left>2.25cm</Left>
+        <Top>14cm</Top>
+        <rd:DefaultName>textbox2</rd:DefaultName>
+        <ZIndex>3</ZIndex>
+        <Visibility>
+          <Hidden>=Count(Fields!Date.Value, "TfsReportDS") &gt; 1</Hidden>
+        </Visibility>
+        <Width>6.75cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontFamily>Verdana</FontFamily>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.63492cm</Height>
+        <Value>No data available yet</Value>
+      </Textbox>
+      <Image Name="image1">
+        <Sizing>AutoSize</Sizing>
+        <ZIndex>2</ZIndex>
+        <Width>21.56085cm</Width>
+        <Source>Embedded</Source>
+        <Style />
+        <Height>1.66667cm</Height>
+        <Value>banner_no_bevel_1</Value>
+      </Image>
+      <Textbox Name="textbox1">
+        <Left>2.25cm</Left>
+        <Top>2.25cm</Top>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <ZIndex>1</ZIndex>
+        <Visibility>
+          <Hidden>=Count(Fields!Date.Value, "TfsReportDS") &lt;= 1</Hidden>
+        </Visibility>
+        <Width>19.25cm</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontFamily>Verdana</FontFamily>
+          <FontSize>16pt</FontSize>
+          <Color>#550e2b</Color>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.88492cm</Height>
+        <Value>="Bug History Chart"</Value>
+      </Textbox>
+      <Chart Name="chart1">
+        <Legend>
+          <Visible>true</Visible>
+          <Style>
+            <BorderStyle>
+              <Default>Solid</Default>
+            </BorderStyle>
+            <FontFamily>Verdana</FontFamily>
+            <FontSize>8pt</FontSize>
+          </Style>
+          <Position>BottomLeft</Position>
+        </Legend>
+        <Subtype>Stacked</Subtype>
+        <Title />
+        <Height>10.25cm</Height>
+        <CategoryAxis>
+          <Axis>
+            <Title>
+              <Caption>Date</Caption>
+              <Style>
+                <FontFamily>Verdana</FontFamily>
+                <FontSize>8pt</FontSize>
+              </Style>
+            </Title>
+            <Style>
+              <FontFamily>Verdana</FontFamily>
+              <FontSize>8pt</FontSize>
+              <Format>=IIf(User.Language="en-US", "MM-dd-yyyy", "dd-MM-yyyy")</Format>
+            </Style>
+            <MajorGridLines>
+              <ShowGridLines>true</ShowGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MajorGridLines>
+            <MinorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MinorGridLines>
+            <MajorTickMarks>Outside</MajorTickMarks>
+            <Min>0</Min>
+            <MajorInterval>=Fields!Interval.Value</MajorInterval>
+            <Visible>true</Visible>
+          </Axis>
+        </CategoryAxis>
+        <PointWidth>0</PointWidth>
+        <ThreeDProperties>
+          <Rotation>30</Rotation>
+          <Inclination>30</Inclination>
+          <Shading>Simple</Shading>
+          <WallThickness>50</WallThickness>
+        </ThreeDProperties>
+        <DataSetName>TfsReportDS</DataSetName>
+        <SeriesGroupings>
+          <SeriesGrouping>
+            <StaticSeries>
+              <StaticMember>
+                <Label>=IIf(Max(Fields!Severity1.Value)="1","Severity 1",Max(Fields!Severity1.Value))</Label>
+              </StaticMember>
+              <StaticMember>
+                <Label>=IIf(Max(Fields!Severity2.Value)="2","Severity 2",Max(Fields!Severity2.Value))</Label>
+              </StaticMember>
+              <StaticMember>
+                <Label>=IIf(Max(Fields!Severity3.Value)="3","Severity 3",Max(Fields!Severity3.Value))</Label>
+              </StaticMember>
+              <StaticMember>
+                <Label>=IIf(Max(Fields!Severity4.Value)="4","Severity 4",Max(Fields!Severity4.Value))</Label>
+              </StaticMember>
+              <StaticMember>
+                <Label>=IIf(Max(Fields!Severity5.Value)="5","Severity 5",Max(Fields!Severity5.Value))</Label>
+              </StaticMember>
+            </StaticSeries>
+          </SeriesGrouping>
+        </SeriesGroupings>
+        <Top>3.25cm</Top>
+        <PlotArea>
+          <Style>
+            <BorderStyle>
+              <Default>Solid</Default>
+            </BorderStyle>
+            <BorderColor>
+              <Default>#808080</Default>
+            </BorderColor>
+            <BackgroundColor>White</BackgroundColor>
+            <BackgroundGradientEndColor>#d1bec6</BackgroundGradientEndColor>
+            <BackgroundGradientType>TopBottom</BackgroundGradientType>
+          </Style>
+        </PlotArea>
+        <ValueAxis>
+          <Axis>
+            <Title>
+              <Caption>Open Bugs</Caption>
+              <Style>
+                <FontFamily>Verdana</FontFamily>
+                <FontSize>8pt</FontSize>
+              </Style>
+            </Title>
+            <Style>
+              <FontFamily>Verdana</FontFamily>
+              <FontSize>8pt</FontSize>
+            </Style>
+            <MajorGridLines>
+              <ShowGridLines>true</ShowGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MajorGridLines>
+            <MinorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MinorGridLines>
+            <MajorTickMarks>Outside</MajorTickMarks>
+            <Min>0</Min>
+            <Margin>true</Margin>
+            <Visible>true</Visible>
+            <Scalar>true</Scalar>
+          </Axis>
+        </ValueAxis>
+        <Visibility>
+          <Hidden>=Count(Fields!Date.Value, "TfsReportDS") &lt;= 1</Hidden>
+        </Visibility>
+        <Type>Area</Type>
+        <Width>21.5cm</Width>
+        <CategoryGroupings>
+          <CategoryGrouping>
+            <DynamicCategories>
+              <Grouping Name="chart1_CategoryGroup1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Date.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Label />
+            </DynamicCategories>
+          </CategoryGrouping>
+        </CategoryGroupings>
+        <Palette>Default</Palette>
+        <ChartData>
+          <ChartSeries>
+            <DataPoints>
+              <DataPoint>
+                <DataValues>
+                  <DataValue>
+                    <Value>=Sum(Fields!Priority1.Value)</Value>
+                  </DataValue>
+                </DataValues>
+                <DataLabel />
+                <Style>
+                  <BackgroundColor>#5b1531</BackgroundColor>
+                  <BackgroundGradientEndColor>#a4808e</BackgroundGradientEndColor>
+                  <BackgroundGradientType>TopBottom</BackgroundGradientType>
+                </Style>
+                <Marker>
+                  <Size>6pt</Size>
+                </Marker>
+              </DataPoint>
+            </DataPoints>
+          </ChartSeries>
+          <ChartSeries>
+            <DataPoints>
+              <DataPoint>
+                <DataValues>
+                  <DataValue>
+                    <Value>=Sum(Fields!Priority2.Value)</Value>
+                  </DataValue>
+                </DataValues>
+                <DataLabel />
+                <Style>
+                  <BackgroundColor>#9ea56e</BackgroundColor>
+                  <BackgroundGradientEndColor>#d0d2b7</BackgroundGradientEndColor>
+                  <BackgroundGradientType>TopBottom</BackgroundGradientType>
+                </Style>
+                <Marker>
+                  <Size>6pt</Size>
+                </Marker>
+              </DataPoint>
+            </DataPoints>
+          </ChartSeries>
+          <ChartSeries>
+            <DataPoints>
+              <DataPoint>
+                <DataValues>
+                  <DataValue>
+                    <Value>=Sum(Fields!Priority3.Value)</Value>
+                  </DataValue>
+                </DataValues>
+                <DataLabel />
+                <Style>
+                  <BackgroundColor>#acb283</BackgroundColor>
+                  <BackgroundGradientEndColor>#d2d9c3</BackgroundGradientEndColor>
+                  <BackgroundGradientType>TopBottom</BackgroundGradientType>
+                </Style>
+                <Marker>
+                  <Size>6pt</Size>
+                </Marker>
+              </DataPoint>
+            </DataPoints>
+          </ChartSeries>
+          <ChartSeries>
+            <DataPoints>
+              <DataPoint>
+                <DataValues>
+                  <DataValue>
+                    <Value>=Sum(Fields!Priority4.Value)</Value>
+                  </DataValue>
+                </DataValues>
+                <DataLabel />
+                <Style>
+                  <BackgroundColor>#b9be97</BackgroundColor>
+                  <BackgroundGradientEndColor>#e2e0ce</BackgroundGradientEndColor>
+                  <BackgroundGradientType>TopBottom</BackgroundGradientType>
+                </Style>
+                <Marker>
+                  <Size>6pt</Size>
+                </Marker>
+              </DataPoint>
+            </DataPoints>
+          </ChartSeries>
+          <ChartSeries>
+            <DataPoints>
+              <DataPoint>
+                <DataValues>
+                  <DataValue>
+                    <Value>=Sum(Fields!Priority5.Value)</Value>
+                  </DataValue>
+                </DataValues>
+                <DataLabel />
+                <Style>
+                  <BackgroundColor>#c7cbac</BackgroundColor>
+                  <BackgroundGradientEndColor>#ebe7d9</BackgroundGradientEndColor>
+                  <BackgroundGradientType>TopBottom</BackgroundGradientType>
+                </Style>
+                <Marker>
+                  <Size>6pt</Size>
+                </Marker>
+              </DataPoint>
+            </DataPoints>
+          </ChartSeries>
+        </ChartData>
+        <Style>
+          <BackgroundColor>White</BackgroundColor>
+        </Style>
+      </Chart>
+    </ReportItems>
+    <Height>14.75cm</Height>
+  </Body>
+  <rd:ReportID>d999e6e6-c92a-40d3-869d-49ad9bdfe49d</rd:ReportID>
+  <LeftMargin>2.5cm</LeftMargin>
+  <EmbeddedImages>
+    <EmbeddedImage Name="banner_no_bevel_1">
+      <ImageData>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</ImageData>
+      <MIMEType>image/jpeg</MIMEType>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <DataSets>
+    <DataSet Name="TfsReportDS">
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText>---------------------------------------------------------- Test data
+--DECLARE @vProjectName AS varchar(20)
+--SET @vProjectName= '/Mark027';
+----------------------------------------------------------End of test data
+
+-- -----------------------------------
+-- Get all Sprint backlogs for this project
+-- -----------------------------------
+WITH CTE1 AS
+(
+SELECT         c.Conchango_VSTS_Scrum_Severity AS Severity,
+                     w.System_ID as BacklogId,
+                     w.Conchango_VSTS_Scrum_SprintBacklogItemType AS BacklogType
+FROM            [Current Work Item] AS c
+INNER JOIN  [Team Project] AS t ON c.[Team Project] = t.__ID
+INNER JOIN  [Work Item] AS w ON c.[Work Item] = w.__ID
+WHERE         w.System_WorkItemType = N'Sprint Backlog Item' 
+AND               '/' + t.[Team Project]=@vProjectName
+AND              w.System_State != 'Deleted'
+),
+
+-- -----------------------------------
+-- Get all history dates for the backlogs
+-- -----------------------------------
+CTE2 AS
+(
+SELECT         h.Date
+FROM           CTE1 AS c
+INNER JOIN [Work Item] AS w ON BacklogId = w.System_Id
+INNER JOIN [Work Item History] AS h ON h.[Work Item] = w.__ID
+),
+
+-- -----------------------------------
+-- Get first date
+-- -----------------------------------
+CTE3 AS
+(
+SELECT Min(Date) AS FirstDate,
+             CASE WHEN DateDiff(day, Min(Date), GETDATE()) &gt; 200
+                       THEN 28
+                       ELSE 7
+             END AS Interval
+FROM CTE2
+),
+
+-- -----------------------------------
+-- Get the Bugs for this project
+-- -----------------------------------
+CTE4 AS
+(
+SELECT   Severity,
+               BacklogId
+FROM     CTE1
+WHERE   BacklogType = 'Bug'
+),
+
+-- -----------------------------------
+-- Get all dates for the bugs
+-- -----------------------------------
+CTE5 AS
+(
+SELECT         BacklogId,
+                     Date,
+                     System_State AS State
+FROM           CTE1 AS c
+INNER JOIN [Work Item] AS w ON BacklogId=w.System_Id
+INNER JOIN [Work Item History] AS h ON h.[Work Item] = w.__ID
+),
+
+-- -----------------------------------
+-- Get earliest date for each bug
+-- -----------------------------------
+CTE6 AS
+(
+SELECT BacklogId,
+             Min(Date) AS StartDate
+FROM   CTE5
+GROUP BY BacklogId
+),
+
+
+-- -----------------------------------
+-- Get all 'Done' dates for the bugs
+-- -----------------------------------
+CTE7 AS
+(
+SELECT   BacklogId,
+               Date
+FROM     CTE5
+WHERE   State = 'Done'
+),
+
+-- -----------------------------------
+-- Get earliest 'Done' date for each bug
+-- -----------------------------------
+CTE8 AS
+(
+SELECT BacklogId,
+             Min(Date) AS EndDate
+FROM   CTE7
+GROUP BY BacklogId
+),
+
+-- -----------------------------------
+-- Join start and end dates to the bugs
+-- -----------------------------------
+CTE9 AS
+(
+SELECT c.BacklogId,
+             Severity,
+             StartDate,
+             CASE WHEN EndDate IS NULL
+                       THEN GETDATE()
+                       ELSE EndDate
+             END AS EndDate
+FROM  CTE4 AS c
+INNER JOIN CTE6 AS c2 ON c.BacklogId = c2.BacklogId
+LEFT OUTER JOIN CTE8 AS c3 ON c.BacklogId = c3.BacklogId
+),
+
+-- ----------------------------------------------------------
+-- Recursively build a set of dates from the earliest date to now
+-- ----------------------------------------------------------
+CTE10 AS
+(
+SELECT FirstDate As Date,
+             Interval
+FROM CTE3
+UNION ALL
+SELECT DATEADD(day,1,Date) AS Date,
+             Interval
+FROM CTE10
+WHERE DATEADD(day,1,Date)&lt; GETDATE()
+),
+
+CTE11 AS
+(
+SELECT 1 AS Total,
+             Severity,
+             Date
+FROM CTE9 AS c
+INNER JOIN CTE10 AS d ON c.StartDate &lt;= d.Date AND c.EndDate &gt;= d.Date
+),
+
+CTE12 AS
+(
+SELECT Sum(Total) AS Total,
+             Severity,
+             Date
+FROM  CTE11 GROUP BY Date, Severity
+),
+
+CTE13 AS
+(
+SELECT a.Date,
+             c1.Total AS Priority1,
+             c2.Total AS Priority2,
+             c3.Total AS Priority3,
+             c4.Total AS Priority4,
+             c5.Total AS Priority5,
+             c1.Severity AS Severity1,
+             c2.Severity AS Severity2,
+             c3.Severity AS Severity3,
+             c4.Severity AS Severity4,
+             c5.Severity AS Severity5,
+             Interval
+FROM CTE10 AS a
+LEFT OUTER JOIN CTE12 AS c1 ON a.Date= c1.Date AND SUBSTRING(c1.Severity,1,1) = '1'
+LEFT OUTER JOIN CTE12 AS c2 ON a.Date= c2.Date AND SUBSTRING(c2.Severity,1,1) = '2'
+LEFT OUTER JOIN CTE12 AS c3 ON a.Date= c3.Date AND SUBSTRING(c3.Severity,1,1) = '3'
+LEFT OUTER JOIN CTE12 AS c4 ON a.Date= c4.Date AND SUBSTRING(c4.Severity,1,1) = '4'
+LEFT OUTER JOIN CTE12 AS c5 ON a.Date= c5.Date AND SUBSTRING(c5.Severity,1,1) = '5'
+)
+
+SELECT * FROM CTE13  ORDER BY Date OPTION(MAXRECURSION 10000)</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@vProjectName">
+            <Value>=Globals!ReportFolder</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <DataSourceName>TfsReportDS</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="Date">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>Date</DataField>
+        </Field>
+        <Field Name="Priority1">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>Priority1</DataField>
+        </Field>
+        <Field Name="Priority2">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>Priority2</DataField>
+        </Field>
+        <Field Name="Priority3">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>Priority3</DataField>
+        </Field>
+        <Field Name="Priority4">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>Priority4</DataField>
+        </Field>
+        <Field Name="Priority5">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>Priority5</DataField>
+        </Field>
+        <Field Name="Severity1">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Severity1</DataField>
+        </Field>
+        <Field Name="Severity2">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Severity2</DataField>
+        </Field>
+        <Field Name="Severity3">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Severity3</DataField>
+        </Field>
+        <Field Name="Severity4">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Severity4</DataField>
+        </Field>
+        <Field Name="Severity5">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Severity5</DataField>
+        </Field>
+        <Field Name="Interval">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>Interval</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Width>22cm</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>2.5cm</TopMargin>
+  <PageHeight>21cm</PageHeight>
+</Report>

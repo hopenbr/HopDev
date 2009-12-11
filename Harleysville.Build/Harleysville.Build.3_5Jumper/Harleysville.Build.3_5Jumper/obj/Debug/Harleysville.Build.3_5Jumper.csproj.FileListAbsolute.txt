@@ -1,0 +1,6 @@
+C:\TFSWorkspaces\VS2008\SRM\Branches\DEVELOPMENT\Harleysville.Build\Harleysville.Build.3_5Jumper\Harleysville.Build.3_5Jumper\obj\Debug\ResolveAssemblyReference.cache
+C:\TFSWorkspaces\VS2008\SRM\Branches\DEVELOPMENT\Harleysville.Build\Harleysville.Build.3_5Jumper\Harleysville.Build.3_5Jumper\bin\Debug\MSBuild.exe
+C:\TFSWorkspaces\VS2008\SRM\Branches\DEVELOPMENT\Harleysville.Build\Harleysville.Build.3_5Jumper\Harleysville.Build.3_5Jumper\bin\Debug\MSBuild.pdb
+C:\TFSWorkspaces\VS2008\SRM\Branches\DEVELOPMENT\Harleysville.Build\Harleysville.Build.3_5Jumper\Harleysville.Build.3_5Jumper\obj\Debug\MSBuild.exe
+C:\TFSWorkspaces\VS2008\SRM\Branches\DEVELOPMENT\Harleysville.Build\Harleysville.Build.3_5Jumper\Harleysville.Build.3_5Jumper\obj\Debug\MSBuild.pdb
+C:\TFSWorkspaces\VS2008\SRM\Branches\DEVELOPMENT\Harleysville.Build\Harleysville.Build.3_5Jumper\Harleysville.Build.3_5Jumper\bin\Debug\MSBuild.exe.config

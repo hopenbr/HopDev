@@ -1,0 +1,21 @@
+﻿<?xml version="1.0"  encoding="utf-8" ?>
+<TFSDeployer>
+	<BuildTypeFileUri>vstfs:///VersionControl/VersionedItem/AgentPortal%25252fTeamBuildTypes%25252f>Version4.0.Release%25252fTFSBuild.proj%2526changesetVersion%253d10430%2526deletionId%253d0</BuildTypeFileUri>
+	<BuildMachine>AS73TFSBUILD01</BuildMachine>
+	<DropLocation>\\AS73TFSBUILD01\Harleysville.Projects\AgentPortal\Drops\AgentPortal-4.0.0.100</DropLocation>
+	<BuildStatus>Successfully Completed</BuildStatus>
+	<StartTime>7/10/2007 3:23:46 PM</StartTime>
+	<BuildType>Version4.0.Release</BuildType>
+	<RequestedBy>CORP\BHOPENW</RequestedBy>
+	<TeamProject>AgentPortal</TeamProject>
+	<BuildNumber>AgentPortal-4.0.0.100</BuildNumber>
+	<BuildQuality>Deploy2-SystemTest01</BuildQuality>
+	<BuildUri>07282007_001009_14718</BuildUri>
+	<FinishTime>7/10/2007 3:24:06 PM</FinishTime>
+	<LogLocation>\\AS73TFSBUILD01\Harleysville.Projects\AgentPortal\Drops\AgentPortal-4.0.0.100\BuildLog.txt</LogLocation>
+	<LastChangedBy>CORP\BHOPENW</LastChangedBy>
+	<LastChangedOn>7/12/2007 7:42:47 AM</LastChangedOn>
+	<BuildStatusId>100</BuildStatusId>
+</TFSDeployer>
+
+

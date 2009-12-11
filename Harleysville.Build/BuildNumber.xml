@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <BuildNumber Name="Harleysville.Build.Tasks">
+    <Major>7</Major>
+    <Minor>1</Minor>
+    <Fix>1</Fix>
+    <Build>0</Build>
+  </BuildNumber>
+</project>

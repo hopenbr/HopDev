@@ -1,0 +1,1445 @@
+<?xml version="1.0"  encoding="utf-8" ?>
+<Packages>
+	<Package Name="HmiChoicePointReport">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="ChoicePoint.TransformerSoap.TransformXML=http://\w+?/XactConnectHV/Transformer.asmx" Replace="ChoicePoint.TransformerSoap.TransformXML=http://as73rtidev01/XactConnectHV/Transformer.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="ChoicePoint.TransformerSoap.TransformXML=http://\w+?/XactConnectHV/Transformer.asmx" Replace="ChoicePoint.TransformerSoap.TransformXML=http://as73rtitst01/XactConnectHV/Transformer.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="ChoicePoint.TransformerSoap.TransformXML=http://\w+?/XactConnectHV/Transformer.asmx" Replace="ChoicePoint.TransformerSoap.TransformXML=http://as73rtiprd01/XactConnectHV/Transformer.asmx" />
+					<Search Regex="NCF.CPAccountSuffix=TST" Replace="NCF.CPAccountSuffix=" />
+					<Search Regex="CLUEP.ChPtIncAccountSuffix=TST" Replace="CLUEP.ChPtIncAccountSuffix=" />
+					<Search Regex="CLUEAuto.ChPtIncAccountSuffix=TST" Replace="CLUEAuto.ChPtIncAccountSuffix=" />
+					<Search Regex="MVR.ChPtIncAccountSuffix=TST" Replace="MVR.ChPtIncAccountSuffix=" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="ChoicePoint.TransformerSoap.TransformXML=http://\w+?/XactConnectHV/Transformer.asmx" Replace="ChoicePoint.TransformerSoap.TransformXML=http://as73rtipre01/XactConnectHV/Transformer.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="ChoicePoint.TransformerSoap.TransformXML=http://\w+?/XactConnectHV/Transformer.asmx" Replace="ChoicePoint.TransformerSoap.TransformXML=http://as73rtitst01/XactConnectHV/Transformer.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="ChoicePoint.TransformerSoap.TransformXML=http://\w+?/XactConnectHV/Transformer.asmx" Replace="ChoicePoint.TransformerSoap.TransformXML=http://as73rtidev01/XactConnectHV/Transformer.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="ChoicePoint.TransformerSoap.TransformXML=http://\w+?/XactConnectHV/Transformer.asmx" Replace="ChoicePoint.TransformerSoap.TransformXML=http://\w+?/XactConnectHV/Transformer.asmx" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiInsuredAccount">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="service.cnf">								
+					<Search Regex="hmiInsuredAccount.ImagingServices.endpoint=http://\w+?/integrationservices/imagingservice.asmx" Replace="hmiInsuredAccount.ImagingServices.endpoint=http://webservicesasy/integrationservices/imagingservice.asmx" />
+					<Search Regex="hmiInsuredAccount.IADBServices.endpoint=http://\w+?/IntegrationServices/IADBService.asmx" Replace="hmiInsuredAccount.IADBServices.endpoint=http://webservicesasy/IntegrationServices/IADBService.asmx" />
+					<Search Regex="hmiInsuredAccount.billingServices.endpoint=http://\w+?/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" Replace="hmiInsuredAccount.billingServices.endpoint=http://webservicesasy/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" />
+					<Search Regex="hmiInsuredAccount.AISServices.endpoint=http://\w+?/AISService/Service.asmx" Replace="hmiInsuredAccount.AISServices.endpoint=http://webservicesasy/AISService/Service.asmx" />
+					<Search Regex="hmiInsuredAccount.irTaskService.endpoint=http://\w+?/integrationservices/imagerightservice.asmx" Replace="hmiInsuredAccount.irTaskService.endpoint=http://webservicesasy/integrationservices/imagerightservice.asmx" />
+					<Search Regex="hmiInsuredAccount.legacyService.endpoint=http://\w+?/IntegrationServices/LegacyService.asmx" Replace="hmiInsuredAccount.legacyService.endpoint=http://webservicesasy/IntegrationServices/LegacyService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="hmiInsuredAccount.billingServices.endpoint=http://\w+?/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" Replace="hmiInsuredAccount.billingServices.endpoint=http://webservicese2e/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" />
+					<Search Regex="hmiInsuredAccount.AISServices.endpoint=http://\w+?/AISService/Service.asmx" Replace="hmiInsuredAccount.AISServices.endpoint=http://webservicese2e/AISService/Service.asmx" />
+					<Search Regex="hmiInsuredAccount.ImagingServices.endpoint=http://\w+?/integrationservices/imagingservice.asmx" Replace="hmiInsuredAccount.ImagingServices.endpoint=http://webservicese2e/integrationservices/imagingservice.asmx" />
+					<Search Regex="hmiInsuredAccount.IADBServices.endpoint=http://\w+?/IntegrationServices/IADBService.asmx" Replace="hmiInsuredAccount.IADBServices.endpoint=http://webservicese2e/IntegrationServices/IADBService.asmx" />
+					<Search Regex="hmiInsuredAccount.irTaskService.endpoint=http://\w+?/integrationservices/imagerightservice.asmx" Replace="hmiInsuredAccount.irTaskService.endpoint=http://webservicese2e/integrationservices/imagerightservice.asmx" />
+					<Search Regex="hmiInsuredAccount.legacyService.endpoint=http://\w+?/IntegrationServices/LegacyService.asmx" Replace="hmiInsuredAccount.legacyService.endpoint=http://webservicese2e/IntegrationServices/LegacyService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="hmiInsuredAccount.AISServices.endpoint=http://\w+?/AISService/Service.asmx" Replace="hmiInsuredAccount.AISServices.endpoint=http://webservicesprd/AISService/Service.asmx" />
+					<Search Regex="hmiInsuredAccount.IADBServices.endpoint=http://\w+?/IntegrationServices/IADBService.asmx" Replace="hmiInsuredAccount.IADBServices.endpoint=http://webservicesprd/IntegrationServices/IADBService.asmx" />
+					<Search Regex="hmiInsuredAccount.billingServices.endpoint=http://\w+?/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" Replace="hmiInsuredAccount.billingServices.endpoint=http://webservicesprd/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" />
+					<Search Regex="hmiInsuredAccount.ImagingServices.endpoint=http://\w+?/integrationservices/imagingservice.asmx" Replace="hmiInsuredAccount.ImagingServices.endpoint=http://webservicesprd/integrationservices/imagingservice.asmx" />
+					<Search Regex="hmiInsuredAccount.irTaskService.endpoint=http://\w+?/integrationservices/imagerightservice.asmx" Replace="hmiInsuredAccount.irTaskService.endpoint=http://webservicesprd/integrationservices/imagerightservice.asmx" />
+					<Search Regex="hmiInsuredAccount.legacyService.endpoint=http://\w+?/IntegrationServices/LegacyService.asmx" Replace="hmiInsuredAccount.legacyService.endpoint=http://webservicesprd/IntegrationServices/LegacyService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="hmiInsuredAccount.billingServices.endpoint=http://\w+?/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" Replace="hmiInsuredAccount.billingServices.endpoint=http://webservicesstg/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" />
+					<Search Regex="hmiInsuredAccount.AISServices.endpoint=http://\w+?/AISService/Service.asmx" Replace="hmiInsuredAccount.AISServices.endpoint=http://webservicesstg/AISService/Service.asmx" />
+					<Search Regex="hmiInsuredAccount.IADBServices.endpoint=http://\w+?/IntegrationServices/IADBService.asmx" Replace="hmiInsuredAccount.IADBServices.endpoint=http://webservicesstg/IntegrationServices/IADBService.asmx" />
+					<Search Regex="hmiInsuredAccount.ImagingServices.endpoint=http://\w+?/integrationservices/imagingservice.asmx" Replace="hmiInsuredAccount.ImagingServices.endpoint=http://webservicesstg/integrationservices/imagingservice.asmx" />
+					<Search Regex="hmiInsuredAccount.irTaskService.endpoint=http://\w+?/integrationservices/imagerightservice.asmx" Replace="hmiInsuredAccount.irTaskService.endpoint=http://webservicesstg/integrationservices/imagerightservice.asmx" />
+					<Search Regex="hmiInsuredAccount.legacyService.endpoint=http://\w+?/IntegrationServices/LegacyService.asmx" Replace="hmiInsuredAccount.legacyService.endpoint=http://webservicesstg/IntegrationServices/LegacyService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="hmiInsuredAccount.ImagingServices.endpoint=http://\w+?/integrationservices/imagingservice.asmx" Replace="hmiInsuredAccount.ImagingServices.endpoint=http://webservicestrn/integrationservices/imagingservice.asmx" />
+					<Search Regex="hmiInsuredAccount.billingServices.endpoint=http://\w+?/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" Replace="hmiInsuredAccount.billingServices.endpoint=http://webservicestrn/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" />
+					<Search Regex="hmiInsuredAccount.AISServices.endpoint=http://\w+?/AISService/Service.asmx" Replace="hmiInsuredAccount.AISServices.endpoint=http://webservicestrn/AISService/Service.asmx" />
+					<Search Regex="hmiInsuredAccount.IADBServices.endpoint=http://\w+?/IntegrationServices/IADBService.asmx" Replace="hmiInsuredAccount.IADBServices.endpoint=http://webservicestrn/IntegrationServices/IADBService.asmx" />
+					<Search Regex="hmiInsuredAccount.irTaskService.endpoint=http://\w+?/integrationservices/imagerightservice.asmx" Replace="hmiInsuredAccount.irTaskService.endpoint=http://webservicestrn/integrationservices/imagerightservice.asmx" />
+					<Search Regex="hmiInsuredAccount.legacyService.endpoint=http://\w+?/IntegrationServices/LegacyService.asmx" Replace="hmiInsuredAccount.legacyService.endpoint=http://webservicestrn/IntegrationServices/LegacyService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="hmiInsuredAccount.billingServices.endpoint=http://\w+?/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" Replace="hmiInsuredAccount.billingServices.endpoint=http://webservicestst1/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" />
+					<Search Regex="hmiInsuredAccount.IADBServices.endpoint=http://\w+?/IntegrationServices/IADBService.asmx" Replace="hmiInsuredAccount.IADBServices.endpoint=http://webservicestst1/IntegrationServices/IADBService.asmx" />
+					<Search Regex="hmiInsuredAccount.AISServices.endpoint=http://\w+?/AISService/Service.asmx" Replace="hmiInsuredAccount.AISServices.endpoint=http://webservicestst1/AISService/Service.asmx" />
+					<Search Regex="hmiInsuredAccount.ImagingServices.endpoint=http://\w+?/integrationservices/imagingservice.asmx" Replace="hmiInsuredAccount.ImagingServices.endpoint=http://webservicestst1/integrationservices/imagingservice.asmx" />
+					<Search Regex="hmiInsuredAccount.irTaskService.endpoint=http://\w+?/integrationservices/imagerightservice.asmx" Replace="hmiInsuredAccount.irTaskService.endpoint=http://webservicestst1/integrationservices/imagerightservice.asmx" />
+					<Search Regex="hmiInsuredAccount.legacyService.endpoint=http://\w+?/IntegrationServices/LegacyService.asmx" Replace="hmiInsuredAccount.legacyService.endpoint=http://webservicestst1/IntegrationServices/LegacyService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="hmiInsuredAccount.AISServices.endpoint=http://\w+?/AISService/Service.asmx" Replace="hmiInsuredAccount.AISServices.endpoint=http://webservicestst/AISService/Service.asmx" />
+					<Search Regex="hmiInsuredAccount.ImagingServices.endpoint=http://\w+?/integrationservices/imagingservice.asmx" Replace="hmiInsuredAccount.ImagingServices.endpoint=http://webservicestst/integrationservices/imagingservice.asmx" />
+					<Search Regex="hmiInsuredAccount.IADBServices.endpoint=http://\w+?/IntegrationServices/IADBService.asmx" Replace="hmiInsuredAccount.IADBServices.endpoint=http://webservicestst/IntegrationServices/IADBService.asmx" />
+					<Search Regex="hmiInsuredAccount.billingServices.endpoint=http://\w+?/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" Replace="hmiInsuredAccount.billingServices.endpoint=http://webservicestst/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" />
+					<Search Regex="hmiInsuredAccount.irTaskService.endpoint=http://\w+?/integrationservices/imagerightservice.asmx" Replace="hmiInsuredAccount.irTaskService.endpoint=http://webservicestst/integrationservices/imagerightservice.asmx" />
+					<Search Regex="hmiInsuredAccount.legacyService.endpoint=http://\w+?/IntegrationServices/LegacyService.asmx" Replace="hmiInsuredAccount.legacyService.endpoint=http://webservicestst/IntegrationServices/LegacyService.asmx" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiClpolTransferBillingTransaction">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="TransactionService.Endpoint=http://\w+?/AQS.TransactionGateway.WebServices/TransactionService.asmx" Replace="TransactionService.Endpoint=http://ws73aqsasy01/AQS.TransactionGateway.WebServices/TransactionService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="TransactionService.Endpoint=http://\w+?/AQS.TransactionGateway.WebServices/TransactionService.asmx" Replace="TransactionService.Endpoint=http://ws73aqse2e02/AQS.TransactionGateway.WebServices/TransactionService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="TransactionService.Endpoint=http://\w+?/AQS.TransactionGateway.WebServices/TransactionService.asmx" Replace="TransactionService.Endpoint=http://as73aqstgwprd01/AQS.TransactionGateway.WebServices/TransactionService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="TransactionService.Endpoint=http://\w+?/AQS.TransactionGateway.WebServices/TransactionService.asmx" Replace="TransactionService.Endpoint=http://as73aqstgwpre01/AQS.TransactionGateway.WebServices/TransactionService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="TransactionService.Endpoint=http://\w+?/AQS.TransactionGateway.WebServices/TransactionService.asmx" Replace="TransactionService.Endpoint=http://as73aqstgwtrn01/AQS.TransactionGateway.WebServices/TransactionService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="TransactionService.Endpoint=http://\w+?/AQS.TransactionGateway.WebServices/TransactionService.asmx" Replace="TransactionService.Endpoint=http://ws73aqstst01/AQS.TransactionGateway.WebServices/TransactionService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="TransactionService.Endpoint=http://\w+?/AQS.TransactionGateway.WebServices/TransactionService.asmx" Replace="TransactionService.Endpoint=http://ws73aqstst02/AQS.TransactionGateway.WebServices/TransactionService.asmx" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiAQSTokenManager">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="sso.endpoint=http://\w+?/AQS.Advantage.Client/WebServices/SingleSignon.asmx" Replace="sso.endpoint=http://ws73aqsasy01/AQS.Advantage.Client/WebServices/SingleSignon.asmx" />			
+					<Search Regex="BatchPrint.password=batchprt" Replace="BatchPrint.password=batchprt" />
+					<Search Regex="PolicyService.password=policy" Replace="PolicyService.password=policy" />
+					<Search Regex="BillingService.password=billing" Replace="BillingService.password=billing" />
+					<Search Regex="BatchPrint.username=batchprtdev" Replace="BatchPrint.username=batchprt" />
+					<Search Regex="SecurityUpload.password=secuplod" Replace="SecurityUpload.password=secuplod" />
+					<Search Regex="TransactionUpload.password=trnuplod" Replace="TransactionUpload.password=trnuplod" />
+					<Search Regex="PolicyService.username=policydev" Replace="PolicyService.username=policy" />
+					<Search Regex="TransactionUpload.username=trnuploddev" Replace="TransactionUpload.username=trnuplod" />
+					<Search Regex="SecurityUpload.username=secuploddev" Replace="SecurityUpload.username=secuplod" />
+					<Search Regex="BillingService.username=billingdev" Replace="BillingService.username=billing" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="sso.endpoint=http://\w+?/AQS.Advantage.Client/WebServices/SingleSignon.asmx" Replace="sso.endpoint=http://ws73aqse2e02/AQS.Advantage.Client/WebServices/SingleSignon.asmx" />
+					<Search Regex="BillingService.username=billingdev" Replace="BillingService.username=billing" />
+					<Search Regex="PolicyService.username=policydev" Replace="PolicyService.username=policy" />
+					<Search Regex="BatchPrint.password=batchprt" Replace="BatchPrint.password=batchprt" />
+					<Search Regex="SecurityUpload.username=secuploddev" Replace="SecurityUpload.username=secuplod" />
+					<Search Regex="TransactionUpload.password=trnuplod" Replace="TransactionUpload.password=trnuplod" />
+					<Search Regex="BillingService.password=billing" Replace="BillingService.password=billing" />
+					<Search Regex="PolicyService.password=policy" Replace="PolicyService.password=policy" />
+					<Search Regex="SecurityUpload.password=secuplod" Replace="SecurityUpload.password=secuplod" />
+					<Search Regex="TransactionUpload.username=trnuploddev" Replace="TransactionUpload.username=trnuplod" />
+					<Search Regex="BatchPrint.username=batchprtdev" Replace="BatchPrint.username=batchprt" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="sso.endpoint=http://\w+?/AQS.Advantage.Client/WebServices/SingleSignon.asmx" Replace="sso.endpoint=http://accesscl.harleysvillegroup.com/AQS.Advantage.Client/WebServices/SingleSignon.asmx" />			
+					<Search Regex="BillingService.password=billing" Replace="BillingService.password=AQS89B99" />
+					<Search Regex="TransactionUpload.username=trnuploddev" Replace="TransactionUpload.username=AQSTRNUL" />
+					<Search Regex="BatchPrint.username=batchprtdev" Replace="BatchPrint.username=AQSBATPRT" />
+					<Search Regex="PolicyService.password=policy" Replace="PolicyService.password=AQS34P22" />
+					<Search Regex="BatchPrint.password=batchprt" Replace="BatchPrint.password=AQS45S59" />
+					<Search Regex="TransactionUpload.password=trnuplod" Replace="TransactionUpload.password=AQS58T39" />
+					<Search Regex="BillingService.username=billingdev" Replace="BillingService.username=AQSBILLING" />
+					<Search Regex="SecurityUpload.password=secuplod" Replace="SecurityUpload.password=AQS26U64" />
+					<Search Regex="PolicyService.username=policydev" Replace="PolicyService.username=AQSPOLICY" />
+					<Search Regex="SecurityUpload.username=secuploddev" Replace="SecurityUpload.username=AQSSECUL" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="sso.endpoint=http://\w+?/AQS.Advantage.Client/WebServices/SingleSignon.asmx" Replace="sso.endpoint=http://accessclpre.harleysvillegroup.com/AQS.Advantage.Client/WebServices/SingleSignon.asmx" />
+					<Search Regex="SecurityUpload.password=secuplod" Replace="SecurityUpload.password=secuplod" />
+					<Search Regex="TransactionUpload.password=trnuplod" Replace="TransactionUpload.password=trnuplod" />
+					<Search Regex="BatchPrint.username=batchprtdev" Replace="BatchPrint.username=batchprt" />
+					<Search Regex="TransactionUpload.username=trnuploddev" Replace="TransactionUpload.username=trnuplod" />
+					<Search Regex="PolicyService.password=policy" Replace="PolicyService.password=policy" />
+					<Search Regex="PolicyService.username=policydev" Replace="PolicyService.username=policy" />
+					<Search Regex="BatchPrint.password=batchprt" Replace="BatchPrint.password=batchprt" />
+					<Search Regex="BillingService.password=billing" Replace="BillingService.password=billing" />
+					<Search Regex="BillingService.username=billingdev" Replace="BillingService.username=billing" />
+					<Search Regex="SecurityUpload.username=secuploddev" Replace="SecurityUpload.username=secuplod" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="sso.endpoint=http://\w+?/AQS.Advantage.Client/WebServices/SingleSignon.asmx" Replace="sso.endpoint=http://trainingcl.harleysvillegroup.com/AQS.Advantage.Client/WebServices/SingleSignon.asmx" />								
+					<Search Regex="BatchPrint.username=batchprtdev" Replace="BatchPrint.username=batchprt" />
+					<Search Regex="PolicyService.username=policydev" Replace="PolicyService.username=policy" />
+					<Search Regex="PolicyService.password=policy" Replace="PolicyService.password=policy" />
+					<Search Regex="TransactionUpload.password=trnuplod" Replace="TransactionUpload.password=trnuplod" />
+					<Search Regex="BillingService.password=billing" Replace="BillingService.password=billing" />
+					<Search Regex="SecurityUpload.username=secuploddev" Replace="SecurityUpload.username=secuplod" />
+					<Search Regex="BatchPrint.password=batchprt" Replace="BatchPrint.password=batchprt" />
+					<Search Regex="SecurityUpload.password=secuplod" Replace="SecurityUpload.password=secuplod" />
+					<Search Regex="TransactionUpload.username=trnuploddev" Replace="TransactionUpload.username=trnuplod" />
+					<Search Regex="BillingService.username=billingdev" Replace="BillingService.username=billing" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="sso.endpoint=http://\w+?/AQS.Advantage.Client/WebServices/SingleSignon.asmx" Replace="sso.endpoint=http://ws73aqstst01/AQS.Advantage.Client/WebServices/SingleSignon.asmx" />
+					<Search Regex="BillingService.password=billing" Replace="BillingService.password=billing" />
+					<Search Regex="PolicyService.username=policydev" Replace="PolicyService.username=policy" />
+					<Search Regex="BatchPrint.password=batchprt" Replace="BatchPrint.password=batchprt" />
+					<Search Regex="TransactionUpload.password=trnuplod" Replace="TransactionUpload.password=trnuplod" />
+					<Search Regex="BillingService.username=billingdev" Replace="BillingService.username=billing" />
+					<Search Regex="SecurityUpload.username=secuploddev" Replace="SecurityUpload.username=secuplod" />
+					<Search Regex="SecurityUpload.password=secuplod" Replace="SecurityUpload.password=secuplod" />
+					<Search Regex="BatchPrint.username=batchprtdev" Replace="BatchPrint.username=batchprt" />
+					<Search Regex="PolicyService.password=policy" Replace="PolicyService.password=policy" />
+					<Search Regex="TransactionUpload.username=trnuploddev" Replace="TransactionUpload.username=trnuplod" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >						 
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="sso.endpoint=http://\w+?/AQS.Advantage.Client/WebServices/SingleSignon.asmx" Replace="sso.endpoint=http://ws73aqstst02/AQS.Advantage.Client/WebServices/SingleSignon.asmx" />
+					<Search Regex="BatchPrint.password=batchprt" Replace="BatchPrint.password=batchprt" />
+					<Search Regex="PolicyService.password=policy" Replace="PolicyService.password=policy" />
+					<Search Regex="PolicyService.username=policydev" Replace="PolicyService.username=policy" />
+					<Search Regex="SecurityUpload.password=secuplod" Replace="SecurityUpload.password=secuplod" />
+					<Search Regex="SecurityUpload.username=secuploddev" Replace="SecurityUpload.username=secuplod" />
+					<Search Regex="TransactionUpload.username=trnuploddev" Replace="TransactionUpload.username=trnuplod" />
+					<Search Regex="TransactionUpload.password=trnuplod" Replace="TransactionUpload.password=trnuplod" />
+					<Search Regex="BillingService.password=billing" Replace="BillingService.password=billing" />
+					<Search Regex="BatchPrint.username=batchprtdev" Replace="BatchPrint.username=batchprt" />
+					<Search Regex="BillingService.username=billingdev" Replace="BillingService.username=billing" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiCompanyAndPlanDetermination">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="determineCompany.endpoint=http://\w+?/integrationservices/Companydeterminationservice.asmx" Replace="determineCompany.endpoint=http://webservicesasy/integrationservices/Companydeterminationservice.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="determineCompany.endpoint=http://\w+?/integrationservices/Companydeterminationservice.asmx" Replace="determineCompany.endpoint=http://webservicese2e/integrationservices/Companydeterminationservice.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="determineCompany.endpoint=http://\w+?/integrationservices/Companydeterminationservice.asmx" Replace="determineCompany.endpoint=http://webservicesprd/integrationservices/Companydeterminationservice.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="determineCompany.endpoint=http://\w+?/integrationservices/Companydeterminationservice.asmx" Replace="determineCompany.endpoint=http://webservicesstg/integrationservices/Companydeterminationservice.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="determineCompany.endpoint=http://\w+?/integrationservices/Companydeterminationservice.asmx" Replace="determineCompany.endpoint=http://webservicestrn/integrationservices/Companydeterminationservice.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="determineCompany.endpoint=http://\w+?/integrationservices/Companydeterminationservice.asmx" Replace="determineCompany.endpoint=http://webservicestst1/integrationservices/Companydeterminationservice.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="determineCompany.endpoint=http://\w+?/integrationservices/Companydeterminationservice.asmx" Replace="determineCompany.endpoint=http://webservicestst/integrationservices/Companydeterminationservice.asmx" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiAddressValidation">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="addressVerification.endpoint=http://\w+?/AddressCheck/MelissaService.asmx" Replace="addressVerification.endpoint=http://as73rtitst01/AddressCheck/MelissaService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="addressVerification.endpoint=http://\w+?/AddressCheck/MelissaService.asmx" Replace="addressVerification.endpoint=http://as73rtitst01/AddressCheck/MelissaService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="addressVerification.endpoint=http://\w+?/AddressCheck/MelissaService.asmx" Replace="addressVerification.endpoint=http://as73rtiprd01/AddressCheck/MelissaService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="addressVerification.endpoint=http://\w+?/AddressCheck/MelissaService.asmx" Replace="addressVerification.endpoint=http://as73rtipre01/AddressCheck/MelissaService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="addressVerification.endpoint=http://\w+?/AddressCheck/MelissaService.asmx" Replace="addressVerification.endpoint=http://as73rtitrn01/AddressCheck/MelissaService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="addressVerification.endpoint=http://\w+?/AddressCheck/MelissaService.asmx" Replace="addressVerification.endpoint=http://as73rtitst01/AddressCheck/MelissaService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="addressVerification.endpoint=http://\w+?/AddressCheck/MelissaService.asmx" Replace="addressVerification.endpoint=http://as73rtitst01/AddressCheck/MelissaService.asmx" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiSystemDetermination">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="ws.cnf">
+					<Search Regex="determineSystem.endpoint=http://\w+?:83/WSBusinessLookup/SystemDetermination.asmx" Replace="determineSystem.endpoint=http://dv73portal10:83/WSBusinessLookup/SystemDetermination.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="ws.cnf">
+					<Search Regex="determineSystem.endpoint=http://\w+?:83/WSBusinessLookup/SystemDetermination.asmx" Replace="determineSystem.endpoint=http://dv73portal10:83/WSBusinessLookup/SystemDetermination.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches/>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="ws.cnf">
+					<Search Regex="determineSystem.endpoint=http://\w+?:83/WSBusinessLookup/SystemDetermination.asmx" Replace="determineSystem.endpoint=http://dv73portal10:83/WSBusinessLookup/SystemDetermination.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="ws.cnf">
+					<Search Regex="determineSystem.endpoint=http://\w+?:83/WSBusinessLookup/SystemDetermination.asmx" Replace="determineSystem.endpoint=http://dv73portal10:83/WSBusinessLookup/SystemDetermination.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="ws.cnf">
+					<Search Regex="determineSystem.endpoint=http://\w+?:83/WSBusinessLookup/SystemDetermination.asmx" Replace="determineSystem.endpoint=http://dv73portal10:83/WSBusinessLookup/SystemDetermination.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="ws.cnf">
+					<Search Regex="determineSystem.endpoint=http://\w+?:83/WSBusinessLookup/SystemDetermination.asmx" Replace="determineSystem.endpoint=http://dv73portal10:83/WSBusinessLookup/SystemDetermination.asmx" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiDctDocuMaker">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="Documaker.endpoint=http://\w+?/edmsdev/EDMSService.asmx" Replace="Documaker.endpoint=http://webservicesasy/edms/EDMSService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="Documaker.endpoint=http://\w+?/edmsdev/EDMSService.asmx" Replace="Documaker.endpoint=http://webservicese2e/edms/EDMSService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="Documaker.endpoint=http://\w+?/edmsdev/EDMSService.asmx" Replace="Documaker.endpoint=http://webservicesprd/edms/EDMSService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="Documaker.endpoint=http://\w+?/edmsdev/EDMSService.asmx" Replace="Documaker.endpoint=http://webservicesstg/edms/EDMSService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="Documaker.endpoint=http://\w+?/edmsdev/EDMSService.asmx" Replace="Documaker.endpoint=http://webservicestst1/edms/EDMSService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="Documaker.endpoint=http://\w+?/edmsdev/EDMSService.asmx" Replace="Documaker.endpoint=http://webservicestst1/edms/EDMSService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="Documaker.endpoint=http://\w+?/edmsdev/EDMSService.asmx" Replace="Documaker.endpoint=http://webservicestst/edms/EDMSService.asmx" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiNightlyLoad">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="InitiateProcess.Endpoint=http://\w+?/AISCLPLLoad/Service.asmx" Replace="InitiateProcess.Endpoint=http://webservicesasy/AISCLPLLoad/Service.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="InitiateProcess.Endpoint=http://\w+?/AISCLPLLoad/Service.asmx" Replace="InitiateProcess.Endpoint=http://webservicese2e/AISCLPLLoad/Service.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="InitiateProcess.Endpoint=http://\w+?/AISCLPLLoad/Service.asmx" Replace="InitiateProcess.Endpoint=http://webservicesprdAISCLPLLoad/Service.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="InitiateProcess.Endpoint=http://\w+?/AISCLPLLoad/Service.asmx" Replace="InitiateProcess.Endpoint=http://webservicesstg/AISCLPLLoad/Service.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="InitiateProcess.Endpoint=http://\w+?/AISCLPLLoad/Service.asmx" Replace="InitiateProcess.Endpoint=http://webservicestrn/AISCLPLLoad/Service.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="InitiateProcess.Endpoint=http://\w+?/AISCLPLLoad/Service.asmx" Replace="InitiateProcess.Endpoint=http://webservicestst1/AISCLPLLoad/Service.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="InitiateProcess.Endpoint=http://\w+?/AISCLPLLoad/Service.asmx" Replace="InitiateProcess.Endpoint=http://webservicestst/AISCLPLLoad/Service.asmx" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiRuleEngineServices">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="ruleEngine.endpoint=http://\w+?/RulesEngineService.asmx" Replace="ruleEngine.endpoint=http://rulesengineasy/RulesEngineService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="ruleEngine.endpoint=http://\w+?/RulesEngineService.asmx" Replace="ruleEngine.endpoint=http://rulesenginee2e/RulesEngineService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="ruleEngine.endpoint=http://\w+?/RulesEngineService.asmx" Replace="ruleEngine.endpoint=http://rulesengineprd/RulesEngineService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="ruleEngine.endpoint=http://\w+?/RulesEngineService.asmx" Replace="ruleEngine.endpoint=http://rulesenginepre/RulesEngineService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="ruleEngine.endpoint=http://\w+?/RulesEngineService.asmx" Replace="ruleEngine.endpoint=http://rulesenginetrn/RulesEngineService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="ruleEngine.endpoint=http://\w+?/RulesEngineService.asmx" Replace="ruleEngine.endpoint=http://rulesenginetst1/RulesEngineService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="ruleEngine.endpoint=http://\w+?/RulesEngineService.asmx" Replace="ruleEngine.endpoint=http://rulesenginetst2/RulesEngineService.asmx" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiBillingDctProcess">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="DuckCreek.endpoint=http://\w+?\:8080/DuckCreek21/DCTServer.aspx" Replace="DuckCreek.endpoint=http://as73dctasy01:8080/DuckCreek21/DCTServer.aspx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="DuckCreek.endpoint=http://\w+?\:8080/DuckCreek21/DCTServer.aspx" Replace="DuckCreek.endpoint=http://as73dcte2e01:8080/DuckCreek22/DCTServer.aspx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="DuckCreek.endpoint=http://\w+?\:8080/DuckCreek21/DCTServer.aspx" Replace="DuckCreek.endpoint=http://dctprdexample:8080/DuckCreek/DCTServer.aspx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="DuckCreek.endpoint=http://\w+?\:8080/DuckCreek21/DCTServer.aspx" Replace="DuckCreek.endpoint=http://dctpreexample:8080/DuckCreek/DCTServer.aspx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="DuckCreek.endpoint=http://\w+?\:8080/DuckCreek21/DCTServer.aspx" Replace="DuckCreek.endpoint=http://as73dcttrn01:8080/DuckCreek21/DCTServer.aspx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="DuckCreek.endpoint=http://\w+?\:8080/DuckCreek21/DCTServer.aspx" Replace="DuckCreek.endpoint=http://as73dcttst01:8080/DuckCreek21/DCTServer.aspx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="DuckCreek.endpoint=http://\w+?\:8080/DuckCreek21/DCTServer.aspx" Replace="DuckCreek.endpoint=http://as73dcttst01:8080/DuckCreek21/DCTServer.aspx" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiAgencyService">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="aisService.endpoint=http://\w+?/AISService/Service.asmx" Replace="aisService.endpoint=http://webservicesasy/AISService/Service.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="aisService.endpoint=http://\w+?/AISService/Service.asmx" Replace="aisService.endpoint=http://webservicese2e/AISService/Service.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="email.to.override=false" Replace="email.to.override=true" />
+					<Search Regex="aisService.endpoint=http://\w+?/AISService/Service.asmx" Replace="aisService.endpoint=http://webservicesprd/AISService/Service.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="aisService.endpoint=http://\w+?/AISService/Service.asmx" Replace="aisService.endpoint=http://webservicesstg/AISService/Service.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="aisService.endpoint=http://\w+?/AISService/Service.asmx" Replace="aisService.endpoint=http://webservicestrn/AISService/Service.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="aisService.endpoint=http://\w+?/AISService/Service.asmx" Replace="aisService.endpoint=http://webservicestst1/AISService/Service.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="aisService.endpoint=http://\w+?/AISService/Service.asmx" Replace="aisService.endpoint=http://webservicestst/AISService/Service.asmx" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiQuoteService">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="http://\w+?/" Replace="http://webservicesasy/" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="http://\w+?/" Replace="http://webservicese2e/" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="http://\w+?/" Replace="http://webservicesprd/" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="http://\w+?/" Replace="http://webservicesstg/" />		   
+					</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="http://\w+?/" Replace="http://webservicestrn/" />
+					</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="http://\w+?/" Replace="http://webservicestst1/" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="http://\w+?/" Replace="http://webservicestst/" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiPolkVinLookup">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="VinLookup.endpoint=http://\w+?/POLK/VinService.asmx" Replace="VinLookup.endpoint=http://as73rtitst01/POLK/VinService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="VinLookup.endpoint=http://\w+?/POLK/VinService.asmx" Replace="VinLookup.endpoint=http://as73rtitst01/POLK/VinService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="VinLookup.endpoint=http://\w+?/POLK/VinService.asmx" Replace="VinLookup.endpoint=http://as73rtiprd01/POLK/VinService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="VinLookup.endpoint=http://\w+?/POLK/VinService.asmx" Replace="VinLookup.endpoint=http://as73rtipre01/POLK/VinService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="VinLookup.endpoint=http://\w+?/POLK/VinService.asmx" Replace="VinLookup.endpoint=http://as73rtitst01/POLK/VinService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="VinLookup.endpoint=http://\w+?/POLK/VinService.asmx" Replace="VinLookup.endpoint=http://as73rtitst01/POLK/VinService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="VinLookup.endpoint=http://\w+?/POLK/VinService.asmx" Replace="VinLookup.endpoint=http://as73rtitst01/POLK/VinService.asmx" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiClAccountProposal">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="edmsService.endpoint=http://\w+?/edmsdev/EDMSService.asmx" Replace="edmsService.endpoint=http://webservicesasy/edms/EDMSService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="edmsService.endpoint=http://\w+?/edmsdev/EDMSService.asmx" Replace="edmsService.endpoint=http://webservicese2e/edms/EDMSService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="edmsService.endpoint=http://\w+?/edmsdev/EDMSService.asmx" Replace="edmsService.endpoint=http://webservicesprd/edms/EDMSService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="edmsService.endpoint=http://\w+?/edmsdev/EDMSService.asmx" Replace="edmsService.endpoint=http://webservicesstg/edms/EDMSService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="edmsService.endpoint=http://\w+?/edmsdev/EDMSService.asmx" Replace="edmsService.endpoint=http://webservicestst1/edms/EDMSService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="edmsService.endpoint=http://\w+?/edmsdev/EDMSService.asmx" Replace="edmsService.endpoint=http://webservicestst1/edms/EDMSService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="edmsService.endpoint=http://\w+?/edmsdev/EDMSService.asmx" Replace="edmsService.endpoint=http://webservicestst/edms/EDMSService.asmx" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiPolicyOutput">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="ws.cnf">
+					<Search Regex="batchPrint.endpoint=http://\w+?.corp.hgicnet.net/AQS.Advantage.Client/WebServices/BatchPrintService.asmx" Replace="batchPrint.endpoint=http://ws73aqsasy01.corp.hgicnet.net/AQS.Advantage.Client/WebServices/BatchPrintService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="ws.cnf">
+					<Search Regex="batchPrint.endpoint=http://\w+?.corp.hgicnet.net/AQS.Advantage.Client/WebServices/BatchPrintService.asmx" Replace="batchPrint.endpoint=http://ws73aqse2e02.corp.hgicnet.net/AQS.Advantage.Client/WebServices/BatchPrintService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="ws.cnf">
+					<Search Regex="batchPrint.endpoint=http://\w+?.corp.hgicnet.net/AQS.Advantage.Client/WebServices/BatchPrintService.asmx" Replace="batchPrint.endpoint=http://accesscl.harleysvillegroup.com/AQS.Advantage.Client/WebServices/BatchPrintService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="ws.cnf">
+					<Search Regex="batchPrint.endpoint=http://\w+?.corp.hgicnet.net/AQS.Advantage.Client/WebServices/BatchPrintService.asmx" Replace="batchPrint.endpoint=http://accessclpre/AQS.Advantage.Client/WebServices/BatchPrintService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="ws.cnf">
+					<Search Regex="batchPrint.endpoint=http://\w+?.corp.hgicnet.net/AQS.Advantage.Client/WebServices/BatchPrintService.asmx" Replace="batchPrint.endpoint=http://trainingcl.harleysvillegroup.com/aqs.advantage.client/WebServices/BatchPrintService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="ws.cnf">
+					<Search Regex="batchPrint.endpoint=http://\w+?.corp.hgicnet.net/AQS.Advantage.Client/WebServices/BatchPrintService.asmx" Replace="batchPrint.endpoint=http://ws73aqstst01.corp.hgicnet.net/AQS.Advantage.Client/WebServices/BatchPrintService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="ws.cnf">
+					<Search Regex="batchPrint.endpoint=http://\w+?.corp.hgicnet.net/AQS.Advantage.Client/WebServices/BatchPrintService.asmx" Replace="batchPrint.endpoint=http://ws73aqstst02.corp.hgicnet.net/AQS.Advantage.Client/WebServices/BatchPrintService.asmx" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiPolicyTransactionUpload">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="aqs.endpoint=http://\w+?/AQS.Integrator.WebServices/CTS.asmx" Replace="aqs.endpoint=http://ws73aqsasy01/AQS.Integrator.WebServices/CTS.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="aqs.endpoint=http://\w+?/AQS.Integrator.WebServices/CTS.asmx" Replace="aqs.endpoint=http://ws73aqse2e02/AQS.Integrator.WebServices/CTS.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="aqs.endpoint=http://\w+?/AQS.Integrator.WebServices/CTS.asmx" Replace="aqs.endpoint=http://as73aqsintprd01/AQS.Integrator.WebServices/CTS.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="aqs.endpoint=http://\w+?/AQS.Integrator.WebServices/CTS.asmx" Replace="aqs.endpoint=http://as73aqsintpre01/AQS.Integrator.WebServices/CTS.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="aqs.endpoint=http://\w+?/AQS.Integrator.WebServices/CTS.asmx" Replace="aqs.endpoint=http://as73aqsinttrn01/aqs.integrator.webservices/CTS.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="aqs.endpoint=http://\w+?/AQS.Integrator.WebServices/CTS.asmx" Replace="aqs.endpoint=http://ws73aqstst01/AQS.Integrator.WebServices/CTS.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="aqs.endpoint=http://\w+?/AQS.Integrator.WebServices/CTS.asmx" Replace="aqs.endpoint=http://ws73aqstst02/AQS.Integrator.WebServices/CTS.asmx" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiPolicyService">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="PolicyService.Endpoint=http://\w+?/AQS.TransactionGateway.WebServices/PolicyService.asmx" Replace="PolicyService.Endpoint=http://ws73aqsasy01/AQS.TransactionGateway.WebServices/PolicyService.asmx" />
+					<Search Regex="createQuote.endpoint=http://\w+?/AQS.Advantage.Client/IntegrationServices/PolicyImport.asmx" Replace="createQuote.endpoint=http://ws73aqsasy01/AQS.Advantage.Client/IntegrationServices/PolicyImport.asmx" />
+					<Search Regex="renew.endpoint=http://\w+?/AQS.Advantage.Client/IntegrationServices/PolicyRenew.asmx" Replace="renew.endpoint=http://ws73aqscnv01/AQS.Advantage.Client/IntegrationServices/PolicyRenew.asmx" />
+					<Search Regex="getPolicyPrefixAndNumber.endpoint=http://\w+?/AQS.Advantage.Client/IntegrationServices/PolicyNumberGenerator.asmx" Replace="getPolicyPrefixAndNumber.endpoint=http://ws73aqsasy01/AQS.Advantage.Client/IntegrationServices/PolicyNumberGenerator.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="createQuote.endpoint=http://\w+?/AQS.Advantage.Client/IntegrationServices/PolicyImport.asmx" Replace="createQuote.endpoint=http://ws73aqse2e02/AQS.Advantage.Client/IntegrationServices/PolicyImport.asmx" />
+					<Search Regex="PolicyService.Endpoint=http://\w+?/AQS.TransactionGateway.WebServices/PolicyService.asmx" Replace="PolicyService.Endpoint=http://ws73aqse2e02/AQS.TransactionGateway.WebServices/PolicyService.asmx" />
+					<Search Regex="getPolicyPrefixAndNumber.endpoint=http://\w+?/AQS.Advantage.Client/IntegrationServices/PolicyNumberGenerator.asmx" Replace="getPolicyPrefixAndNumber.endpoint=http://ws73aqse2e02/AQS.Advantage.Client/IntegrationServices/PolicyNumberGenerator.asmx" />
+					<Search Regex="renew.endpoint=http://\w+?/AQS.Advantage.Client/IntegrationServices/PolicyRenew.asmx" Replace="renew.endpoint=http://ws73aqse2e02/AQS.Advantage.Client/IntegrationServices/PolicyRenew.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="getPolicyPrefixAndNumber.endpoint=http://\w+?/AQS.Advantage.Client/IntegrationServices/PolicyNumberGenerator.asmx" Replace="getPolicyPrefixAndNumber.endpoint=http://accesscl.harleysvillegroup.com/AQS.Advantage.Client/IntegrationServices/PolicyNumberGenerator.asmx" />
+					<Search Regex="renew.endpoint=http://\w+?/AQS.Advantage.Client/IntegrationServices/PolicyRenew.asmx" Replace="renew.endpoint=http://accesscl.harleysvillegroup.com/AQS.Advantage.Client/IntegrationServices/PolicyRenew.asmx" />
+					<Search Regex="PolicyService.Endpoint=http://\w+?/AQS.TransactionGateway.WebServices/PolicyService.asmx" Replace="PolicyService.Endpoint=http://as73aqstgwprd01/AQS.TransactionGateway.WebServices/PolicyService.asmx" />
+					<Search Regex="createQuote.endpoint=http://\w+?/AQS.Advantage.Client/IntegrationServices/PolicyImport.asmx" Replace="createQuote.endpoint=http://accesscl.harleysvillegroup.com/AQS.Advantage.Client/IntegrationServices/PolicyImport.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="createQuote.endpoint=http://\w+?/AQS.Advantage.Client/IntegrationServices/PolicyImport.asmx" Replace="createQuote.endpoint=http://accessclpre.harleysvillegroup.com/AQS.Advantage.Client/IntegrationServices/PolicyImport.asmx" />
+					<Search Regex="getPolicyPrefixAndNumber.endpoint=http://\w+?/AQS.Advantage.Client/IntegrationServices/PolicyNumberGenerator.asmx" Replace="getPolicyPrefixAndNumber.endpoint=http://accessclpre.harleysvillegroup.com/AQS.Advantage.Client/IntegrationServices/PolicyNumberGenerator.asmx" />
+					<Search Regex="renew.endpoint=http://\w+?/AQS.Advantage.Client/IntegrationServices/PolicyRenew.asmx" Replace="renew.endpoint=http://accessclpre.harleysvillegroup.com/AQS.Advantage.Client/IntegrationServices/PolicyRenew.asmx" />
+					<Search Regex="PolicyService.Endpoint=http://\w+?/AQS.TransactionGateway.WebServices/PolicyService.asmx" Replace="PolicyService.Endpoint=http://as73aqstgwpre01/AQS.TransactionGateway.WebServices/PolicyService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="PolicyService.Endpoint=http://\w+?/AQS.TransactionGateway.WebServices/PolicyService.asmx" Replace="PolicyService.Endpoint=http://as73aqstgwtrn01/AQS.TransactionGateway.WebServices/PolicyService.asmx" />
+					<Search Regex="getPolicyPrefixAndNumber.endpoint=http://\w+?/AQS.Advantage.Client/IntegrationServices/PolicyNumberGenerator.asmx" Replace="getPolicyPrefixAndNumber.endpoint=http://trainingcl.harleysvillegroup.com/aqs.advantage.client/IntegrationServices/PolicyNumberGenerator.asmx" />
+					<Search Regex="renew.endpoint=http://\w+?/AQS.Advantage.Client/IntegrationServices/PolicyRenew.asmx" Replace="renew.endpoint=http://trainingcl.harleysvillegroup.com/aqs.advantage.client/IntegrationServices/PolicyRenew.asmx" />
+					<Search Regex="createQuote.endpoint=http://\w+?/AQS.Advantage.Client/IntegrationServices/PolicyImport.asmx" Replace="createQuote.endpoint=http://trainingcl.harleysvillegroup.com/aqs.advantage.client/IntegrationServices/PolicyImport.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="PolicyService.Endpoint=http://\w+?/AQS.TransactionGateway.WebServices/PolicyService.asmx" Replace="PolicyService.Endpoint=http://ws73aqstst01/AQS.TransactionGateway.WebServices/PolicyService.asmx" />
+					<Search Regex="createQuote.endpoint=http://\w+?/AQS.Advantage.Client/IntegrationServices/PolicyImport.asmx" Replace="createQuote.endpoint=http://ws73aqstst01/AQS.Advantage.Client/IntegrationServices/PolicyImport.asmx" />
+					<Search Regex="renew.endpoint=http://\w+?/AQS.Advantage.Client/IntegrationServices/PolicyRenew.asmx" Replace="renew.endpoint=http://ws73aqstst01/AQS.Advantage.Client/IntegrationServices/PolicyRenew.asmx" />
+					<Search Regex="getPolicyPrefixAndNumber.endpoint=http://\w+?/AQS.Advantage.Client/IntegrationServices/PolicyNumberGenerator.asmx" Replace="getPolicyPrefixAndNumber.endpoint=http://ws73aqstst01/AQS.Advantage.Client/IntegrationServices/PolicyNumberGenerator.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="renew.endpoint=http://\w+?/AQS.Advantage.Client/IntegrationServices/PolicyRenew.asmx" Replace="renew.endpoint=http://ws73aqstst02/AQS.Advantage.Client/IntegrationServices/PolicyRenew.asmx" />
+					<Search Regex="getPolicyPrefixAndNumber.endpoint=http://\w+?/AQS.Advantage.Client/IntegrationServices/PolicyNumberGenerator.asmx" Replace="getPolicyPrefixAndNumber.endpoint=http://ws73aqstst02/AQS.Advantage.Client/IntegrationServices/PolicyNumberGenerator.asmx" />
+					<Search Regex="createQuote.endpoint=http://\w+?/AQS.Advantage.Client/IntegrationServices/PolicyImport.asmx" Replace="createQuote.endpoint=http://ws73aqstst02/AQS.Advantage.Client/IntegrationServices/PolicyImport.asmx" />
+					<Search Regex="PolicyService.Endpoint=http://\w+?/AQS.TransactionGateway.WebServices/PolicyService.asmx" Replace="PolicyService.Endpoint=http://ws73aqstst02/AQS.TransactionGateway.WebServices/PolicyService.asmx" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiProxixGEOcode">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="Proxix.SpatialSoap=http://\w+?/gsert/Spatial.asmx" Replace="Proxix.SpatialSoap=http://as73rtidev01/gsert/Spatial.asmx" />
+					<Search Regex="Proxix.PxPointGeocodeSoap=http://\w+?/gsert/PxPointGeocode.asmx" Replace="Proxix.PxPointGeocodeSoap=http://as73rtidev01/gsert/PxPointGeocode.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="Proxix.PxPointGeocodeSoap=http://\w+?/gsert/PxPointGeocode.asmx" Replace="Proxix.PxPointGeocodeSoap=http://as73rtitst01/gsert/PxPointGeocode.asmx" />
+					<Search Regex="Proxix.SpatialSoap=http://\w+?/gsert/Spatial.asmx" Replace="Proxix.SpatialSoap=http://as73rtitst01/gsert/Spatial.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="Proxix.SpatialSoap=http://\w+?/gsert/Spatial.asmx" Replace="Proxix.SpatialSoap=http://as73rtiprd01/gsert/Spatial.asmx" />
+					<Search Regex="Proxix.PxPointGeocodeSoap=http://\w+?/gsert/PxPointGeocode.asmx" Replace="Proxix.PxPointGeocodeSoap=http://as73rtiprd01/gsert/PxPointGeocode.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="Proxix.SpatialSoap=http://\w+?/gsert/Spatial.asmx" Replace="Proxix.SpatialSoap=http://as73rtipre01/gsert/Spatial.asmx" />
+					<Search Regex="Proxix.PxPointGeocodeSoap=http://\w+?/gsert/PxPointGeocode.asmx" Replace="Proxix.PxPointGeocodeSoap=http://as73rtipre01/gsert/PxPointGeocode.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="Proxix.PxPointGeocodeSoap=http://\w+?/gsert/PxPointGeocode.asmx" Replace="Proxix.PxPointGeocodeSoap=http://as73rtitst01/gsert/PxPointGeocode.asmx" />
+					<Search Regex="Proxix.SpatialSoap=http://\w+?/gsert/Spatial.asmx" Replace="Proxix.SpatialSoap=http://as73rtitst01/gsert/Spatial.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="Proxix.PxPointGeocodeSoap=http://\w+?/gsert/PxPointGeocode.asmx" Replace="Proxix.PxPointGeocodeSoap=http://as73rtitst01/gsert/PxPointGeocode.asmx" />
+					<Search Regex="Proxix.SpatialSoap=http://\w+?/gsert/Spatial.asmx" Replace="Proxix.SpatialSoap=http://as73rtitst01/gsert/Spatial.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="Proxix.SpatialSoap=http://\w+?/gsert/Spatial.asmx" Replace="Proxix.SpatialSoap=http://as73rtitst01/gsert/Spatial.asmx" />
+					<Search Regex="Proxix.PxPointGeocodeSoap=http://\w+?/gsert/PxPointGeocode.asmx" Replace="Proxix.PxPointGeocodeSoap=http://as73rtitst01/gsert/PxPointGeocode.asmx" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiChoicePointBatchReports">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="serverhost=172.20.1.186" Replace="serverhost=US73FTPTST01" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="serverhost=172.20.1.186" Replace="serverhost=US73FTPTST01" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="serverhost=172.20.1.186" Replace="serverhost=TR7" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="serverhost=172.20.1.186" Replace="serverhost=US73FTPTST01" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="serverhost=172.20.1.186" Replace="serverhost=US73FTPTST01" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="serverhost=172.20.1.186" Replace="serverhost=US73FTPTST01" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="serverhost=172.20.1.186" Replace="serverhost=US73FTPTST01" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiPolicySourceService">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="policySourceService.endpoint=http://\w+?/IntegrationServices/IADBService.asmx" Replace="policySourceService.endpoint=http://webservicesasy/IntegrationServices/IADBService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="policySourceService.endpoint=http://\w+?/IntegrationServices/IADBService.asmx" Replace="policySourceService.endpoint=http://webservicese2e/IntegrationServices/IADBService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="policySourceService.endpoint=http://\w+?/IntegrationServices/IADBService.asmx" Replace="policySourceService.endpoint=http://webservicesprd/IntegrationServices/IADBService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="policySourceService.endpoint=http://\w+?/IntegrationServices/IADBService.asmx" Replace="policySourceService.endpoint=http://webservicesstg/IntegrationServices/IADBService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="policySourceService.endpoint=http://\w+?/IntegrationServices/IADBService.asmx" Replace="policySourceService.endpoint=http://webservicestrn/IntegrationServices/IADBService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="policySourceService.endpoint=http://\w+?/IntegrationServices/IADBService.asmx" Replace="policySourceService.endpoint=http://webservicestst1/IntegrationServices/IADBService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="policySourceService.endpoint=http://\w+?/IntegrationServices/IADBService.asmx" Replace="policySourceService.endpoint=http://webservicestst/IntegrationServices/IADBService.asmx" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiClLegacy">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="hmiClLegacy.IADBServices.endpoint=http://\w+?/IntegrationServices/IADBService.asmx" Replace="hmiClLegacy.IADBServices.endpoint=http://webservicesasy/IntegrationServices/IADBService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="hmiClLegacy.IADBServices.endpoint=http://\w+?/IntegrationServices/IADBService.asmx" Replace="hmiClLegacy.IADBServices.endpoint=http://webservicese2e/IntegrationServices/IADBService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="hmiClLegacy.IADBServices.endpoint=http://\w+?/IntegrationServices/IADBService.asmx" Replace="hmiClLegacy.IADBServices.endpoint=http://webservicesprd/IntegrationServices/IADBService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="hmiClLegacy.IADBServices.endpoint=http://\w+?/IntegrationServices/IADBService.asmx" Replace="hmiClLegacy.IADBServices.endpoint=http://webservicesstg/IntegrationServices/IADBService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="hmiClLegacy.IADBServices.endpoint=http://\w+?/IntegrationServices/IADBService.asmx" Replace="hmiClLegacy.IADBServices.endpoint=http://webservicestrn/IntegrationServices/IADBService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="hmiClLegacy.IADBServices.endpoint=http://\w+?/IntegrationServices/IADBService.asmx" Replace="hmiClLegacy.IADBServices.endpoint=http://webservicestst1/IntegrationServices/IADBService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="hmiClLegacy.IADBServices.endpoint=http://\w+?/IntegrationServices/IADBService.asmx" Replace="hmiClLegacy.IADBServices.endpoint=http://webservicestst/IntegrationServices/IADBService.asmx" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiDCTISOPPC">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="ISOPPC.endpoint=http://\w+?\:8080/soap/servlet/rpcrouter" Replace="ISOPPC.endpoint=http://as73rtiasy01:8080/soap/servlet/rpcrouter" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="ISOPPC.endpoint=http://\w+?\:8080/soap/servlet/rpcrouter" Replace="ISOPPC.endpoint=http://as73rtitst01:8080/soap/servlet/rpcrouter" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="ISOPPC.endpoint=http://\w+?\:8080/soap/servlet/rpcrouter" Replace="ISOPPC.endpoint=http://as73rtiprd01:8080/soap/servlet/rpcrouter" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="ISOPPC.endpoint=http://\w+?\:8080/soap/servlet/rpcrouter" Replace="ISOPPC.endpoint=http://as73rtipre01:8080/soap/servlet/rpcrouter" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="ISOPPC.endpoint=http://\w+?\:8080/soap/servlet/rpcrouter" Replace="ISOPPC.endpoint=http://as73rtitrn01:8080/soap/servlet/rpcrouter" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="ISOPPC.endpoint=http://\w+?\:8080/soap/servlet/rpcrouter" Replace="ISOPPC.endpoint=http://as73rtitst01:8080/soap/servlet/rpcrouter" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="ISOPPC.endpoint=http://\w+?\:8080/soap/servlet/rpcrouter" Replace="ISOPPC.endpoint=http://as73rtitst01:8080/soap/servlet/rpcrouter" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiOrderMVR">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches/>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches/>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="imageright.fillerdigit=310" Replace="imageright.fillerdigit=290" />
+					<Search Regex="AS73imgrttst01" Replace="as73imgrtappsvr" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches/>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches/>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches/>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches/>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiConnectors">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="ws.cnf">
+					<Search Regex="CICSWebservices.endpoint=http://\w+?/CICSWebServiceASY/LegacyWebService.asmx" Replace="CICSWebservices.endpoint=http://us73tsthis02/CICSWebService/LegacyWebService.asmx?op=executeOPIDCICSService" />
+					<Search Regex="his.consumeHIServerService.endpoint=http://\w+?/HisToMF_HMKCICS/HIServerToMainframeIntegrGateway/HisToMfIntegrGateway.asmx" Replace="his.consumeHIServerService.endpoint=http://us73DEVHIS01/HisToMF_HMKCICS/HIServerToMainframeIntegrGateway/HisToMfIntegrGateway.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="ws.cnf">
+					<Search Regex="his.consumeHIServerService.endpoint=http://\w+?/HisToMF_HMKCICS/HIServerToMainframeIntegrGateway/HisToMfIntegrGateway.asmx" Replace="his.consumeHIServerService.endpoint=http://us73tsthis02/HisToMF_HMVCICS/HIServerToMainframeIntegrGateway/HisToMfIntegrGateway.asmx" />
+					<Search Regex="CICSWebservices.endpoint=http://\w+?/CICSWebServiceASY/LegacyWebService.asmx" Replace="CICSWebservices.endpoint=http://us73tsthis02/CICSWebServicee2e/LegacyWebService.asmx?" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="ws.cnf">
+					<Search Regex="his.consumeHIServerService.endpoint=http://\w+?/HisToMF_HMKCICS/HIServerToMainframeIntegrGateway/HisToMfIntegrGateway.asmx" Replace="his.consumeHIServerService.endpoint=http://od-hv-w-is-1/HisToMF_HMPCICS/HIServerToMainframeIntegrGateway/HisToMfIntegrGateway.asmx" />
+					<Search Regex="CICSWebservices.endpoint=http://\w+?/CICSWebServiceASY/LegacyWebService.asmx" Replace="CICSWebservices.endpoint=http://od-hv-w-is-1/CICSwebservice/Legacywebservice.asmx?op=executeOPIDCICSService" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="ws.cnf">
+					<Search Regex="his.consumeHIServerService.endpoint=http://\w+?/HisToMF_HMKCICS/HIServerToMainframeIntegrGateway/HisToMfIntegrGateway.asmx" Replace="his.consumeHIServerService.endpoint=http://us73tsthis02/HisToMF_HMCCICS/HIServerToMainframeIntegrGateway/HisToMfIntegrGateway.asmx" />
+					<Search Regex="CICSWebservices.endpoint=http://\w+?/CICSWebServiceASY/LegacyWebService.asmx" Replace="CICSWebservices.endpoint=http://us73tsthis02/CICSWebServiceTst/LegacyWebService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="ws.cnf">
+					<Search Regex="his.consumeHIServerService.endpoint=http://\w+?/HisToMF_HMKCICS/HIServerToMainframeIntegrGateway/HisToMfIntegrGateway.asmx" Replace="his.consumeHIServerService.endpoint=http://us73devhis01/HisToMF_HMGCICS/HIServerToMainframeIntegrGateway/HisToMfIntegrGateway.asmx" />
+					<Search Regex="CICSWebservices.endpoint=http://\w+?/CICSWebServiceASY/LegacyWebService.asmx" Replace="CICSWebservices.endpoint=http://us73devhis01/CICSWebServiceg/LegacyWebService.asmx?op=executeOPIDCICSService" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="ws.cnf">
+					<Search Regex="CICSWebservices.endpoint=http://\w+?/CICSWebServiceASY/LegacyWebService.asmx" Replace="CICSWebservices.endpoint=http://us73tsthis02/CICSWebService/LegacyWebService.asmx?op=executeOPIDCICSService" />
+					<Search Regex="his.consumeHIServerService.endpoint=http://\w+?/HisToMF_HMKCICS/HIServerToMainframeIntegrGateway/HisToMfIntegrGateway.asmx" Replace="his.consumeHIServerService.endpoint=http://us73tsthis02/HisToMF_HMWCICS/HIServerToMainframeIntegrGateway/HisToMfIntegrGateway.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="ws.cnf">
+					<Search Regex="CICSWebservices.endpoint=http://\w+?/CICSWebServiceASY/LegacyWebService.asmx" Replace="CICSWebservices.endpoint=http://us73tsthis02/CICSWebService/LegacyWebService.asmx?op=executeOPIDCICSService" />
+					<Search Regex="his.consumeHIServerService.endpoint=http://\w+?/HisToMF_HMKCICS/HIServerToMainframeIntegrGateway/HisToMfIntegrGateway.asmx" Replace="his.consumeHIServerService.endpoint=http://us73tsthis02/HisToMF_HMWCICS/HIServerToMainframeIntegrGateway/HisToMfIntegrGateway.asmx" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiSecurityLoad">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="SecurityResourcesManagementServiceSoap=http://\w+?/AQS.Advantage.Client/WebServices/SecurityResourceManagement.asmx" Replace="SecurityResourcesManagementServiceSoap=http://ws73aqsasy01/AQS.Advantage.Client/WebServices/SecurityResourceManagement.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="SecurityResourcesManagementServiceSoap=http://\w+?/AQS.Advantage.Client/WebServices/SecurityResourceManagement.asmx" Replace="SecurityResourcesManagementServiceSoap=http://ws73aqse2e02/AQS.Advantage.Client/WebServices/SecurityResourceManagement.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="SecurityResourcesManagementServiceSoap=http://\w+?/AQS.Advantage.Client/WebServices/SecurityResourceManagement.asmx" Replace="SecurityResourcesManagementServiceSoap=http://accesscl/AQS.Advantage.Client/WebServices/SecurityResourceManagement.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="SecurityResourcesManagementServiceSoap=http://\w+?/AQS.Advantage.Client/WebServices/SecurityResourceManagement.asmx" Replace="SecurityResourcesManagementServiceSoap=http://accessclpre/AQS.Advantage.Client/WebServices/SecurityResourceManagement.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="SecurityResourcesManagementServiceSoap=http://\w+?/AQS.Advantage.Client/WebServices/SecurityResourceManagement.asmx" Replace="SecurityResourcesManagementServiceSoap=http://trainingcl.harleysvillegroup.com/AQS.Advantage.Client/WebServices/SecurityResourceManagement.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="SecurityResourcesManagementServiceSoap=http://\w+?/AQS.Advantage.Client/WebServices/SecurityResourceManagement.asmx" Replace="SecurityResourcesManagementServiceSoap=http://ws73aqstst01/AQS.Advantage.Client/WebServices/SecurityResourceManagement.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="SecurityResourcesManagementServiceSoap=http://\w+?/AQS.Advantage.Client/WebServices/SecurityResourceManagement.asmx" Replace="SecurityResourcesManagementServiceSoap=http://ws73aqstst02/AQS.Advantage.Client/WebServices/SecurityResourceManagement.asmx" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiClpolDetermineBindingAuthority">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="quoteService.endpoint=http://\w+?/integrationservices/urequoteservice.asmx" Replace="quoteService.endpoint=http://webservicesasy/integrationservices/urequoteservice.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="quoteService.endpoint=http://\w+?/integrationservices/urequoteservice.asmx" Replace="quoteService.endpoint=http://webservicese2e/integrationservices/urequoteservice.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="quoteService.endpoint=http://\w+?/integrationservices/urequoteservice.asmx" Replace="quoteService.endpoint=http://webservicesprd/integrationservices/urequoteservice.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="quoteService.endpoint=http://\w+?/integrationservices/urequoteservice.asmx" Replace="quoteService.endpoint=http://webservicesstg/integrationservices/urequoteservice.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="quoteService.endpoint=http://\w+?/integrationservices/urequoteservice.asmx" Replace="quoteService.endpoint=http://webservicestrn/integrationservices/urequoteservice.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="quoteService.endpoint=http://\w+?/integrationservices/urequoteservice.asmx" Replace="quoteService.endpoint=http://webservicestst1/integrationservices/urequoteservice.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="quoteService.endpoint=http://\w+?/integrationservices/urequoteservice.asmx" Replace="quoteService.endpoint=http://webservicestst/integrationservices/urequoteservice.asmx" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiClpolBillingStatus">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="GetBillMethodByPolicy.Endpoint=http://\w+?/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" Replace="GetBillMethodByPolicy.Endpoint=http://webservicesasy/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="GetBillMethodByPolicy.Endpoint=http://\w+?/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" Replace="GetBillMethodByPolicy.Endpoint=http://webservicese2e/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="GetBillMethodByPolicy.Endpoint=http://\w+?/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" Replace="GetBillMethodByPolicy.Endpoint=http://webservicesprd/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="GetBillMethodByPolicy.Endpoint=http://\w+?/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" Replace="GetBillMethodByPolicy.Endpoint=http://webservicesstg/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="GetBillMethodByPolicy.Endpoint=http://\w+?/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" Replace="GetBillMethodByPolicy.Endpoint=http://webservicestrn/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="GetBillMethodByPolicy.Endpoint=http://\w+?/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" Replace="GetBillMethodByPolicy.Endpoint=http://webservicestst1/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="GetBillMethodByPolicy.Endpoint=http://\w+?/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" Replace="GetBillMethodByPolicy.Endpoint=http://webservicestst/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiBalancingReport">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="report.endpoint=http://\w+?/IntegrationServices/CL_B_R_DataLoad.asmx" Replace="report.endpoint=http://webservicesasy/IntegrationServices/CL_B_R_DataLoad.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="report.endpoint=http://\w+?/IntegrationServices/CL_B_R_DataLoad.asmx" Replace="report.endpoint=http://webservicese2e/IntegrationServices/CL_B_R_DataLoad.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="report.endpoint=http://\w+?/IntegrationServices/CL_B_R_DataLoad.asmx" Replace="report.endpoint=http://webservicesprd/IntegrationServices/CL_B_R_DataLoad.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="report.endpoint=http://\w+?/IntegrationServices/CL_B_R_DataLoad.asmx" Replace="report.endpoint=http://webservicesstg/IntegrationServices/CL_B_R_DataLoad.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="report.endpoint=http://\w+?/IntegrationServices/CL_B_R_DataLoad.asmx" Replace="report.endpoint=http://webservicestrn/IntegrationServices/CL_B_R_DataLoad.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="report.endpoint=http://\w+?/IntegrationServices/CL_B_R_DataLoad.asmx" Replace="report.endpoint=http://webservicestst1/IntegrationServices/CL_B_R_DataLoad.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="report.endpoint=http://\w+?/IntegrationServices/CL_B_R_DataLoad.asmx" Replace="report.endpoint=http://webservicestst/IntegrationServices/CL_B_R_DataLoad.asmx" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiPortalDCTRedirect">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="Starpak.endpoint=http://\w+?/CICSwebservice/Legacywebservice.asmx" Replace="Starpak.endpoint=http://us73devhis01/CICSwebservice/Legacywebservice.asmx" />
+					<Search Regex="soapURL=http://\w+?\:8080/DuckCreek21/DCTServer.aspx" Replace="soapURL=http://as73dctasy01:8080/DuckCreek21/DCTServer.aspx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="soapURL=http://\w+?\:8080/DuckCreek21/DCTServer.aspx" Replace="soapURL=http://as73dcte2e01:8080/DuckCreek22/DCTServer.aspx?" />
+					<Search Regex="Starpak.endpoint=http://\w+?/CICSwebservice/Legacywebservice.asmx" Replace="Starpak.endpoint=http://us73tsthis02/CICSwebserviceE2e/Legacywebservice.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="Starpak.endpoint=http://\w+?/CICSwebservice/Legacywebservice.asmx" Replace="Starpak.endpoint=http://od-hv-w-is-1/CICSwebservice/Legacywebservice.asmx" />
+					<Search Regex="soapURL=http://\w+?\:8080/DuckCreek21/DCTServer.aspx" Replace="soapURL=http://dctprdexample:8080/DuckCreek/DCTServer.aspx?" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="soapURL=http://\w+?\:8080/DuckCreek21/DCTServer.aspx" Replace="soapURL=http://dctpreexample:8080/DuckCreek/DCTServer.aspx?" />
+					<Search Regex="Starpak.endpoint=http://\w+?/CICSwebservice/Legacywebservice.asmx" Replace="Starpak.endpoint=http://US73TstHis02/CICSWebServiceStaging/LegacyWebService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="soapURL=http://\w+?\:8080/DuckCreek21/DCTServer.aspx" Replace="soapURL=http://as73dcttrn01:8080/DuckCreek21/DCTServer.aspx?" />
+					<Search Regex="Starpak.endpoint=http://\w+?/CICSwebservice/Legacywebservice.asmx" Replace="Starpak.endpoint=http://us73devhis01/CICSwebserviceg/Legacywebservice.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="soapURL=http://\w+?\:8080/DuckCreek21/DCTServer.aspx" Replace="soapURL=http://as73dcttst01:8080/DuckCreek21_ST1/DCTServer.aspx?" />
+					<Search Regex="Starpak.endpoint=http://\w+?/CICSwebservice/Legacywebservice.asmx" Replace="Starpak.endpoint=http://us73devhis01/CICSwebservice/Legacywebservice.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="Config.cnf">
+					<Search Regex="soapURL=http://\w+?\:8080/DuckCreek21/DCTServer.aspx" Replace="soapURL=http://ws73dcttst01:8080/express21_ST2/default.aspx" />
+					<Search Regex="Starpak.endpoint=http://\w+?/CICSwebservice/Legacywebservice.asmx" Replace="Starpak.endpoint=http://us73devhis01/CICSwebservice/Legacywebservice.asmx" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiClpolPredictiveModeling">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="HmiBillingAdminService.Endpoint=http://\w+?/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" Replace="HmiBillingAdminService.Endpoint=http://webservicesasy/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" />
+					<Search Regex="HmiPMNBService.Endpoint=http://\w+?/aqspmservice/nbserviceprovider.asmx" Replace="HmiPMNBService.Endpoint=http://webservicesasy/aqspmservice/nbserviceprovider.asmx" />
+					<Search Regex="HmiPMRnwlService.Endpoint=http://\w+?/AQSRenewalServices/RenewalServiceProvider.asmx" Replace="HmiPMRnwlService.Endpoint=http://webservicesasy/AQSRenewalServices/RenewalServiceProvider.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="HmiIADBService.Endpoint=http://\w+?/IntegrationServices/IADBService.asmx" Replace="HmiIADBService.Endpoint=http://webservicese2e/IntegrationServices/IADBService.asmx" />
+					<Search Regex="HmiPMNBService.Endpoint=http://\w+?/aqspmservice/nbserviceprovider.asmx" Replace="HmiPMNBService.Endpoint=http://webservicese2e/aqspmservice/nbserviceprovider.asmx" />
+					<Search Regex="HmiBillingAdminService.Endpoint=http://\w+?/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" Replace="HmiBillingAdminService.Endpoint=http://webservicese2e/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="HmiBillingAdminService.Endpoint=http://\w+?/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" Replace="HmiBillingAdminService.Endpoint=http://webservicesprd/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" />
+					<Search Regex="HmiPMNBService.Endpoint=http://\w+?/aqspmservice/nbserviceprovider.asmx" Replace="HmiPMNBServiceProvider.Endpoint=http://webservicesprd/aqspmservice/nbserviceprovider.asmx" />
+					<Search Regex="HmiIADBService.Endpoint=http://\w+?/IntegrationServices/IADBService.asmx" Replace="HmiIADBService.Endpoint=http://webservicesprd/IntegrationServices/IADBService.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="HmiBillingAdminService.Endpoint=http://\w+?/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" Replace="HmiBillingAdminService.Endpoint=http://webservicesstg/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" />
+					<Search Regex="HmiIADBService.Endpoint=http://\w+?/IntegrationServices/IADBService.asmx" Replace="HmiIADBService.Endpoint=http://webservicesstg/IntegrationServices/IADBService.asmx" />
+					<Search Regex="HmiPMNBService.Endpoint=http://\w+?/aqspmservice/nbserviceprovider.asmx" Replace="HmiPMNBService.Endpoint=http://webservicesstg/aqspmservice/nbserviceprovider.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="HmiBillingAdminService.Endpoint=http://\w+?/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" Replace="HmiBillingAdminService.Endpoint=http://webservicestrn/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" />
+					<Search Regex="HmiIADBService.Endpoint=http://\w+?/IntegrationServices/IADBService.asmx" Replace="HmiIADBService.Endpoint=http://webservicestrn/IntegrationServices/IADBService.asmx" />
+					<Search Regex="HmiPMNBService.Endpoint=http://\w+?/aqspmservice/nbserviceprovider.asmx" Replace="HmiPMNBService.Endpoint=http://webservicestrn/aqspmservice/nbserviceprovider.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="HmiPMNBService.Endpoint=http://\w+?/aqspmservice/nbserviceprovider.asmx" Replace="HmiPMNBService.Endpoint=http://webservicestst1/aqspmservice/nbserviceprovider.asmx" />
+					<Search Regex="HmiIADBService.Endpoint=http://\w+?/IntegrationServices/IADBService.asmx" Replace="HmiIADBService.Endpoint=http://webservicestst1/IntegrationServices/IADBService.asmx" />
+					<Search Regex="HmiBillingAdminService.Endpoint=http://\w+?/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" Replace="HmiBillingAdminService.Endpoint=http://webservicestst1/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" />
+					<Search Regex="HmiPMRnwlService.Endpoint=http://\w+?/AQSRenewalServices/RenewalServiceProvider.asmx" Replace="HmiPMRnwlService.Endpoint=http://webservicestst1/AQSRenewalServices/RenewalServiceProvider.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="HmiIADBService.Endpoint=http://\w+?/IntegrationServices/IADBService.asmx" Replace="HmiIADBService.Endpoint=http://webservicestst/IntegrationServices/IADBService.asmx" />
+					<Search Regex="HmiPMNBService.Endpoint=http://\w+?/aqspmservice/nbserviceprovider.asmx" Replace="HmiPMNBService.Endpoint=http://webservicestst/aqspmservice/nbserviceprovider.asmx" />
+					<Search Regex="HmiBillingAdminService.Endpoint=http://\w+?/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" Replace="HmiBillingAdminService.Endpoint=http://webservicestst/BillingAdmin/BillingServices/BillingAdminWebServices.asmx" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiPLDownload">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="InitiateProcess.Endpoint=http://\w+?/pldl/Service.asmx" Replace="InitiateProcess.Endpoint=http://webservicesasy/pldl/Service.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="InitiateProcess.Endpoint=http://\w+?/pldl/Service.asmx" Replace="InitiateProcess.Endpoint=http://webservicese2e/pldl/Service.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="InitiateProcess.Endpoint=http://\w+?/pldl/Service.asmx" Replace="InitiateProcess.Endpoint=http://webservicesprd/pldl/Service.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="InitiateProcess.Endpoint=http://\w+?/pldl/Service.asmx" Replace="InitiateProcess.Endpoint=http://webservicesstg/pldl/Service.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="InitiateProcess.Endpoint=http://\w+?/pldl/Service.asmx" Replace="InitiateProcess.Endpoint=http://webservicestrn/pldl/Service.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="InitiateProcess.Endpoint=http://\w+?/pldl/Service.asmx" Replace="InitiateProcess.Endpoint=http://webservicestst1/pldl/Service.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="InitiateProcess.Endpoint=http://\w+?/pldl/Service.asmx" Replace="InitiateProcess.Endpoint=http://webservicestst/pldl/Service.asmx" />
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+	<Package Name="HmiBillingAutoRenewal">
+		<Environments>
+			<Environment Name="ASY" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="hmibillingAutoRenewal.billingServices.endpoint=http://\w+?/BillingAdmin/BillingServices/BillingRenewalWebServices.asmx" Replace="hmibillingAutoRenewal.billingServices.endpoint=http://webservicesasy/BillingAdmin/BillingServices/BillingRenewalWebServices.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="E2E" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="hmibillingAutoRenewal.billingServices.endpoint=http://\w+?/BillingAdmin/BillingServices/BillingRenewalWebServices.asmx" Replace="hmibillingAutoRenewal.billingServices.endpoint=http://webservicese2e/BillingAdmin/BillingServices/BillingRenewalWebServices.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRD" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="hmibillingAutoRenewal.billingServices.endpoint=http://\w+?/BillingAdmin/BillingServices/BillingRenewalWebServices.asmx" Replace="hmibillingAutoRenewal.billingServices.endpoint=http://webservicesprd/BillingAdmin/BillingServices/BillingRenewalWebServices.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="PRE" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="hmibillingAutoRenewal.billingServices.endpoint=http://\w+?/BillingAdmin/BillingServices/BillingRenewalWebServices.asmx" Replace="hmibillingAutoRenewal.billingServices.endpoint=http://webservicesstg/BillingAdmin/BillingServices/BillingRenewalWebServices.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TRN" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="hmibillingAutoRenewal.billingServices.endpoint=http://\w+?/BillingAdmin/BillingServices/BillingRenewalWebServices.asmx" Replace="hmibillingAutoRenewal.billingServices.endpoint=http://webservicestrn/BillingAdmin/BillingServices/BillingRenewalWebServices.asmx" />
+				</Searches>
+			</Environment>
+			<Environment Name="TST1" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="hmibillingAutoRenewal.billingServices.endpoint=http://\w+?/BillingAdmin/BillingServices/BillingRenewalWebServices.asmx" Replace="hmibillingAutoRenewal.billingServices.endpoint=http://webservicestst1/BillingAdmin/BillingServices/BillingRenewalWebServices.asmx" />	
+				</Searches>
+			</Environment>
+			<Environment Name="TST2" >
+				<Searches FileName2Search="service.cnf">
+					<Search Regex="hmibillingAutoRenewal.billingServices.endpoint=http://\w+?/BillingAdmin/BillingServices/BillingRenewalWebServices.asmx" Replace="hmibillingAutoRenewal.billingServices.endpoint=http://webservicestst/BillingAdmin/BillingServices/BillingRenewalWebServices.asmx" />	
+				</Searches>
+			</Environment>
+		</Environments>
+	</Package>
+</Packages>
+

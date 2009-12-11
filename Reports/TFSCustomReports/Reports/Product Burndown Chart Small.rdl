@@ -1,0 +1,787 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="TfsReportDS">
+      <DataSourceReference>TfsReportDS</DataSourceReference>
+      <rd:DataSourceID>64006cd7-4ec8-432c-94ec-9c8f175fdf19</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>2.5cm</BottomMargin>
+  <RightMargin>2.5cm</RightMargin>
+  <PageWidth>27.9cm</PageWidth>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>21cm</InteractiveWidth>
+  <rd:GridSpacing>0.25cm</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <Left>4cm</Left>
+        <Top>8.75cm</Top>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <ZIndex>8</ZIndex>
+        <Visibility>
+          <Hidden>=Count(Fields!SprintName.Value, "ChartData") &lt;&gt; 0</Hidden>
+        </Visibility>
+        <Width>3.75cm</Width>
+        <Style>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontFamily>Verdana</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.63492cm</Height>
+        <Value>No data available yet</Value>
+      </Textbox>
+      <Image Name="image1">
+        <Sizing>AutoSize</Sizing>
+        <Left>4cm</Left>
+        <Top>7.25cm</Top>
+        <ZIndex>7</ZIndex>
+        <Visibility>
+          <Hidden>=Count(Fields!SprintName.Value, "ChartData") &lt;&gt; 0</Hidden>
+        </Visibility>
+        <Width>3.75661cm</Width>
+        <Source>Embedded</Source>
+        <Style />
+        <Height>1.45503cm</Height>
+        <Value>scrumlogo</Value>
+      </Image>
+      <Chart Name="chart1">
+        <Legend>
+          <Style>
+            <BorderStyle>
+              <Default>Solid</Default>
+            </BorderStyle>
+            <BackgroundColor>White</BackgroundColor>
+          </Style>
+          <Position>BottomCenter</Position>
+        </Legend>
+        <Subtype>Stacked</Subtype>
+        <Title />
+        <NoRows>***SORRY. No data is available for this Project ***</NoRows>
+        <Height>6.25cm</Height>
+        <CategoryAxis>
+          <Axis>
+            <Title />
+            <Style>
+              <FontFamily>Verdana</FontFamily>
+              <Color>#333333</Color>
+            </Style>
+            <MajorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MajorGridLines>
+            <MinorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MinorGridLines>
+            <MajorTickMarks>Outside</MajorTickMarks>
+            <Min>0</Min>
+            <Visible>true</Visible>
+          </Axis>
+        </CategoryAxis>
+        <PointWidth>0</PointWidth>
+        <Left>0.25cm</Left>
+        <ThreeDProperties>
+          <Rotation>30</Rotation>
+          <Inclination>30</Inclination>
+          <Shading>Simple</Shading>
+          <WallThickness>50</WallThickness>
+        </ThreeDProperties>
+        <DataSetName>ChartData</DataSetName>
+        <SeriesGroupings>
+          <SeriesGrouping>
+            <StaticSeries>
+              <StaticMember>
+                <Label>Work Remaining</Label>
+              </StaticMember>
+              <StaticMember>
+                <Label>Burndown</Label>
+              </StaticMember>
+              <StaticMember>
+                <Label>Trend using Linear Regression</Label>
+              </StaticMember>
+            </StaticSeries>
+          </SeriesGrouping>
+        </SeriesGroupings>
+        <Top>0.25cm</Top>
+        <PlotArea>
+          <Style>
+            <BorderStyle>
+              <Default>Solid</Default>
+            </BorderStyle>
+            <BorderColor>
+              <Default>#808080</Default>
+            </BorderColor>
+            <BackgroundGradientEndColor>#d1bec6</BackgroundGradientEndColor>
+            <BackgroundGradientType>TopBottom</BackgroundGradientType>
+          </Style>
+        </PlotArea>
+        <ValueAxis>
+          <Axis>
+            <Title>
+              <Caption>Estimate Remaining</Caption>
+              <Style>
+                <FontFamily>Verdana</FontFamily>
+                <FontSize>8pt</FontSize>
+                <Color>#333333</Color>
+              </Style>
+            </Title>
+            <Style>
+              <FontFamily>Verdana</FontFamily>
+              <Color>#333333</Color>
+            </Style>
+            <MajorGridLines>
+              <ShowGridLines>true</ShowGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+                <BorderColor>
+                  <Default>#808080</Default>
+                </BorderColor>
+              </Style>
+            </MajorGridLines>
+            <MinorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MinorGridLines>
+            <MajorTickMarks>Outside</MajorTickMarks>
+            <Min>0</Min>
+            <Margin>true</Margin>
+            <Visible>true</Visible>
+            <Scalar>true</Scalar>
+          </Axis>
+        </ValueAxis>
+        <ZIndex>6</ZIndex>
+        <Visibility>
+          <Hidden>=Count(Fields!SprintName.Value, "ChartData") = 0</Hidden>
+        </Visibility>
+        <Type>Column</Type>
+        <Width>11.5cm</Width>
+        <CategoryGroupings>
+          <CategoryGrouping>
+            <DynamicCategories>
+              <Grouping Name="chart1_CategoryGroup1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!SprintName.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Label>=Fields!SprintName.Value</Label>
+            </DynamicCategories>
+          </CategoryGrouping>
+        </CategoryGroupings>
+        <Palette>Default</Palette>
+        <ChartData>
+          <ChartSeries>
+            <DataPoints>
+              <DataPoint>
+                <DataValues>
+                  <DataValue>
+                    <Value>=Sum(Fields!EffortAtEnd.Value)</Value>
+                  </DataValue>
+                </DataValues>
+                <DataLabel />
+                <Style>
+                  <BackgroundColor>#909859</BackgroundColor>
+                  <BackgroundGradientEndColor>#c7cbac</BackgroundGradientEndColor>
+                  <BackgroundGradientType>VerticalCenter</BackgroundGradientType>
+                </Style>
+                <Marker>
+                  <Size>6pt</Size>
+                </Marker>
+              </DataPoint>
+            </DataPoints>
+          </ChartSeries>
+          <ChartSeries>
+            <DataPoints>
+              <DataPoint>
+                <DataValues>
+                  <DataValue>
+                    <Value>=Fields!WorkDone.Value</Value>
+                  </DataValue>
+                </DataValues>
+                <DataLabel />
+                <Action>
+                  <Drillthrough>
+                    <ReportName>Delta Report Small</ReportName>
+                    <Parameters>
+                      <Parameter Name="vLastSprintDate">
+                        <Value>=Fields!SprintStart.Value</Value>
+                      </Parameter>
+                      <Parameter Name="vNextSprintDate">
+                        <Value>=Fields!SprintEnd.Value</Value>
+                      </Parameter>
+                    </Parameters>
+                  </Drillthrough>
+                </Action>
+                <Style>
+                  <BackgroundColor>#c7cbac</BackgroundColor>
+                  <BackgroundGradientEndColor>#e6e7d9</BackgroundGradientEndColor>
+                  <BackgroundGradientType>VerticalCenter</BackgroundGradientType>
+                </Style>
+                <Marker>
+                  <Size>6pt</Size>
+                </Marker>
+              </DataPoint>
+            </DataPoints>
+          </ChartSeries>
+          <ChartSeries>
+            <DataPoints>
+              <DataPoint>
+                <DataValues>
+                  <DataValue>
+                    <Value>=Code.GetTrend(Fields!EffortAtEnd.Value,Fields!ConcatenatedBurndown.Value)</Value>
+                  </DataValue>
+                </DataValues>
+                <DataLabel />
+                <Style>
+                  <BorderStyle>
+                    <Default>Dashed</Default>
+                  </BorderStyle>
+                  <BorderColor>
+                    <Default>#550e2b</Default>
+                  </BorderColor>
+                </Style>
+                <Marker>
+                  <Size>6pt</Size>
+                </Marker>
+              </DataPoint>
+            </DataPoints>
+            <PlotType>Line</PlotType>
+          </ChartSeries>
+        </ChartData>
+        <Style>
+          <FontFamily>Verdana</FontFamily>
+          <BackgroundColor>White</BackgroundColor>
+        </Style>
+      </Chart>
+      <Image Name="image4">
+        <Sizing>Fit</Sizing>
+        <Left>0.25cm</Left>
+        <Top>6.63cm</Top>
+        <ZIndex>5</ZIndex>
+        <Visibility>
+          <Hidden>=Count(Fields!SprintName.Value, "ChartData") = 0</Hidden>
+        </Visibility>
+        <Width>1.25cm</Width>
+        <Source>Embedded</Source>
+        <Style />
+        <Height>0.33cm</Height>
+        <Value>grad1</Value>
+      </Image>
+      <Textbox Name="textbox5">
+        <Left>1.75cm</Left>
+        <Top>6.5cm</Top>
+        <ZIndex>4</ZIndex>
+        <Visibility>
+          <Hidden>=Count(Fields!SprintName.Value, "ChartData") = 0</Hidden>
+        </Visibility>
+        <Width>2.75cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontFamily>Verdana</FontFamily>
+          <FontSize>8pt</FontSize>
+          <Color>#550e2b</Color>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.5cm</Height>
+        <Value>Work Remaining</Value>
+      </Textbox>
+      <Image Name="image5">
+        <Sizing>Fit</Sizing>
+        <Left>4.75cm</Left>
+        <Top>6.63cm</Top>
+        <ZIndex>3</ZIndex>
+        <Visibility>
+          <Hidden>=Count(Fields!SprintName.Value, "ChartData") = 0</Hidden>
+        </Visibility>
+        <Width>1.25cm</Width>
+        <Source>Embedded</Source>
+        <Style />
+        <Height>0.33cm</Height>
+        <Value>grad2</Value>
+      </Image>
+      <Textbox Name="textbox3">
+        <Left>6.25cm</Left>
+        <Top>6.5cm</Top>
+        <ZIndex>2</ZIndex>
+        <Visibility>
+          <Hidden>=Count(Fields!SprintName.Value, "ChartData") = 0</Hidden>
+        </Visibility>
+        <Width>2cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontFamily>Verdana</FontFamily>
+          <FontSize>8pt</FontSize>
+          <Color>#550e2b</Color>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.5cm</Height>
+        <Value>Burndown</Value>
+      </Textbox>
+      <Textbox Name="textbox4">
+        <Left>10cm</Left>
+        <Top>6.5cm</Top>
+        <ZIndex>1</ZIndex>
+        <Visibility>
+          <Hidden>=Count(Fields!SprintName.Value, "ChartData") = 0</Hidden>
+        </Visibility>
+        <Width>1.25cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontFamily>Verdana</FontFamily>
+          <FontSize>8pt</FontSize>
+          <Color>#550e2b</Color>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.5cm</Height>
+        <Value>Trend</Value>
+      </Textbox>
+      <Line Name="line3">
+        <Left>8.5cm</Left>
+        <Top>6.75cm</Top>
+        <Visibility>
+          <Hidden>=Count(Fields!SprintName.Value, "ChartData") = 0</Hidden>
+        </Visibility>
+        <Width>1.25cm</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Dashed</Default>
+          </BorderStyle>
+          <BorderWidth>
+            <Default>2pt</Default>
+          </BorderWidth>
+          <BorderColor>
+            <Default>#550e2b</Default>
+          </BorderColor>
+        </Style>
+        <Height>0cm</Height>
+      </Line>
+    </ReportItems>
+    <Height>9.5cm</Height>
+  </Body>
+  <rd:ReportID>072cb091-1bc4-48c6-b836-70cbee520352</rd:ReportID>
+  <LeftMargin>2.5cm</LeftMargin>
+  <EmbeddedImages>
+    <EmbeddedImage Name="scrumlogo">
+      <ImageData>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</ImageData>
+      <MIMEType>image/jpeg</MIMEType>
+    </EmbeddedImage>
+    <EmbeddedImage Name="banner_for_app">
+      <ImageData>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</ImageData>
+      <MIMEType>image/jpeg</MIMEType>
+    </EmbeddedImage>
+    <EmbeddedImage Name="grad1">
+      <ImageData>/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAXAFADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDWjq1H2qrHVqPtXjxGW4+lWo+lVY+lWo+laoC3H0pz9KbH0pz9K16AVZO9VZO9WpO9VZO9ZsCpJ1qrJVqTrVWSspAMjq1H2oopRAtx9KtR9KKK1QFuPpTn6UUVr0Aqyd6qyd6KKzYFSTrVWSiispAf/9k=</ImageData>
+      <MIMEType>image/jpeg</MIMEType>
+    </EmbeddedImage>
+    <EmbeddedImage Name="grad2">
+      <ImageData>/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAVAE8DASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD0tamWoVqZa5EMmWpVqJalWqQiZaGoWhqoCFqiapWqJqlgQtULVM1QtUsYLUy0UUICZalWiiqQiZaGooqgIWqJqKKlgQtULUUVLGf/2Q==</ImageData>
+      <MIMEType>image/jpeg</MIMEType>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <DataSets>
+    <DataSet Name="ChartData">
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText>---------------------------------------------------------- Test data
+--DECLARE @vProjectName AS varchar(20)
+--SET @vProjectName= '/Mark012';
+----------------------------------------------------------End of test data
+
+DECLARE @work AS varchar(1000)
+SET @work='';
+
+-- ----------------------------------------------------------
+-- Select Product Backlog history where the WorkRemaining is zero
+-- ----------------------------------------------------------
+WITH CTE1 AS
+(
+SELECT     YEAR(h.Date)*10000+MONTH(h.Date)*100+DAY(h.Date)  AS  StartDate,
+                 w.System_Id AS SystemId
+FROM           [Work Item History] AS h
+INNER JOIN [Work Item] AS w ON h.[Work Item] = w.__ID
+INNER JOIN [Team Project] AS t ON h.[Team Project] = t.__ID
+WHERE    w.System_WorkItemType = 'Product Backlog Item' AND '/'+t.[Team Project]+'/Portal Reports'  = @vProjectName
+AND         w.System_State != 'Deleted'
+AND         h.Conchango_VSTS_Scrum_WorkRemaining = 0
+),
+
+-- ----------------------------------------------------------
+-- Where there are duplicates, choose the earliest
+-- i.e. get the first date when each Product Backlog was seen to be completed
+-- ----------------------------------------------------------
+CTE2 AS
+(
+SELECT Min(StartDate) AS StartDate, SystemId FROM CTE1 GROUP BY SystemId
+),
+
+-- ----------------------------------------------------------
+-- Meanwhile, get the Sprints...
+-- ----------------------------------------------------------
+CTE3 AS
+(
+SELECT     YEAR(c.Conchango_VSTS_Scrum_SprintStart)*10000+
+                 MONTH(c.Conchango_VSTS_Scrum_SprintStart)*100+
+                 DAY(c.Conchango_VSTS_Scrum_SprintStart) As SprintStart,
+                YEAR(c.Conchango_VSTS_Scrum_SprintEnd)*10000+
+                 MONTH(c.Conchango_VSTS_Scrum_SprintEnd)*100+
+                 DAY(c.Conchango_VSTS_Scrum_SprintEnd) As SprintEnd,
+                 w.System_Title As SprintName,
+                 c.Conchango_VSTS_Scrum_SprintNumber As SprintNumber
+FROM       [Current Work Item] AS c
+                INNER JOIN [Team Project] AS t ON c.[Team Project] = t.__ID
+                INNER JOIN [Work Item] AS w ON c.[Work Item] = w.__ID
+WHERE    w.System_WorkItemType ='Sprint' AND '/'+t.[Team Project]+'/Portal Reports'  = @vProjectName
+AND         w.System_State != 'Deleted'
+),
+
+-- ----------------------------------------------------------
+-- And the Product Backlog Items
+-- ----------------------------------------------------------
+CTE4 AS
+(
+SELECT    c.Conchango_VSTS_Scrum_EstimatedEffort As Effort,
+                w.System_Id AS SystemId
+FROM      [Current Work Item] AS c
+                INNER JOIN [Team Project] AS t ON c.[Team Project] = t.__ID
+                INNER JOIN [Work Item] AS w ON c.[Work Item] = w.__ID
+WHERE    w.System_WorkItemType = 'Product Backlog Item' AND '/'+t.[Team Project]+'/Portal Reports'  = @vProjectName
+AND         w.System_State != 'Deleted'
+),
+
+-- ----------------------------------------------------------
+-- Join the Product Backlogs to the History to find when/if each was completed
+-- ----------------------------------------------------------
+CTE5 AS
+(
+SELECT Effort,
+             a.SystemId,
+             b.StartDate As CompletedDate
+FROM CTE4 As a
+LEFT OUTER JOIN CTE2 As b ON a.SystemId = b.SystemId
+),
+
+-- ----------------------------------------------------------
+-- Join again to the Sprints to get a Spring/Backlog combination for all sprints where the backlog is completed
+-- ----------------------------------------------------------
+CTE6 AS
+(
+SELECT Effort,
+             SprintNumber,
+             SprintName,
+             SprintStart,
+             SprintEnd
+FROM CTE5 AS a
+INNER JOIN CTE3 AS b ON a.CompletedDate &lt;= b.SprintEnd
+),
+
+-- ----------------------------------------------------------
+-- Get all Product Backlog history where the Estimated Effort is positive
+-- ----------------------------------------------------------
+CTE7 AS
+(
+SELECT     YEAR(h.Date)*10000+MONTH(h.Date)*100+DAY(h.Date) AS StartDate,
+                 w.System_Id AS SystemId,
+                 h.Conchango_VSTS_Scrum_EstimatedEffort AS Effort
+FROM         [Work Item History] AS h
+INNER JOIN [Work Item] AS w ON h.[Work Item] = w.__ID
+INNER JOIN [Team Project] AS t ON h.[Team Project] = t.__ID
+WHERE    w.System_WorkItemType = 'Product Backlog Item' AND '/'+t.[Team Project]+'/Portal Reports'  = @vProjectName
+AND         w.System_State != 'Deleted'
+AND         h.Conchango_VSTS_Scrum_EstimatedEffort &gt; 0
+),
+
+-- ----------------------------------------------------------
+-- Group by SystemId/Effort to retrieve the earliest from each set of duplicates
+-- ----------------------------------------------------------
+CTE8 AS
+(
+SELECT SystemId, Effort, MIN(StartDate) As StartDate FROM CTE7 GROUP BY SystemId, Effort
+),
+
+-- ----------------------------------------------------------
+-- Join to the Sprints to get all records for each
+-- Sprint where the date is earlier than the start
+-- of the Sprint
+-- ----------------------------------------------------------
+CTE10 AS
+(
+SELECT SystemId,
+             Effort,
+             SprintName,
+             SprintEnd,
+             StartDate
+FROM CTE8 AS a
+INNER JOIN CTE3 AS b ON a.StartDate &lt;= b.SprintStart
+),
+
+CTE10a AS
+(
+SELECT SystemId,
+             SprintEnd,
+             MAX(StartDate) AS StartDate
+FROM CTE10 GROUP BY SystemId,SprintEnd
+),
+
+-- ----------------------------------------------------------
+-- Group in order to retrieve the latest from each
+-- set per Backlog/Sprint combination
+-- ----------------------------------------------------------
+CTE11 AS
+(
+SELECT a.SystemId,
+             Effort,
+             SprintName,
+             a.SprintEnd
+FROM CTE10 AS a
+INNER JOIN CTE10a AS b ON a.SystemId=b.SystemId AND a.SprintEnd=b.SprintEnd AND a.StartDate=b.StartDate
+),
+
+-- ----------------------------------------------------------
+-- Sum the effort remaining at the start of each sprint
+-- ----------------------------------------------------------
+CTE12 AS
+(
+SELECT SUM(Effort) AS EffortAtStart,
+             SprintName,
+             SprintEnd
+FROM CTE11 GROUP BY SprintName, SprintEnd
+),
+
+-- ----------------------------------------------------------
+-- Sum all the effort completed for each Sprint
+-- ----------------------------------------------------------
+CTE13 AS
+(
+SELECT SUM(Effort) AS EffortCompleted,
+             SprintName,
+             SprintStart,
+             SprintEnd
+FROM CTE6 GROUP BY SprintName, SprintStart, SprintEnd
+),
+
+-- ----------------------------------------------------------
+--Join the two together
+-- ----------------------------------------------------------
+CTE14 AS
+(
+SELECT EffortAtStart,
+             EffortCompleted,
+             EffortAtStart-EffortCompleted AS EffortAtEnd,
+             a.SprintName,
+             a.SprintStart,
+             a.SprintEnd
+FROM CTE13 AS a
+INNER JOIN CTE12 AS b ON a.SprintEnd=b.SprintEnd
+),
+
+-- ----------------------------------------------------------
+-- Null out data for any Sprints that haven't finished yet
+-- ----------------------------------------------------------
+CTE15 AS
+(
+SELECT EffortAtStart,
+             CASE WHEN SprintEnd &lt;= YEAR(GETDATE())*10000+MONTH(GETDATE())*100+DAY(GETDATE())
+                       THEN EffortCompleted
+                       ELSE NULL
+             END AS EffortCompleted,
+            CASE WHEN SprintEnd &lt;= YEAR(GETDATE())*10000+MONTH(GETDATE())*100+DAY(GETDATE())
+                       THEN EffortAtEnd
+                       ELSE NULL
+             END AS EffortAtEnd,
+             SprintName,
+             SprintStart,
+             SprintEnd
+FROM CTE14
+),
+
+-- ----------------------------------------------------------
+-- Find the earliest sprint end
+-- ----------------------------------------------------------
+CTE16 AS
+(
+SELECT MIN(SprintEnd) AS SprintEnd FROM CTE15
+),
+
+-- ----------------------------------------------------------
+-- Add an artificial sprint record at the front to
+-- hold the initial position
+-- ----------------------------------------------------------
+CTE17 AS
+(
+SELECT EffortAtStart,
+             0 AS EffortCompleted,
+             EffortAtStart As EffortAtEnd,
+             '' AS SprintName,
+             0 AS SprintStart,
+             a.SprintEnd-1 AS SprintEnd
+FROM CTE14 AS a
+INNER JOIN CTE16 AS b ON a.SprintEnd=b.SprintEnd
+UNION
+SELECT EffortAtStart,
+             EffortCompleted,
+             EffortAtEnd,
+             SprintName,
+             SprintStart,
+             SprintEnd
+FROM CTE15
+),
+
+-- ----------------------------------------------------------
+-- Concatenate all the effort values into a string to pass to the C# code
+-- ----------------------------------------------------------
+CTE18 AS
+(
+SELECT (SELECT CAST(EffortAtEnd AS varchar) + ',' AS [text()]
+              FROM CTE17
+              ORDER BY SprintEnd
+              FOR XML PATH('')
+              ) AS ConcatenatedBurndown
+),
+
+-- ----------------------------------------------------------
+-- Add the concatenated string to each record
+-- ----------------------------------------------------------
+CTE19 AS
+(
+SELECT EffortAtStart,
+             EffortCompleted,
+             EffortAtEnd,
+             SprintName,
+             SprintStart,
+             SprintEnd,
+             ConcatenatedBurndown,
+             ROW_NUMBER() OVER(ORDER BY SprintEnd) AS Row
+FROM CTE17
+INNER JOIN CTE18 ON 1=1
+),
+
+-- ----------------------------------------------------------
+-- Join table to itself in
+-- order to calculate the difference between work 
+-- completed in adjoining Sprints, i.e. the work done
+-- by each Sprint
+-- ----------------------------------------------------------
+
+CTE20 AS
+(
+SELECT a.EffortAtStart,
+             a.EffortCompleted,
+             a.EffortAtEnd,
+             a.SprintName,
+             a.SprintStart,
+             a.SprintEnd,
+             a.ConcatenatedBurndown,
+             CASE WHEN a.EffortAtEnd IS NULL
+                       THEN NULL
+                       ELSE  a.EffortCompleted - b.EffortCompleted
+             END AS WorkDone
+FROM CTE19 AS a
+INNER JOIN CTE19 AS b ON b.Row=a.Row-1
+)
+
+SELECT * FROM CTE20 ORDER BY SprintEnd</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@vProjectName">
+            <Value>=Globals!ReportFolder</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <DataSourceName>TfsReportDS</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="EffortAtStart">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>EffortAtStart</DataField>
+        </Field>
+        <Field Name="EffortCompleted">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>EffortCompleted</DataField>
+        </Field>
+        <Field Name="EffortAtEnd">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>EffortAtEnd</DataField>
+        </Field>
+        <Field Name="SprintName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SprintName</DataField>
+        </Field>
+        <Field Name="SprintStart">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SprintStart</DataField>
+        </Field>
+        <Field Name="SprintEnd">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SprintEnd</DataField>
+        </Field>
+        <Field Name="ConcatenatedBurndown">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ConcatenatedBurndown</DataField>
+        </Field>
+        <Field Name="WorkDone">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>WorkDone</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <CodeModules>
+    <CodeModule>Conchango.TeamSystem.Scrum.Metrics, Version=1.1.60629.0, Culture=neutral, PublicKeyToken=97e379b71f431203</CodeModule>
+  </CodeModules>
+  <Code>Function GetTrend(ByVal burndown As Object, ByVal concat As Object) As Nullable(Of Double)
+   Return mForecasting.GetProductBurndownTrend(burndown, concat)
+End Function
+
+
+</Code>
+  <Width>12cm</Width>
+  <InteractiveHeight>29.7cm</InteractiveHeight>
+  <Classes>
+    <Class>
+      <ClassName>Conchango.TeamSystem.Scrum.Metrics.Forecasting</ClassName>
+      <InstanceName>mForecasting</InstanceName>
+    </Class>
+  </Classes>
+  <Language>en-US</Language>
+  <TopMargin>2.5cm</TopMargin>
+  <PageHeight>21cm</PageHeight>
+</Report>

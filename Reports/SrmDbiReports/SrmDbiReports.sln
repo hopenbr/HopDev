@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "SrmDbiReports", "SrmDbiReports\SrmDbiReports.rptproj", "{B622AFAD-1703-4720-8134-E3B5F97A2E94}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://as73tfs01:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SrmDbiReports\\SrmDbiReports.rptproj
+		SccProjectName1 = SrmDbiReports
+		SccLocalPath1 = SrmDbiReports
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Production|Default = Production|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B622AFAD-1703-4720-8134-E3B5F97A2E94}.Debug|Default.ActiveCfg = Debug
+		{B622AFAD-1703-4720-8134-E3B5F97A2E94}.Debug|Default.Build.0 = DebugLocal
+		{B622AFAD-1703-4720-8134-E3B5F97A2E94}.Debug|Default.Deploy.0 = DebugLocal
+		{B622AFAD-1703-4720-8134-E3B5F97A2E94}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{B622AFAD-1703-4720-8134-E3B5F97A2E94}.DebugLocal|Default.Build.0 = DebugLocal
+		{B622AFAD-1703-4720-8134-E3B5F97A2E94}.Production|Default.ActiveCfg = Production
+		{B622AFAD-1703-4720-8134-E3B5F97A2E94}.Production|Default.Build.0 = Production
+		{B622AFAD-1703-4720-8134-E3B5F97A2E94}.Production|Default.Deploy.0 = Production
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

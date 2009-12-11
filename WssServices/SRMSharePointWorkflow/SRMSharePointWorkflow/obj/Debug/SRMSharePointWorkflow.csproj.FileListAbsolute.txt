@@ -1,0 +1,1 @@
+C:\TFSWorkspaces\VS2008\SRM\Branches\DEVELOPMENT\WssServices\SRMSharePointWorkflow\SRMSharePointWorkflow\obj\Debug\ResolveAssemblyReference.cache

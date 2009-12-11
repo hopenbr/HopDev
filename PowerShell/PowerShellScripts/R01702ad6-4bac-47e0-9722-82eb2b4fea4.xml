@@ -1,0 +1,745 @@
+﻿<ManuScript>
+  <properties manuscriptID="AutomatedProcess_Director" versionID="R01702ad6-4bac-47e0-9722-82eb2b4fea4" versionDate="2007-05-29" version="1" boolean="1" fieldCache="1" shortCircuitCond="1" caption="AutomatedProcessDirector" inherited="AutomatedProcess_Base" image="" dataSchema="" cultureCode="en-US" cultureName="English (United States)">
+    <notes />
+    <keys>
+      <keyInfo name="lob" value="Admin" />
+      <keyInfo name="state" value="Admin" />
+      <keyInfo name="effectiveDateNew" value="Admin" />
+      <keyInfo name="effectiveDateRenewal" value="Admin" />
+      <keyInfo name="masterID" value="Admin" />
+      <keyInfo name="productCode" value="Admin" />
+      <keyInfo name="family" value="Admin" />
+      <keyInfo name="version" value="2.1.0" />
+    </keys>
+    <contexts />
+  </properties>
+  <model defaultValue="True">
+    <object id="data" path="data">
+      <minOccurs value="1" />
+      <maxOccurs value="1" />
+      <public id="data.RunCommitManuScript" path="RunCommitManuScript" type="string">
+        <definition>
+          <caption value="Get Commit MS" />
+        </definition>
+        <rules>
+          <value>
+            <external>
+              <manuscriptName idref="ManuscriptID.CommittManuScriptID" />
+              <referenceField value="data.ProcessCheck" />
+            </external>
+          </value>
+        </rules>
+      </public>
+      <object id="ManuscriptID">
+        <minOccurs value="1" />
+        <maxOccurs value="1" />
+        <private id="ManuscriptID.CommittManuScriptID" type="string" comment="">
+          <value>
+            <request verb="ManuScriptBroker.listRq" get="items/item/@id">
+              <onFailure value="" />
+              <modifySession value="" />
+              <usesSession value="" />
+              <default value="" />
+              <nameValues>
+                <nameValue value="" name="keys" dataType="element">
+                  <nameValue value="" name="key" dataType="element">
+                    <nameValue value="lob" name="name" dataType="attribute" />
+                    <nameValue value="=" name="operator" dataType="attribute" />
+                    <nameValue idref="ManuscriptID.LineOfBusinessKey" name="value" dataType="attribute" />
+                  </nameValue>
+                  <nameValue value="" name="key" dataType="element">
+                    <nameValue value="state" name="name" dataType="attribute" />
+                    <nameValue value="=" name="operator" dataType="attribute" />
+                    <nameValue idref="ManuscriptID.StateKey" name="value" dataType="attribute" />
+                  </nameValue>
+                  <nameValue value="" name="key" dataType="element">
+                    <nameValue idref="ManuscriptID.EffectiveDateKeyName" name="name" dataType="attribute" />
+                    <nameValue value="&lt;=" name="operator" dataType="attribute" />
+                    <nameValue idref="ManuscriptID.EffectiveDateKey" name="value" dataType="attribute" />
+                  </nameValue>
+                  <nameValue value="" name="key" dataType="element">
+                    <nameValue value="productCode" name="name" dataType="attribute" />
+                    <nameValue value="=" name="operator" dataType="attribute" />
+                    <nameValue idref="ManuscriptID.ProductCodeKey" name="value" dataType="attribute" />
+                  </nameValue>
+                  <nameValue value="" name="key" dataType="element">
+                    <nameValue value="family" name="name" dataType="attribute" />
+                    <nameValue value="=" name="operator" dataType="attribute" />
+                    <nameValue idref="ManuscriptID.CommittFamilyKey" name="value" dataType="attribute" />
+                  </nameValue>
+                  <nameValue value="" name="sort" dataType="element">
+                    <nameValue value="versionDate" name="name" dataType="attribute" />
+                    <nameValue value="descending" name="direction" dataType="attribute" />
+                  </nameValue>
+                </nameValue>
+              </nameValues>
+            </request>
+          </value>
+        </private>
+        <private id="ManuscriptID.EffectiveDateKeyName" caption="" type="string">
+          <value>
+            <if>
+              <condition>
+                <comparison compare="eq">
+                  <operand idref="Policy.Status" type="string" />
+                  <operand type="string" value="Renewal" />
+                </comparison>
+              </condition>
+              <then value="effectiveDateRenewal" />
+              <else value="effectiveDateNew" />
+            </if>
+          </value>
+        </private>
+        <private id="ManuscriptID.EffectiveDateKey" caption="" type="string">
+          <value idref="PolicyInput.EffectiveDate" />
+        </private>
+        <private id="ManuscriptID.CommittFamilyKey" caption="" type="string">
+          <value value="Committ" />
+        </private>
+        <private id="ManuscriptID.InformationFamilyKey" caption="" type="string">
+          <value value="Information" />
+        </private>
+        <private id="ManuscriptID.LineOfBusinessKey" caption="" type="string">
+          <value value="Admin" />
+        </private>
+        <private id="ManuscriptID.ProductCodeKey" caption="" type="string">
+          <value value="Batch" />
+        </private>
+        <public id="ManuscriptID.StateKey" path="StateKey" type="string">
+          <definition>
+            <caption value="State Key" />
+          </definition>
+          <rules>
+            <value value="Admin" />
+          </rules>
+        </public>
+        <private id="ManuscriptID.InformationManuScriptID" type="string" comment="">
+          <value>
+            <request verb="ManuScriptBroker.listRq" get="items/item/@id">
+              <onFailure value="" />
+              <modifySession value="" />
+              <usesSession value="" />
+              <default value="" />
+              <nameValues>
+                <nameValue value="" name="keys" dataType="element">
+                  <nameValue value="" name="key" dataType="element">
+                    <nameValue value="lob" name="name" dataType="attribute" />
+                    <nameValue value="=" name="operator" dataType="attribute" />
+                    <nameValue idref="ManuscriptID.LineOfBusinessKey" name="value" dataType="attribute" />
+                  </nameValue>
+                  <nameValue value="" name="key" dataType="element">
+                    <nameValue value="state" name="name" dataType="attribute" />
+                    <nameValue value="=" name="operator" dataType="attribute" />
+                    <nameValue idref="ManuscriptID.StateKey" name="value" dataType="attribute" />
+                  </nameValue>
+                  <nameValue value="" name="key" dataType="element">
+                    <nameValue idref="ManuscriptID.EffectiveDateKeyName" name="name" dataType="attribute" />
+                    <nameValue value="&lt;=" name="operator" dataType="attribute" />
+                    <nameValue idref="ManuscriptID.EffectiveDateKey" name="value" dataType="attribute" />
+                  </nameValue>
+                  <nameValue value="" name="key" dataType="element">
+                    <nameValue value="productCode" name="name" dataType="attribute" />
+                    <nameValue value="=" name="operator" dataType="attribute" />
+                    <nameValue idref="ManuscriptID.ProductCodeKey" name="value" dataType="attribute" />
+                  </nameValue>
+                  <nameValue value="" name="key" dataType="element">
+                    <nameValue value="family" name="name" dataType="attribute" />
+                    <nameValue value="=" name="operator" dataType="attribute" />
+                    <nameValue idref="ManuscriptID.InformationFamilyKey" name="value" dataType="attribute" />
+                  </nameValue>
+                  <nameValue value="" name="sort" dataType="element">
+                    <nameValue value="versionDate" name="name" dataType="attribute" />
+                    <nameValue value="descending" name="direction" dataType="attribute" />
+                  </nameValue>
+                </nameValue>
+              </nameValues>
+            </request>
+          </value>
+        </private>
+        <private id="ManuscriptID.ScheduleRenewalManuScriptID" type="string" comment="">
+          <value>
+            <request verb="ManuScriptBroker.listRq" get="items/item/@id">
+              <onFailure value="" />
+              <modifySession value="" />
+              <usesSession value="" />
+              <default value="" />
+              <nameValues>
+                <nameValue value="" name="keys" dataType="element">
+                  <nameValue value="" name="key" dataType="element">
+                    <nameValue value="lob" name="name" dataType="attribute" />
+                    <nameValue value="=" name="operator" dataType="attribute" />
+                    <nameValue idref="ManuscriptID.LineOfBusinessKey" name="value" dataType="attribute" />
+                  </nameValue>
+                  <nameValue value="" name="key" dataType="element">
+                    <nameValue value="state" name="name" dataType="attribute" />
+                    <nameValue value="=" name="operator" dataType="attribute" />
+                    <nameValue idref="ManuscriptID.StateKey" name="value" dataType="attribute" />
+                  </nameValue>
+                  <nameValue value="" name="key" dataType="element">
+                    <nameValue idref="ManuscriptID.EffectiveDateKeyName" name="name" dataType="attribute" />
+                    <nameValue value="&lt;=" name="operator" dataType="attribute" />
+                    <nameValue idref="ManuscriptID.EffectiveDateKey" name="value" dataType="attribute" />
+                  </nameValue>
+                  <nameValue value="" name="key" dataType="element">
+                    <nameValue value="productCode" name="name" dataType="attribute" />
+                    <nameValue value="=" name="operator" dataType="attribute" />
+                    <nameValue idref="ManuscriptID.ProductCodeKey" name="value" dataType="attribute" />
+                  </nameValue>
+                  <nameValue value="" name="key" dataType="element">
+                    <nameValue value="family" name="name" dataType="attribute" />
+                    <nameValue value="=" name="operator" dataType="attribute" />
+                    <nameValue idref="ManuscriptID.ScheduleRenewalFamilyKey" name="value" dataType="attribute" />
+                  </nameValue>
+                  <nameValue value="" name="sort" dataType="element">
+                    <nameValue value="versionDate" name="name" dataType="attribute" />
+                    <nameValue value="descending" name="direction" dataType="attribute" />
+                  </nameValue>
+                </nameValue>
+              </nameValues>
+            </request>
+          </value>
+        </private>
+        <private id="ManuscriptID.ScheduleRenewalFamilyKey" caption="" type="string">
+          <value value="ScheduleRenewal" />
+        </private>
+        <private id="ManuscriptID.RenewalManuScriptID" type="string" comment="">
+          <value>
+            <request verb="ManuScriptBroker.listRq" get="items/item/@id">
+              <onFailure value="" />
+              <modifySession value="" />
+              <usesSession value="" />
+              <default value="" />
+              <nameValues>
+                <nameValue value="" name="keys" dataType="element">
+                  <nameValue value="" name="key" dataType="element">
+                    <nameValue value="lob" name="name" dataType="attribute" />
+                    <nameValue value="=" name="operator" dataType="attribute" />
+                    <nameValue idref="ManuscriptID.LineOfBusinessKey" name="value" dataType="attribute" />
+                  </nameValue>
+                  <nameValue value="" name="key" dataType="element">
+                    <nameValue value="state" name="name" dataType="attribute" />
+                    <nameValue value="=" name="operator" dataType="attribute" />
+                    <nameValue idref="ManuscriptID.StateKey" name="value" dataType="attribute" />
+                  </nameValue>
+                  <nameValue value="" name="key" dataType="element">
+                    <nameValue idref="ManuscriptID.EffectiveDateKeyName" name="name" dataType="attribute" />
+                    <nameValue value="&lt;=" name="operator" dataType="attribute" />
+                    <nameValue idref="ManuscriptID.EffectiveDateKey" name="value" dataType="attribute" />
+                  </nameValue>
+                  <nameValue value="" name="key" dataType="element">
+                    <nameValue value="productCode" name="name" dataType="attribute" />
+                    <nameValue value="=" name="operator" dataType="attribute" />
+                    <nameValue idref="ManuscriptID.ProductCodeKey" name="value" dataType="attribute" />
+                  </nameValue>
+                  <nameValue value="" name="key" dataType="element">
+                    <nameValue value="family" name="name" dataType="attribute" />
+                    <nameValue value="=" name="operator" dataType="attribute" />
+                    <nameValue idref="ManuscriptID.RenewalFamilyKey" name="value" dataType="attribute" />
+                  </nameValue>
+                  <nameValue value="" name="sort" dataType="element">
+                    <nameValue value="versionDate" name="name" dataType="attribute" />
+                    <nameValue value="descending" name="direction" dataType="attribute" />
+                  </nameValue>
+                </nameValue>
+              </nameValues>
+            </request>
+          </value>
+        </private>
+        <private id="ManuscriptID.RenewalFamilyKey" caption="" type="string">
+          <value value="Renew" />
+        </private>
+      </object>
+      <object id="Policy" abstract="1">
+        <object id="PolicyInput">
+          <minOccurs value="1" />
+          <maxOccurs value="1" />
+          <public id="PolicyInput.EffectiveDate" path="EffectiveDate" type="string">
+            <definition>
+              <caption value="Effective Date" />
+            </definition>
+          </public>
+          <public id="PolicyInput.ExpirationDate" path="ExpirationDate" type="date">
+            <definition>
+              <caption value="Expiration Date" />
+            </definition>
+          </public>
+          <public id="PolicyInput.PrimaryRatingState" path="PrimaryRatingState" type="string">
+            <definition>
+              <caption value="Primary Rating State" />
+            </definition>
+          </public>
+          <public id="PolicyInput.LineOfBusiness" path="LineOfBusiness" type="string">
+            <definition>
+              <caption value="Line Of Business" />
+            </definition>
+          </public>
+        </object>
+        <object id="PolicyPrivate">
+          <minOccurs value="1" />
+          <maxOccurs value="1" />
+          <private id="PolicyPrivate.SixMonthsFromEffectiveDate" caption="" type="date">
+            <value>
+              <dateAdd>
+                <dateArgument idref="PolicyInput.EffectiveDate" />
+                <dateUnit value="6" unit="months" />
+              </dateAdd>
+            </value>
+          </private>
+          <private id="PolicyPrivate.ThirtyDaysPriorToSixMontsFromEffectiveDate" caption="" type="date">
+            <value>
+              <dateAdd subtract="1">
+                <dateArgument idref="PolicyPrivate.SixMonthsFromEffectiveDate" />
+                <dateUnit value="30" unit="days" />
+              </dateAdd>
+            </value>
+          </private>
+        </object>
+      </object>
+      <public id="data.RunPropertyInspectionInformationManuScript" path="RunPropertyInspectionInformationManuScript" type="string">
+        <definition>
+          <caption value="data Run Property Inspection Information Manu Script" />
+        </definition>
+        <rules>
+          <value>
+            <external>
+              <manuscriptName idref="ManuscriptID.InformationManuScriptID" />
+              <referenceField value="data.SetPropertyInspectionReason" />
+            </external>
+          </value>
+        </rules>
+      </public>
+      <public id="data.RunScheduleRenewalManuScript" path="RunScheduleRenewalManuScript" type="string">
+        <definition>
+          <caption value="data Run Schedule Renewal Manu Script" />
+        </definition>
+        <rules>
+          <value>
+            <external>
+              <manuscriptName idref="ManuscriptID.ScheduleRenewalManuScriptID" />
+              <referenceField value="data.ProcessCheck" />
+            </external>
+          </value>
+        </rules>
+      </public>
+      <public id="data.RunLossReferralInformationManuScript" path="RunLossReferralInformationManuScript" type="string">
+        <definition>
+          <caption value="data Run Loss Referral Information Manu Script" />
+        </definition>
+        <rules>
+          <value>
+            <external>
+              <manuscriptName idref="ManuscriptID.InformationManuScriptID" />
+              <referenceField value="data.SetLossReferralReason" />
+            </external>
+          </value>
+        </rules>
+      </public>
+      <public id="data.RunSixMonthIDCardInformationManuScript" path="RunSixMonthIDCardInformationManuScript" type="string">
+        <definition>
+          <caption value="data Run Six Month ID Card Information Manu Script" />
+        </definition>
+        <rules>
+          <value>
+            <external>
+              <manuscriptName idref="ManuscriptID.InformationManuScriptID" />
+              <referenceField value="data.SetSixMonthIDCard" />
+            </external>
+          </value>
+        </rules>
+      </public>
+      <private id="data.NumberOfOpenRenewals" caption="" type="int">
+        <value>
+          <iterator type="int" scope="all" action="count" idref="Transaction_Current">
+            <where>
+              <comparison compare="and">
+                <comparison compare="eq">
+                  <operand idref="Transaction_Current.Type" type="string" />
+                  <operand type="string" value="Renew" />
+                </comparison>
+                <comparison compare="is">
+                  <operand idref="Transaction_Current.Status" type="string" />
+                  <operand type="string" value="Pending,Referred,Scheduled" />
+                </comparison>
+              </comparison>
+            </where>
+          </iterator>
+        </value>
+      </private>
+      <private id="data.RunScheduleRenewalManuscriptCheck" caption="" type="string">
+        <value>
+          <if>
+            <condition>
+              <comparison compare="and">
+                <comparison compare="eq">
+                  <operand idref="data.NumberOfOpenRenewals" type="int" />
+                  <operand type="int" value="0" />
+                </comparison>
+                <comparison compare="eq">
+                  <operand idref="data.StarPakPending" type="boolean" />
+                  <operand idref="False" type="int" />
+                </comparison>
+              </comparison>
+            </condition>
+            <then idref="data.RunScheduleRenewalManuScript" />
+          </if>
+        </value>
+      </private>
+      <public id="data.RunRenewalManuScript" path="RunRenewalManuScript" type="string">
+        <definition>
+          <caption value="data Run Renewal Manu Script" />
+        </definition>
+        <rules>
+          <value>
+            <external>
+              <manuscriptName idref="ManuscriptID.RenewalManuScriptID" />
+              <referenceField value="data.ProcessCheck" />
+            </external>
+          </value>
+        </rules>
+      </public>
+      <private id="data.RunRenewalManuscriptCheck" caption="" type="string">
+        <value>
+          <if>
+            <condition>
+              <comparison compare="eq">
+                <operand idref="data.LastTransactionIsScheduledOrPendingRenewal" type="boolean" />
+                <operand idref="True" type="int" />
+              </comparison>
+            </condition>
+            <then idref="data.RunRenewalManuScript" />
+          </if>
+        </value>
+        <misc>
+          <if>
+            <condition>
+              <comparison compare="eq">
+                <operand idref="data.LastTransactionIsReferredRenewal" type="boolean" />
+                <operand idref="True" type="int" />
+              </comparison>
+            </condition>
+            <then idref="data.RunRenewalManuScriptReferred" />
+          </if>
+        </misc>
+      </private>
+      <private id="data.LastTransactionIsScheduledOrPendingRenewal" caption="" type="boolean">
+        <value>
+          <comparison compare="and">
+            <comparison compare="and">
+              <comparison compare="eq">
+                <operand idref="data.LastTransactionType" type="string" />
+                <operand type="string" value="Renew" />
+              </comparison>
+              <comparison compare="is">
+                <operand idref="data.LastTransactionStatus" type="string" />
+                <operand type="string" value="Scheduled,Pending,Approved" />
+              </comparison>
+            </comparison>
+            <comparison compare="le">
+              <operand idref="data.LastTransactionScheduleDate" type="string" />
+              <operand idref="DateTime.CurrentDate" type="date" />
+            </comparison>
+          </comparison>
+        </value>
+      </private>
+      <private id="data.LastTransactionType" caption="" type="string">
+        <value>
+          <iterator type="string" scope="last" action="sum" idref="Transaction_Current">
+            <reference idref="Transaction_Current.Type" type="string" />
+            <where>
+              <comparison compare="eq">
+                <operand idref="Transaction_Current.DeprecatedBy" type="string" />
+                <operand type="string" value="" />
+              </comparison>
+            </where>
+          </iterator>
+        </value>
+      </private>
+      <private id="data.LastTransactionStatus" caption="" type="string">
+        <value>
+          <iterator type="string" scope="last" action="sum" idref="Transaction_Current">
+            <reference idref="Transaction_Current.Status" type="string" />
+            <where>
+              <comparison compare="eq">
+                <operand idref="Transaction_Current.DeprecatedBy" type="string" />
+                <operand type="string" value="" />
+              </comparison>
+            </where>
+          </iterator>
+        </value>
+      </private>
+      <private id="data.LastTransactionIsReferredRenewal" caption="" type="boolean">
+        <value>
+          <comparison compare="and">
+            <comparison compare="eq">
+              <operand idref="data.LastTransactionType" type="string" />
+              <operand type="string" value="Renew" />
+            </comparison>
+            <comparison compare="eq">
+              <operand idref="data.LastTransactionStatus" type="string" />
+              <operand type="string" value="Referred" />
+            </comparison>
+          </comparison>
+        </value>
+      </private>
+      <public id="data.RunRenewalManuScriptReferred" path="RunRenewalManuScriptReferred" type="string">
+        <definition>
+          <caption value="data Run Renewal Manu Script Referred" />
+        </definition>
+        <rules>
+          <value>
+            <external>
+              <manuscriptName idref="ManuscriptID.RenewalManuScriptID" />
+              <referenceField value="data.ProcessCheckReferred" />
+            </external>
+          </value>
+        </rules>
+      </public>
+      <public id="data.RunGoodStudentRecertificationInformationManuScript" path="RunGoodStudentRecertificationInformationManuScript" type="string">
+        <definition>
+          <caption value="data Run Good Student Recertification Information Manu Script" />
+        </definition>
+        <rules>
+          <value>
+            <external>
+              <manuscriptName idref="ManuscriptID.InformationManuScriptID" />
+              <referenceField value="data.SetGoodStudentRecertification" />
+            </external>
+          </value>
+        </rules>
+      </public>
+      <private id="data.RunCommitRenewalChangeCheck" caption="" type="string">
+        <value>
+          <if>
+            <condition>
+              <comparison compare="and">
+                <comparison compare="ne">
+                  <operand idref="data.LastRenewalChangeHistoryID" type="string" />
+                  <operand type="string" value="" />
+                </comparison>
+                <comparison compare="ne">
+                  <operand idref="data.LastRenewalChangeHistoryID" type="string" />
+                  <operand type="int" value="0" />
+                </comparison>
+              </comparison>
+            </condition>
+            <then idref="data.CommitRenewalChange" />
+          </if>
+        </value>
+      </private>
+      <private id="data.LastRenewalChangeHistoryID" caption="" type="string">
+        <value>
+          <iterator type="string" scope="last" action="sum" idref="Transaction_Current">
+            <reference idref="Transaction_Current.HistoryID" type="string" />
+            <where>
+              <comparison compare="and">
+                <comparison compare="and">
+                  <comparison compare="and">
+                    <comparison compare="eq">
+                      <operand idref="Transaction_Current.Type" type="string" />
+                      <operand type="string" value="RenewalChange" />
+                    </comparison>
+                    <comparison compare="eq">
+                      <operand idref="Transaction_Current.Status" type="string" />
+                      <operand type="string" value="Scheduled" />
+                    </comparison>
+                  </comparison>
+                  <comparison compare="eq">
+                    <operand idref="Transaction_Current.EffectiveDate" type="date" />
+                    <operand idref="PolicyInput.EffectiveDate" type="string" />
+                  </comparison>
+                </comparison>
+                <comparison compare="eq">
+                  <operand idref="Transaction_Current.DeprecatedBy" type="string" />
+                  <operand type="string" value="" />
+                </comparison>
+              </comparison>
+            </where>
+          </iterator>
+        </value>
+      </private>
+      <private id="data.CommitRenewalChange" caption="" type="string">
+        <value>
+          <request verb="TransACT.commitTransactionRq" get="@status">
+            <onFailure value="" />
+            <modifySession value="" />
+            <usesSession value="" />
+            <default value=" " />
+            <nameValues>
+              <nameValue idref="data.LastRenewalChangeHistoryID" name="historyID" dataType="attribute" />
+              <nameValue value="1" name="allowCheckoutOverride" dataType="attribute" />
+            </nameValues>
+          </request>
+        </value>
+      </private>
+      <private id="data.OrderMVROnly" caption="" type="string">
+        <value>
+          <external path="data/policy/line">
+            <manuscriptName idref="PolicyAdmin.PolicyManuScriptID" />
+            <referenceField value="LinePrivate.OrderMVROnlyCheck" />
+          </external>
+        </value>
+        <affects>
+          <reference idref="data.GetNewManuscriptIDEventCheck" effect="preEffect" />
+        </affects>
+      </private>
+      <object id="PolicyAdmin" path="policyAdmin">
+        <minOccurs value="1" />
+        <maxOccurs value="1" />
+        <public id="PolicyAdmin.PolicyManuScriptID" path="PolicyManuScriptID" type="string">
+          <definition>
+            <caption value="Policy Manuscript ID" />
+          </definition>
+        </public>
+        <public id="PolicyAdmin.PolicyManuScriptVersionID" path="PolicyManuScriptVersionID" type="string">
+          <definition />
+        </public>
+      </object>
+      <private id="data.GetNewManuscriptIDEvent" caption="" type="string">
+        <value>
+          <request verb="ManuScriptBroker.listRq" get="items/item/@id">
+            <onFailure value="" />
+            <modifySession value="" />
+            <usesSession value="" />
+            <default value="" />
+            <nameValues>
+              <nameValue value="" name="keys" dataType="element">
+                <nameValue value="" name="key" dataType="element">
+                  <nameValue value="versionID" name="name" dataType="attribute" />
+                  <nameValue value="=" name="operator" dataType="attribute" />
+                  <nameValue idref="PolicyAdmin.PolicyManuScriptVersionID" name="value" dataType="attribute" />
+                </nameValue>
+                <nameValue value="" name="key" dataType="element">
+                  <nameValue value="effectiveDateRenewal" name="name" dataType="attribute" />
+                  <nameValue value="&lt;=" name="operator" dataType="attribute" />
+                  <nameValue idref="PolicyInput.ExpirationDate" name="value" dataType="attribute" />
+                </nameValue>
+                <nameValue value="" name="sort" dataType="element">
+                  <nameValue value="versionDate" name="name" dataType="attribute" />
+                  <nameValue value="descending" name="direction" dataType="attribute" />
+                </nameValue>
+              </nameValue>
+            </nameValues>
+          </request>
+        </value>
+        <affects>
+          <reference idref="PolicyAdmin.PolicyManuScriptID" effect="setValue" />
+        </affects>
+      </private>
+      <private id="data.GetNewManuscriptIDEventNew" caption="" type="string">
+        <value>
+          <request verb="ManuScriptBroker.listRq" get="items/item/@id">
+            <responsePath value="" />
+            <onFailure value="" />
+            <modifySession value="" />
+            <usesSession value="" />
+            <default value="" />
+            <nameValues>
+              <nameValue value="" name="keys" dataType="element">
+                <nameValue value="" name="key" dataType="element">
+                  <nameValue value="versionID" name="name" dataType="attribute" />
+                  <nameValue value="=" name="operator" dataType="attribute" />
+                  <nameValue idref="PolicyAdmin.PolicyManuScriptVersionID" name="value" dataType="attribute" />
+                </nameValue>
+                <nameValue value="" name="key" dataType="element">
+                  <nameValue value="version" name="name" dataType="attribute" />
+                  <nameValue value="=" name="operator" dataType="attribute" />
+                  <nameValue idref="TransactionInfo.CurrentTransactionVersion" name="value" dataType="attribute" />
+                </nameValue>
+                <nameValue value="" name="key" dataType="element">
+                  <nameValue value="effectiveDateRenewal" name="name" dataType="attribute" />
+                  <nameValue value="&lt;=" name="operator" dataType="attribute" />
+                  <nameValue idref="PolicyInput.ExpirationDate" name="value" dataType="attribute" />
+                </nameValue>
+                <nameValue value="" name="sort" dataType="element">
+                  <nameValue value="versionDate" name="name" dataType="attribute" />
+                  <nameValue value="descending" name="direction" dataType="attribute" />
+                </nameValue>
+              </nameValue>
+            </nameValues>
+          </request>
+        </value>
+        <affects>
+          <reference idref="PolicyAdmin.PolicyManuScriptID" effect="setValue" />
+        </affects>
+      </private>
+      <private id="data.GetNewManuscriptIDEventCheck" caption="" type="string">
+        <affects>
+          <reference idref="PolicyAdmin.PolicyManuScriptID" effect="setValue" />
+        </affects>
+        <value>
+          <if>
+            <condition>
+              <comparison compare="and">
+                <comparison compare="is">
+                  <operand idref="PolicyInput.PrimaryRatingState" type="string" />
+                  <operand type="string" value="PA,MD,RI" />
+                </comparison>
+                <comparison compare="eq">
+                  <operand idref="PolicyInput.LineOfBusiness" type="string" />
+                  <operand type="string" value="PersonalAuto" />
+                </comparison>
+              </comparison>
+            </condition>
+            <then idref="data.GetNewManuscriptIDEventNew" />
+            <else idref="data.GetNewManuscriptIDEvent" />
+          </if>
+        </value>
+      </private>
+      <object id="AutomatedProcessing" abstract="1">
+        <object id="TransactionInfo" abstract="1">
+          <private id="TransactionInfo.CurrentTransactionVersion" caption="" type="string">
+            <value>
+              <request verb="ManuScript.getPropertiesRq" get="//keys/keyInfo[8]/@value">
+                <responsePath value="" />
+                <onFailure value="" />
+                <modifySession value="" />
+                <usesSession value="" />
+                <default value="" />
+                <nameValues>
+                  <nameValue idref="PolicyAdmin.PolicyManuScriptID" name="manuscript" dataType="attribute" />
+                </nameValues>
+              </request>
+            </value>
+          </private>
+        </object>
+      </object>
+      <public id="data.StarPakPending" path="StarPakPending" type="boolean">
+        <definition>
+          <caption value="Star Pak Pending" />
+        </definition>
+      </public>
+      <private id="data.LastTransactionScheduleDate" caption="" type="string">
+        <value>
+          <iterator type="string" scope="last" action="sum" idref="Transaction_Current">
+            <reference idref="Transaction_Current.ScheduleDate" type="date" />
+            <where>
+              <comparison compare="eq">
+                <operand idref="Transaction_Current.DeprecatedBy" type="string" />
+                <operand type="string" value="" />
+              </comparison>
+            </where>
+          </iterator>
+        </value>
+      </private>
+    </object>
+    <object id="_processingData" abstract="1">
+      <object id="Transaction_Current" abstract="1">
+        <public id="Transaction_Current.Type" path="Type" type="string">
+          <definition>
+            <caption value="Type" />
+          </definition>
+        </public>
+        <public id="Transaction_Current.DeprecatedBy" path="DeprecatedBy" type="string">
+          <definition>
+            <caption value="Deprecated By" />
+          </definition>
+        </public>
+        <public id="Transaction_Current.EffectiveDate" path="EffectiveDate" type="date">
+          <definition>
+            <caption value="Effective Date" />
+          </definition>
+        </public>
+      </object>
+    </object>
+  </model>
+</ManuScript>

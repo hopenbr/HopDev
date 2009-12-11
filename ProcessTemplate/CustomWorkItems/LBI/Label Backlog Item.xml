@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WITD application="Work item type editor" version="1.0">
+  <WORKITEMTYPE name="Label Backlog Item">
+    <DESCRIPTION>LBI's will automatically process label requests for Informatica</DESCRIPTION>
+    <FIELDS>
+      <FIELD reportable="dimension" type="String" name="Title" refname="System.Title">
+        <HELPTEXT>Short description of the item used to differentiate it in a list or report.</HELPTEXT>
+        <CANNOTLOSEVALUE />
+        <DEFAULT from="value" value="NA" />
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="State" refname="System.State">
+        <HELPTEXT>This is the status of the product backlog item as selected by the user. The choices are: Done / Not Done / In Progress / Deferred</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="dimension" type="Integer" name="Rev" refname="System.Rev" />
+      <FIELD reportable="dimension" type="String" name="Changed By" refname="System.ChangedBy" />
+      <FIELD type="String" name="Audit" refname="Conchango.VSTS.Scrum.Audit">
+        <HELPTEXT>This is a hidden field used as a work around for the requirements of the workflow section</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="Reason" refname="System.Reason" />
+      <FIELD reportable="dimension" type="TreePath" name="Iteration Path" refname="System.IterationPath" />
+      <FIELD type="Integer" name="IterationID" refname="System.IterationId" />
+      <FIELD reportable="dimension" type="String" name="Assigned To" refname="System.AssignedTo">
+        <HELPTEXT>The person assigned to act on the item, either to fix it or to verify the fix</HELPTEXT>
+        <ALLOWEDVALUES filteritems="excludegroups">
+          <LISTITEM value="[project]\Project Administrators" />
+          <LISTITEM value="[project]\Contributors" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="Work Item Type" refname="System.WorkItemType" />
+      <FIELD reportable="dimension" type="DateTime" name="Created Date" refname="System.CreatedDate" />
+      <FIELD reportable="dimension" type="String" name="Created By" refname="System.CreatedBy" />
+      <FIELD type="PlainText" name="Description" refname="System.Description">
+        <HELPTEXT>The description of the task / impediment / bug</HELPTEXT>
+      </FIELD>
+      <FIELD type="History" name="History" refname="System.History">
+        <HELPTEXT>Discussion thread and other historical information</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="measure" type="Integer" name="ExternalLinkCount" refname="System.ExternalLinkCount" />
+      <FIELD type="Integer" name="RelatedLinkCount" refname="System.RelatedLinkCount" />
+      <FIELD reportable="dimension" type="String" name="Team Project" refname="System.TeamProject" />
+      <FIELD reportable="measure" type="Integer" name="HyperLinkCount" refname="System.HyperLinkCount" />
+      <FIELD reportable="measure" type="Integer" name="AttachedFileCount" refname="System.AttachedFileCount" />
+      <FIELD type="String" name="Node Name" refname="System.NodeName" />
+      <FIELD reportable="dimension" type="TreePath" name="Area Path" refname="System.AreaPath">
+        <HELPTEXT>The area of the product with which this bug is associated</HELPTEXT>
+      </FIELD>
+      <FIELD type="DateTime" name="Revised Date" refname="System.RevisedDate" />
+      <FIELD reportable="dimension" type="DateTime" name="Changed Date" refname="System.ChangedDate" />
+      <FIELD reportable="dimension" type="Integer" name="ID" refname="System.Id">
+        <HELPTEXT>Human readable, auto-populated numeric Id</HELPTEXT>
+      </FIELD>
+      <FIELD type="Integer" name="AreaID" refname="System.AreaId" />
+      <FIELD type="String" name="Authorized As" refname="System.AuthorizedAs" />
+      <FIELD reportable="dimension" type="String" name="HIC INFORMATICA LABEL TYPE" refname="HIC.INFORMATICA.Label.Type">
+        <HELPTEXT>The label type PLDR CLRP AQS, etc</HELPTEXT>
+        <REQUIRED />
+        <ALLOWEDVALUES>
+          <GLOBALLIST name="List - InformaticaBuildType" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC INFORMATICA LABEL REGION" refname="HIC.INFORMATICA.LABEL.REGION">
+        <HELPTEXT>The region where the label should be created and will used.</HELPTEXT>
+        <REQUIRED />
+        <ALLOWEDVALUES>
+          <LISTITEM value="Rep_DEV" />
+          <LISTITEM value="Rep_E2E" />
+          <LISTITEM value="Rep_TST1" />
+        </ALLOWEDVALUES>
+      </FIELD>
+    </FIELDS>
+    <WORKFLOW>
+      <STATES>
+        <STATE value="Not Done" />
+        <STATE value="Closed" />
+        <STATE value="Deferred" />
+        <STATE value="Deleted" />
+      </STATES>
+      <TRANSITIONS>
+        <TRANSITION from="" to="Not Done">
+          <REASONS>
+            <DEFAULTREASON value="New" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Not Done" to="Deleted">
+          <REASONS>
+            <DEFAULTREASON value="Item has been marked for deletion" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Deleted" to="Not Done">
+          <REASONS>
+            <DEFAULTREASON value="Item has been marked for restoration" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Not Done" to="Deferred">
+          <REASONS>
+            <DEFAULTREASON value="Descoped from Sprint" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Not Done" to="Closed">
+          <REASONS>
+            <DEFAULTREASON value="Label has been created" />
+          </REASONS>
+        </TRANSITION>
+        <TRANSITION from="Deferred" to="Deleted">
+          <REASONS>
+            <DEFAULTREASON value="Moved to deleted state" />
+          </REASONS>
+        </TRANSITION>
+      </TRANSITIONS>
+    </WORKFLOW>
+    <FORM>
+      <Layout>
+        <Group>
+          <Column PercentWidth="100">
+            <Control FieldName="System.Title" Type="FieldControl" Label="Label" LabelPosition="Left" ReadOnly="True" />
+          </Column>
+        </Group>
+        <Group>
+          <Column PercentWidth="50">
+            <Group Label="Label Information">
+              <Column PercentWidth="100">
+                <Control FieldName="HIC.INFORMATICA.Label.Type" Type="FieldControl" Label="Label Type:" LabelPosition="Left" />
+                <Control FieldName="HIC.INFORMATICA.LABEL.REGION" Type="FieldControl" Label="Label Region:" LabelPosition="Left" />
+              </Column>
+            </Group>
+          </Column>
+          <Column PercentWidth="50">
+            <Group Label="Status">
+              <Column PercentWidth="100">
+                <Control FieldName="System.State" Type="FieldControl" Label="Current Status:" LabelPosition="Left" />
+                <Control FieldName="System.CreatedBy" Type="FieldControl" Label="Requested By:" LabelPosition="Left" />
+              </Column>
+            </Group>
+          </Column>
+        </Group>
+        <TabGroup>
+          <Tab Label="Notes">
+            <Control FieldName="System.Description" Type="HtmlFieldControl" Label="Label notes" LabelPosition="Top" Dock="Fill" />
+          </Tab>
+          <Tab Label="History">
+            <Control FieldName="System.History" Type="WorkItemLogControl" Label="Detailed Description and History" LabelPosition="Top" Dock="Fill" />
+          </Tab>
+          <Tab Label="Links">
+            <Control Type="LinksControl" LabelPosition="Top" />
+          </Tab>
+          <Tab Label="File Attachments">
+            <Control Type="AttachmentsControl" LabelPosition="Top" />
+          </Tab>
+        </TabGroup>
+      </Layout>
+    </FORM>
+  </WORKITEMTYPE>
+</WITD>

@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<workItemType dslVersion="1.4.0.0" Name="Deployment Backlog Item" source="deployment backlog item.xml" xmlns="http://schemas.microsoft.com/dsltools/WITDesigner">
+  <States>
+    <state Name="Not Done">
+      <Source>
+        <transitionMoniker Name="/Deployment Backlog Item/Not Done~Deferred" />
+        <transitionMoniker Name="/Deployment Backlog Item/Not Done~Approved for Deployment" />
+        <transitionMoniker Name="/Deployment Backlog Item/Not Done~Rejected" />
+      </Source>
+    </state>
+    <state Name="Deferred">
+      <Source>
+        <transitionMoniker Name="/Deployment Backlog Item/Deferred~Deleted" />
+        <transitionMoniker Name="/Deployment Backlog Item/Deferred~Not Done" />
+      </Source>
+    </state>
+    <state Name="Deleted">
+      <Source>
+        <transitionMoniker Name="/Deployment Backlog Item/Deleted~Not Done" />
+      </Source>
+    </state>
+    <state Name="Rejected">
+      <Source>
+        <transitionMoniker Name="/Deployment Backlog Item/Rejected~Not Done" />
+      </Source>
+    </state>
+    <state Name="Approved for Deployment">
+      <Source>
+        <transitionMoniker Name="/Deployment Backlog Item/Approved for Deployment~Deferred" />
+        <transitionMoniker Name="/Deployment Backlog Item/Approved for Deployment~Ready for IRB (Production Only)" />
+        <transitionMoniker Name="/Deployment Backlog Item/Approved for Deployment~Rejected" />
+        <transitionMoniker Name="/Deployment Backlog Item/Approved for Deployment~Deployed" />
+      </Source>
+    </state>
+    <state Name="Approved by IRB">
+      <Source>
+        <transitionMoniker Name="/Deployment Backlog Item/Approved by IRB~Deployed" />
+        <transitionMoniker Name="/Deployment Backlog Item/Approved by IRB~Deferred" />
+        <transitionMoniker Name="/Deployment Backlog Item/Approved by IRB~Rejected" />
+      </Source>
+    </state>
+    <state Name="Ready for IRB (Production Only)">
+      <Source>
+        <transitionMoniker Name="/Deployment Backlog Item/Ready for IRB (Production Only)~Approved by IRB" />
+        <transitionMoniker Name="/Deployment Backlog Item/Ready for IRB (Production Only)~Rejected" />
+      </Source>
+    </state>
+    <state Name="Rolled Back">
+      <Source>
+        <transitionMoniker Name="/Deployment Backlog Item/Rolled Back~Ready for IRB (Production Only)" />
+        <transitionMoniker Name="/Deployment Backlog Item/Rolled Back~Not Done" />
+        <transitionMoniker Name="/Deployment Backlog Item/Rolled Back~Deleted" />
+      </Source>
+    </state>
+    <state Name="Deployed">
+      <Source>
+        <transitionMoniker Name="/Deployment Backlog Item/Deployed~Rolled Back" />
+      </Source>
+    </state>
+  </States>
+  <Fields>
+    <field Name="Audit" referenceName="Conchango.VSTS.Scrum.Audit" />
+  </Fields>
+  <Transitions>
+    <transition Id="98bc89e8-6c2d-4a0d-be31-c425188d5c7c" Name="~Not Done">
+      <Target>
+        <stateMoniker Name="/Deployment Backlog Item/Not Done" />
+      </Target>
+      <Reasons>
+        <reason Name="New" />
+      </Reasons>
+      <fields>
+        <transitionFieldConstraint ruleTag="* ">
+          <fieldMoniker Name="/Deployment Backlog Item/Audit" />
+        </transitionFieldConstraint>
+      </fields>
+    </transition>
+    <transition Id="24203d80-5c5f-457b-8a2b-5e21cce1bc07" Name="Deferred~Deleted">
+      <Target>
+        <stateMoniker Name="/Deployment Backlog Item/Deleted" />
+      </Target>
+      <Reasons>
+        <reason Name="Item has been marked for deletion" />
+      </Reasons>
+      <fields>
+        <transitionFieldConstraint ruleTag="* ">
+          <fieldMoniker Name="/Deployment Backlog Item/Audit" />
+        </transitionFieldConstraint>
+      </fields>
+    </transition>
+    <transition Id="7608bd2d-3647-41fd-bbbe-02a33b6d7b64" Name="Deferred~Not Done">
+      <Target>
+        <stateMoniker Name="/Deployment Backlog Item/Not Done" />
+      </Target>
+      <Reasons>
+        <reason Name="Item has been marked for restoration" />
+      </Reasons>
+      <fields>
+        <transitionFieldConstraint ruleTag="* ">
+          <fieldMoniker Name="/Deployment Backlog Item/Audit" />
+        </transitionFieldConstraint>
+      </fields>
+    </transition>
+    <transition Id="b97751e3-b8b2-496a-9fde-733643370e12" Name="Not Done~Deferred">
+      <Target>
+        <stateMoniker Name="/Deployment Backlog Item/Deferred" />
+      </Target>
+      <Reasons>
+        <reason Name="Descoped from deployments" />
+      </Reasons>
+      <fields>
+        <transitionFieldConstraint ruleTag="* ">
+          <fieldMoniker Name="/Deployment Backlog Item/Audit" />
+        </transitionFieldConstraint>
+      </fields>
+    </transition>
+    <transition Id="a63ee8bf-f3e5-484b-99f0-9617febb7edc" Name="Not Done~Approved for Deployment">
+      <Target>
+        <stateMoniker Name="/Deployment Backlog Item/Approved for Deployment" />
+      </Target>
+      <Reasons>
+        <reason Name="The package was approved by the team led for deployment" />
+      </Reasons>
+      <fields>
+        <transitionFieldConstraint ruleTag="* ">
+          <fieldMoniker Name="/Deployment Backlog Item/Audit" />
+        </transitionFieldConstraint>
+      </fields>
+    </transition>
+    <transition Id="a56deeac-166f-460c-bd83-c9137151f50e" Name="Approved for Deployment~Deferred">
+      <Target>
+        <stateMoniker Name="/Deployment Backlog Item/Deferred" />
+      </Target>
+      <Reasons>
+        <reason Name="Descoped from deployment backlog" />
+      </Reasons>
+      <fields>
+        <transitionFieldConstraint ruleTag="* ">
+          <fieldMoniker Name="/Deployment Backlog Item/Audit" />
+        </transitionFieldConstraint>
+      </fields>
+    </transition>
+    <transition Id="1de991a7-3ac8-479c-bd15-766742accda7" Name="Deleted~Not Done">
+      <Target>
+        <stateMoniker Name="/Deployment Backlog Item/Not Done" />
+      </Target>
+      <Reasons>
+        <reason Name="Undo/Undelete" />
+      </Reasons>
+      <fields>
+        <transitionFieldConstraint ruleTag="* ">
+          <fieldMoniker Name="/Deployment Backlog Item/Audit" />
+        </transitionFieldConstraint>
+      </fields>
+    </transition>
+    <transition Id="2b5cca94-285b-45fa-a424-b9b420ca0a95" Name="Ready for IRB (Production Only)~Approved by IRB">
+      <Target>
+        <stateMoniker Name="/Deployment Backlog Item/Approved by IRB" />
+      </Target>
+      <Reasons>
+        <reason Name="The package was approved by the Internal Review Board for deployment tp Production" />
+      </Reasons>
+      <fields>
+        <transitionFieldConstraint ruleTag="* ">
+          <fieldMoniker Name="/Deployment Backlog Item/Audit" />
+        </transitionFieldConstraint>
+      </fields>
+    </transition>
+    <transition Id="d6e14763-ce86-45da-854a-71aa468a9d93" Name="Approved for Deployment~Ready for IRB (Production Only)">
+      <Target>
+        <stateMoniker Name="/Deployment Backlog Item/Ready for IRB (Production Only)" />
+      </Target>
+      <Reasons>
+        <reason Name="Build package was sent to IRB for Approval" />
+      </Reasons>
+      <fields>
+        <transitionFieldConstraint ruleTag="* ">
+          <fieldMoniker Name="/Deployment Backlog Item/Audit" />
+        </transitionFieldConstraint>
+      </fields>
+    </transition>
+    <transition Id="c950e923-58cd-4068-863a-28b92f8a2392" Name="Not Done~Rejected">
+      <Target>
+        <stateMoniker Name="/Deployment Backlog Item/Rejected" />
+      </Target>
+      <Reasons>
+        <reason Name="The package was rejected by the team led for deployment" />
+      </Reasons>
+      <fields>
+        <transitionFieldConstraint ruleTag="* ">
+          <fieldMoniker Name="/Deployment Backlog Item/Audit" />
+        </transitionFieldConstraint>
+      </fields>
+    </transition>
+    <transition Id="d689a082-6b67-40bd-8694-be457777738a" Name="Rejected~Not Done">
+      <Target>
+        <stateMoniker Name="/Deployment Backlog Item/Not Done" />
+      </Target>
+      <Reasons>
+        <reason Name="Rejected DBI was brought back to backlog for deployment" />
+      </Reasons>
+      <fields>
+        <transitionFieldConstraint ruleTag="* ">
+          <fieldMoniker Name="/Deployment Backlog Item/Audit" />
+        </transitionFieldConstraint>
+      </fields>
+    </transition>
+    <transition Id="1b189598-2f45-4e8d-b1be-7a4a662f90ed" Name="Rolled Back~Ready for IRB (Production Only)">
+      <Target>
+        <stateMoniker Name="/Deployment Backlog Item/Ready for IRB (Production Only)" />
+      </Target>
+      <Reasons>
+        <reason Name="Rolled back build is ready to be moved back to PRD" />
+      </Reasons>
+      <fields>
+        <transitionFieldConstraint ruleTag="* ">
+          <fieldMoniker Name="/Deployment Backlog Item/Audit" />
+        </transitionFieldConstraint>
+      </fields>
+    </transition>
+    <transition Id="5df64f2e-a41a-4f93-b9e2-0fe62ef30e78" Name="Ready for IRB (Production Only)~Rejected">
+      <Target>
+        <stateMoniker Name="/Deployment Backlog Item/Rejected" />
+      </Target>
+      <Reasons>
+        <reason Name="The package was rejected by the Internal Review Board" />
+      </Reasons>
+      <fields>
+        <transitionFieldConstraint ruleTag="* ">
+          <fieldMoniker Name="/Deployment Backlog Item/Audit" />
+        </transitionFieldConstraint>
+      </fields>
+    </transition>
+    <transition Id="048883ec-05e1-4b59-82c7-e104c0fc93d3" Name="Approved for Deployment~Rejected">
+      <Target>
+        <stateMoniker Name="/Deployment Backlog Item/Rejected" />
+      </Target>
+      <Reasons>
+        <reason Name="Deployment Rejected" />
+      </Reasons>
+      <fields>
+        <transitionFieldConstraint ruleTag="* ">
+          <fieldMoniker Name="/Deployment Backlog Item/Audit" />
+        </transitionFieldConstraint>
+      </fields>
+    </transition>
+    <transition Id="babd4b65-ea29-405f-be11-76f6944ad34b" Name="Approved for Deployment~Deployed">
+      <Target>
+        <stateMoniker Name="/Deployment Backlog Item/Deployed" />
+      </Target>
+      <Reasons>
+        <reason Name="The Build package was deployed to the Target Environment" />
+      </Reasons>
+      <fields>
+        <transitionFieldConstraint ruleTag="* ">
+          <fieldMoniker Name="/Deployment Backlog Item/Audit" />
+        </transitionFieldConstraint>
+      </fields>
+    </transition>
+    <transition Id="480048e7-3925-498c-9348-097641cde915" Name="Approved by IRB~Deployed">
+      <Target>
+        <stateMoniker Name="/Deployment Backlog Item/Deployed" />
+      </Target>
+      <Reasons>
+        <reason Name="The Build package was deployed from the Team Project's TFVC Release area to Production" />
+      </Reasons>
+      <fields>
+        <transitionFieldConstraint ruleTag="* ">
+          <fieldMoniker Name="/Deployment Backlog Item/Audit" />
+        </transitionFieldConstraint>
+      </fields>
+    </transition>
+    <transition Id="b0c87a54-19e8-4370-8e36-bea50d1ce113" Name="Approved by IRB~Deferred">
+      <Target>
+        <stateMoniker Name="/Deployment Backlog Item/Deferred" />
+      </Target>
+      <Reasons>
+        <reason Name="The production deployment was deferred" />
+      </Reasons>
+      <fields>
+        <transitionFieldConstraint ruleTag="* ">
+          <fieldMoniker Name="/Deployment Backlog Item/Audit" />
+        </transitionFieldConstraint>
+      </fields>
+    </transition>
+    <transition Id="13957126-cf4e-46dd-bd6c-6a591adea095" Name="Deployed~Rolled Back">
+      <Target>
+        <stateMoniker Name="/Deployment Backlog Item/Rolled Back" />
+      </Target>
+      <Reasons>
+        <reason Name="The Production build was Rolled back to a previous build" />
+      </Reasons>
+      <fields>
+        <transitionFieldConstraint ruleTag="* ">
+          <fieldMoniker Name="/Deployment Backlog Item/Audit" />
+        </transitionFieldConstraint>
+      </fields>
+    </transition>
+    <transition Id="fa3bcc8e-a897-43a4-b87c-ac222567430d" Name="Rolled Back~Not Done">
+      <Target>
+        <stateMoniker Name="/Deployment Backlog Item/Not Done" />
+      </Target>
+      <Reasons>
+        <reason Name="Rolled back build is ready to be deployed again" />
+      </Reasons>
+      <fields>
+        <transitionFieldConstraint ruleTag="* ">
+          <fieldMoniker Name="/Deployment Backlog Item/Audit" />
+        </transitionFieldConstraint>
+      </fields>
+    </transition>
+    <transition Id="5ffd725b-b4d6-4d29-b7e7-42847f468330" Name="Rolled Back~Deleted">
+      <Target>
+        <stateMoniker Name="/Deployment Backlog Item/Deleted" />
+      </Target>
+      <Reasons>
+        <reason Name="Rolled back build is no longer needed" />
+      </Reasons>
+      <fields>
+        <transitionFieldConstraint ruleTag="* ">
+          <fieldMoniker Name="/Deployment Backlog Item/Audit" />
+        </transitionFieldConstraint>
+      </fields>
+    </transition>
+    <transition Id="35f2008e-c66f-4b58-b565-1193baefdd82" Name="Approved by IRB~Rejected">
+      <Target>
+        <stateMoniker Name="/Deployment Backlog Item/Rejected" />
+      </Target>
+      <Reasons>
+        <reason Name="Re-approval needed" />
+      </Reasons>
+      <fields>
+        <transitionFieldConstraint ruleTag="* ">
+          <fieldMoniker Name="/Deployment Backlog Item/Audit" />
+        </transitionFieldConstraint>
+      </fields>
+    </transition>
+  </Transitions>
+</workItemType>

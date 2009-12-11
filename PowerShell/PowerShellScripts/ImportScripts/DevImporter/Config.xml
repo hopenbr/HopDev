@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Settings>
+	<EventSource>Harleysville.TFS.Ivans.HARLEYHO.Importer</EventSource>
+	<CommonScriptsLocation>E:\TFS\PowerShellScripts</CommonScriptsLocation>
+	<SleepTime>120</SleepTime>
+	<TFSUrl>Http://as73tfs01:8080</TFSUrl>
+	<ErrorRecipient>SRM@HarleysvilleGroup.com</ErrorRecipient>
+	<CheckInComment></CheckInComment>
+	<Shares>
+		<Share>
+			<Target>\\cldloadtest\IVANS\TX2050</Target>
+			<Tfvc>
+				<ServerPath>$/Agency.Projects/Branches/INTEGRATION/Ivans/HARLEYHO</ServerPath>
+				<SubFolder>HARLEYHO</SubFolder>
+			</Tfvc>
+		</Share>
+	</Shares>
+</Settings>

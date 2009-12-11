@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Settings xmlns="urn:schema-Harleysvillegroup-com:TFSDeployerConfig">
+	<!--<TFS TeamBuildType="Deployer.TST" TeamProject ="Software.Release.Management"/>-->
+	<Databases>
+		<Database Name="TestAPADB" Region="Assembly" Sync="true" TFVCServerPath="$/TestProject/DB/APADB" SqlCompareArgsXmlName="SqlCompArgs_APADB.xml" SearchAndReplace="true" />
+	</Databases>
+</Settings>
+

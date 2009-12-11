@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <BuildNumber Name="SRM.TFS.Powershell">
+    <Major>3</Major>
+    <Minor>5</Minor>
+    <Fix>0</Fix>
+    <Build>1</Build>
+  </BuildNumber>
+</project>

@@ -1,0 +1,46 @@
+body
+
+{
+   background-color:#dcdcdc;
+
+}
+
+ 
+
+#main
+
+{
+
+    float: left;
+
+    width: 100%;
+    
+    border-top: 3px solid #333;
+
+    margin-right: 15px;
+
+    padding-bottom: 10px;
+
+    padding-right: 10px; 
+   
+    bottom: 90%       
+
+}
+
+
+
+#brand
+{
+
+    clear: both;
+
+    width: 100%;    
+
+    text-align:right;
+
+    font-size:small;
+
+    padding: 3px;    
+
+}
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="HppScriptParameters" targetNamespace="http://HarleysvilleGroup.com/HppScriptParameters.xsd" elementFormDefault="qualified" xmlns="http://HarleysvilleGroup.com/HppScriptParameters.xsd" xmlns:mstns="http://HarleysvilleGroup.com/HppScriptParameters.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Parameters">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Parameter" maxOccurs="unbounded" minOccurs="1">
+					<xs:complexType>
+						<xs:sequence />
+						<xs:attribute name="Name" type="NameVal" />
+						<xs:attribute name="Value" type="xs:string" />
+						<xs:attribute name="Type" type="ParamTypes" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="ParamTypes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="String" />
+			<xs:enumeration value="Bool" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NameVal">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="^\w+$" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

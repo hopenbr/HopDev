@@ -1,0 +1,4 @@
+load "C:\TEMP\CognosTest" "C:\TEMP\CognosTest2"
+Expand all
+log verbose 
+sync create-empty mirror:left->right

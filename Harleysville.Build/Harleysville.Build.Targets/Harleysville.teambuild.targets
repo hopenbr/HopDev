@@ -1,0 +1,522 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<!--<Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />-->
+	<Import Project="$(MSBuildExtensionsPath)\Microsoft.Sdc.Tasks\Build\bin\Microsoft.Sdc.Common.targets" />
+	<Import Project=".\Harleysville.tasks.targets" />
+	
+	<PropertyGroup>
+		<WhoKickedItPath>$(temp)\$(TeamProject).$(BuildType).kickoff.targets</WhoKickedItPath>
+		<BuildOutComePath>$(temp)\$(TeamProject).$(BuildType).BuildOutCome</BuildOutComePath>
+		<HarleysvilleSMTP>172.20.2.15</HarleysvilleSMTP>
+		<VSTFhelpMessage>Please feel free to contact &lt;a href='mailto:VSTFhelp@harleysvillegroup.com'&gt;VSTF help&lt;/a &gt; if you have any questions.</VSTFhelpMessage>
+	</PropertyGroup>
+
+	<Target Name="BeforeEndToEndIterationChecker" DependsOnTargets="Check4Changesets;CheckBuildNumber" />
+
+	<Target Name="BeforeEndToEndIteration" DependsOnTargets="BeforeEndToEndIterationChecker" />
+
+	<Target Name="Check4Changesets" Condition="'$(LastGoodBuildNumber)' != ''">
+		   
+		<AddBuildStep BuildUri="$(BuildUri)" BuildStepName="Check4Checkesets" BuildStepText="Checking for new changesets" />
+		<Check4Changesets LastGoodBuildNumber="$(LastGoodBuildNumber)" Workspace="$(WorkspaceName)" Owner="$(username)" Condition="$(ForceBuild) != 'true'" />
+		<UpdateBuildStep BuildUri="$(BuildUri)" BuildStepName="Check4Checkesets" BuildStepResult="true" />
+
+		<OnError ExecuteTargets="OnErrorCheck4Changesets" />
+		
+	</Target>
+
+	<Target Name="AfterLabelTFVC" Condition="$(LabelPaths) != ''" >
+		<Exec Command="powershell /c &quot;$(PowerShellScripts)\BuildScripts\Label-ParentTFVCFolders.ps1 '$(LabelPaths)' '$(BuildNumber)' '$(userdomain)\$(username)' &quot;" /> 
+	</Target>
+	
+	<Target Name="AfterLabelTFVCRecursive" Condition="$(RecursiveLabelPaths) != ''" >
+		<Exec Command="powershell /c &quot;$(PowerShellScripts)\BuildScripts\Label-ParentTFVCFolders.ps1 '$(RecursiveLabelPaths)' '$(BuildNumber)' '$(userdomain)\$(username)' 'Full' &quot;" /> 
+	</Target>
+
+	<Target Name="AfterLabel" DependsOnTargets="AfterLabelTFVC;AfterLabelTFVCRecursive" />
+
+	<Target Name ="OnErrorCheck4Changesets" >
+		<UpdateBuildStep BuildUri="$(BuildUri)" BuildStepName="Check4Checkesets" BuildStepResult="false" />   
+	</Target>
+
+	<Target Name="CheckBuildNumber" >
+		<!--<AddBuildStep BuildUri="$(BuildUri)" BuildStepName="CheckBuildNumber" BuildStepText="Verifing build number" />
+		<GetBuildNumber VersionXmlPath="$(VersionXmlPath)" 
+						Update="false">
+			<Output TaskParameter="BuildNumber" PropertyName="BNum" />
+		</GetBuildNumber>
+		<Check4PRDBuild TeamProject="$(TeamProject)"
+						BuildNumber="$(BNum)"
+						BuildType="$(BuildType)"
+						Condition="'$(BNum)' != ''" />
+		<UpdateBuildStep BuildUri="$(BuildUri)" BuildStepName="CheckBuildNumber" BuildStepResult="true" />
+
+		<OnError ExecuteTargets="OnErrorCheckBuildNumber"/> -->
+	</Target>
+
+	<Target Name="OnErrorCheckBuildNumber" >
+		<UpdateBuildStep BuildUri="$(BuildUri)" BuildStepName="CheckBuildNumber" BuildStepResult="false" /> 
+	</Target>
+
+
+	<Target Name = "BuildNumberOverrideTarget" Condition="$(UpdateBuildNumber) == 'true' And  Exists('$(VersionXmlPath)')" >
+		<AddBuildStep BuildUri="$(BuildUri)" BuildStepName="CreateBuildNumber" BuildStepText="Creating build number" />
+		<TFSCheckout Element="$(VersionXmlPath)" Workspace="$(WorkspaceName)" Owner="$(USERNAME)" />
+		<TFSCheckout Element="$(VersionAscxPath)" Workspace="$(WorkspaceName)" Owner="$(USERNAME)" Condition="'$(VersionAscxPath)' != ''" />
+		<GetBuildNumber VersionXmlPath="$(VersionXmlPath)"
+						Update="true"
+						WorkspaceName="$(WorkspaceName)"
+						Owner="$(username)"
+						GetLatest="true"
+					    BuildType="$(BuildType)"
+					    TeamProject="$(TeamProject)"
+					    UpdateVersion="$(UpdateVersion)">
+			
+			<Output TaskParameter="BuildNumber"
+					 PropertyName="BuildNumber"/>
+		</GetBuildNumber>
+
+		<Message Text="New build number is $(BuildNumber)" />
+
+		<GetWorkItem WorkItemType="Build Backlog Item"
+				     DBIProject="Software.Release.Management"
+					 BuildUri="$(BuildUri)"
+					 HICProject="$(HICProject4DBI)"
+				     HICSubProject="$(HICSubProject4DBI)"
+				     DeploymentType="$(DeploymentType)"
+					 BuildNumber="$(BuildNumber)">
+			<Output TaskParameter="WorkItemNumber" PropertyName="WorkItemNumber" />
+		</GetWorkItem>
+		<!-- Make Workitem number avaible to all targets-->
+		<CreateProperty Value="$(WorkItemNumber)" >
+			<Output TaskParameter="Value" PropertyName="BNWorkItemNumber" />
+		</CreateProperty>
+
+		<Exec Command="powershell &quot;$(UpdateVersionAscxScript) '$(BuildNumber)' '$(VersionAscxPath)' &quot;" Condition="'$(VersionAscxPath)' != ''" />
+		
+		<TFSCheckin Element="$(VersionXmlPath)"
+				 Workspace="$(WorkspaceName)"
+				 Owner="$(USERNAME)"
+				 Comment="New build: $(BuildNumber)"
+				 WorkItemNumber="$(BNWorkItemNumber)"
+				 WorkItemType="Sprint Backlog Item"
+				 TeamProject="$(TeamProject)"/>
+
+		<TFSCheckin Element="$(VersionAscxPath)"
+				 Workspace="$(WorkspaceName)"
+				 Owner="$(USERNAME)"
+				 Comment="New build: $(BuildNumber)"
+				 WorkItemNumber="$(BNWorkItemNumber)"
+				 WorkItemType="Sprint Backlog Item"
+				 TeamProject="$(TeamProject)"
+				 Condition="'$(VersionAscxPath)' != ''"/>
+		
+		<UpdateBuildStep BuildUri="$(BuildUri)" BuildStepName="CreateBuildNumber" BuildStepResult="true" />
+		<OnError ExecuteTargets="OnErrorCreateBuildNumber"/>
+	</Target>
+
+	<Target Name="OnErrorCreateBuildNumber" >
+		<UpdateBuildStep BuildUri="$(BuildUri)" BuildStepName="CreateBuildNumber" BuildStepResult="false" />
+	</Target>
+
+	<Target Name="AfterOnBuildBreak">
+
+		<Email MailTo="$(TeamEmail)"
+			   MailFrom="VSTFhelp@harleysvillegroup.com"
+			   SmtpServer="$(HarleysvilleSMTP)"
+			   Subject="$(BuildNumber) Failed"
+			   Format="HTML"
+			   Body="&lt;b&gt;$(TeamProject),
+				&lt;/b&gt; 
+				&lt;br&gt;
+				$(BuildNumber) Build Failed
+				&lt;br&gt;
+				&lt;a
+				href='file:///$(DropLocation)\$(BuildNumber)\ErrorsWarningsLog.txt'
+				&gt;
+				$(BuildNumber) Errors and Warnings Log
+				&lt;/a &gt;
+				&lt;br&gt;
+				&lt;br&gt;
+				WorkItem for build is $(BNWorkItemNumber)
+				&lt;br&gt;
+				&lt;br&gt;
+				$(VSTFhelpMessage)
+				&lt;br&gt;
+				&lt;br&gt;
+				Thank you, 
+				&lt;br&gt;
+				TFS Build"
+		   Condition="$(TeamEmail) != ''"/>
+
+		<CallTarget Targets="WorkItemUpdateOnBuildFailure" Condition="$(Deploy2Drop) == 'true'"/>
+
+	</Target>
+
+	<Target Name="AfterEndToEndIteration">
+
+		<CallTarget Targets="UpdateBuildQuality" />
+		<CallTarget Targets="WorkItemUpdate" Condition="$(Deploy2Drop) == 'true'"/>
+		<Email SmtpServer="$(HarleysvilleSMTP)"
+		 MailTo="$(TeamEmail)"
+		 MailFrom="VSTFhelp@harleysvillegroup.com"
+		 Subject="$(BuildNumber) built successfully"
+		 Format="HTML"
+		 Body="&lt;b&gt;Hello,
+			&lt;/b&gt; 
+			&lt;br&gt;
+			$(BuildNumber) built successfully
+			&lt;br&gt;
+			&lt;br&gt;
+			$(VSTFhelpMessage)
+			&lt;br&gt;
+			&lt;br&gt;
+			Thank you, 
+			&lt;br&gt;
+			TFS Build" 
+		Condition="$(TeamEmail) != ''"
+			/>
+
+	</Target>
+
+	<Target Name="WorkItemUpdateOnBuildFailure" Condition="$(UpdateBuildNumber) == 'true'" >
+		   
+		<UpdateWorkItem WorkItemNumber="$(BNWorkItemNumber)"
+				 State="Failed to Build"
+				 History="$(BuildNumber) built unseccessfully"
+				 BuildNumber="$(BuildNumber)" />
+
+		<SaveWorkItemNumber TeamProject="$(TeamProject)"
+							  BuildNumber="$(BuildNumber)"
+							  DropLocation="$(DropLocation)"
+							  WorkItemNumber="$(BNWorkItemNumber)"/>
+	</Target>
+
+	<Target Name="WorkItemUpdateSuccessful" Condition="$(UpdateBuildNumber) == 'true'" >
+		   
+		<UpdateWorkItem WorkItemNumber="$(WorkItemNumber)"
+						State="In Testing"
+						History="$(BuildNumber) built successfully"
+					    BuildNumber="$(BuildNumber)" />
+
+		<SaveWorkItemNumber TeamProject="$(TeamProject)"
+							  BuildNumber="$(BuildNumber)"
+							  DropLocation="$(DropLocation)"
+							  WorkItemNumber="$(BNWorkItemNumber)"/>
+	</Target>
+
+	<Target Name="AfterDropEnvConfig" Condition=" $(Deploy2Drop) == 'true' " >
+
+		<Message Text="Message 277: Getting Web config files  $(BuildPath)\Env.Config\**\*.*" />
+		<CreateItem Include="$(BuildPath)\Env.Config\**\*.*" >
+			<Output TaskParameter="Include" ItemName="Configs2Copy"/>
+		</CreateItem>
+
+		<Copy SourceFiles="@(Configs2Copy)"
+			  DestinationFiles="@(Configs2Copy ->'$(DropLocation)\$(BuildNumber)\Env.Config\%(RecursiveDir)%(Filename)%(Extension)')"
+			  ContinueOnError="false" />
+	</Target>
+
+	<Target Name="AfterDropBuild" Condition=" $(Deploy2Drop) == 'true' " DependsOnTargets="AfterDropEnvConfig" />
+
+	<Target Name="AfterDropwMBuild" >
+		<MakeDir Directories="$(DropLocation)\$(BuildNumber)\Env.Config" />
+		<Set_wMEnvConfig Path2EnvConfig="$(DropLocation)\$(BuildNumber)\Env.Config" Path2Source="$(SolutionRoot)" />
+	</Target>
+
+	<!--<Target Name="CoreLabelOverride" >
+		Label all the latest non deleted files in workspace 
+			 This will called from indivisaul tfsproj 
+			 Need to have the ChangesetsSerachFolder property set 
+		
+
+		<Label Condition=" '$(SkipLabel)'!='true' "
+			   Workspace="$(WorkspaceName)"
+			   Name="$(BuildNumber)@$/$(TeamProject)/$(ChangesetsSearchFolder)"
+			   Version="W$(WorkspaceName)"
+			   Files="$/$(TeamProject)/$(ChangesetsSearchFolder)"
+			   Child="$(ChildLabel)"
+			   Comments="$(LabelTaskComment)"
+			   Recursive="true" />
+
+	</Target>-->
+
+	<Target Name="WorkItemUpdate" Condition=" '$(UpdateBuildNumber)' == 'true' " >
+	   
+	<UpdateWorkItem WorkItemNumber="$(WorkItemNumber)"
+			 State="In Testing"
+			 History="$(BuildNumber) built successfully"
+			 BuildNumber="$(BuildNumber)" />
+
+	<SaveWorkItemNumber TeamProject="$(TeamProject)"
+						  BuildNumber="$(BuildNumber)"
+						  DropLocation="$(DropLocation)"
+						  WorkItemNumber="$(BNWorkItemNumber)"/>
+	</Target>
+
+	<Target Name="UpdateBuildQuality" Condition="$(Deploy) == 'true'" >
+		<AddBuildStep BuildUri="$(BuildUri)" BuildStepName="BQUpdate" BuildStepText="Updating build Quality" />
+		<Exec Command="powershell &quot;$(PowerShellScripts)\Update-BuildQuality.ps1 /BuildNumber=$(BuildNumber) '$(NewBuildQuality)' $(TeamProject) $(BuildType)&quot;" />
+		<UpdateBuildStep BuildUri="$(BuildUri)" BuildStepName="BQUpdate" BuildStepResult="true" />
+		<OnError ExecuteTargets="OnErrorBQUpdate"/>
+	</Target>
+
+	<Target Name="OnErrorBQUpdate" >
+		<UpdateBuildStep BuildUri="$(BuildUri)" BuildStepName="BQUpdate" BuildStepResult="false" />
+	</Target>
+
+	<Target Name="GetWhoKickedItOff" >
+		<Message Text="Message 1678.1: attempting to retireve username of checkin" />
+		<AddBuildStep BuildUri="$(BuildUri)" BuildStepName="WhoKickedIt" BuildStepText="Checking for Developer who checked in to kick off build" />
+
+		<WhoKickedIt WritePath="$(WhoKickedItPath)" 
+			         Team_Project="$(TeamProject)" 
+					 Build_Branch="$(BuildBranch)">
+			<Output TaskParameter="NameOf" PropertyName="WhoKickedIt" />
+		</WhoKickedIt>
+		<Message Text="message 1678.2: WhoKickIt = $(WhoKickedIt)" />
+		
+		<CreateProperty Value="VSTFhelp" Condition=" '$(DebugMode)' == 'true' " >
+			<Output TaskParameter="Value"
+					PropertyName="WhoKickedIt"/>
+		</CreateProperty>
+			
+		<Message Text="message 1678.3: in Debug WhoKickIt to $(WhoKickedIt) " 
+				 Condition=" '$(DebugMode)' == 'true' "/>
+		
+		<UpdateBuildStep BuildUri="$(BuildUri)" BuildStepName="WhoKickedIt" BuildStepResult="true" />
+	</Target>
+	
+	<Target Name="MailOnBuildBreak" Condition="Exists($(WhoKickedItPath))">
+		<ReadLinesFromFile
+		   File="$(WhoKickedItPath)">
+			<Output 
+                TaskParameter="Lines"
+                PropertyName="WhoKickedIt"/>
+		</ReadLinesFromFile>
+		<AddBuildStep BuildUri="$(BuildUri)" BuildStepName="WhoKickedItMailFailure" BuildStepText="Mailing $(WhoKickedIt) about build failure" />
+
+		<CreateProperty Value="VSTFhelp" Condition="'$(DebugMode)' == 'true' " >
+			<Output TaskParameter="Value"
+					PropertyName="WhoKickedIt"/>
+		</CreateProperty>
+
+		<ReadLinesFromFile
+		   File="$(BuildOutComePath)" ContinueOnError="true" >
+			<Output
+                TaskParameter="Lines"
+                PropertyName="PrevBuildOutCome"/>
+		</ReadLinesFromFile>
+
+		<CreateProperty Value="Was the Previous Build of $(BuildType) buildtype successful: $(PrevBuildOutCome)"  >
+			<Output TaskParameter="Value" PropertyName="PreviousBuildStatus"/>
+		</CreateProperty>
+
+		<Email SmtpServer="$(HarleysvilleSMTP)"
+			MailTo="$(WhoKickedIt)@harleysvillegroup.com"
+			MailFrom="tfsbuild@harleysvillegroup.com"
+			Subject="$(TeamProject): $(BuildType) buildtype Build failure"
+			Format="HTML"
+			Body="&lt;b&gt;$(WhoKickedIt),
+			&lt;/b&gt; 
+			&lt;br&gt;
+			Your recent changes checked into $(TeamProject) kicked off a build of the $(BuildType) buildtype, 
+			this build failed.  Please examin the errors and try to fix the issues as soon as possible.
+			&lt;br&gt;
+			&lt;br&gt;
+			&lt;a
+			href='file:///$(DropLocation)\$(BuildNumber)\ErrorsWarningsLog.txt'
+			&gt;
+			$(BuildNumber) Errors and Warnings Log
+			&lt;/a &gt;
+			&lt;br&gt;
+			&lt;br&gt;
+			$(PreviousBuildStatus)
+			&lt;br&gt;
+			&lt;br&gt;
+			$(VSTFhelpMessage)
+			&lt;br&gt;
+			&lt;br&gt;
+			Thank you, 
+			&lt;br&gt;
+			TFS Build"
+			/>
+
+		<UpdateBuildStep BuildUri="$(BuildUri)" BuildStepName="WhoKickedItMailFailure" BuildStepResult="true" />
+	</Target>
+
+	<Target Name="MailOnBuildSuccessed" Condition="Exists($(WhoKickedItPath))">
+		<ReadLinesFromFile
+		   File="$(WhoKickedItPath)">
+			<Output 
+                TaskParameter="Lines"
+                PropertyName="WhoKickedIt"/>
+		</ReadLinesFromFile>
+
+		<AddBuildStep BuildUri="$(BuildUri)" BuildStepName="WhoKickedItMailSuccess" BuildStepText="Mailing $(WhoKickedIt) about successful build" />
+		
+		<CreateProperty Value="VSTFhelp" Condition="'$(DebugMode)' == 'true' " >
+			<Output TaskParameter="Value"
+					PropertyName="WhoKickedIt"/>
+		</CreateProperty>
+
+		<CreateProperty Value="Please feel free to contact
+		&lt;a
+        href='mailto:VSTFhelp@harleysvillegroup.com'
+        &gt;
+        VSTF help
+        &lt;/a &gt; 
+		if you have any questions.
+		" >
+			<Output TaskParameter="Value" PropertyName="VSTFhelpMessage"/>
+		</CreateProperty>
+
+		<Email SmtpServer="$(HarleysvilleSMTP)"
+			MailTo="$(WhoKickedIt)@harleysvillegroup.com"
+			MailFrom="tfsbuild@harleysvillegroup.com"
+			Subject="Successful build of $(TeamProject): $(BuildType) buildtype"
+			Format="HTML" 
+			Body="&lt;b&gt;$(WhoKickedIt),
+			&lt;/b&gt; 
+			&lt;br&gt;
+			Your recent changes checked into $(TeamProject) kicked off a build of the $(BuildType) buildtype, 
+			this build built successfully.  
+			&lt;br&gt;
+			&lt;br&gt;
+			$(VSTFhelpMessage)
+			&lt;br&gt;
+			&lt;br&gt;
+			Thank you, 
+			&lt;br&gt;
+			TFS Build" 
+			/>
+		<UpdateBuildStep BuildUri="$(BuildUri)" BuildStepName="WhoKickedItMailSuccess" BuildStepResult="true" />
+		
+	</Target>
+
+	<Target Name="BuildFailure" >
+		<Message Text="message 1680.1: Reporting build failure" />
+		<BuildOutCome Successful="False" WritePath="$(BuildOutComePath)"/>
+	</Target>
+
+	<Target Name="BuildSuccessful" >
+		<Message Text="message 1681.1: Reporting Successful Build" />
+		<BuildOutCome Successful="True" WritePath="$(BuildOutComePath)"/>
+	</Target>
+
+	<Target Name="MailOnSuccessfulNightlyBuild" >
+
+		<Message Text="Message 1682.1: Team Email => $(TeamEmail)" />
+
+		<CreateProperty Value="VSTFhelp@harleysvillegroup.com" Condition=" '$(TeamEmail)' == '' Or '$(DebugMode)' == 'true' " >
+			<Output TaskParameter="Value"
+					PropertyName="TeamEmail"/>
+		</CreateProperty>
+
+		<ReturnHtmlLink Links="$(BuildLinks)" >
+			<Output TaskParameter="HtmlLink" PropertyName="BuildLinks" />	  
+		</ReturnHtmlLink>
+
+		<Message Text="Message 1682.2: Team Email Changes to $(TeamEmail) while in Debug" 
+		         Condition=" '$(DebugMode)' == 'true' "/>
+
+
+		<Email SmtpServer="$(HarleysvilleSMTP)"
+			MailTo="$(TeamEmail)"
+			MailFrom="VSTFhelp@harleysvillegroup.com"
+			Subject="Successful build of $(TeamProject): $(BuildType) buildtype"
+			Format="HTML" 
+			Body="&lt;b&gt;$(TeamProject),
+			&lt;/b&gt; 
+			&lt;br&gt;
+			The Nightly build was successful.  
+			&lt;br&gt;
+			&lt;br&gt;
+			Build was deploy to below area:
+			$(BuildLinks)
+			&lt;br&gt;
+			&lt;br&gt;
+			$(VSTFhelpMessage)
+			&lt;br&gt;
+			&lt;br&gt;
+			Thank you, 
+			&lt;br&gt;
+			TFS Build" 
+			/>
+	</Target>
+
+	<Target Name="BuildEmail" >
+
+		<Email SmtpServer="$(HarleysvilleSMTP)"
+			MailTo="$(EmailTo)"
+			MailFrom="VSTFhelp@harleysvillegroup.com"
+			Subject="$(EmailSubject)"
+			Format="HTML"
+			Body="$(EmailBody)"
+			/>
+		   
+	 </Target>
+
+	<Target Name="MailOnUnsuccessfulNightlyBuild" >
+		<!--<ReturnTeamEmail Team_Project="$(TeamProject)">
+			<Output TaskParameter="TeamEmail" PropertyName="TeamEmail" />
+		</ReturnTeamEmail>-->
+		
+		<Message Text="Message 1683.1: Team Email => $(TeamEmail)" />
+
+		<CreateProperty Value="VSTFhelp@harleysvillegroup.com" Condition=" '$(TeamEmail)' == '' Or '$(DebugMode)' == 'true' " >
+			<Output TaskParameter="Value"
+					PropertyName="TeamEmail"/>
+		</CreateProperty>
+
+		<Message Text="Message 1683.2: Team Email Changes to $(TeamEmail) while in Debug" 
+		         Condition=" '$(DebugMode)' == 'true' "/>
+		
+		<Email MailTo="$(TeamEmail)"
+			   MailFrom="VSTFhelp@harleysvillegroup.com"
+			   SmtpServer="$(HarleysvilleSMTP)"
+			   Subject="UnSuccessful build of $(TeamProject): $(BuildType) buildtype"
+			   Format="HTML"
+			   Body="&lt;b&gt;$(TeamProject),
+				&lt;/b&gt; 
+				&lt;br&gt;
+				The Nightly build was Unsuccessful. 
+				&lt;br&gt;
+				&lt;br&gt;
+				&lt;a
+				href='file:///$(DropLocation)\$(BuildNumber)\ErrorsWarningsLog.txt'
+				&gt;
+				$(BuildNumber) Errors and Warnings Log
+				&lt;/a &gt;
+				&lt;br&gt;
+				&lt;br&gt;
+				$(VSTFhelpMessage)
+				&lt;br&gt;
+				&lt;br&gt;
+				Thank you, 
+				&lt;br&gt;
+				TFS Build"
+			   />
+	</Target>
+
+	<Target Name="DeleteAll" >
+
+		<DeleteAll Dir="C:\Temp\test" />
+		
+	</Target>
+
+	<Target Name="BuildNumber" >
+		   
+		<!--<Exec Command="%comspec% /k &quot;&quot;C:\Program Files\Microsoft Visual Studio 8\VC\vcvarsall.bat&quot;&quot; x86" 
+			  WorkingDirectory="C:\Program Files\Microsoft Visual Studio 8\VC\"-->
+		   
+		<GetBuildNumber VersionXmlPath="$(VersionXmlPath)" Update="false" >
+			<Output TaskParameter="BuildNumber"
+					 PropertyName="BuildNumber"/>
+		</GetBuildNumber>
+
+		<Message Text="New build number is $(BuildNumber)" />
+	</Target>
+	
+
+</Project>

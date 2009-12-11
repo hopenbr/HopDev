@@ -1,0 +1,239 @@
+<?xml version="1.0"  encoding="utf-8" ?>
+<Deployment>
+	<CommonScriptsLocation>C:\TFSWorkspaces\VS2008\SRM\Branches\DEVELOPMENT\PowerShell\PowerShellScripts\</CommonScriptsLocation>
+	<!--Location the parent direcoty of the HIC PowerPlatform -->
+	
+	<CommonEmailAddress>@HarleysvilleGroup.com</CommonEmailAddress>
+	<!--Backend of email address-->
+	
+	<TFSServer>http://As73tfs01:8080</TFSServer>
+	<!--Url to TFS server no difference between these two -->
+	<TFSServerURL>http://As73tfs01:8080</TFSServerURL>
+	
+	<TFSBuild>AS73tfsbuild01</TFSBuild>
+	<!--Build server -->
+	<EventSource>Harleysville.TfsDeployer</EventSource>
+	<!--App Event Source of for Errors --> 
+	
+	<ConnectionString>server=AS73tfstst01;database=SRM_TFS_Deploys;trusted_connection=true;</ConnectionString>
+	<!--ConnectionString to Deployment Database-->
+	
+	<DBITeamProject>Software.Release.Management</DBITeamProject>
+	<!--Team Project that house DBIs only one project can be used-->
+	
+	<TempLocation>C:\Temp\HPP\TFSDeployer</TempLocation>
+	<!-- Local temparary storage directory on server-->
+
+  <LogLocation>C:\TFS\HPPLogs\</LogLocation>
+
+	<Path2SqlCompareDir>C:\Program Files\Red Gate\SQL Compare 7</Path2SqlCompareDir>
+	<!-- Local path to Red gates sql compare cmd line utility-->
+
+  <RedGateDefaultOptions></RedGateDefaultOptions>
+
+  <RedGate>
+    <SyncOptions>
+      <Default>Default,ForceColumnOrder,IgnorePermissions</Default>
+      <!--Default will be added all sync jobs -->
+      <NoConstraints>IgnoreIndexes,IgnoreKeys,IgnoreChecks,IgnoreTriggers,DisableAndReenableDdlTriggers</NoConstraints>
+    </SyncOptions>
+  </RedGate>
+  
+	<ServerPaths>
+		<DBSearchAndReplace>$/Database.Projects/SRM/Deployments/SearchAndReplace</DBSearchAndReplace>
+    <DefaultSQLCompareArgsXml>$/Database.Projects/SRM/Deployments/Defaults/SqlCompArgs.xml</DefaultSQLCompareArgsXml>
+	</ServerPaths>
+
+  <RegPaths>
+    <DBDeployer>HKLM:\software\HGIC\SRM\HPP\DBDeployer</DBDeployer>
+    <SecureCodes>HKLM:\software\HGIC\SRM\HPP\SecureCodes</SecureCodes>
+  </RegPaths>
+
+	<URLs>
+		<SQLBackupMonitor>http://HPPWebTst:1420/SQLBackupMonitor.aspx</SQLBackupMonitor>
+	</URLs>
+
+  <!--TargetNamespace of XSD -->
+  <DeploymentConfigSchemaName>urn:schema-Harleysvillegroup-com:TFSDeployerConfig</DeploymentConfigSchemaName>
+  <!-- path is for TFSDeployerScripts folder if using file path, could also use Http, UNC 
+       variable is invoked as express there if you want to us string in close in $()-->
+  <DeploymentConfigSchemaUri>Join-Path $PWD "\XSD\TFSDeployerConfigMapping.xsd"</DeploymentConfigSchemaUri>
+  
+  <logging>
+		<Level>debug</Level>
+		<!--Levels: "error" = Only Error messages are logged
+					"warning" = Warning and Error messages are logged
+					"info" = Error, Warning, and info messages are logged
+					"config" = Error, Warning, info and config messsages are logged
+					"Debug" = All messages logged-->
+		
+		<EventSource>Harleysville.TfsDeployer</EventSource>
+		<!--App Event Log Source name-->
+
+		<ID>4200</ID>
+		<!--App Event ID-->
+	</logging>
+	<BuildQualityConversions>
+		   
+		   <!--This section is used to match up a deploy2 Build Quality to its In-'Env' 
+			For the most part this completely stright forward and I thought about removing it 
+			but it does allow us to mask/skip/impersonate envrionments therefore I left it in 
+		    What I mean by skip env is we can have a "Deploy2-TST1 but TST1 has be change to TST2 
+		    we could just have a entry here Deploy2-TST1 In-TST2 which would deploy the build package
+			to the new TST2 even though it was asked to go to TST1  -->
+		
+		<BuildConversion Original="Deploy2-Dev" Converted="In-Dev" />
+		<BuildConversion Original="Configs2-Dev" Converted="In-Dev" />
+		<BuildConversion Original="Deploy2-Assembly" Converted="In-Assembly" />
+		<BuildConversion Original="Configs2-Assembly" Converted="In-Assembly" />
+		<BuildConversion Original="Deploy2-AssemblyCL" Converted="In-AssemblyCL" />
+		<BuildConversion Original="Deploy2-TST1" Converted="In-TST1" />
+		<BuildConversion Original="Configs2-TST1" Converted="In-TST1" />
+		<BuildConversion Original="Deploy2-Conversion" Converted="In-SystemTest01" />
+		<BuildConversion Original="Deploy2-QA2" Converted="In-QA2" />
+		<BuildConversion Original="Configs2-QA2" Converted="In-QA2" />
+		<BuildConversion Original="Deploy2-End2End" Converted="In-End2End" />
+		<BuildConversion Original="Configs2-End2End" Converted="In-End2End" />
+		<BuildConversion Original="Deploy2-End2EndCL" Converted="In-End2EndCL" />
+		<BuildConversion Original="Deploy2-Training" Converted="In-Training" />
+		<BuildConversion Original="Configs2-Training" Converted="In-Training" />
+		<BuildConversion Original="Deploy2-PrePrd" Converted="In-PrePrd" />
+		<BuildConversion Original="Configs2-PrePrd" Converted="In-PrePrd" />
+		<BuildConversion Original="Deploy2-PrePrdCL" Converted="In-PrePrdCL" />
+		<BuildConversion Original="Deploy2-IRB" Converted="In-IRB" />
+		<BuildConversion Original="Configs2-IRB" Converted="In-IRB" />
+		<BuildConversion Original="Deploy2-Production" Converted="In-Production" />
+		<BuildConversion Original="Configs2-Production" Converted="In-Production" />
+		<BuildConversion Original="RollBack" Converted="RollBack" />
+		<BuildConversion Original="Update-Configs" Converted="ConfigUpdate" />
+		<BuildConversion Original="Deploy2-SystemTest01" Converted="In-TST1" />
+		<BuildConversion Original="Deploy2-SystemTest02" Converted="In-QA2" />
+		<BuildConversion Original="Deploy2-Test" Converted="In-Test" />
+		<BuildConversion Original="Configs2-Test" Converted="In-Test" />
+		<BuildConversion Original="Deploy2-TST02" Converted="In-TST02" />
+		<BuildConversion Original="Configs2-TST02" Converted="In-TST02" />
+		<BuildConversion Original="Deploy2-Staging" Converted="In-Staging" />
+		<BuildConversion Original="Configs2-Staging" Converted="In-Staging" />
+		<BuildConversion Original="Update-Configs" Converted="Update-Configs" />
+		<BuildConversion Original="Deploy2-Dev02" Converted="In-Dev02" />
+		<BuildConversion Original="Deploy2-QTE" Converted="In-QTE" />
+		<BuildConversion Original="Configs2-QTE" Converted="In-QTE" />
+		<BuildConversion Original="Configs2-Dev02" Converted="In-Dev02" />
+    <BuildConversion Original="SyncDB-Assembly" Converted="In-Assembly" />
+    <BuildConversion Original="SyncDB-QA2" Converted="In-QA2" />
+    <BuildConversion Original="SyncDB-End2End" Converted="In-End2End" />
+    <BuildConversion Original="SyncDB-TST1" Converted="In-TST1" />
+    <BuildConversion Original="SyncDB-Training" Converted="In-Training" />
+    <BuildConversion Original="SyncDB-PrePrd" Converted="In-PrePrd" />
+    <BuildConversion Original="SyncDB-Production" Converted="In-Production" />
+    
+	</BuildQualityConversions>
+	<!--The Environments slection FullName needs to have corresponding Converted value from above 
+	   Region/Env specific infomation can be stored here like the webMethods Server authenification codes -->
+	<Environments>
+		<Environment Name="Assembly" FullName="In-Assembly" ShortName="ASY">
+			<wM>
+				<Servers>
+					<Server Name="as73esbasy01">
+						<wM_Admin_auth>Basic QWRtaW5pc3RyYXRvcjpBc3kwMSZBZG0xbg==</wM_Admin_auth>
+					</Server>
+				</Servers>
+			</wM>
+		</Environment>
+		<Environment Name="TST1" FullName="In-TST1" ShortName="TST1">
+			<wM>
+				<Servers>
+					<Server Name="as73esbtst01">
+						<wM_Admin_auth>Basic QWRtaW5pc3RyYXRvcjptYW5hZ2VpY2M=</wM_Admin_auth>
+					</Server>
+				</Servers>
+			</wM>
+		</Environment>
+		<Environment Name="QA2" FullName="In-QA2" ShortName="QA2">
+			<wM>
+				<Servers>
+					<Server Name="as73esbtst02">
+						<wM_Admin_auth>Basic QWRtaW5pc3RyYXRvcjpUc3QwMiZBZG0xbg==</wM_Admin_auth>
+					</Server>
+				</Servers>
+			</wM>
+		</Environment>
+		<Environment Name="End2End" FullName="In-End2End" ShortName="E2E">
+			<wM>
+				<Servers>
+					<Server Name="as73esbe2e01">
+						<wM_Admin_auth>Basic QWRtaW5pc3RyYXRvcjpFc2UwMSZBZG0xbg==</wM_Admin_auth>
+					</Server>
+				</Servers>
+			</wM>
+		</Environment>
+		<Environment Name="Training" FullName="In-Training" ShortName="TRN">
+			<wM>
+				<Servers>
+					<Server Name="as73esbtrn01">
+						<wM_Admin_auth>Basic QWRtaW5pc3RyYXRvcjpUcm4wMSZBZG0xbg==</wM_Admin_auth>
+					</Server>
+				</Servers>
+			</wM>
+		</Environment>
+		<Environment Name="PrePrd" FullName="In-PrePrd" ShortName="PRE">
+			<wM>
+				<Servers>
+					<Server Name="as73esbpre01">
+						<wM_Admin_auth>Basic QWRtaW5pc3RyYXRvcjpQcmUwMSZBZG0xbg==</wM_Admin_auth>
+					</Server>
+				</Servers>
+			</wM>
+		</Environment>
+		<Environment Name="Production" FullName="In-Production" ShortName="PRD">
+			<wM>
+				<Servers>
+					<Server Name="as73esbprd01">
+						<wM_Admin_auth>Basic QWRtaW5pc3RyYXRvcjpQcmQmQWRtMW4=</wM_Admin_auth>
+					</Server>
+					<Server Name="as73esbprd02">
+						<wM_Admin_auth>Basic QWRtaW5pc3RyYXRvcjpQcmQmQWRtMW4=</wM_Admin_auth>
+					</Server>
+				</Servers>
+			</wM>
+		</Environment>
+		<Environment Name="Staging" FullName="In-Staging" ShortName="STG"/>
+		<Environment Name="Test" FullName="In-Test" ShortName="TST"/>
+		<Environment Name="Dev" FullName="In-Dev" ShortName="DEV"/>
+		<Environment Name="QTE" FullName="In-QTE" ShortName="QTE"/>
+		<Environment Name="Dev02" FullName="In-Dev02" ShortName="DEV02"/>
+		<Environment Name="TST02" FullName="In-TST02" ShortName="TST02"/>
+		<Environment Name="IRB" FullName="In-IRB" ShortName="IRB"/>
+	</Environments>
+
+	<!-- WAS section is for EAR related deployments; 
+	     each SDLC is also in the ConfigMapping XSD if you add a new SDLC need to add
+		 it to the WasSDLC xs:simpletype in the XSD
+	    
+		EAR deployments have Access Harleysville Deployment Environments (AHDE)
+	    Therefore you need to map each AHDE to one of these WAS SDLC
+		If no mapping is used then the default Region will be used
+		The mapping should be made in the Build types DeploymentConfig.Xml in the DeeploymentRegion Node
+		  Ex/ <DeploymentRegion Name="Assembly" WasSDLC="DVLT02"/>
+	-->
+	<WAS>
+		<SDLCs>
+			<SDLC Name="DVLT01" Host="as73wasnodem00" Port="49169" User="WSNTDADM" Pwd="D43TCEHA" DefaultRegion="Assembly" />
+			<SDLC Name="DVLT02" Host="as73wasnodem00" Port="49189" User="WSNTDADM" Pwd="D43TCEHA" />
+			<SDLC Name="DVLT04" Host="as73wasnodem00" Port="49229" User="WSNTDADM" Pwd="D43TCEHA" DefaultRegion="Dev" />
+			<SDLC Name="DVLT05" Host="as73wasnodem00" Port="49249" User="WSNTDADM" Pwd="D43TCEHA" />
+			<SDLC Name="DVLT11" Host="as73wasnodem00" Port="49289" User="WSNTDADM" Pwd="D43TCEHA" />
+			<SDLC Name="DVLT13" Host="as73wasnodem00" Port="49329" User="WSNTDADM" Pwd="D43TCEHA" DefaultRegion="Training" />
+			<SDLC Name="SYST01" Host="as73wasnodem00" Port="49349" User="WSNTTADM" Pwd="TV2RL1EV" DefaultRegion="End2End" />
+			<SDLC Name="SYST02" Host="as73wasnodem00" Port="49369" User="WSNTTADM" Pwd="TV2RL1EV" DefaultRegion="PrePrd" />
+			<SDLC Name="SYST04" Host="as73wasnodem00" Port="49409" User="WSNTTADM" Pwd="TV2RL1EV" DefaultRegion="TST1" />
+			<SDLC Name="SYST11" Host="as73wasnodem00" Port="49469" User="WSNTTADM" Pwd="TV2RL1EV" />
+			<SDLC Name="SYST12" Host="as73wasnodem00" Port="49489" User="WSNTTADM" Pwd="TV2RL1EV" DefaultRegion="QA2" />
+			<SDLC Name="WSPP" Host="hmicmvs1.harleysvillegroup.com" Port="49412" User="WSPPADM" Pwd="WSPADMP" />
+			<SDLC Name="WSTT" Host="hmichmp2.harleysvillegroup.com" Port="49292" User="WSTTADM" Pwd="WSTADMT" />
+			<SDLC Name="WSTD" Host="hmichmp2.harleysvillegroup.com" Port="49262" User="WSTDADM" Pwd="WSTADMD" />
+			<SDLC Name="PRODUCTION" Host="as73wasnodem00" Port="49529" User="WSNTPADM" Pwd="MV856PEY" DefaultRegion="Production" />
+		</SDLCs>
+	</WAS>	   
+
+</Deployment>

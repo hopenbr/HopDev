@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{233AE625-8BDB-4142-9E47-2D8B6A0CD6D2}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\Add-InfoPathForm.ps1 = Scripts\Add-InfoPathForm.ps1
+		Scripts\Add-WspSolution.ps1 = Scripts\Add-WspSolution.ps1
+		Scripts\Run-StsadmCmd.ps1 = Scripts\Run-StsadmCmd.ps1
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harleysville.Powershell.Utilities", "..\..\TFSeventServices\Harleysville.Powershell.Utilities\Harleysville.Powershell.Utilities.csproj", "{D2703B5F-5772-439B-806E-F2218CD9C8DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StsadmServices", "StsadmServices\StsadmServices.csproj", "{0D49BC85-2E25-4602-B17F-46582F772474}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://as73tfs01:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\..\\TFSeventServices\\Harleysville.Powershell.Utilities\\Harleysville.Powershell.Utilities.csproj
+		SccProjectName1 = ../../TFSeventServices/Harleysville.Powershell.Utilities
+		SccLocalPath1 = ..\\..\\TFSeventServices\\Harleysville.Powershell.Utilities
+		SccProjectUniqueName2 = StsadmServices\\StsadmServices.csproj
+		SccProjectName2 = StsadmServices
+		SccLocalPath2 = StsadmServices
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2703B5F-5772-439B-806E-F2218CD9C8DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2703B5F-5772-439B-806E-F2218CD9C8DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2703B5F-5772-439B-806E-F2218CD9C8DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2703B5F-5772-439B-806E-F2218CD9C8DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D49BC85-2E25-4602-B17F-46582F772474}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D49BC85-2E25-4602-B17F-46582F772474}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D49BC85-2E25-4602-B17F-46582F772474}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D49BC85-2E25-4602-B17F-46582F772474}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TextTemplating) = postSolution
+		TextTemplating = 1
+	EndGlobalSection
+EndGlobal

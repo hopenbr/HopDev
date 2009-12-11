@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<tasks>
+	<task 
+		id="Site"
+		plugin="Microsoft.ProjectCreationWizard.Reporting"
+		completionMessage="Project Reporting site created.">
+		<dependencies/>
+		<taskXml>
+			<ReportingServices>
+				<site />
+			</ReportingServices>
+		</taskXml>
+	</task>
+
+	<task id="Populate Reports"
+		  plugin="Microsoft.ProjectCreationWizard.Reporting"
+		  completionMessage="Project site created.">
+		<dependencies>
+			<dependency taskId="Site"/>
+		</dependencies>
+		<taskXml>
+			<ReportingServices>
+        <folders>
+          <folder path="Portal Reports"></folder>
+        </folders>
+				<reports>
+          
+          <report name="All Sprints" filename="Reports\All Sprints.rdl" folder=""  cacheExpiration ="30">
+						<datasources>
+							<reference name="/TfsReportDS" dsname="TfsReportDS"/>
+						</datasources>
+					</report>
+          
+					<report name="All Product Backlog Items" filename="Reports\All Product Backlog Items.rdl" folder=""  cacheExpiration ="30">
+						<datasources>
+							<reference name="/TfsReportDS" dsname="TfsReportDS"/>
+						</datasources>
+					</report>
+          
+					<report name="All Sprint Backlog Items" filename="Reports\All Sprint Backlog Items.rdl" folder=""  cacheExpiration ="30">
+						<datasources>
+							<reference name="/TfsReportDS" dsname="TfsReportDS"/>
+						</datasources>
+					</report>
+
+					<report name="Sprint Burndown Chart" filename="Reports\Sprint Burndown Chart.rdl" folder=""  cacheExpiration ="30">
+						<datasources>
+							<reference name="/TfsReportDS" dsname="TfsReportDS"/>
+						</datasources>
+					</report>
+
+          <report name="Sprint Burndown Chart Small" filename="Reports\Sprint Burndown Chart Small.rdl" folder="Portal Reports"  cacheExpiration ="30">
+            <datasources>
+              <reference name="/TfsReportDS" dsname="TfsReportDS"/>
+            </datasources>
+          </report>
+          <report name="Product Burndown Chart" filename="Reports\Product Burndown Chart.rdl" folder=""  cacheExpiration ="30">
+						<datasources>
+							<reference name="/TfsReportDS" dsname="TfsReportDS"/>
+						</datasources>
+					</report>
+
+			<!--<report name="Product Burndown Chart 1" filename="Reports\Product Burndown Chart 1.rdl" folder=""  cacheExpiration ="30">
+				<datasources>
+					<reference name="/TfsReportDS" dsname="TfsReportDS"/>
+				</datasources>
+			</report>-->
+
+
+
+
+					<report name="Product Burndown Chart Small" filename="Reports\Product Burndown Chart Small.rdl" folder="Portal Reports"  cacheExpiration ="30">
+            <datasources>
+              <reference name="/TfsReportDS" dsname="TfsReportDS"/>
+            </datasources>
+          </report>
+          <report name="Delta Report" filename="Reports\Delta Report.rdl" folder=""  cacheExpiration ="30">
+            <datasources>
+              <reference name="/TfsReportDS" dsname="TfsReportDS"/>
+            </datasources>
+          </report>
+          <report name="Delta Report Small" filename="Reports\Delta Report Small.rdl" folder="Portal Reports"  cacheExpiration ="30">
+            <datasources>
+              <reference name="/TfsReportDS" dsname="TfsReportDS"/>
+            </datasources>
+          </report>
+          <report name="Current Sprint Status" filename="Reports\Current Sprint Status.rdl" folder="Portal Reports"  cacheExpiration ="30">
+						<datasources>
+							<reference name="/TfsReportDS" dsname="TfsReportDS"/>
+						</datasources>
+					</report>
+          <report name="Impediment Report" filename="Reports\Impediment Report.rdl" folder=""  cacheExpiration ="30">
+            <datasources>
+              <reference name="/TfsReportDS" dsname="TfsReportDS"/>
+            </datasources>
+          </report>
+          <report name="Bug Count" filename="Reports\Bug Count.rdl" folder=""  cacheExpiration ="30">
+            <datasources>
+              <reference name="/TfsReportDS" dsname="TfsReportDS"/>
+            </datasources>
+          </report>
+          <report name="Product Backlog Composition" filename="Reports\Product Backlog Composition.rdl" folder=""  cacheExpiration ="30">
+            <datasources>
+              <reference name="/TfsReportDS" dsname="TfsReportDS"/>
+            </datasources>
+          </report>
+          <report name="Retrospective Report" filename="Reports\Retrospective Report.rdl" folder=""  cacheExpiration ="30">
+            <datasources>
+              <reference name="/TfsReportDS" dsname="TfsReportDS"/>
+            </datasources>
+          </report>
+          <report name="Bug Priority Chart" filename="Reports\Bug Priority Chart.rdl" folder="Portal Reports"  cacheExpiration ="30">
+            <datasources>
+              <reference name="/TfsReportDS" dsname="TfsReportDS"/>
+            </datasources>
+          </report>
+          <report name="Bug History Chart" filename="Reports\Bug History Chart.rdl" folder=""  cacheExpiration ="30">
+            <datasources>
+              <reference name="/TfsReportDS" dsname="TfsReportDS"/>
+            </datasources>
+          </report>
+          <report name="Sprint Overview Chart" filename="Reports\Sprint Overview Chart.rdl" folder=""  cacheExpiration ="30">
+            <datasources>
+              <reference name="/TfsReportDS" dsname="TfsReportDS"/>
+            </datasources>
+          </report>
+          <report name="Sprint View" filename="Reports\Sprint View.rdl" folder=""  cacheExpiration ="30">
+            <datasources>
+              <reference name="/TfsReportDS" dsname="TfsReportDS"/>
+            </datasources>
+          </report>
+          <report name="Sprint Cumulative Flow" filename="Reports\Sprint Cumulative Flow.rdl" folder=""  cacheExpiration ="30">
+            <datasources>
+              <reference name="/TfsReportDS" dsname="TfsReportDS"/>
+            </datasources>
+          </report>
+          <report name="Product Cumulative Flow" filename="Reports\Product Cumulative Flow.rdl" folder=""  cacheExpiration ="30">
+            <datasources>
+              <reference name="/TfsReportDS" dsname="TfsReportDS"/>
+            </datasources>
+          </report>
+        </reports>
+			</ReportingServices>
+		</taskXml>
+	</task>
+</tasks>

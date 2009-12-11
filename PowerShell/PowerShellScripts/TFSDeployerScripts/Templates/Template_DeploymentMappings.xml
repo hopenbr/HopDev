@@ -1,0 +1,336 @@
+﻿<DeploymentMappings xmlns="http://www.readify.net/TFSDeployer/DeploymentMappings20061026">
+	<Mapping xmlns=""
+			   NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			   Computer="AS73TFSBUILD02"
+			   OriginalQuality="Unexamined"
+			   NewQuality="Deploy2-Assembly"
+			   Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			  NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			  Computer="AS73TFSBUILD02"
+			  OriginalQuality="In-Assembly"
+			  NewQuality="Deploy2-Assembly"
+			  Script="Deploy.ps1" />
+
+  <Mapping xmlns=""
+			   NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			   Computer="AS73TFSBUILD02"
+			   OriginalQuality="Unexamined"
+			   NewQuality="Deploy2-TST1"
+			   Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD02"
+			 OriginalQuality="In-TST1"
+			 NewQuality="Deploy2-TST1"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD02"
+			 OriginalQuality="In-QA2"
+			 NewQuality="Deploy2-QA2"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-End2End"
+			 NewQuality="Deploy2-End2End"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-Training"
+			 NewQuality="Deploy2-Training"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-PrePrd"
+			 NewQuality="Deploy2-PrePrd"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-IRB"
+			 NewQuality="Deploy2-IRB"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-IRB"
+			 NewQuality="Deploy2-Production"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-Production"
+			 NewQuality="Deploy2-Production"
+			 Script="Deploy.ps1" />
+
+	<!-- Push prod build down to lower env -->
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-Production"
+			 NewQuality="Deploy2-Assembly"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-Production"
+			 NewQuality="Deploy2-TST1"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-Production"
+			 NewQuality="Deploy2-QA2"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-Production"
+			 NewQuality="Deploy2-End2End"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-Production"
+			 NewQuality="Deploy2-Training"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-Production"
+			 NewQuality="Deploy2-PrePrd"
+			 Script="Deploy.ps1" />
+
+	<!--Config Update section -->
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-Assembly"
+			 NewQuality="Update-Configs"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-TST1"
+			  NewQuality="Update-Configs"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-QA2"
+			 NewQuality="Update-Configs"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-End2End"
+			  NewQuality="Update-Configs"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-Training"
+			  NewQuality="Update-Configs"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-PrePrd"
+			 NewQuality="Update-Configs"
+			 Script="Deploy.ps1" />
+
+	<!--Configs2 section -->
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD02"
+			 OriginalQuality="In-Assembly"
+			 NewQuality="Configs2-Assembly"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD02"
+			 OriginalQuality="In-TST1"
+			  NewQuality="Configs2-TST1"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD02"
+			 OriginalQuality="In-QA2"
+			 NewQuality="Configs2-QA2"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-End2End"
+			  NewQuality="Configs2-End2End"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-Training"
+			  NewQuality="Configs2-Training"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-PrePrd"
+			 NewQuality="Configs2-PrePrd"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-IRB"
+			  NewQuality="Configs2-IRB"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-Production"
+			 NewQuality="Configs2-Production"
+			 Script="Deploy.ps1" />
+
+
+	<!-- Rollback section -->
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD02"
+			 OriginalQuality="In-Assembly"
+			 NewQuality="RollBack"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD02"
+			 OriginalQuality="In-TST1"
+			  NewQuality="RollBack"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD02"
+			 OriginalQuality="In-QA2"
+			 NewQuality="RollBack"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD02"
+			 OriginalQuality="In-End2End"
+			  NewQuality="RollBack"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-Training"
+			  NewQuality="RollBack"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-PrePrd"
+			 NewQuality="RollBack"
+			 Script="Deploy.ps1" />
+
+	<Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-Production"
+			 NewQuality="RollBack"
+			 Script="Deploy.ps1" />
+
+  <!-- SyncDB section -->
+
+  <Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73tfsbuild01"
+			 OriginalQuality="Unexamined"
+			 NewQuality="SyncDB-Assembly"
+			 Script="Deploy.ps1" />
+
+  <Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBLDTST01"
+			 OriginalQuality="In-Assembly"
+			 NewQuality="SyncDB-Assembly"
+			 Script="Deploy.ps1" />
+
+  <Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-TST1"
+			  NewQuality="SyncDB-TST1"
+			 Script="Deploy.ps1" />
+
+  <Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-QA2"
+			 NewQuality="SyncDB-QA2"
+			 Script="Deploy.ps1" />
+
+  <Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-End2End"
+			  NewQuality="SyncDB-End2End"
+			 Script="Deploy.ps1" />
+
+  <Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-Training"
+			  NewQuality="SyncDB-Training"
+			 Script="Deploy.ps1" />
+
+  <Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-PrePrd"
+			 NewQuality="SyncDB-PrePrd"
+			 Script="Deploy.ps1" />
+
+  <Mapping xmlns=""
+			 NotificationAdress="VSTFhelp@harleysvillegroup.com"
+			 Computer="AS73TFSBUILD01"
+			 OriginalQuality="In-Production"
+			 NewQuality="SyncDB-Production"
+			 Script="Deploy.ps1" />
+
+
+</DeploymentMappings>

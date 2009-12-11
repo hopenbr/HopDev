@@ -1,0 +1,5 @@
+C:\TFSWorkspaces\VS2008\SRM\Branches\DEVELOPMENT\TFVC\Recycle-AppPools\Recycle-AppPools\obj\Debug\ResolveAssemblyReference.cache
+C:\TFSWorkspaces\VS2008\SRM\Branches\DEVELOPMENT\TFVC\Recycle-AppPools\Recycle-AppPools\bin\Debug\Recycle-AppPools.exe
+C:\TFSWorkspaces\VS2008\SRM\Branches\DEVELOPMENT\TFVC\Recycle-AppPools\Recycle-AppPools\bin\Debug\Recycle-AppPools.pdb
+C:\TFSWorkspaces\VS2008\SRM\Branches\DEVELOPMENT\TFVC\Recycle-AppPools\Recycle-AppPools\obj\Debug\Recycle-AppPools.exe
+C:\TFSWorkspaces\VS2008\SRM\Branches\DEVELOPMENT\TFVC\Recycle-AppPools\Recycle-AppPools\obj\Debug\Recycle-AppPools.pdb

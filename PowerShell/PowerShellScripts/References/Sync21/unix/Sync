@@ -1,0 +1,7 @@
+# Sync - Unix/Linux script for convenient execution of Sync
+# Instructions:
+#   1. Change "/Path/To/Sync.jar" to the full path name of Sync.jar
+#   2. Copy this file to a directory on the PATH
+#   3. Set permissions to make this file executable, e.g. chmod u+x Sync
+#   4. A suggestion: rename this file to something short, e.g. s
+java -jar "/Path/To/Sync.jar" "$@"

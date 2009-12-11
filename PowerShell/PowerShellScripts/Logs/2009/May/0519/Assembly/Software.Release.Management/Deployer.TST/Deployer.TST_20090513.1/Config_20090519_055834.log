@@ -1,0 +1,19 @@
+
+Sync 2.1   Copyright 2007 Zach Scrivena   2007-12-09
+
+DIRECTORY SYNCHRONIZATION
+
+Source directory: "\\as73tfs01\BuildStore\SRM\TFSEventServices\Drops\Deployer.TST_20090513.1\Env.Config\In-Assembly\"
+Target directory: "\\as73tfstst01\TDA\ASY\"
+
+File-matching attributes: (name,size,time,crc)
+
+
+SUBDIRECTORY: ".\"
+
+ No. of source files matched: 0 of 1
+
+ No. of unmatched source files to be copied: 1
+ [C1] "Web.Config" (9.2 kb)
+  Overwrite existing file "web.config"?
+  (Y)es/(N)o/(A)lways/Neve(R): 

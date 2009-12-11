@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ServiceSettings" targetNamespace="http://tempuri.org/ServiceSettings.xsd" xmlns:mstns="http://tempuri.org/ServiceSettings.xsd" xmlns="http://tempuri.org/ServiceSettings.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ServiceSettings" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ServiceSettings" msprop:Generator_DataSetName="ServiceSettings">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ServiceSettings" msprop:Generator_UserTableName="ServiceSettings" msprop:Generator_RowDeletedName="ServiceSettingsRowDeleted" msprop:Generator_TableClassName="ServiceSettingsDataTable" msprop:Generator_RowChangedName="ServiceSettingsRowChanged" msprop:Generator_RowClassName="ServiceSettingsRow" msprop:Generator_RowChangingName="ServiceSettingsRowChanging" msprop:Generator_RowEvArgName="ServiceSettingsRowChangeEvent" msprop:Generator_RowEvHandlerName="ServiceSettingsRowChangeEventHandler" msprop:Generator_TablePropName="_ServiceSettings" msprop:Generator_TableVarName="tableServiceSettings" msprop:Generator_RowDeletingName="ServiceSettingsRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Key" msprop:Generator_UserColumnName="Key" msprop:Generator_ColumnPropNameInRow="Key" msprop:Generator_ColumnVarNameInTable="columnKey" msprop:Generator_ColumnPropNameInTable="KeyColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Value" msprop:Generator_UserColumnName="Value" msprop:Generator_ColumnPropNameInRow="Value" msprop:Generator_ColumnVarNameInTable="columnValue" msprop:Generator_ColumnPropNameInTable="ValueColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Services" msprop:Generator_UserTableName="Services" msprop:Generator_RowDeletedName="ServicesRowDeleted" msprop:Generator_TableClassName="ServicesDataTable" msprop:Generator_RowChangedName="ServicesRowChanged" msprop:Generator_RowClassName="ServicesRow" msprop:Generator_RowChangingName="ServicesRowChanging" msprop:Generator_RowEvArgName="ServicesRowChangeEvent" msprop:Generator_RowEvHandlerName="ServicesRowChangeEventHandler" msprop:Generator_TablePropName="Services" msprop:Generator_TableVarName="tableServices" msprop:Generator_RowDeletingName="ServicesRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Service" msprop:Generator_UserColumnName="Service" msprop:Generator_ColumnPropNameInRow="Service" msprop:Generator_ColumnVarNameInTable="columnService" msprop:Generator_ColumnPropNameInTable="ServiceColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Services_ServicesSettings" msdata:parent="Services" msdata:child="ServiceSettings" msdata:parentkey="Service" msdata:childkey="Key" msprop:Generator_UserRelationName="Services_ServicesSettings" msprop:Generator_RelationVarName="relationServices_ServicesSettings" msprop:Generator_UserChildTable="ServiceSettings" msprop:Generator_UserParentTable="Services" msprop:Generator_ParentPropName="ServicesRow" msprop:Generator_ChildPropName="GetServiceSettingsRows" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

@@ -1,0 +1,7 @@
+C:\TFSWorkspaces\VS2008\SRM\Branches\DEVELOPMENT\WssServices\StsadmServices\StsadmServices\obj\Debug\ResolveAssemblyReference.cache
+C:\TFSWorkspaces\VS2008\SRM\Branches\DEVELOPMENT\WssServices\StsadmServices\StsadmServices\bin\InstallerServices.dll
+C:\TFSWorkspaces\VS2008\SRM\Branches\DEVELOPMENT\WssServices\StsadmServices\StsadmServices\bin\InstallerServices.pdb
+C:\TFSWorkspaces\VS2008\SRM\Branches\DEVELOPMENT\WssServices\StsadmServices\StsadmServices\bin\Harleysville.Powershell.Utilities.dll
+C:\TFSWorkspaces\VS2008\SRM\Branches\DEVELOPMENT\WssServices\StsadmServices\StsadmServices\bin\Harleysville.Powershell.Utilities.pdb
+C:\TFSWorkspaces\VS2008\SRM\Branches\DEVELOPMENT\WssServices\StsadmServices\StsadmServices\obj\Debug\InstallerServices.dll
+C:\TFSWorkspaces\VS2008\SRM\Branches\DEVELOPMENT\WssServices\StsadmServices\StsadmServices\obj\Debug\InstallerServices.pdb

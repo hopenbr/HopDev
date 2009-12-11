@@ -1,0 +1,5 @@
+C:\TFSWorkspaces\VS2008\SRM\Branches\DEVELOPMENT\TFSeventServices\Harleysville.Powershell.Utilities\bin\Debug\Harleysville.Powershell.Utilities.dll
+C:\TFSWorkspaces\VS2008\SRM\Branches\DEVELOPMENT\TFSeventServices\Harleysville.Powershell.Utilities\bin\Debug\Harleysville.Powershell.Utilities.pdb
+C:\TFSWorkspaces\VS2008\SRM\Branches\DEVELOPMENT\TFSeventServices\Harleysville.Powershell.Utilities\obj\Debug\ResolveAssemblyReference.cache
+C:\TFSWorkspaces\VS2008\SRM\Branches\DEVELOPMENT\TFSeventServices\Harleysville.Powershell.Utilities\obj\Debug\Harleysville.Powershell.Utilities.dll
+C:\TFSWorkspaces\VS2008\SRM\Branches\DEVELOPMENT\TFSeventServices\Harleysville.Powershell.Utilities\obj\Debug\Harleysville.Powershell.Utilities.pdb

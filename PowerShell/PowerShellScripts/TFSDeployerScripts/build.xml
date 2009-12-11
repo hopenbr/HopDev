@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <project name="CLPortalAnt" default="Default">
+
+
+       	<target name="Default">
+			<echo>You must supply a target</echo>
+		</target>
+
+       	<target name="Init">
+			<echo>Initializing...</echo>
+
+       	<!-- SET THESE VARIABLES -->
+       	    <!-- Variables that needs to be changed once for each release -->
+    		<property name="project.relasenum" value="2_0" />
+
+
+    		<!-- Variables that needs to be chnaged once for each project -->
+    		<property name="project.workingdir" value="c:\CLPortalBuild" />
+		<property name="clearcase.ucm.project.name" value="NewDev_R${project.relasenum}_Build"/>
+		<property name="clearcase.ucm.project.integration.name" value="NewDev_R${project.relasenum}"/>
+
+		<property name="clearcase.ucm.view.drive" value="l:\"/>
+		<property name="build.user.name" value="svelaga"/>
+		<property name="clearcase.ucm.vob" value="/HICucm"/>
+		<property name="clearcase.ucm.project.root" value="CLFA"/>
+		   <property name="build.drive" value="c:"/>
+	    	<property name="build.dir" value="deploy"/>
+	    	<property name="build.ear.prefix" value="CLPortal_R${project.relasenum}"/>
+		    <property name="build.boxname" value="W73hic400187"/>
+	    	<property name="deployment.server1" value="wasdvlt04win"/>
+		    <property name="deployment.server2" value="wassyst01win"/>
+	    	<property name="email.to" value="svelaga"/>
+	    	<property name="email1.to" value="jtomeo"/>
+		<property name="email.from" value="svelaga"/>
+		<property name="project.name" value="CL Portal"/>
+		<property name="build.log.name" value="buildlog.txt"/>
+
+		    <!-- compile properties -->
+
+		    <property name="websphere.jars" value="C:\Program Files\IBM\WebSphere Studio\Application Developer\v5.1.2\runtimes\aes_v4_jars\lib\*.jar"/>
+		    <property name="shared.cleansrc" value="${clearcase.ucm.view.drive}${build.user.name}_${clearcase.ucm.project.name}\${clearcase.ucm.project.root}\AutomateRenewalShared\Java Source"/>
+		    <property name="ejb.cleansrc" value="${clearcase.ucm.view.drive}${build.user.name}_${clearcase.ucm.project.name}\${clearcase.ucm.project.root}\AutomateRenewalEJB\ejbModule"/>
+		    <property name="web.cleansrc" value="${clearcase.ucm.view.drive}${build.user.name}_${clearcase.ucm.project.name}\${clearcase.ucm.project.root}\AutomateRenewalWeb\JavaSource"/>
+		    <property name="webservice.cleansrc" value="${clearcase.ucm.view.drive}${build.user.name}_${clearcase.ucm.project.name}\${clearcase.ucm.project.root}\WSRouter\JavaSource"/>
+		    <property name="shared.destination" value="${project.workingdir}\AutomateRenewalShared\bin"/>
+		    <property name="ejb.destination" value="${project.workingdir}\AutomateRenewalEJB\ejbModule"/>
+		    <property name="web.destination" value="${project.workingdir}\AutomateRenewalWeb\WebContent\WEB-INF\classes"/>
+		    <property name="webservice.destination" value="${project.workingdir}\WSRouter\WebContent\WEB-INF\classes"/>
+		    <property name="application.project.folder" value="${clearcase.ucm.view.drive}${build.user.name}_${clearcase.ucm.project.name}\${clearcase.ucm.project.root}\AutomateRenewal"/>
+		    <property name="ibm.wsad.path" value="C:\Program Files\IBM\WebSphere Studio\Application Developer\v5.1.2"/>
+		    <property name="ibm.eclipse.jre.path" value="${ibm.wsad.path}\eclipse\jre"/>
+		    <property name="ibm.wsad.lib.path" value="${ibm.wsad.path}\runtimes\base_v5_stub\lib"/>
+
+    		<!-- End of Variables setting -->
+
+    		<property name="project.workingdir.eardir" value="${project.workingdir}\EAR" />
+			<property name="clearcase.ucm.view" value="${build.user.name}_${clearcase.ucm.project.name}" />
+			<property name="clearcase.ucm.integration.path" value="${clearcase.ucm.view.drive}${build.user.name}_${clearcase.ucm.project.name}_int"/>
+			<property name="clearcase.ucm.integration.view" value="${build.user.name}_${clearcase.ucm.project.name}_int"/>
+			<property name="clearcase.ucm.sourcestream" value="${clearcase.ucm.view.drive}${build.user.name}_${clearcase.ucm.project.name}\${clearcase.ucm.project.root}"/>
+
+		    <tstamp>
+			<format property="today.date" pattern="MM_dd_yyyy"/>
+			<format property="today.datetime" pattern="MM_dd_yyyy_hh_mm"/>
+		    </tstamp>
+			<property name="clearcase.ucm.baseline.name" value="${clearcase.ucm.project.name}_${today.datetime}" />
+
+		    <property name="build.name" value="${build.ear.prefix}_${today.datetime}"/>
+
+
+		    <property name="email.host" value="172.20.2.15"/>
+		    <property name="email.subject1" value="Please Deploy EAR file to ${deployment.server1}"/>
+		    <property name="email.subject2" value="Please Deploy EAR file to ${deployment.server2}"/>
+	    	<property name="email.message1" value="&lt;font color='ff0000' size='4'&gt;&lt;B&gt;${project.name} Application - ${today.datetime} build &lt;/B&gt;&lt;/font&gt;
+	    									   &lt;br&gt;&lt;br&gt;
+	    									   &lt;font size='2'&gt;&lt;B&gt;Please deploy EAR File to ${deployment.server1}&lt;/B&gt;&lt;/font&gt;
+	    									   &lt;br&gt;&lt;br&gt;
+	    									   Location - &lt;A href='file://\\${build.boxname}\${build.dir}\${build.name}.ear'&gt;
+	    									   &lt;font size=2&gt;\\${build.boxname}\${build.dir}\${build.name}.ear&lt;/font&gt;&lt;/A&gt;
+	    									   &lt;br&gt;&lt;br&gt;
+	    									   &lt;font size='2'&gt;&lt;B&gt;EAR file - ${build.name}.ear&lt;/B&gt;&lt;/font&gt;
+	    									   &lt;br&gt;&lt;br&gt;
+	    									   &lt;br&gt;
+	    									   Thanks!
+	    									   &lt;br&gt;
+	    									   Build Box"/>
+		</target>
+
+		<target name="CleanUpPreviousBuild">
+		<record name="${build.log.name}" action="start" append="yes" loglevel="error"/>
+    		<echo>Cleaning up previous build...</echo>
+			<delete dir="${project.workingdir}"
+				includeEmptyDirs="true"
+				failonerror="true"
+			/>
+			<mkdir dir="${project.workingdir}"/>
+			<mkdir dir="${project.workingdir.eardir}"/>
+			<mkdir dir="${project.workingdir}\AutomateRenewalWeb\WebContent\WEB-INF\source"/>
+			<mkdir dir="${project.workingdir}\AutomateRenewalWeb\WebContent\WEB-INF\classes"/>
+			<mkdir dir="${project.workingdir}\WSRouter\WebContent\WEB-INF\source"/>
+			<mkdir dir="${project.workingdir}\WSRouter\WebContent\WEB-INF\classes"/>
+		<record name="${build.log.name}" action="stop"/>
+		</target>
+
+		<target name="UpdateIntegrationStream">
+		<record name="${build.log.name}" action="start" append="yes" loglevel="error"/>
+		<echo>Updating Integration Stream, to get ready for a baseline</echo>
+		<exec executable="cleartool.exe" failonerror="true">
+			<arg line="update ${clearcase.ucm.integration.path}"/>
+		</exec>
+		<record name="${build.log.name}" action="stop"/>
+		</target>
+
+		<target name="MakeProjectBaseLine">
+		<record name="${build.log.name}" action="start" append="yes" loglevel="error"/>
+			<echo>Makes a Base Line</echo>
+			<exec executable="cleartool.exe" failonerror="true">
+				<arg line="mkbl -incremental -view ${clearcase.ucm.integration.view} ${clearcase.ucm.baseline.name}"/>
+			</exec>
+		<record name="${build.log.name}" action="stop"/>
+		</target>
+
+		<target name="RecommendProjectBaseLine">
+		<record name="${build.log.name}" action="start" append="yes" loglevel="error"/>
+			<echo>Recommends a Base Line</echo>
+			<exec executable="cleartool.exe" failonerror="true">
+				<arg line="chstream -recommend baseline:${clearcase.ucm.baseline.name}@${clearcase.ucm.vob} stream:${clearcase.ucm.project.integration.name}_Integration@${clearcase.ucm.vob}"/>
+			</exec>
+		<record name="${build.log.name}" action="stop"/>
+		</target>
+
+		<target name="RebaseProject">
+		<record name="${build.log.name}" action="start" append="yes" loglevel="error"/>
+			<echo>Rebase with recommended baseline</echo>
+				<exec executable="cleartool.exe" failonerror="true">
+					<arg line="rebase -view ${clearcase.ucm.view} -recommended -complete"/>
+				</exec>
+		<record name="${build.log.name}" action="stop"/>
+		</target>
+
+		<target name="GetCleanCodeToIncludeInEar">
+		<record name="${build.log.name}" action="start" append="yes" loglevel="error"/>
+			<echo>Gets lastest code to include in EAR</echo>
+		  	<copy todir="${project.workingdir}\AutomateRenewalShared">
+			    <fileset dir="${clearcase.ucm.sourcestream}\AutomateRenewalShared">
+			    <exclude name="**/*.class"/>
+			    </fileset>
+  			</copy>
+		  	<copy todir="${project.workingdir}\AutomateRenewalEJB">
+			    <fileset dir="${clearcase.ucm.sourcestream}\AutomateRenewalEJB">
+			    <exclude name="**/*.class"/>
+			    </fileset>
+  			</copy>
+		  	<copy todir="${project.workingdir}\AutomateRenewalWeb">
+			    <fileset dir="${clearcase.ucm.sourcestream}\AutomateRenewalWeb">
+			    <exclude name="**/*.class, **JavaSource**"/>
+			    </fileset>
+  			</copy>
+		  	<copy todir="${project.workingdir}\AutomateRenewalWeb\WebContent\WEB-INF\source">
+			    <fileset dir="${clearcase.ucm.sourcestream}\AutomateRenewalWeb\JavaSource">
+			    <exclude name="**/*.class"/>
+			    </fileset>
+  			</copy>
+  			<copy todir="${project.workingdir}\WSRouter">
+						    <fileset dir="${clearcase.ucm.sourcestream}\WSRouter">
+						    <exclude name="**/*.class, **JavaSource**"/>
+						    </fileset>
+			  			</copy>
+			<copy todir="${project.workingdir}\WSRouter\WebContent\WEB-INF\source">
+						    <fileset dir="${clearcase.ucm.sourcestream}\WSRouter\JavaSource">
+						    <exclude name="**/*.class"/>
+						    </fileset>
+  			</copy>
+
+		  	<copy todir="${project.workingdir}\AutomateRenewal">
+			    <fileset dir="${clearcase.ucm.sourcestream}\AutomateRenewal">
+			    <exclude name="**/*.class"/>
+			    </fileset>
+  			</copy>
+		<record name="${build.log.name}" action="stop"/>
+		</target>
+
+	<!-- Compile with generated class path.  Must include all jars used during compiles. -->
+	<target name="javac2">
+		<path id="classpath">
+			<pathelement location="${websphere.jars}"/>
+			<pathelement location="${application.project.folder}\CTGCLIENT.jar" />
+			<pathelement location="${application.project.folder}\log4j-1.2.8.jar" />
+			<pathelement location="${application.project.folder}\struts.jar" />
+			<pathelement location="${application.project.folder}\xalan.jar" />
+			<pathelement location="${application.project.folder}\xercescne.jar" />
+			<pathelement location="${application.project.folder}\commons-collections-3.1\commons-collections-3.1.jar" />
+			<pathelement location="${application.project.folder}\database-drivers\msbase.jar" />
+			<pathelement location="${application.project.folder}\database-drivers\mssqlserver.jar" />
+			<pathelement location="${application.project.folder}\database-drivers\msutil.jar" />
+			<pathelement location="${application.project.folder}\database-drivers\mysql-connector-java-3.1.8-bin.jar" />
+			<pathelement location="${application.project.folder}\spring\dist\spring.jar" />
+			<pathelement location="${application.project.folder}\spring\dist\spring-mock.jar" />
+			<pathelement location="${application.project.folder}\spring\lib\junit\junit.jar" />
+
+			<pathelement location="${application.project.folder}\hibernate\hibernate3.jar" />
+			<pathelement location="${application.project.folder}\spring\lib\dom4j\dom4j-1.6.jar" />
+			<pathelement location="${application.project.folder}\cactus\cactus-1.7.jar" />
+			<pathelement location="${application.project.folder}\spring\lib\jakarta-commons\commons-beanutils.jar" />
+			<pathelement location="${application.project.folder}\spring\lib\jakarta-commons\commons-collections.jar" />
+			<pathelement location="${application.project.folder}\spring\lib\jakarta-commons\commons-digester.jar" />
+			<pathelement location="${application.project.folder}\spring\lib\jakarta-commons\commons-logging.jar" />
+			<pathelement location="${application.project.folder}\spring\lib\jakarta-commons\commons-validator.jar" />
+			<pathelement location="${application.project.folder}\hibernate\antlr-2.7.5H3.jar" />
+			<pathelement location="${application.project.folder}\cactus\commons-logging-1.0.4.jar" />
+
+
+
+
+
+
+
+
+
+
+
+			<pathelement location="${application.project.folder}\xmlbeansjar\u280.jar" />
+			<pathelement location="${application.project.folder}\xmlbeansjar\reviewrenewal.jar" />
+			<pathelement location="${application.project.folder}\xmlbeansjar\reasoncode.jar" />
+			<pathelement location="${application.project.folder}\xmlbeansjar\nonrenewstatus.jar" />
+			<pathelement location="${application.project.folder}\xmlbeansjar\nonrenew.jar" />
+			<pathelement location="${application.project.folder}\xmlbeansjar\commonReinsurance.jar" />
+			<pathelement location="${application.project.folder}\xmlbeansjar\billinginfo.jar" />
+			<pathelement location="${application.project.folder}\xmlbeans\jaxen-1.1-beta-2.jar" />
+			<pathelement location="${application.project.folder}\xml\xercesImpl.jar" />
+			<pathelement location="${application.project.folder}\xmlbeansjar\accountDetails.jar" />
+			<pathelement location="${application.project.folder}\xmlbeans\xbean_xpath.jar" />
+			<pathelement location="${application.project.folder}\xml\xerces.jar" />
+			<pathelement location="${application.project.folder}\xml\xml-apis.jar" />
+			<pathelement location="${application.project.folder}\xmlbeans\xbean.jar" />
+			<pathelement location="${application.project.folder}\xml\xmlParserAPIs.jar" />
+
+
+
+
+
+
+
+			<pathelement location="${application.project.folder}\database-drivers\jtds-1.0.3.jar" />
+			<pathelement location="${application.project.folder}\ftp\edtftpj-1.5.3.jar" />
+
+			<pathelement location="${ibm.eclipse.jre.path}\lib\rt.jar" />
+			<pathelement location="${ibm.wsad.lib.path}\j2ee.jar" />
+			<pathelement location="${ibm.wsad.lib.path}\appprofile.jar" />
+			<pathelement location="${ibm.wsad.lib.path}\ecutils.jar" />
+			<pathelement location="${ibm.wsad.lib.path}\ejbcontainer.jar" />
+			<pathelement location="${ibm.wsad.lib.path}\ejbportable.jar" />
+			<pathelement location="${ibm.wsad.lib.path}\ivjejb35.jar" />
+			<pathelement location="${ibm.wsad.lib.path}\j2ee.jar" />
+			<pathelement location="${ibm.wsad.lib.path}\pm.jar" />
+			<pathelement location="${ibm.wsad.lib.path}\pmimpl.jar" />
+			<pathelement location="${ibm.wsad.lib.path}\querymd.jar" />
+			<pathelement location="${ibm.wsad.lib.path}\ras.jar" />
+			<pathelement location="${ibm.wsad.lib.path}\rsadaptercci.jar" />
+			<pathelement location="${ibm.wsad.lib.path}\rsadapterspi.jar" />
+			<pathelement location="${ibm.wsad.lib.path}\rsaexternal.jar" />
+			<pathelement location="${ibm.wsad.lib.path}\runtime.jar" />
+			<pathelement location="${ibm.wsad.lib.path}\runtimefw.jar" />
+			<pathelement location="${ibm.wsad.lib.path}\utils.jar" />
+			<pathelement location="${ibm.wsad.lib.path}\vaprt.jar" />
+			<pathelement location="${ibm.wsad.lib.path}\wsexception.jar" />
+			<pathelement location="${ibm.wsad.lib.path}\webservices.jar" />
+			<pathelement location="${ibm.wsad.lib.path}\wsdl4j.jar" />
+			<pathelement location="${ibm.wsad.lib.path}\qname.jar" />
+
+		</path>
+		<property name="classpath" refid="classpath" />
+		<javac srcdir="${param_srcdir}"
+			destdir="${param_destdir}"
+			classpath="${classpath1};${classpath}"
+			includes="${param_includes}"
+			debug="on"
+			optimize="off"
+			deprecation="off"
+			failonerror="true"
+		/>
+	</target>
+
+
+		<target name="CompileShared">
+		<record name="${build.log.name}" action="start" append="yes" loglevel="error" />
+			<echo>Compiles AutomateRenewalShared</echo>
+			<antcall target="javac2">
+				<param name="param_srcdir" value="${shared.cleansrc}"/>
+				<param name="param_destdir" value="${shared.destination}"/>
+				<param name="param_includes" value="com/harleysvillegroup/shared/**"/>
+			</antcall>
+		<record name="${build.log.name}" action="stop"/>
+		</target>
+
+
+		<target name="CompileEJB">
+		<record name="${build.log.name}" action="start" append="yes" loglevel="error" />
+			<echo>Compiles AutomateRenewalEJB</echo>
+			<antcall target="javac2">
+				<param name="param_srcdir" value="${ejb.cleansrc}"/>
+				<param name="param_destdir" value="${ejb.destination}"/>
+				<param name="param_includes" value="com/harleysvillegroup/clfa/**,com/harleysvillegroup/clfa/service/mf/**, com/harleysvillegroup/clfa/service/xlist/**, com/imageright/**, com/microsoft/**"/>
+				<param name="classpath1" value="C:\CLPortalBuild\AutomateRenewalShared\bin"/>
+			</antcall>
+		<record name="${build.log.name}" action="stop"/>
+		</target>
+
+
+		<target name="CompileWeb">
+		<record name="${build.log.name}" action="start" append="yes" loglevel="error" />
+			<echo>Compiles AutomateRenewalWeb</echo>
+			<antcall target="javac2">
+				<param name="param_srcdir" value="${web.cleansrc}"/>
+				<param name="param_destdir" value="${web.destination}"/>
+				<param name="param_includes" value="com/harleysvillegroup/clfa/web/**, com/harleysvillegroup/clfa/web/prefill/**"/>
+				<param name="classpath1" value="C:\CLPortalBuild\AutomateRenewalShared\bin;C:\CLPortalBuild\AutomateRenewalEJB\ejbModule"/>
+			</antcall>
+			<echo>Compiles WSRouter</echo>
+						<antcall target="javac2">
+							<param name="param_srcdir" value="${webservice.cleansrc}"/>
+							<param name="param_destdir" value="${webservice.destination}"/>
+
+							<param name="classpath1" value="C:\CLPortalBuild\AutomateRenewalShared\bin;C:\CLPortalBuild\AutomateRenewalEJB\ejbModule"/>
+			</antcall>
+		<record name="${build.log.name}" action="stop"/>
+		</target>
+
+		<target name="PackageSharedComponent">
+		<record name="${build.log.name}" action="start" append="yes" loglevel="error"/>
+			<echo>Packages all the Shared Code into a jar file</echo>
+                 <jar destfile="${project.workingdir.eardir}\AutomateRenewalShared.jar">
+		      <fileset dir="C:\CLPortalBuild\AutomateRenewalShared\bin"/>
+		      <fileset dir="C:\CLPortalBuild\AutomateRenewalShared\Java Source"/>
+		     </jar>
+		<record name="${build.log.name}" action="stop"/>
+		</target>
+
+		<target name="PackageEJBComponent">
+		<record name="${build.log.name}" action="start" append="yes" loglevel="error" />
+			<echo>Packages all the EJBs into a jar file</echo>
+            <jar destfile="${project.workingdir.eardir}\AutomateRenewalEJB.jar"
+			       basedir="C:\CLPortalBuild\AutomateRenewalEJB\ejbModule"
+			       manifest="C:\CLPortalBuild\AutomateRenewalEJB\ejbModule\META-INF\MANIFEST.MF"
+			/>
+		<record name="${build.log.name}" action="stop"/>
+		</target>
+
+
+		<target name="PackageWebComponent">
+		<record name="${build.log.name}" action="start" append="yes" loglevel="error" />
+			<echo>Packages all the web code into a war file</echo>
+			<war destfile="${project.workingdir.eardir}\AutomateRenewalWeb.war" webxml="C:\CLPortalBuild\AutomateRenewalWeb\WebContent\WEB-INF\web.xml"
+				 basedir="C:\CLPortalBuild\AutomateRenewalWeb\WebContent">
+			</war>
+			<echo>Packages all the web code into a war file for webservice</echo>
+						<war destfile="${project.workingdir.eardir}\WSRouter.war" webxml="C:\CLPortalBuild\WSRouter\WebContent\WEB-INF\web.xml"
+							 basedir="C:\CLPortalBuild\WSRouter\WebContent">
+			</war>
+		<record name="${build.log.name}" action="stop"/>
+		</target>
+
+		<target name="PackageEAR">
+		<record name="${build.log.name}" action="start" append="yes" loglevel="error"/>
+			<echo>Packages all the jars and wars into ear file</echo>
+		    <ear destfile="${build.drive}\${build.dir}\${build.name}.ear" appxml="${application.project.folder}\META-INF\application.xml">
+		      <fileset dir="${project.workingdir.eardir}" includes="*.jar,*.war"/>
+		      <fileset dir="${project.workingdir}\AutomateRenewal"/>
+		    </ear>
+		<record name="${build.log.name}" action="stop"/>
+		</target>
+
+		<target name="SendMail">
+			<echo>Sends a WAS_REQUEST</echo>
+			<mail from="${param.email.from}@harleysvillegroup.com"
+					tolist="${param.email.to}@harleysvillegroup.com, ${email1.to}@harleysvillegroup.com" failonerror="false"
+					subject="${param.email.subject}"
+					message="${param.email.message}"
+	 				mailhost="${email.host}"
+	 				messagemimetype="text/html"
+	 		/>
+		</target>
+	 	<!--			files="${build.drive}\${build.dir}\${build.name}.ear"/>-->
+
+		<target name="SendDeployRequest">
+		<record name="${build.log.name}" action="start" append="yes" loglevel="error" />
+			<echo>Sends a WAS_REQUEST</echo>
+			<antcall target="SendMail">
+				<param name="param.email.from" value="${email.from}"/>
+				<param name="param.email.to" value="${email.to}"/>
+				<param name="param.email.subject" value="${email.subject1}"/>
+				<param name="param.email.message" value="${email.message1}"/>
+			</antcall>
+		<record name="${build.log.name}" action="stop"/>
+		</target>
+
+    <target name="GenerateTfsTeamBuildPackage">
+        <record name="${build.log.name}" action="start" append="yes" loglevel="error"/>
+        <echo>Kicking off TFS Team Build generation</echo>
+        <exec executable="powershell.exe" failonerror="true">
+          <arg line="/c C:\TFSWorkspace\Powershell\BuildScripts\Generate-TfsCLPortalEarBuildPackage.ps1 ${Build.Name}"/>
+        </exec>
+        <record name="${build.log.name}" action="stop"/>
+    </target>
+
+		<target name="MakeEarForTesting" depends="Init, CleanUpPreviousBuild, GetCleanCodeToIncludeInEar, CompileShared, CompileEJB, CompileWeb, PackageSharedComponent, PackageEJBComponent, PackageWebComponent, PackageEAR, SendDeployRequest"/>
+
+		<target name="DoCleanCLPortalBuild" depends="Init, UpdateIntegrationStream, MakeProjectBaseLine, RecommendProjectBaseLine, RebaseProject, CleanUpPreviousBuild, GetCleanCodeToIncludeInEar, CompileShared, CompileEJB, CompileWeb, PackageSharedComponent, PackageEJBComponent, PackageWebComponent, PackageEAR, SendDeployRequest"/>
+
+		<target name="DoCleanCLPortalBuild-Step1" depends="Init, UpdateIntegrationStream, MakeProjectBaseLine, RecommendProjectBaseLine, RebaseProject"/>
+
+		<target name="DoCleanCLPortalBuild-Step2" depends="Init, CleanUpPreviousBuild, GetCleanCodeToIncludeInEar, CompileShared, CompileEJB, CompileWeb, PackageSharedComponent, PackageEJBComponent, PackageWebComponent, PackageEAR, SendDeployRequest"/>
+
+		<target name="DoCleanCLPortalBuild-Step1.1" depends="Init, RecommendProjectBaseLine, RebaseProject"/>
+
+		<target name="DoCleanCLPortalBuild-Step1.2" depends="Init, RebaseProject"/>
+
+		<target name="RebaseNobaselineBuild" depends="DoCleanCLPortalBuild-Step1.2, DoCleanCLPortalBuild-Step2"/>
+
+
+		<target name="DoCleanCLPortalBuild-Stepx.1" depends="Init, UpdateIntegrationStream, RebaseProject"/>
+
+
+   	</project>
+
+

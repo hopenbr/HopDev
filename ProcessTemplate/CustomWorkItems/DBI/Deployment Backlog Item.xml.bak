@@ -1,0 +1,1980 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WITD application="Work item type editor" version="1.0">
+  <WORKITEMTYPE name="Deployment Backlog Item">
+    <DESCRIPTION>Includes information about a particular deployment Backlog Item</DESCRIPTION>
+    <FIELDS>
+      <FIELD reportable="dimension" type="String" name="Title" refname="System.Title">
+        <HELPTEXT>This is the name and/or number of the Deployment backlog item</HELPTEXT>
+        <CANNOTLOSEVALUE />
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <READONLY not="[global]\Team Foundation Administrators" />
+          <READONLY for="[project]\Contributors" />
+        </WHENNOT>
+        <REQUIRED />
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="State" refname="System.State">
+        <HELPTEXT>This is the status of the Deployment Backlog Item as selected by the user.</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="dimension" type="Integer" name="Rev" refname="System.Rev" />
+      <FIELD reportable="dimension" type="String" name="Changed By" refname="System.ChangedBy" />
+      <FIELD type="String" name="Audit" refname="Conchango.VSTS.Scrum.Audit">
+        <HELPTEXT>This is a hidden field used as a work around for the requirements of the workflow section</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="detail" type="Integer" name="Relative Value" refname="Conchango.VSTS.Scrum.RelativeValue">
+        <HELPTEXT>This is the priority of this Deployment Backlog Item, as defined by the business</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="detail" type="Integer" name="Estimated Effort" refname="Conchango.VSTS.Scrum.EstimatedEffort">
+        <HELPTEXT>This is the estimated time that it will take for this item to be completed. This is normally done in days</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="detail" type="Integer" name="Work Remaining" refname="Conchango.VSTS.Scrum.WorkRemaining">
+        <HELPTEXT>This field is automatically populated once a Deployment Backlog Item is selected for a sprint. It shows the work remaining (in hours) for that Deployment Backlog Item.</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="detail" type="Integer" name="Sprint Number" refname="Conchango.VSTS.Scrum.SprintNumber">
+        <HELPTEXT>The Sprint Number that the Deployment Backlog Item will be developed in. This does not have to assigned as soon as the item is created - it can be assigned as the project progresses</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="Reason" refname="System.Reason" />
+      <FIELD reportable="dimension" type="String" name="Assigned To" refname="System.AssignedTo">
+        <HELPTEXT>The person/group that is assigned the DBI in its current state and is responsible for the tasks needed to move the DBI to its next state</HELPTEXT>
+        <ALLOWEDVALUES filteritems="excludegroups">
+          <LISTITEM value="[project]\Project Administrators" />
+          <LISTITEM value="[project]\Contributors" />
+          <GLOBALLIST name="Teams - Software.Release.Management" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="Work Item Type" refname="System.WorkItemType" />
+      <FIELD reportable="dimension" type="DateTime" name="Created Date" refname="System.CreatedDate" />
+      <FIELD reportable="dimension" type="String" name="Created By" refname="System.CreatedBy" />
+      <FIELD type="PlainText" name="Description" refname="System.Description">
+        <HELPTEXT>This is the full description of the Deployment Backlog Item</HELPTEXT>
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <READONLY not="[global]\Team Foundation Administrators" />
+          <READONLY for="[project]\Contributors" />
+        </WHENNOT>
+        <WHEN field="HIC.Dependency.ProjectTeam" value="1 - See Deployment Description">
+          <REQUIRED />
+        </WHEN>
+      </FIELD>
+      <FIELD type="History" name="History" refname="System.History">
+        <HELPTEXT>This field shows any changes made to the Deployment backlog item and by whom</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="Current Test Environment" refname="HIC.Test.Environment.Current">
+        <HELPTEXT>The current test env that the build is being tested in</HELPTEXT>
+        <ALLOWEDVALUES>
+          <LISTITEM value="DEV" />
+          <LISTITEM value="TST1" />
+          <LISTITEM value="ASSEMBLY" />
+          <LISTITEM value="QA2" />
+          <LISTITEM value="END2END" />
+          <LISTITEM value="TRAINING" />
+          <LISTITEM value="PRE-PRD" />
+          <LISTITEM value="PRODUCTION" />
+          <LISTITEM value="TEST" />
+          <LISTITEM value="STAGING" />
+          <LISTITEM value="CONVERSION" />
+          <LISTITEM value="QTE" />
+          <LISTITEM value="TST02" />
+          <LISTITEM value="DEV02" />
+        </ALLOWEDVALUES>
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <READONLY not="[global]\Team Foundation Administrators" />
+          <READONLY for="[project]\Contributors" />
+        </WHENNOT>
+        <WHEN field="HIC.Deployment.Type" value="DataBase">
+          <REQUIRED />
+        </WHEN>
+        <WHEN field="HIC.Test.Envrionment.Structure" value="Access Harleysville">
+          <PROHIBITEDVALUES>
+            <LISTITEM value="TEST" />
+            <LISTITEM value="STAGING" />
+            <LISTITEM value="QTE" />
+            <LISTITEM value="TST02" />
+            <LISTITEM value="DEV02" />
+          </PROHIBITEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Test.Envrionment.Structure" value="Harleysville">
+          <PROHIBITEDVALUES>
+            <LISTITEM value="TST1" />
+            <LISTITEM value="ASSEMBLY" />
+            <LISTITEM value="QA2" />
+            <LISTITEM value="END2END" />
+            <LISTITEM value="TRAINING" />
+            <LISTITEM value="PRE-PRD" />
+            <LISTITEM value="CONVERSION" />
+          </PROHIBITEDVALUES>
+        </WHEN>
+        <WHENNOT field="HIC.Project" value="AQS">
+          <PROHIBITEDVALUES>
+            <LISTITEM value="CONVERSION" />
+          </PROHIBITEDVALUES>
+        </WHENNOT>
+        <WHENCHANGED field="HIC.Project">
+          <ALLOWEDVALUES>
+            <LISTITEM value="DEV" />
+            <LISTITEM value="TST1" />
+            <LISTITEM value="ASSEMBLY" />
+            <LISTITEM value="QA2" />
+            <LISTITEM value="END2END" />
+            <LISTITEM value="TRAINING" />
+            <LISTITEM value="PRE-PRD" />
+            <LISTITEM value="PRODUCTION" />
+            <LISTITEM value="TEST" />
+            <LISTITEM value="STAGING" />
+            <LISTITEM value="CONVERSION" />
+            <LISTITEM value="QTE" />
+            <LISTITEM value="TST02" />
+            <LISTITEM value="DEV02" />
+          </ALLOWEDVALUES>
+        </WHENCHANGED>
+        <ALLOWEXISTINGVALUE />
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="New Test Environment" refname="HIC.Test.Environment.New">
+        <HELPTEXT>The test environment that the build needs to be deployed to</HELPTEXT>
+        <ALLOWEDVALUES>
+          <LISTITEM value="DEV" />
+          <LISTITEM value="TST1" />
+          <LISTITEM value="ASSEMBLY" />
+          <LISTITEM value="QA2" />
+          <LISTITEM value="END2END" />
+          <LISTITEM value="TRAINING" />
+          <LISTITEM value="PRE-PRD" />
+          <LISTITEM value="PRODUCTION" />
+          <LISTITEM value="TEST" />
+          <LISTITEM value="STAGING" />
+          <LISTITEM value="CONVERSION" />
+          <LISTITEM value="QTE" />
+          <LISTITEM value="TST02" />
+          <LISTITEM value="DEV02" />
+        </ALLOWEDVALUES>
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <READONLY not="[global]\Team Foundation Administrators" />
+          <READONLY for="[project]\Contributors" />
+        </WHENNOT>
+        <REQUIRED />
+        <WHEN field="HIC.Test.Envrionment.Structure" value="Access Harleysville">
+          <PROHIBITEDVALUES>
+            <LISTITEM value="TEST" />
+            <LISTITEM value="STAGING" />
+            <LISTITEM value="QTE" />
+            <LISTITEM value="DEV02" />
+            <LISTITEM value="TST02" />
+          </PROHIBITEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Test.Envrionment.Structure" value="Harleysville">
+          <PROHIBITEDVALUES>
+            <LISTITEM value="TST1" />
+            <LISTITEM value="ASSEMBLY" />
+            <LISTITEM value="QA2" />
+            <LISTITEM value="END2END" />
+            <LISTITEM value="TRAINING" />
+            <LISTITEM value="PRE-PRD" />
+            <LISTITEM value="CONVERSION" />
+          </PROHIBITEDVALUES>
+        </WHEN>
+        <WHENNOT field="HIC.Project" value="AQS">
+          <PROHIBITEDVALUES>
+            <LISTITEM value="CONVERSION" />
+          </PROHIBITEDVALUES>
+        </WHENNOT>
+        <WHENCHANGED field="HIC.Project">
+          <ALLOWEDVALUES>
+            <LISTITEM value="DEV" />
+            <LISTITEM value="TST1" />
+            <LISTITEM value="ASSEMBLY" />
+            <LISTITEM value="QA2" />
+            <LISTITEM value="END2END" />
+            <LISTITEM value="TRAINING" />
+            <LISTITEM value="PRE-PRD" />
+            <LISTITEM value="PRODUCTION" />
+            <LISTITEM value="TEST" />
+            <LISTITEM value="STAGING" />
+            <LISTITEM value="CONVERSION" />
+            <LISTITEM value="QTE" />
+            <LISTITEM value="DEV02" />
+            <LISTITEM value="TST02" />
+          </ALLOWEDVALUES>
+        </WHENCHANGED>
+        <ALLOWEXISTINGVALUE />
+      </FIELD>
+      <FIELD reportable="dimension" type="DateTime" name="Deployment Date" refname="HIC.Deploy.Date">
+        <HELPTEXT>The date and time deployment is needed</HELPTEXT>
+        <REQUIRED />
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="Build Number" refname="HIC.Build.Number">
+        <HELPTEXT>The build number is derived from a TFS build type. Build numbers should only be used for DBI types of .Net, WebMethods, and Config. Build types should be use with all other DBI types.  Build types are basically the deployment sub-type.</HELPTEXT>
+        <WHEN field="HIC.Project" value="AgentPortal">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="Builds - AgentPortal.Project" />
+            <GLOBALLIST name="List - DefaultBuildNumbers" />
+            <GLOBALLIST name="Builds - WmProjects" />
+            <GLOBALLIST name="Builds - Database.Projects" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Project" value="URE">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="Builds - UREProject" />
+            <GLOBALLIST name="List - DefaultBuildNumbers" />
+            <GLOBALLIST name="Builds - WmProjects" />
+            <GLOBALLIST name="Builds - Database.Projects" />
+            <GLOBALLIST name="Builds - RuleServices.Projects" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Project" value="Agency">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="Builds - Agency.Projects" />
+            <GLOBALLIST name="List - DefaultBuildNumbers" />
+            <GLOBALLIST name="Builds - WmProjects" />
+            <GLOBALLIST name="Builds - Database.Projects" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Project" value="Ivans">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="Builds - Agency.Projects" />
+            <GLOBALLIST name="List - DefaultBuildNumbers" />
+            <GLOBALLIST name="Builds - Database.Projects" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Project" value="HIEDMS">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="Builds - HIEDMS" />
+            <GLOBALLIST name="List - DefaultBuildNumbers" />
+            <GLOBALLIST name="Builds - WmProjects" />
+            <GLOBALLIST name="Builds - Database.Projects" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Project" value="IntegratedServices">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="List - DefaultBuildNumbers" />
+            <GLOBALLIST name="Builds - IntegratedServices.Projects" />
+            <GLOBALLIST name="Builds - WmProjects" />
+            <GLOBALLIST name="Builds - Database.Projects" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Project" value="PersonalLines.Projects">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="Builds - PersonalLines.Projects" />
+            <GLOBALLIST name="List - DefaultBuildNumbers" />
+            <GLOBALLIST name="Builds - WmProjects" />
+            <GLOBALLIST name="Builds - Database.Projects" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Project" value="CommercialLines.Projects">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="Builds - CommercialLines.Projects" />
+            <GLOBALLIST name="List - DefaultBuildNumbers" />
+            <GLOBALLIST name="Builds - WmProjects" />
+            <GLOBALLIST name="Builds - Database.Projects" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Project" value="PredictiveModelingService">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="List - DefaultBuildNumbers" />
+            <GLOBALLIST name="Builds - PredictiveModeling.Projects" />
+            <GLOBALLIST name="Builds - WmProjects" />
+            <GLOBALLIST name="Builds - Database.Projects" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Project" value="PolicyOutput">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="Builds - CommercialLines.Projects" />
+            <GLOBALLIST name="List - DefaultBuildNumbers" />
+            <GLOBALLIST name="Builds - WmProjects" />
+            <GLOBALLIST name="Builds - Database.Projects" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Deployment.Type" value="DataBase">
+          <ALLOWEXISTINGVALUE />
+        </WHEN>
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <READONLY for="[project]\Contributors" />
+          <READONLY not="[global]\Team Foundation Administrators" />
+        </WHENNOT>
+        <WHEN field="HIC.Project" value="WC Reporting">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="Builds - CommercialLines.Projects" />
+            <GLOBALLIST name="List - DefaultBuildNumbers" />
+            <GLOBALLIST name="Builds - Database.Projects" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Project" value="GroupLife">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="Builds - LifeGroup" />
+            <GLOBALLIST name="Builds - Life.Projects" />
+            <GLOBALLIST name="List - DefaultBuildNumbers" />
+            <GLOBALLIST name="Builds - Database.Projects" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Deployment.Type" value="Informatica">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="List - InformaticaBuildType" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Project" value="AQSHelp">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="Builds - HIC.Projects" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Project" value="HostIntegrationServer">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="Builds - HostIntegrationServer" />
+            <GLOBALLIST name="Builds - WmProjects" />
+            <GLOBALLIST name="Builds - Database.Projects" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Project" value="LGBP">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="Builds - WmProjects" />
+            <GLOBALLIST name="Builds - Life.Projects" />
+            <GLOBALLIST name="Builds - Database.Projects" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Project" value="AccessCL">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="Builds - WmProjects" />
+            <GLOBALLIST name="Builds - AQS.Projects" />
+            <GLOBALLIST name="Builds - CommercialLines.Projects" />
+            <GLOBALLIST name="Builds - Database.Projects" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Project" value="Documaker">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="Builds - Documaker.Projects" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Project" value="CLPolicyOutput">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="Builds - CommercialLines.Projects" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Deployment.Type" value="webMethods">
+          <ALLOWEXISTINGVALUE />
+          <REQUIRED />
+        </WHEN>
+        <WHEN field="HIC.Deployment.Type" value=".Net">
+          <ALLOWEXISTINGVALUE />
+          <REQUIRED />
+        </WHEN>
+         <WHEN field="HIC.Deployment.Type" value="Multi">
+          <ALLOWEXISTINGVALUE />
+          <REQUIRED />
+        </WHEN>
+         <WHEN field="HIC.Deployment.Type" value="DBScripts">
+          <ALLOWEXISTINGVALUE />
+          <REQUIRED />
+        </WHEN>
+        <WHEN field="HIC.Deployment.Type" value="MOSS">
+          <ALLOWEXISTINGVALUE />
+          <REQUIRED />
+        </WHEN>
+        <WHEN field="HIC.Deployment.Type" value="Vendor">
+          <ALLOWEXISTINGVALUE />
+          <REQUIRED />
+        </WHEN>
+        <WHEN field="HIC.Deployment.Type" value="EAR">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="Builds - HIC.Projects" />
+          </SUGGESTEDVALUES>
+          <ALLOWEXISTINGVALUE />
+          <REQUIRED />
+        </WHEN>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="DBA Request Number" refname="HIC.Dependency.TR.DBAReq">
+        <HELPTEXT>The TrackRecord DBA request number</HELPTEXT>
+        <WHEN field="HIC.Dependency.ProjectTeam" value="DBA">
+          <REQUIRED />
+        </WHEN>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="Dependency" refname="HIC.Dependency">
+        <HELPTEXT>Are there any deployment Dependencies for this build</HELPTEXT>
+        <ALLOWEDVALUES>
+          <LISTITEM value="No" />
+          <LISTITEM value="Yes" />
+        </ALLOWEDVALUES>
+        <REQUIRED />
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <READONLY for="[project]\Contributors" />
+          <READONLY not="[global]\Team Foundation Administrators" />
+        </WHENNOT>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="Dependency ProjectTeam" refname="HIC.Dependency.ProjectTeam">
+        <HELPTEXT>The project that you are dependent on</HELPTEXT>
+        <ALLOWEXISTINGVALUE />
+        <ALLOWEDVALUES>
+          <GLOBALLIST name="Projects" />
+          <LISTITEM value="1 - See Deployment Description" />
+        </ALLOWEDVALUES>
+        <WHEN field="HIC.Dependency" value="Yes">
+          <ALLOWEXISTINGVALUE />
+          <REQUIRED />
+        </WHEN>
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <ALLOWEXISTINGVALUE />
+          <READONLY for="[project]\Contributors" />
+          <READONLY not="[global]\Team Foundation Administrators" />
+        </WHENNOT>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC Project" refname="HIC.Project">
+        <HELPTEXT>The project the build belongs to</HELPTEXT>
+        <ALLOWEXISTINGVALUE />
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <READONLY not="[global]\Team Foundation Administrators" />
+          <READONLY for="[project]\Contributors" />
+        </WHENNOT>
+        <REQUIRED />
+        <ALLOWEDVALUES>
+          <GLOBALLIST name="List - DBI Projects Vendor" />
+          <GLOBALLIST name="List - DBI Projects InHouse" />
+          <GLOBALLIST name="List - DBI Projects Scripts" />
+          <GLOBALLIST name="List - DBI Projects DB" />
+          <GLOBALLIST name="List - DBI Projects Informatica" />
+          <LISTITEM value="Other" />
+        </ALLOWEDVALUES>
+        <WHEN field="HIC.Deployment.Type" value="DataBase">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="List - DBI Projects Vendor" />
+            <GLOBALLIST name="List - DBI Projects InHouse" />
+            <GLOBALLIST name="List - DBI Projects Scripts" />
+            <GLOBALLIST name="List - DBI Projects DB" />
+            <GLOBALLIST name="List - DBI Projects Informatica" />
+            <LISTITEM value="Other" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Deployment.Type" value="Vendor">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="List - DBI Projects Vendor" />
+            <LISTITEM value="Other" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Deployment.Type" value="Informatica">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="List - DBI Projects Informatica" />
+            <LISTITEM value="Other" />
+          </ALLOWEDVALUES>
+          <COPY from="value" value="Informatica" />
+        </WHEN>
+        <WHEN field="HIC.Deployment.Type" value="Scripts">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="List - DBI Projects Scripts" />
+            <LISTITEM value="Other" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Deployment.Type" value=".Net">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="List - DBI Projects InHouse" />
+            <LISTITEM value="Other" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Deployment.Type" value="MOSS">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="List - DBI Projects InHouse" />
+            <LISTITEM value="Other" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Deployment.Type" value="webMethods">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="List - DBI Projects InHouse" />
+            <LISTITEM value="Other" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Deployment.Type" value="EAR">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="List - DBI Projects InHouse" />
+            <LISTITEM value="Other" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHENCHANGED field="HIC.Deployment.Type">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="List - DBI Projects Vendor" />
+            <GLOBALLIST name="List - DBI Projects InHouse" />
+            <GLOBALLIST name="List - DBI Projects Scripts" />
+            <GLOBALLIST name="List - DBI Projects DB" />
+            <GLOBALLIST name="List - DBI Projects Informatica" />
+            <LISTITEM value="Other" />
+          </ALLOWEDVALUES>
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD type="String" name="HIC Deployed To" refname="HIC.Deploy.To">
+        <HELPTEXT>Deployment Complete status</HELPTEXT>
+        <ALLOWEDVALUES>
+          <GLOBALLIST name="Test.Environment" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="Deployment Type" refname="HIC.Deployment.Type">
+        <HELPTEXT>The type of Deployment</HELPTEXT>
+        <ALLOWEXISTINGVALUE />
+        <ALLOWEDVALUES>
+          <GLOBALLIST name="DeploymentTypes" />
+        </ALLOWEDVALUES>
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <ALLOWEXISTINGVALUE />
+          <READONLY not="[global]\Team Foundation Administrators" />
+          <READONLY for="[project]\Contributors" />
+        </WHENNOT>
+        <REQUIRED />
+      </FIELD>
+      <FIELD type="Integer" name="RelatedLinkCount" refname="System.RelatedLinkCount" />
+      <FIELD reportable="dimension" type="String" name="HIC DBA Type" refname="HIC.DBA.Type">
+        <HELPTEXT>The type of Database that will be worked on</HELPTEXT>
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <READONLY not="[global]\Team Foundation Administrators" />
+          <READONLY for="[project]\Contributors" />
+        </WHENNOT>
+        <ALLOWEXISTINGVALUE />
+        <ALLOWEDVALUES>
+          <GLOBALLIST name="List - DBI DB sub-Types" />
+        </ALLOWEDVALUES>
+        <WHEN field="HIC.Deployment.Type" value="DataBase">
+          <REQUIRED />
+        </WHEN>
+        <WHEN field="HIC.Test.Envrionment.Structure" value="Access Harleysville">
+          <SUGGESTEDVALUES>
+            <LISTITEM value="Access Harleysville" />
+          </SUGGESTEDVALUES>
+          <PROHIBITEDVALUES>
+            <LISTITEM value="DB2" />
+            <LISTITEM value="UDB" />
+            <LISTITEM value="SQL - Apps" />
+          </PROHIBITEDVALUES>
+        </WHEN>
+        <WHENCHANGED field="HIC.Project">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="List - DBI DB sub-Types" />
+          </SUGGESTEDVALUES>
+        </WHENCHANGED>
+        <WHEN field="HIC.Test.Envrionment.Structure" value="Harleysville">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="List - DBI DB sub-Types" />
+          </SUGGESTEDVALUES>
+          <PROHIBITEDVALUES>
+            <LISTITEM value="Access Harleysville" />
+          </PROHIBITEDVALUES>
+        </WHEN>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC DBA Subsystem" refname="HIC.DBA.Subsystem">
+        <HELPTEXT>The Sub system that will be worked on</HELPTEXT>
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <READONLY not="[global]\Team Foundation Administrators" />
+          <READONLY for="[project]\Contributors" />
+        </WHENNOT>
+        <ALLOWEDVALUES>
+          <LISTITEM value="DSNL" />
+          <LISTITEM value="DSNU" />
+          <LISTITEM value="DSNP" />
+          <LISTITEM value="DSNQ" />
+          <LISTITEM value="DSNX" />
+          <LISTITEM value="UDB" />
+          <LISTITEM value="SQL" />
+        </ALLOWEDVALUES>
+        <WHEN field="HIC.DBA.Type" value="Access Harleysville">
+          <SUGGESTEDVALUES>
+            <LISTITEM value="SQL" />
+          </SUGGESTEDVALUES>
+          <PROHIBITEDVALUES>
+            <LISTITEM value="DSNL" />
+            <LISTITEM value="DSNU" />
+            <LISTITEM value="DSNP" />
+            <LISTITEM value="DSNQ" />
+            <LISTITEM value="DSNX" />
+            <LISTITEM value="UDB" />
+          </PROHIBITEDVALUES>
+          <COPY from="value" value="SQL" />
+        </WHEN>
+        <WHEN field="HIC.DBA.Type" value="UDB">
+          <SUGGESTEDVALUES>
+            <LISTITEM value="UDB" />
+          </SUGGESTEDVALUES>
+          <PROHIBITEDVALUES>
+            <LISTITEM value="DSNL" />
+            <LISTITEM value="DSNU" />
+            <LISTITEM value="DSNP" />
+            <LISTITEM value="DSNQ" />
+            <LISTITEM value="DSNX" />
+            <LISTITEM value="SQL" />
+          </PROHIBITEDVALUES>
+          <COPY from="value" value="UDB" />
+        </WHEN>
+        <WHEN field="HIC.DBA.Type" value="DB2">
+          <SUGGESTEDVALUES>
+            <LISTITEM value="DSNL" />
+            <LISTITEM value="DSNU" />
+            <LISTITEM value="DSNP" />
+            <LISTITEM value="DSNQ" />
+            <LISTITEM value="DSNX" />
+          </SUGGESTEDVALUES>
+          <PROHIBITEDVALUES>
+            <LISTITEM value="SQL" />
+            <LISTITEM value="UDB" />
+          </PROHIBITEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Deployment.Type" value="DataBase">
+          <REQUIRED />
+        </WHEN>
+        <WHEN field="HIC.DBA.Type" value="SQL - Apps">
+          <SUGGESTEDVALUES>
+            <LISTITEM value="SQL" />
+          </SUGGESTEDVALUES>
+          <PROHIBITEDVALUES>
+            <LISTITEM value="DSNL" />
+            <LISTITEM value="DSNU" />
+            <LISTITEM value="DSNP" />
+            <LISTITEM value="DSNQ" />
+            <LISTITEM value="DSNX" />
+            <LISTITEM value="UDB" />
+          </PROHIBITEDVALUES>
+          <COPY from="value" value="SQL" />
+        </WHEN>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC DBA Name" refname="HIC.DBA.Name">
+        <HELPTEXT>The name of the Database</HELPTEXT>
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <ALLOWEXISTINGVALUE />
+          <READONLY not="[global]\Team Foundation Administrators" />
+          <READONLY for="[project]\Contributors" />
+        </WHENNOT>
+        <WHEN field="HIC.Deployment.Type" value="DataBase">
+          <ALLOWEXISTINGVALUE />
+          <REQUIRED />
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="AS73TFS01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="AS73TFS01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73DCTTST01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73DCTTST01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73SQLPRD03">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73SQLPRD03" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73SQLPRDINTG_INTG">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73SQLPRDINTG_INTG" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73SQLPRDOLTP">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73SQLPRDOLTP" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73SQLPRDOLAP_OLAP">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73SQLPRDOLAP_OLAP" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73ESBTST01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73ESBTST01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73ESBDEV01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73ESBDEV01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73PORTALSVR">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73PORTALSVR" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73CLARIFYSVR">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73CLARIFYSVR" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73SQLPRE03">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73SQLPRE03" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73OITDBSVR">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73OITDBSVR" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73ESBASY01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73ESBASY01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73SQLTRN03">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73SQLTRN03" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="HAR73SDIPROD">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="HAR73SDIPROD" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73SQL02">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73SQL02" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73AQSDEV01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73AQSDEV01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73AQSDEV01_TST02">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73AQSDEV01_TST02" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="HAR73SDIPRES">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="HAR73SDIPRES" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73SQL01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73SQL01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73SQLASY01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73SQLASY01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="AS73DCTDEV02">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="AS73DCTDEV02" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73SDIDEV2">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73SDIDEV2" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73SDIDEV2_TEST">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73SDIDEV2_TEST" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73SDIDEV2_DEV">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73SDIDEV2_DEV" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73SDIDEV2_TST2">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73SDIDEV2_TST2" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="AS73APP01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="AS73APP01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="AS73APP01_SPSQL">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="AS73APP01_SPSQL" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="AS73CAMRATEST">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="AS73CAMRATEST" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73TRNIMGRT01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73TRNIMGRT01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="AS73AQSDEMO">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="AS73AQSDEMO" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="AS73BIDEV01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="AS73BIDEV01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="AS73DCTDEV01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="AS73DCTDEV01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="AS73ETLDEV02">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="AS73ETLDEV02" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="AS73ETLE2E01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="AS73ETLE2E01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="AS73ETLE2E02">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="AS73ETLE2E02" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="AS73ETLPRE01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="AS73ETLPRE01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="AS73ETLPROD01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="AS73ETLPROD01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="AS73ETLTST01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="AS73ETLTST01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="AS73ETLTST02">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="AS73ETLTST02" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73ACTUARIAL">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73ACTUARIAL" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73AQSASY01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73AQSASY01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73AQSCNV01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73AQSCNV01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73AQSE2E01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73AQSE2E01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73AQSTRN01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73AQSTRN01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73AQSTST01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73AQSTST01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73AQSTST02">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73AQSTST02" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73DCTE2E01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73DCTE2E01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73DCTPRE01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73DCTPRE01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73ESBE2E01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73ESBE2E01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73ESBTST02">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73ESBTST02" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73IMGRTTST01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73IMGRTTST01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73SQLDEV">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73SQLDEV" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73SQLDEV01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73SQLDEV01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73SQLDEV02">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73SQLDEV02" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73SQLDEV03">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73SQLDEV03" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73SQLE2E01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73SQLE2E01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73SQLE2E03">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73SQLE2E03" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73SQLPRE01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73SQLPRE01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73SQLTEST">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73SQLTEST" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73SQLTRN01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73SQLTRN01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73SQLTST01">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73SQLTST01" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73SQLTST02">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73SQLTST02" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73SQLTST03">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="DS73SQLTST03" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="HAR73SDIDEV">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="HAR73SDIDEV" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.Deployment.Type" value="DataBase">
+          <ALLOWEXISTINGVALUE />
+          <REQUIRED />
+        </WHEN>
+        <WHEN field="HIC.DBA.Subsystem" value="DSNL">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="List - DSNL Databases" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Subsystem" value="DSNP">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="List - DSNP Databases" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Subsystem" value="DSNQ">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="List - DSNQ Databases" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Subsystem" value="DSNU">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="List - DSNU Databases" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73UDBTST01">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="List - UDB TST Databases" />
+          </ALLOWEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Server" value="DS73UDB01">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="List - UDB Databases" />
+          </ALLOWEDVALUES>
+        </WHEN>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC DBA Server" refname="HIC.DBA.Server">
+        <HELPTEXT>The server that Database is hosted on</HELPTEXT>
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <ALLOWEXISTINGVALUE />
+          <READONLY not="[global]\Team Foundation Administrators" />
+          <READONLY for="[project]\Contributors" />
+        </WHENNOT>
+        <WHEN field="HIC.Deployment.Type" value="DataBase">
+          <ALLOWEXISTINGVALUE />
+          <REQUIRED />
+        </WHEN>
+        <WHEN field="HIC.DBA.Subsystem" value="SQL">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="SQLServers" />
+          </SUGGESTEDVALUES>
+        </WHEN>
+        <WHEN field="HIC.DBA.Type" value="DB2">
+          <ALLOWEDVALUES>
+            <LISTITEM value="Mainframe" />
+          </ALLOWEDVALUES>
+          <COPY from="value" value="Mainframe" />
+        </WHEN>
+        <WHEN field="HIC.DBA.Type" value="UDB">
+          <ALLOWEDVALUES>
+            <GLOBALLIST name="List - UDB Servers" />
+          </ALLOWEDVALUES>
+        </WHEN>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC Deployment Priority" refname="HIC.Deployment.Priority">
+        <HELPTEXT>The urgency of the deployment (1) Normal; (2) Expedited; (3) Emergency hotfix (IRB will be bypassed for PRD) Option 3 will only be avaiable when the Target Environment is set to Production</HELPTEXT>
+        <ALLOWEXISTINGVALUE />
+        <ALLOWEDVALUES>
+          <LISTITEM value="1 - Normal" />
+          <LISTITEM value="2 - Expedited" />
+          <LISTITEM value="3 - Emergency hotfix" />
+        </ALLOWEDVALUES>
+        <DEFAULT from="value" value="1 - Normal" />
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <ALLOWEXISTINGVALUE />
+          <READONLY for="[project]\Contributors" />
+        </WHENNOT>
+        <WHENNOT field="HIC.Test.Environment.New" value="Production">
+          <PROHIBITEDVALUES>
+            <LISTITEM value="3 - Emergency hotfix" />
+          </PROHIBITEDVALUES>
+        </WHENNOT>
+        <CANNOTLOSEVALUE />
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC Last Changed By" refname="HIC.LastChangedBy">
+        <HELPTEXT>Last person to save a change to this work item</HELPTEXT>
+        <SERVERDEFAULT from="currentuser" />
+      </FIELD>
+      <FIELD type="Integer" name="HIc Fields Lock" refname="HIC.Fields.Lock">
+        <HELPTEXT>O=unlocked 1=locked</HELPTEXT>
+        <DEFAULT from="value" value="0" />
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC Team Build Type" refname="HIC.Team.Build.Type">
+        <HELPTEXT>The Build package's build type</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC Team Build Project" refname="HIC.Team.Build.Project">
+        <HELPTEXT>The Team Project that the Build package's build type resides in</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC Team Build Type2" refname="HIC.Team.Build.Type2">
+        <HELPTEXT>The Build package's build type</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC Team Build Project2" refname="HIC.Team.Build.Project2">
+        <HELPTEXT>The Team Project that the Build package's build type resides in</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC Team Build Type3" refname="HIC.Team.Build.Type3">
+        <HELPTEXT>The Build package's build type</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC Team Build Project3" refname="HIC.Team.Build.Project3">
+        <HELPTEXT>The Team Project that the Build package's build type resides in</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC Team Build Type4" refname="HIC.Team.Build.Type4">
+        <HELPTEXT>The Build package's build type</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC Team Build Project4" refname="HIC.Team.Build.Project4">
+        <HELPTEXT>The Team Project that the Build package's build type resides in</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC Team Build Type5" refname="HIC.Team.Build.Type5">
+        <HELPTEXT>The Build package's build type</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC Team Build Project5" refname="HIC.Team.Build.Project5">
+        <HELPTEXT>The Team Project that the Build package's build type resides in</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC Team Build Type6" refname="HIC.Team.Build.Type6">
+        <HELPTEXT>The Build package's build type</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC Team Build Project6" refname="HIC.Team.Build.Project6">
+        <HELPTEXT>The Team Project that the Build package's build type resides in</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC Team Build Type7" refname="HIC.Team.Build.Type7">
+        <HELPTEXT>The Build package's build type</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC Team Build Project7" refname="HIC.Team.Build.Project7">
+        <HELPTEXT>The Team Project that the Build package's build type resides in</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC Team Build Type8" refname="HIC.Team.Build.Type8">
+        <HELPTEXT>The Build package's build type</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC Team Build Project8" refname="HIC.Team.Build.Project8">
+        <HELPTEXT>The Team Project that the Build package's build type resides in</HELPTEXT>
+      </FIELD>
+      <FIELD type="Integer" name="HIC Auto Fill Count" refname="HIC.Auto.Fill.Count">
+        <HELPTEXT>If auto fill was run its value will be the BBI# if not it will be its own number</HELPTEXT>
+        <WHEN field="HIC.Auto.Fill.Count" value="1">
+          <READONLY for="[project]\Contributors" />
+          <READONLY not="[global]\Team Foundation Administrators" />
+        </WHEN>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC Sub-Project" refname="HIC.SubProject">
+        <HELPTEXT>The sub project</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC TR defect Numbers" refname="HIC.TR.DefectNumbers">
+        <HELPTEXT>A semi-colon separated list of TrackRecord Defect numbers fixed in this deployment.  If not defect please use NA</HELPTEXT>
+        <WHEN field="System.State" value="Approved for Deployment">
+          <REQUIRED />
+        </WHEN>
+        <WHEN field="System.State" value="Ready for IRB (Production Only)">
+          <REQUIRED />
+        </WHEN>
+        <SUGGESTEDVALUES>
+          <LISTITEM value="NA" />
+          <LISTITEM value="Unknown" />
+        </SUGGESTEDVALUES>
+        <WHEN field="HIC.Deployment.Type" value="DataBase">
+          <DEFAULT from="value" value="NA" />
+        </WHEN>
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <READONLY for="[project]\Contributors" />
+          <READONLY not="[global]\Team Foundation Administrators" />
+        </WHENNOT>
+        <WHEN field="HIC.Deployment.Type" value="Informatica">
+          <DEFAULT from="value" value="NA" />
+        </WHEN>
+      </FIELD>
+      <FIELD type="String" name="HIC Deployment Approver" refname="HIC.Deployment.Approver">
+        <HELPTEXT>The Person/Group responsible for approving the DBI</HELPTEXT>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC Deployment Impact" refname="HIC.Deployment.Impact">
+        <HELPTEXT>The Impact that deployment will have on the Target Environment</HELPTEXT>
+        <ALLOWEDVALUES>
+          <GLOBALLIST name="List - Deployment Impact" />
+        </ALLOWEDVALUES>
+        <REQUIRED />
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <READONLY for="[project]\Contributors" />
+          <READONLY not="[global]\Team Foundation Administrators" />
+        </WHENNOT>
+        <WHENCHANGED field="HIC.Test.Envrionment.Structure">
+          <SUGGESTEDVALUES>
+            <GLOBALLIST name="List - Deployment Impact" />
+          </SUGGESTEDVALUES>
+        </WHENCHANGED>
+        <WHEN field="HIC.Project" value="DBA">
+          <COPY from="value" value="None" />
+        </WHEN>
+      </FIELD>
+      <FIELD reportable="dimension" type="TreePath" name="Iteration Path" refname="System.IterationPath" />
+      <FIELD type="Integer" name="IterationID" refname="System.IterationId" />
+      <FIELD reportable="measure" type="Integer" name="ExternalLinkCount" refname="System.ExternalLinkCount" />
+      <FIELD reportable="dimension" type="String" name="Team Project" refname="System.TeamProject" />
+      <FIELD reportable="measure" type="Integer" name="HyperLinkCount" refname="System.HyperLinkCount" />
+      <FIELD reportable="measure" type="Integer" name="AttachedFileCount" refname="System.AttachedFileCount" />
+      <FIELD type="String" name="Node Name" refname="System.NodeName" />
+      <FIELD reportable="dimension" type="TreePath" name="Area Path" refname="System.AreaPath">
+        <HELPTEXT>The area of the product with which this bug is associated</HELPTEXT>
+      </FIELD>
+      <FIELD type="DateTime" name="Revised Date" refname="System.RevisedDate" />
+      <FIELD reportable="dimension" type="DateTime" name="Changed Date" refname="System.ChangedDate" />
+      <FIELD reportable="dimension" type="Integer" name="ID" refname="System.Id">
+        <HELPTEXT>This is automatically assigned by the system and will be seen when the newly created Product Backlog is viewed.</HELPTEXT>
+      </FIELD>
+      <FIELD type="Integer" name="AreaID" refname="System.AreaId" />
+      <FIELD type="String" name="Authorized As" refname="System.AuthorizedAs" />
+      <FIELD reportable="dimension" type="String" name="HIC INFORMATICA Label Name" refname="HIC.INFORMATICA.Label.Name">
+        <HELPTEXT>Name of the Informatica label to be deployed</HELPTEXT>
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <READONLY for="[project]\Contributors" not="[Global]\Team Foundation Administrators" />
+        </WHENNOT>
+        <SUGGESTEDVALUES>
+          <GLOBALLIST name="List - Informatica Labels" />
+        </SUGGESTEDVALUES>
+        <WHEN field="HIC.Deployment.Type" value="Informatica">
+          <REQUIRED />
+        </WHEN>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC INFORMATICA Label Description" refname="HIC.INFORMATICA.Label.Description">
+        <HELPTEXT>Description of label being deployed</HELPTEXT>
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <READONLY for="[project]\Contributors" not="[Global]\Team Foundation Administrators" />
+        </WHENNOT>
+        <SUGGESTEDVALUES>
+          <LISTITEM value="NA" />
+        </SUGGESTEDVALUES>
+        <WHEN field="HIC.Deployment.Type" value="Informatica">
+          <REQUIRED />
+        </WHEN>
+      </FIELD>
+      <FIELD type="PlainText" name="HIC INFORMATICA Object" refname="HIC.INFORMATICA.Object">
+        <HELPTEXT>Description of Object/Workflows sessions being deployed</HELPTEXT>
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <READONLY for="[project]\Contributors" not="[Global]\Team Foundation Administrators" />
+        </WHENNOT>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC INFORMATICA TWS Job Name" refname="HIC.INFORMATICA.TWS.Job.Name">
+        <HELPTEXT>Name of TWS job that is affected by the Informatica deploy</HELPTEXT>
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <READONLY for="[project]\Contributors" not="[Global]\Team Foundation Administrators" />
+        </WHENNOT>
+        <SUGGESTEDVALUES>
+          <LISTITEM value="NA" />
+        </SUGGESTEDVALUES>
+        <WHEN field="HIC.Deployment.Type" value="Informatica">
+          <REQUIRED />
+        </WHEN>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC INFORMATICA Batch Filename" refname="HIC.INFORMATICA.Batch.Filename">
+        <HELPTEXT>Batch Filename affected by Informatica deploy</HELPTEXT>
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <READONLY for="[project]\Contributors" not="[Global]\Team Foundation Administrators" />
+        </WHENNOT>
+        <SUGGESTEDVALUES>
+          <LISTITEM value="NA" />
+        </SUGGESTEDVALUES>
+        <WHEN field="HIC.Deployment.Type" value="Informatica">
+          <REQUIRED />
+        </WHEN>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC Deployment Time" refname="HIC.Deployment.Time">
+        <HELPTEXT>The time of day when deploy should be completed</HELPTEXT>
+        <REQUIRED />
+        <ALLOWEDVALUES>
+          <GLOBALLIST name="List - Deployment Times" />
+          <LISTITEM value="Immediately" />
+        </ALLOWEDVALUES>
+        <WHEN field="HIC.Deployment.Priority" value="3 - Emergency hotfix">
+          <DEFAULT from="value" value="Immediately" />
+        </WHEN>
+        <WHENNOT field="HIC.Deployment.Impact" value="None">
+          <PROHIBITEDVALUES>
+            <LISTITEM value="Anytime" />
+          </PROHIBITEDVALUES>
+        </WHENNOT>
+        <WHENNOT field="HIC.Deployment.Priority" value="3 - Emergency hotfix">
+          <PROHIBITEDVALUES>
+            <LISTITEM value="Immediately" />
+          </PROHIBITEDVALUES>
+        </WHENNOT>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC Test Environment Structure" refname="HIC.Test.Envrionment.Structure">
+        <HELPTEXT>The Test environment strucuture the project is apart of</HELPTEXT>
+        <ALLOWEDVALUES>
+          <GLOBALLIST name="List - Test Environment Structures" />
+        </ALLOWEDVALUES>
+        <DEFAULT from="value" value="Access Harleysville" />
+        <WHEN field="HIC.Project" value="DBA">
+          <COPY from="value" value="Harleysville" />
+        </WHEN>
+        <WHEN field="HIC.Project" value="GroupLife">
+          <COPY from="value" value="Harleysville" />
+        </WHEN>
+        <WHEN field="HIC.Project" value="ImageRight">
+          <COPY from="value" value="Harleysville" />
+        </WHEN>
+        <WHEN field="HIC.Project" value="Documaker">
+          <COPY from="value" value="Harleysville" />
+        </WHEN>
+        <WHEN field="HIC.Project" value="LGBP">
+          <COPY from="value" value="Harleysville" />
+        </WHEN>
+        <WHENCHANGED field="HIC.Project">
+          <COPY from="value" value="Access Harleysville" />
+        </WHENCHANGED>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC INFORMATICA WorkFlow" refname="HIC.INFORMATICA.WorkFlow">
+        <HELPTEXT>The Workflow type and/or folder name </HELPTEXT>
+        <WHEN field="HIC.Deployment.Type" value="Informatica">
+          <REQUIRED />
+        </WHEN>
+        <ALLOWEDVALUES>
+          <GLOBALLIST name="List - InformaticaBuildType" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD reportable="dimension" type="String" name="HIC Deployment Package Type" refname="HIC.Deployment.Package.Type">
+        <HELPTEXT>What part of the Deployment package is needed to be deployed.</HELPTEXT>
+        <ALLOWEDVALUES>
+          <GLOBALLIST name="List - DBI Deployment Type" />
+        </ALLOWEDVALUES>
+        <DEFAULT from="value" value="Full" />
+        <REQUIRED />
+      </FIELD>
+      <FIELD type="String" name="HIC Build Package2" refname="HIC.Build.Package2">
+        <HELPTEXT>Build Package to be deployed</HELPTEXT>
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <READONLY for="[project]\Contributors" not="[Global]\Team Foundation Administrators" />
+        </WHENNOT>
+        <WHEN field="HIC.Build.Number" value="">
+          <READONLY />
+        </WHEN>
+        <ALLOWEDVALUES>
+          <GLOBALLIST name="Builds - AIS_Project" />
+          <GLOBALLIST name="Builds - HIC.Projects" />
+          <GLOBALLIST name="Builds - UREProject" />
+          <GLOBALLIST name="Builds - UserSecurityLoad" />
+          <GLOBALLIST name="Builds - HostIntegrationServer" />
+          <GLOBALLIST name="Builds - PersonalLines.Projects" />
+          <GLOBALLIST name="Builds - CommercialLines.Projects" />
+          <GLOBALLIST name="Builds - AgentPortal.Project" />
+          <GLOBALLIST name="Builds - Agency.Projects" />
+          <GLOBALLIST name="Builds - Software.Release.Management" />
+          <GLOBALLIST name="Builds - WmProjects" />
+          <GLOBALLIST name="Builds - IntegratedServices.Projects" />
+          <GLOBALLIST name="Builds - PredictiveModeling.Projects" />
+          <GLOBALLIST name="Builds - Documaker.Projects" />
+          <GLOBALLIST name="Builds - LGBP.Projects" />
+          <GLOBALLIST name="Builds - AQS.Projects" />
+          <GLOBALLIST name="Builds - Legacy.Projects" />
+          <GLOBALLIST name="Builds - HarleysvilleCore.Projects" />
+          <GLOBALLIST name="Builds - RuleServices.Projects" />
+          <GLOBALLIST name="Builds - Life.Projects" />
+          <GLOBALLIST name="Builds - AgencyUpload.Projects" />
+          <GLOBALLIST name="Builds - AgencyProfile.Projects" />
+          <GLOBALLIST name="Builds - Database.Projects" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD type="String" name="HIC Build Package3" refname="HIC.Build.Package3">
+        <HELPTEXT>Build Package to be deployed</HELPTEXT>
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <READONLY for="[project]\Contributors" not="[Global]\Team Foundation Administrators" />
+        </WHENNOT>
+        <WHEN field="HIC.Build.Package2" value="">
+          <READONLY />
+        </WHEN>
+        <ALLOWEDVALUES>
+          <GLOBALLIST name="Builds - AIS_Project" />
+          <GLOBALLIST name="Builds - HIC.Projects" />
+          <GLOBALLIST name="Builds - UREProject" />
+          <GLOBALLIST name="Builds - UserSecurityLoad" />
+          <GLOBALLIST name="Builds - HostIntegrationServer" />
+          <GLOBALLIST name="Builds - PersonalLines.Projects" />
+          <GLOBALLIST name="Builds - CommercialLines.Projects" />
+          <GLOBALLIST name="Builds - AgentPortal.Project" />
+          <GLOBALLIST name="Builds - Agency.Projects" />
+          <GLOBALLIST name="Builds - Software.Release.Management" />
+          <GLOBALLIST name="Builds - WmProjects" />
+          <GLOBALLIST name="Builds - IntegratedServices.Projects" />
+          <GLOBALLIST name="Builds - PredictiveModeling.Projects" />
+          <GLOBALLIST name="Builds - Documaker.Projects" />
+          <GLOBALLIST name="Builds - LGBP.Projects" />
+          <GLOBALLIST name="Builds - AQS.Projects" />
+          <GLOBALLIST name="Builds - Legacy.Projects" />
+          <GLOBALLIST name="Builds - HarleysvilleCore.Projects" />
+          <GLOBALLIST name="Builds - RuleServices.Projects" />
+          <GLOBALLIST name="Builds - Life.Projects" />
+          <GLOBALLIST name="Builds - AgencyUpload.Projects" />
+          <GLOBALLIST name="Builds - AgencyProfile.Projects" />
+          <GLOBALLIST name="Builds - Database.Projects" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD type="String" name="HIC Build Package4" refname="HIC.Build.Package4">
+        <HELPTEXT>Build Package to be deployed</HELPTEXT>
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <READONLY for="[project]\Contributors" not="[Global]\Team Foundation Administrators" />
+        </WHENNOT>
+        <WHEN field="HIC.Build.Package3" value="">
+          <READONLY />
+        </WHEN>
+        <ALLOWEDVALUES>
+          <GLOBALLIST name="Builds - AIS_Project" />
+          <GLOBALLIST name="Builds - HIC.Projects" />
+          <GLOBALLIST name="Builds - UREProject" />
+          <GLOBALLIST name="Builds - UserSecurityLoad" />
+          <GLOBALLIST name="Builds - HostIntegrationServer" />
+          <GLOBALLIST name="Builds - PersonalLines.Projects" />
+          <GLOBALLIST name="Builds - CommercialLines.Projects" />
+          <GLOBALLIST name="Builds - AgentPortal.Project" />
+          <GLOBALLIST name="Builds - Agency.Projects" />
+          <GLOBALLIST name="Builds - Software.Release.Management" />
+          <GLOBALLIST name="Builds - WmProjects" />
+          <GLOBALLIST name="Builds - IntegratedServices.Projects" />
+          <GLOBALLIST name="Builds - PredictiveModeling.Projects" />
+          <GLOBALLIST name="Builds - Documaker.Projects" />
+          <GLOBALLIST name="Builds - LGBP.Projects" />
+          <GLOBALLIST name="Builds - AQS.Projects" />
+          <GLOBALLIST name="Builds - Legacy.Projects" />
+          <GLOBALLIST name="Builds - HarleysvilleCore.Projects" />
+          <GLOBALLIST name="Builds - RuleServices.Projects" />
+          <GLOBALLIST name="Builds - Life.Projects" />
+          <GLOBALLIST name="Builds - AgencyUpload.Projects" />
+          <GLOBALLIST name="Builds - AgencyProfile.Projects" />
+          <GLOBALLIST name="Builds - Database.Projects" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD type="String" name="HIC Build Package5" refname="HIC.Build.Package5">
+        <HELPTEXT>Build Package to be deployed</HELPTEXT>
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <READONLY for="[project]\Contributors" not="[Global]\Team Foundation Administrators" />
+        </WHENNOT>
+        <WHEN field="HIC.Build.Package4" value="">
+          <READONLY />
+        </WHEN>
+        <ALLOWEDVALUES>
+          <GLOBALLIST name="Builds - AIS_Project" />
+          <GLOBALLIST name="Builds - HIC.Projects" />
+          <GLOBALLIST name="Builds - UREProject" />
+          <GLOBALLIST name="Builds - UserSecurityLoad" />
+          <GLOBALLIST name="Builds - HostIntegrationServer" />
+          <GLOBALLIST name="Builds - PersonalLines.Projects" />
+          <GLOBALLIST name="Builds - CommercialLines.Projects" />
+          <GLOBALLIST name="Builds - AgentPortal.Project" />
+          <GLOBALLIST name="Builds - Agency.Projects" />
+          <GLOBALLIST name="Builds - Software.Release.Management" />
+          <GLOBALLIST name="Builds - WmProjects" />
+          <GLOBALLIST name="Builds - IntegratedServices.Projects" />
+          <GLOBALLIST name="Builds - PredictiveModeling.Projects" />
+          <GLOBALLIST name="Builds - Documaker.Projects" />
+          <GLOBALLIST name="Builds - LGBP.Projects" />
+          <GLOBALLIST name="Builds - AQS.Projects" />
+          <GLOBALLIST name="Builds - Legacy.Projects" />
+          <GLOBALLIST name="Builds - HarleysvilleCore.Projects" />
+          <GLOBALLIST name="Builds - RuleServices.Projects" />
+          <GLOBALLIST name="Builds - Life.Projects" />
+          <GLOBALLIST name="Builds - AgencyUpload.Projects" />
+          <GLOBALLIST name="Builds - AgencyProfile.Projects" />
+          <GLOBALLIST name="Builds - Database.Projects" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD type="String" name="HIC Build Package6" refname="HIC.Build.Package6">
+        <HELPTEXT>Build Package to be deployed</HELPTEXT>
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <READONLY for="[project]\Contributors" not="[Global]\Team Foundation Administrators" />
+        </WHENNOT>
+        <WHEN field="HIC.Build.Package5" value="">
+          <READONLY />
+        </WHEN>
+        <ALLOWEDVALUES>
+          <GLOBALLIST name="Builds - AIS_Project" />
+          <GLOBALLIST name="Builds - HIC.Projects" />
+          <GLOBALLIST name="Builds - UREProject" />
+          <GLOBALLIST name="Builds - UserSecurityLoad" />
+          <GLOBALLIST name="Builds - HostIntegrationServer" />
+          <GLOBALLIST name="Builds - PersonalLines.Projects" />
+          <GLOBALLIST name="Builds - CommercialLines.Projects" />
+          <GLOBALLIST name="Builds - AgentPortal.Project" />
+          <GLOBALLIST name="Builds - Agency.Projects" />
+          <GLOBALLIST name="Builds - Software.Release.Management" />
+          <GLOBALLIST name="Builds - WmProjects" />
+          <GLOBALLIST name="Builds - IntegratedServices.Projects" />
+          <GLOBALLIST name="Builds - PredictiveModeling.Projects" />
+          <GLOBALLIST name="Builds - Documaker.Projects" />
+          <GLOBALLIST name="Builds - LGBP.Projects" />
+          <GLOBALLIST name="Builds - AQS.Projects" />
+          <GLOBALLIST name="Builds - Legacy.Projects" />
+          <GLOBALLIST name="Builds - HarleysvilleCore.Projects" />
+          <GLOBALLIST name="Builds - RuleServices.Projects" />
+          <GLOBALLIST name="Builds - Life.Projects" />
+          <GLOBALLIST name="Builds - AgencyUpload.Projects" />
+          <GLOBALLIST name="Builds - AgencyProfile.Projects" />
+          <GLOBALLIST name="Builds - Database.Projects" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD type="String" name="HIC Build Package7" refname="HIC.Build.Package7">
+        <HELPTEXT>Build Package to be deployed</HELPTEXT>
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <READONLY for="[project]\Contributors" not="[Global]\Team Foundation Administrators" />
+        </WHENNOT>
+        <WHEN field="HIC.Build.Package6" value="">
+          <READONLY />
+        </WHEN>
+        <ALLOWEDVALUES>
+          <GLOBALLIST name="Builds - AIS_Project" />
+          <GLOBALLIST name="Builds - HIC.Projects" />
+          <GLOBALLIST name="Builds - UREProject" />
+          <GLOBALLIST name="Builds - UserSecurityLoad" />
+          <GLOBALLIST name="Builds - HostIntegrationServer" />
+          <GLOBALLIST name="Builds - PersonalLines.Projects" />
+          <GLOBALLIST name="Builds - CommercialLines.Projects" />
+          <GLOBALLIST name="Builds - AgentPortal.Project" />
+          <GLOBALLIST name="Builds - Agency.Projects" />
+          <GLOBALLIST name="Builds - Software.Release.Management" />
+          <GLOBALLIST name="Builds - WmProjects" />
+          <GLOBALLIST name="Builds - IntegratedServices.Projects" />
+          <GLOBALLIST name="Builds - PredictiveModeling.Projects" />
+          <GLOBALLIST name="Builds - Documaker.Projects" />
+          <GLOBALLIST name="Builds - LGBP.Projects" />
+          <GLOBALLIST name="Builds - AQS.Projects" />
+          <GLOBALLIST name="Builds - Legacy.Projects" />
+          <GLOBALLIST name="Builds - HarleysvilleCore.Projects" />
+          <GLOBALLIST name="Builds - RuleServices.Projects" />
+          <GLOBALLIST name="Builds - Life.Projects" />
+          <GLOBALLIST name="Builds - AgencyUpload.Projects" />
+          <GLOBALLIST name="Builds - AgencyProfile.Projects" />
+          <GLOBALLIST name="Builds - Database.Projects" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD type="String" name="HIC Build Package8" refname="HIC.Build.Package8">
+        <HELPTEXT>Build Package to be deployed</HELPTEXT>
+        <WHENNOT field="HIC.Fields.Lock" value="0">
+          <READONLY for="[project]\Contributors" not="[Global]\Team Foundation Administrators" />
+        </WHENNOT>
+        <WHEN field="HIC.Build.Package7" value="">
+          <READONLY />
+        </WHEN>
+        <ALLOWEDVALUES>
+          <GLOBALLIST name="Builds - AIS_Project" />
+          <GLOBALLIST name="Builds - HIC.Projects" />
+          <GLOBALLIST name="Builds - UREProject" />
+          <GLOBALLIST name="Builds - UserSecurityLoad" />
+          <GLOBALLIST name="Builds - HostIntegrationServer" />
+          <GLOBALLIST name="Builds - PersonalLines.Projects" />
+          <GLOBALLIST name="Builds - CommercialLines.Projects" />
+          <GLOBALLIST name="Builds - AgentPortal.Project" />
+          <GLOBALLIST name="Builds - Agency.Projects" />
+          <GLOBALLIST name="Builds - Software.Release.Management" />
+          <GLOBALLIST name="Builds - WmProjects" />
+          <GLOBALLIST name="Builds - IntegratedServices.Projects" />
+          <GLOBALLIST name="Builds - PredictiveModeling.Projects" />
+          <GLOBALLIST name="Builds - Documaker.Projects" />
+          <GLOBALLIST name="Builds - LGBP.Projects" />
+          <GLOBALLIST name="Builds - AQS.Projects" />
+          <GLOBALLIST name="Builds - Legacy.Projects" />
+          <GLOBALLIST name="Builds - HarleysvilleCore.Projects" />
+          <GLOBALLIST name="Builds - RuleServices.Projects" />
+          <GLOBALLIST name="Builds - Life.Projects" />
+          <GLOBALLIST name="Builds - AgencyUpload.Projects" />
+          <GLOBALLIST name="Builds - AgencyProfile.Projects" />
+          <GLOBALLIST name="Builds - Database.Projects" />
+        </ALLOWEDVALUES>
+      </FIELD>
+      <FIELD type="String" name="HIC Build Numbers" refname="HIC.Build.Numbers">
+        <HELPTEXT>Hidden field, Will be used to hold all build numbers in a comma separated string</HELPTEXT>
+      </FIELD>
+      <FIELD type="Integer" name="HIC Build Package1 Deployment Status" refname="HIC.Build.Package1.Deployment.Status">
+        <HELPTEXT>hidden field The status the of deployment</HELPTEXT>
+      </FIELD>
+      <FIELD type="Integer" name="HIC Build Package2 Deployment Status" refname="HIC.Build.Package2.Deployment.Status">
+        <HELPTEXT>hidden field The status the of deployment</HELPTEXT>
+      </FIELD>
+      <FIELD type="Integer" name="HIC Build Package3 Deployment Status" refname="HIC.Build.Package3.Deployment.Status">
+        <HELPTEXT>hidden field The status the of deployment</HELPTEXT>
+      </FIELD>
+      <FIELD type="Integer" name="HIC Build Package4 Deployment Status" refname="HIC.Build.Package4.Deployment.Status">
+        <HELPTEXT>hidden field The status the of deployment</HELPTEXT>
+      </FIELD>
+      <FIELD type="Integer" name="HIC Build Package5 Deployment Status" refname="HIC.Build.Package5.Deployment.Status">
+        <HELPTEXT>hidden field The status the of deployment</HELPTEXT>
+      </FIELD>
+      <FIELD type="Integer" name="HIC Build Package6 Deployment Status" refname="HIC.Build.Package6.Deployment.Status">
+        <HELPTEXT>hidden field The status the of deployment</HELPTEXT>
+      </FIELD>
+      <FIELD type="Integer" name="HIC Build Package7 Deployment Status" refname="HIC.Build.Package7.Deployment.Status">
+        <HELPTEXT>hidden field The status the of deployment</HELPTEXT>
+      </FIELD>
+      <FIELD type="Integer" name="HIC Build Package8 Deployment Status" refname="HIC.Build.Package8.Deployment.Status">
+        <HELPTEXT>hidden field The status the of deployment</HELPTEXT>
+      </FIELD>
+      <FIELD type="Integer" name="HIC Priority Status" refname="HIC.Priority.Status">
+        <HELPTEXT>hidden field The status the of priority when not 0 the priority field will be blank forcing the user to pick</HELPTEXT>
+      </FIELD>
+    </FIELDS>
+    <WORKFLOW>
+      <STATES>
+        <STATE value="Not Done" />
+        <STATE value="Deferred" />
+        <STATE value="Deleted" />
+        <STATE value="Rejected" />
+        <STATE value="Approved for Deployment" />
+        <STATE value="Approved by IRB" />
+        <STATE value="Ready for IRB (Production Only)" />
+        <STATE value="Rolled Back" />
+        <STATE value="Deployed" />
+      </STATES>
+      <TRANSITIONS>
+        <TRANSITION from="" to="Not Done">
+          <REASONS>
+            <DEFAULTREASON value="New" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Deferred" to="Deleted">
+          <REASONS>
+            <DEFAULTREASON value="Item has been marked for deletion" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Deferred" to="Not Done">
+          <REASONS>
+            <DEFAULTREASON value="Item has been marked for restoration" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Not Done" to="Deferred">
+          <REASONS>
+            <DEFAULTREASON value="Descoped from deployments" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Not Done" to="Approved for Deployment">
+          <REASONS>
+            <DEFAULTREASON value="The package was approved by the team led for deployment" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Approved for Deployment" to="Deferred">
+          <REASONS>
+            <DEFAULTREASON value="Descoped from deployment backlog" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Deleted" to="Not Done">
+          <REASONS>
+            <DEFAULTREASON value="Undo/Undelete" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Ready for IRB (Production Only)" to="Approved by IRB">
+          <REASONS>
+            <DEFAULTREASON value="The package was approved by the Internal Review Board for deployment tp Production" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Approved for Deployment" to="Ready for IRB (Production Only)" for="[global]\Team Foundation Administrators">
+          <REASONS>
+            <DEFAULTREASON value="Build package was sent to IRB for Approval" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Not Done" to="Rejected">
+          <REASONS>
+            <DEFAULTREASON value="The package was rejected by the team led for deployment" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Rejected" to="Not Done">
+          <REASONS>
+            <DEFAULTREASON value="Rejected DBI was brought back to backlog for deployment" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Rolled Back" to="Ready for IRB (Production Only)">
+          <REASONS>
+            <DEFAULTREASON value="Rolled back build is ready to be moved back to PRD" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Ready for IRB (Production Only)" to="Rejected">
+          <REASONS>
+            <DEFAULTREASON value="The package was rejected by the Internal Review Board" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Approved for Deployment" to="Rejected">
+          <REASONS>
+            <DEFAULTREASON value="Deployment Rejected" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Approved for Deployment" to="Deployed">
+          <REASONS>
+            <DEFAULTREASON value="The Build package was deployed to the Target Environment" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Approved by IRB" to="Deployed">
+          <REASONS>
+            <DEFAULTREASON value="The Build package was deployed from the Team Project's TFVC Release area to Production" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Approved by IRB" to="Deferred">
+          <REASONS>
+            <DEFAULTREASON value="The production deployment was deferred" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Deployed" to="Rolled Back">
+          <REASONS>
+            <DEFAULTREASON value="The Production build was Rolled back to a previous build" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Rolled Back" to="Not Done">
+          <REASONS>
+            <DEFAULTREASON value="Rolled back build is ready to be deployed again" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Rolled Back" to="Deleted">
+          <REASONS>
+            <DEFAULTREASON value="Rolled back build is no longer needed" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+        <TRANSITION from="Approved by IRB" to="Rejected">
+          <REASONS>
+            <DEFAULTREASON value="Re-approval needed" />
+          </REASONS>
+          <FIELDS>
+            <FIELD refname="Conchango.VSTS.Scrum.Audit">
+              <DEFAULT from="value" value="0" />
+            </FIELD>
+          </FIELDS>
+        </TRANSITION>
+      </TRANSITIONS>
+    </WORKFLOW>
+    <FORM>
+      <Layout>
+        <Group>
+          <Column PercentWidth="100">
+            <Control FieldName="System.Title" Type="FieldControl" Label="Title" LabelPosition="Left" />
+          </Column>
+        </Group>
+        <Group Label="Deployment Information">
+          <Column PercentWidth="50">
+            <Group Label="">
+              <Column PercentWidth="50">
+                <Control FieldName="HIC.Deployment.Type" Type="FieldControl" Label="Deployment Type:" LabelPosition="Left" />
+                <Control FieldName="HIC.Project" Type="FieldControl" Label="Project: " LabelPosition="Left" />
+                <Control FieldName="HIC.Deployment.Impact" Type="FieldControl" Label="Environment Impact:" LabelPosition="Left" />
+                <Control FieldName="HIC.Deployment.Priority" Type="FieldControl" Label="Priority: " LabelPosition="Left" />
+              </Column>
+            </Group>
+          </Column>
+          <Column PercentWidth="50">
+            <Group Label="">
+              <Column PercentWidth="100">
+                <Control FieldName="HIC.Test.Environment.Current" Type="FieldControl" Label="Current Environment: " LabelPosition="Left" />
+                <Control FieldName="HIC.Test.Environment.New" Type="FieldControl" Label="Target Environment: " LabelPosition="Left" />
+                <Control FieldName="HIC.Deploy.Date" Type="DateTimeControl" Label="Deployment Date:" LabelPosition="Left" Format="Custom" CustomFormat="MM/dd/yyyy" />
+                <Control FieldName="HIC.Deployment.Time" Type="FieldControl" Label="Deployment Time:" LabelPosition="Left" />
+              </Column>
+            </Group>
+          </Column>
+        </Group>
+        <Group Label="Deployment Status">
+          <Column PercentWidth="50">
+            <Control FieldName="System.State" Type="FieldControl" Label="Deployment Status: " LabelPosition="Left" />
+          </Column>
+          <Column PercentWidth="50">
+            <Control FieldName="System.AssignedTo" Type="FieldControl" Label="Assigned to: " LabelPosition="Left" />
+          </Column>
+        </Group>
+        <Group Label="">
+          <Column PercentWidth="100">
+            <TabGroup>
+              <Tab Label="Deployment">
+                <Group Label="">
+                  <Column PercentWidth="50">
+                    <Group Label="Defect Information">
+                      <Column PercentWidth="100">
+                        <Control FieldName="HIC.TR.DefectNumbers" Type="FieldControl" Label="Track Record Defect #:" LabelPosition="Left" />
+                      </Column>
+                    </Group>
+                  </Column>
+                  <Column PercentWidth="50">
+                    <Group Label="Deployment Type">
+                      <Column PercentWidth="100">
+                        <Control FieldName="HIC.Deployment.Package.Type" Type="FieldControl" Label="Deployment Task:" LabelPosition="Left" />
+                      </Column>
+                    </Group>
+                  </Column>
+                </Group>
+                <Group Label="Dependency Infomation">
+                  <Column PercentWidth="50">
+                    <Control FieldName="HIC.Dependency" Type="FieldControl" Label="Deployment dependencies:" LabelPosition="Left" Dock="Top" />
+                  </Column>
+                  <Column PercentWidth="50">
+                    <Control FieldName="HIC.Dependency.ProjectTeam" Type="FieldControl" Label="Project you are dependent on:" LabelPosition="Left" />
+                  </Column>
+                </Group>
+                <Control FieldName="System.Description" Type="HtmlFieldControl" Label="Deployment and Dependencies Description:" LabelPosition="Top" Dock="Fill" />
+              </Tab>
+              <Tab Label="Build/Package">
+                <Group Label="">
+                  <Column PercentWidth="50">
+                    <Group Label="Build Packages">
+                      <Column PercentWidth="100">
+                        <Control FieldName="HIC.Build.Number" Type="FieldControl" Label="Build/Package Number:" LabelPosition="Left" Padding="(0,0,0,25)" />
+                        <Control FieldName="HIC.Build.Package2" Type="FieldControl" Label="2:" LabelPosition="Left" />
+                        <Control FieldName="HIC.Build.Package3" Type="FieldControl" Label="3: " LabelPosition="Left" />
+                        <Control FieldName="HIC.Build.Package4" Type="FieldControl" Label="4: " LabelPosition="Left" />
+                        <Control FieldName="HIC.Build.Package5" Type="FieldControl" Label="5:" LabelPosition="Left" />
+                        <Control FieldName="HIC.Build.Package6" Type="FieldControl" Label="6: " LabelPosition="Left" />
+                        <Control FieldName="HIC.Build.Package7" Type="FieldControl" Label="7: " LabelPosition="Left" />
+                        <Control FieldName="HIC.Build.Package8" Type="FieldControl" Label="8: " LabelPosition="Left" />
+                      </Column>
+                    </Group>
+                  </Column>
+                  <Column PercentWidth="50">
+                    <Group Label="Build Package Info">
+                      <Column PercentWidth="100">
+                        <TabGroup>
+                          <Tab Label="BPI1">
+                            <Control FieldName="HIC.Team.Build.Project" Type="FieldControl" Label="Team Project:" LabelPosition="Left" ReadOnly="True" />
+                            <Control FieldName="HIC.Team.Build.Type" Type="FieldControl" Label="Team Build Type:" LabelPosition="Left" ReadOnly="True" />
+                          </Tab>
+                          <Tab Label="BPI2">
+                            <Control FieldName="HIC.Team.Build.Project2" Type="FieldControl" Label="Team Project:" LabelPosition="Left" ReadOnly="True" />
+                            <Control FieldName="HIC.Team.Build.Type2" Type="FieldControl" Label="Team Build Type:" LabelPosition="Left" ReadOnly="True" />
+                          </Tab>
+                          <Tab Label="BPI3">
+                            <Control FieldName="HIC.Team.Build.Project3" Type="FieldControl" Label="Team Project:" LabelPosition="Left" ReadOnly="True" />
+                            <Control FieldName="HIC.Team.Build.Type3" Type="FieldControl" Label="Team Build Type:" LabelPosition="Left" ReadOnly="True" />
+                          </Tab>
+                          <Tab Label="BPI4">
+                            <Control FieldName="HIC.Team.Build.Project4" Type="FieldControl" Label="Team Project:" LabelPosition="Left" ReadOnly="True" />
+                            <Control FieldName="HIC.Team.Build.Type4" Type="FieldControl" Label="Team Build Type:" LabelPosition="Left" ReadOnly="True" />
+                          </Tab>
+                          <Tab Label="BPI5">
+                            <Control FieldName="HIC.Team.Build.Project5" Type="FieldControl" Label="Team Project:" LabelPosition="Left" ReadOnly="True" />
+                            <Control FieldName="HIC.Team.Build.Type5" Type="FieldControl" Label="Team Build Type:" LabelPosition="Left" ReadOnly="True" />
+                          </Tab>
+                          <Tab Label="BPI6">
+                            <Control FieldName="HIC.Team.Build.Project6" Type="FieldControl" Label="Team Project:" LabelPosition="Left" ReadOnly="True" />
+                            <Control FieldName="HIC.Team.Build.Type6" Type="FieldControl" Label="Team Build Type:" LabelPosition="Left" ReadOnly="True" />
+                          </Tab>
+                          <Tab Label="BPI7">
+                            <Control FieldName="HIC.Team.Build.Project7" Type="FieldControl" Label="Team Project:" LabelPosition="Left" ReadOnly="True" />
+                            <Control FieldName="HIC.Team.Build.Type7" Type="FieldControl" Label="Team Build Type:" LabelPosition="Left" ReadOnly="True" />
+                          </Tab>
+                          <Tab Label="BPI8">
+                            <Control FieldName="HIC.Team.Build.Project8" Type="FieldControl" Label="Team Project:" LabelPosition="Left" ReadOnly="True" />
+                            <Control FieldName="HIC.Team.Build.Type8" Type="FieldControl" Label="Team Build Type:" LabelPosition="Left" ReadOnly="True" />
+                          </Tab>
+                        </TabGroup>
+                      </Column>
+                    </Group>
+                  </Column>
+                </Group>
+              </Tab>
+              <Tab Label="Database">
+                <Group Label="System Information">
+                  <Column PercentWidth="50">
+                    <Control FieldName="HIC.DBA.Type" Type="FieldControl" Label="Database Type:" LabelPosition="Left" />
+                  </Column>
+                  <Column PercentWidth="50">
+                    <Control FieldName="HIC.DBA.Subsystem" Type="FieldControl" Label="Database Sub-System:" LabelPosition="Left" />
+                  </Column>
+                </Group>
+                <Group Label="Server Information">
+                  <Column PercentWidth="50">
+                    <Control FieldName="HIC.DBA.Server" Type="FieldControl" Label="Server Name:" LabelPosition="Left" />
+                  </Column>
+                  <Column PercentWidth="50">
+                    <Control FieldName="HIC.DBA.Name" Type="FieldControl" Label="Database Name:" LabelPosition="Left" />
+                  </Column>
+                </Group>
+              </Tab>
+              <Tab Label="Informatica">
+                <Group Label="">
+                  <Column PercentWidth="100">
+                    <Group>
+                      <Column PercentWidth="50">
+                        <Control FieldName="HIC.INFORMATICA.WorkFlow" Type="FieldControl" Label="Workflow type:" LabelPosition="Left" />
+                      </Column>
+                      <Column PercentWidth="50" />
+                    </Group>
+                    <Group Label="Workflow details">
+                      <Column PercentWidth="50">
+                        <Control FieldName="HIC.INFORMATICA.Label.Name" Type="FieldControl" Label="Label Name:" LabelPosition="Left" />
+                        <Control FieldName="HIC.INFORMATICA.TWS.Job.Name" Type="FieldControl" Label="TWS Job Name:" LabelPosition="Left" />
+                      </Column>
+                      <Column PercentWidth="50">
+                        <Control FieldName="HIC.INFORMATICA.Label.Description" Type="FieldControl" Label="Label Description:" LabelPosition="Left" />
+                        <Control FieldName="HIC.INFORMATICA.Batch.Filename" Type="FieldControl" Label="Batch Filename:" LabelPosition="Left" />
+                      </Column>
+                    </Group>
+                  </Column>
+                </Group>
+                <Control FieldName="HIC.INFORMATICA.Object" Type="HtmlFieldControl" Label="Workflows, Objects for Deployment and Special Instructions:" LabelPosition="Top" Dock="Fill" />
+              </Tab>
+              <Tab Label="History">
+                <Control FieldName="System.History" Type="WorkItemLogControl" Label="History" LabelPosition="Top" Dock="Fill" />
+              </Tab>
+              <Tab Label="Links">
+                <Control Type="LinksControl" LabelPosition="Top" />
+              </Tab>
+              <Tab Label="File Attachments">
+                <Control Type="AttachmentsControl" Label="Please attachment deployment support documentation" LabelPosition="Top" />
+              </Tab>
+              <Tab Label="Misc.">
+                <Group>
+                  <Column PercentWidth="50">
+                    <Control FieldName="System.AreaPath" Type="WorkItemClassificationControl" Label="Area:" LabelPosition="Left" />
+                    <Control FieldName="System.RelatedLinkCount" Type="FieldControl" Label="Related Link Count:" LabelPosition="Left" />
+                    <Control FieldName="HIC.Auto.Fill.Count" Type="FieldControl" Label="Was Auto filled:" LabelPosition="Left" ReadOnly="True" />
+                    <Control FieldName="HIC.Test.Envrionment.Structure" Type="FieldControl" Label="Test Envionment Structure:" LabelPosition="Left" ReadOnly="True" />
+                  </Column>
+                  <Column PercentWidth="50">
+                    <Control FieldName="HIC.LastChangedBy" Type="FieldControl" Label="Last Changed By:" LabelPosition="Left" />
+                    <Control FieldName="HIC.Fields.Lock" Type="FieldControl" Label="Lock type: " LabelPosition="Left" />
+                    <Control FieldName="HIC.Deployment.Approver" Type="FieldControl" Label="Approved by:" LabelPosition="Left" ReadOnly="True" />
+                  </Column>
+                </Group>
+              </Tab>
+            </TabGroup>
+          </Column>
+        </Group>
+      </Layout>
+    </FORM>
+  </WORKITEMTYPE>
+</WITD>

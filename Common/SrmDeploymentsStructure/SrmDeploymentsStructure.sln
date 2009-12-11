@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{34F4293B-0F90-4F84-8E32-A09498F9B97B}"
+	ProjectSection(SolutionItems) = preProject
+		SrmDeploymentsStructure.ad = SrmDeploymentsStructure.ad
+		SrmDeploymentsStructure.sd = SrmDeploymentsStructure.sd
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "System1", "System1", "{9A51736C-1B61-4CA3-A309-4A95AE0906D7}"
+	ProjectSection(SolutionItems) = preProject
+		System1.sd = System1.sd
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9A51736C-1B61-4CA3-A309-4A95AE0906D7} = {34F4293B-0F90-4F84-8E32-A09498F9B97B}
+	EndGlobalSection
+EndGlobal

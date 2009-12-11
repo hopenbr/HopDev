@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<assembly>
+		<name>Microsoft.TeamFoundation.Common</name>
+	</assembly>
+	<members>
+		<member name="F:Microsoft.TeamFoundation.FilterType.ArtifactType">
+			<summary>Filter by the <see cref="T:Microsoft.TeamFoundation.Server.ArtifactType"></see> string.</summary>
+		</member>
+		<member name="F:Microsoft.TeamFoundation.FilterType.LinkType">
+			<summary>Filter by the <see cref="T:Microsoft.TeamFoundation.Server.LinkType"></see> string.</summary>
+		</member>
+		<member name="F:Microsoft.TeamFoundation.FilterType.ToolType">
+			<summary>Filter by the tool type string.</summary>
+		</member>
+		<member name="M:Microsoft.TeamFoundation.ILinking.GetArtifactUrl(System.String)">
+			<returns>Returns an addressable URL for the specified artifact.</returns>
+			<param name="uri">The Uri to convert into a URL.</param>
+		</member>
+		<member name="M:Microsoft.TeamFoundation.ILinking.GetArtifactUrlExternal(System.String)">
+			<returns>Returns an addressable URL for the specified artifact.</returns>
+			<param name="uri">The Uri to convert into a URL.</param>
+		</member>
+		<member name="M:Microsoft.TeamFoundation.ILinking.GetReferencingArtifacts(System.String[],Microsoft.TeamFoundation.LinkFilter[])">
+			<returns>The return value is an array of Artifact objects that reference or link to one or more of the input artifact Uris, restricted to the criteria in filters.</returns>
+			<param name="uriList">Array of artifact Ids.</param>
+			<param name="filters">Filters to limit the return values to the specified criteria.</param>
+		</member>
+		<member name="M:Microsoft.TeamFoundation.ILinkingConsumer.GetReferencingArtifacts(System.String[])">
+			<returns>The return value is an array of all <see cref="T:Microsoft.TeamFoundation.Artifact"></see> objects that reference or link to one or more of the input <see cref="P:Microsoft.TeamFoundation.VersionControl.Client.Item.ArtifactUris"></see>.</returns>
+			<param name="artifactUriList">Array of artifact Ids.</param>
+		</member>
+		<member name="M:Microsoft.TeamFoundation.ILinkingProvider.GetArtifacts(System.String[])">
+			<returns>The return value is an array of objects that complies with the Team Foundation Generic Artifact Display Schema (GAS).When an artifact for which an ID appears in the artifactUris cannot be returned, its corresponding element in the returned artifact array is set to null.</returns>
+			<param name="artifactUris">Array of artifact Ids.</param>
+		</member>
+		<member name="M:Microsoft.TeamFoundation.LinkingUtilities.DecodeUri(System.String)">
+			<returns>Returns a structure of type <see cref="T:Microsoft.TeamFoundation.ArtifactId"></see>.</returns>
+			<param name="uri">A string that complies with Visual Studio Team Foundation Server URI rules</param>
+		</member>
+		<member name="M:Microsoft.TeamFoundation.LinkingUtilities.EncodeUri(Microsoft.TeamFoundation.ArtifactId)">
+			<returns>Returns a string that complies with URL rules.</returns>
+			<param name="artifactId">URI artifact to encode as a URL.</param>
+		</member>
+		<member name="M:Microsoft.TeamFoundation.LinkingUtilities.GetArtifactUri(System.String)">
+			<returns>Artifact URI for the given artifact URI</returns>
+			<param name="artifactUrl">Artifact URL to convert to a URI</param>
+		</member>
+	</members>
+</doc>

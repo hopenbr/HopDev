@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SRMSharePointWorkflow", "SRMSharePointWorkflow\SRMSharePointWorkflow.csproj", "{59880966-C48F-42BF-81A5-CD4F78BC4E11}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://as73tfs01:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SRMSharePointWorkflow\\SRMSharePointWorkflow.csproj
+		SccProjectName1 = SRMSharePointWorkflow
+		SccLocalPath1 = SRMSharePointWorkflow
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		DebugBuild|Any CPU = DebugBuild|Any CPU
+		DebugDelete|Any CPU = DebugDelete|Any CPU
+		DebugDeploy|Any CPU = DebugDeploy|Any CPU
+		DebugInstall|Any CPU = DebugInstall|Any CPU
+		DebugQuickCopy|Any CPU = DebugQuickCopy|Any CPU
+		DebugRedeploy|Any CPU = DebugRedeploy|Any CPU
+		DebugRetract|Any CPU = DebugRetract|Any CPU
+		DebugUpgrade|Any CPU = DebugUpgrade|Any CPU
+		Release|Any CPU = Release|Any CPU
+		ReleaseBuild|Any CPU = ReleaseBuild|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.DebugBuild|Any CPU.ActiveCfg = Debug|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.DebugBuild|Any CPU.Build.0 = Debug|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.DebugBuild|Any CPU.Deploy.0 = Debug|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.DebugDelete|Any CPU.ActiveCfg = Debug|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.DebugDelete|Any CPU.Build.0 = Debug|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.DebugDelete|Any CPU.Deploy.0 = Debug|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.DebugDeploy|Any CPU.ActiveCfg = Debug|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.DebugDeploy|Any CPU.Build.0 = Debug|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.DebugDeploy|Any CPU.Deploy.0 = Debug|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.DebugInstall|Any CPU.ActiveCfg = Debug|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.DebugInstall|Any CPU.Build.0 = Debug|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.DebugInstall|Any CPU.Deploy.0 = Debug|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.DebugQuickCopy|Any CPU.ActiveCfg = Debug|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.DebugQuickCopy|Any CPU.Build.0 = Debug|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.DebugQuickCopy|Any CPU.Deploy.0 = Debug|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.DebugRedeploy|Any CPU.ActiveCfg = Debug|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.DebugRedeploy|Any CPU.Build.0 = Debug|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.DebugRedeploy|Any CPU.Deploy.0 = Debug|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.DebugRetract|Any CPU.ActiveCfg = Debug|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.DebugRetract|Any CPU.Build.0 = Debug|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.DebugRetract|Any CPU.Deploy.0 = Debug|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.DebugUpgrade|Any CPU.ActiveCfg = Debug|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.DebugUpgrade|Any CPU.Build.0 = Debug|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.DebugUpgrade|Any CPU.Deploy.0 = Debug|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.ReleaseBuild|Any CPU.ActiveCfg = Release|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.ReleaseBuild|Any CPU.Build.0 = Release|Any CPU
+		{59880966-C48F-42BF-81A5-CD4F78BC4E11}.ReleaseBuild|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

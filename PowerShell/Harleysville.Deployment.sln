@@ -1,0 +1,381 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harleysville.Deployment.SnapIn", "Harleysville.Deployment.SnapIn\Harleysville.Deployment.SnapIn\Harleysville.Deployment.SnapIn.csproj", "{29F45531-4D50-43A4-88E1-6CEFD8746F3E}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harleysville.Deployment.Utilities", "Harleysville.Deployment.Utilities\Harleysville.Deployment.Utilities.csproj", "{1D4F3EA0-72C6-4244-BADD-BA4B1CAD02BE}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harleysville.Deployment.WebApp", "Harleysville.Deployment.WebApp\Harleysville.Deployment.WebApp.csproj", "{A2B15FBF-7DA3-40DE-BE4F-E9DA2CED32FF}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harleysville.Deployment.WebServices", "Harleysville.Deployment.WebServices\Harleysville.Deployment.WebServices.csproj", "{5383CC36-50EC-41B3-9008-F2E6CFB6EF7F}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PowerShellScripts", "PowerShellScripts", "{81230FAF-0733-4B05-9113-EB4220BF077E}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		PowerShellScripts\Add-2TFVC.ps1 = PowerShellScripts\Add-2TFVC.ps1
+		PowerShellScripts\Add-TFVC.ps1 = PowerShellScripts\Add-TFVC.ps1
+		PowerShellScripts\Catch-Error.ps1 = PowerShellScripts\Catch-Error.ps1
+		PowerShellScripts\Check-SQLQuery4Rows.ps1 = PowerShellScripts\Check-SQLQuery4Rows.ps1
+		PowerShellScripts\Clean-DropFolders.ps1 = PowerShellScripts\Clean-DropFolders.ps1
+		PowerShellScripts\Compare-Directories.ps1 = PowerShellScripts\Compare-Directories.ps1
+		PowerShellScripts\Create-Database.ps1 = PowerShellScripts\Create-Database.ps1
+		PowerShellScripts\Create-Logger.ps1 = PowerShellScripts\Create-Logger.ps1
+		PowerShellScripts\Create-WorkItem.ps1 = PowerShellScripts\Create-WorkItem.ps1
+		PowerShellScripts\Csv2Xml.ps1 = PowerShellScripts\Csv2Xml.ps1
+		PowerShellScripts\Get-FromTFVC.ps1 = PowerShellScripts\Get-FromTFVC.ps1
+		PowerShellScripts\Get-SQLStoreProc.ps1 = PowerShellScripts\Get-SQLStoreProc.ps1
+		PowerShellScripts\Get-Tfs.ps1 = PowerShellScripts\Get-Tfs.ps1
+		PowerShellScripts\Get-TfsWorkspace.ps1 = PowerShellScripts\Get-TfsWorkspace.ps1
+		PowerShellScripts\Get-WorkItem.ps1 = PowerShellScripts\Get-WorkItem.ps1
+		PowerShellScripts\Insert-DatabaseRow.ps1 = PowerShellScripts\Insert-DatabaseRow.ps1
+		PowerShellScripts\Invoke-SearchAndReplace.ps1 = PowerShellScripts\Invoke-SearchAndReplace.ps1
+		PowerShellScripts\Invoke-SQLStoredProc.ps1 = PowerShellScripts\Invoke-SQLStoredProc.ps1
+		PowerShellScripts\Label-TFVCFolders.ps1 = PowerShellScripts\Label-TFVCFolders.ps1
+		PowerShellScripts\New-Cab.ps1 = PowerShellScripts\New-Cab.ps1
+		PowerShellScripts\Recycle-AppPool.ps1 = PowerShellScripts\Recycle-AppPool.ps1
+		PowerShellScripts\Remove-All.ps1 = PowerShellScripts\Remove-All.ps1
+		PowerShellScripts\Replace-InFile.ps1 = PowerShellScripts\Replace-InFile.ps1
+		PowerShellScripts\Run-SQLNonQuery.ps1 = PowerShellScripts\Run-SQLNonQuery.ps1
+		PowerShellScripts\Run-SQLQuery.ps1 = PowerShellScripts\Run-SQLQuery.ps1
+		PowerShellScripts\Search-Checkins.ps1 = PowerShellScripts\Search-Checkins.ps1
+		PowerShellScripts\Send-Email.ps1 = PowerShellScripts\Send-Email.ps1
+		PowerShellScripts\Sync-Directories.ps1 = PowerShellScripts\Sync-Directories.ps1
+		PowerShellScripts\Test-Syntax.ps1 = PowerShellScripts\Test-Syntax.ps1
+		PowerShellScripts\Test-TFSEventServices.ps1 = PowerShellScripts\Test-TFSEventServices.ps1
+		PowerShellScripts\TFVC-Merge.ps1 = PowerShellScripts\TFVC-Merge.ps1
+		PowerShellScripts\Update-BuildQuality.ps1 = PowerShellScripts\Update-BuildQuality.ps1
+		PowerShellScripts\Update-BuildTypePackageNames.ps1 = PowerShellScripts\Update-BuildTypePackageNames.ps1
+		PowerShellScripts\Update-Version.ps1 = PowerShellScripts\Update-Version.ps1
+		PowerShellScripts\Update-wMWsMapping.ps1 = PowerShellScripts\Update-wMWsMapping.ps1
+		PowerShellScripts\Validate-Xml.ps1 = PowerShellScripts\Validate-Xml.ps1
+		PowerShellScripts\wMCnfEnvComparer.ps1 = PowerShellScripts\wMCnfEnvComparer.ps1
+		PowerShellScripts\wMPackage-TFVCchanges.ps1 = PowerShellScripts\wMPackage-TFVCchanges.ps1
+		PowerShellScripts\Write-EventLog.ps1 = PowerShellScripts\Write-EventLog.ps1
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TFSDeployerScripts", "TFSDeployerScripts", "{13A4E6C4-2EC9-4110-8456-2636FD1AFE91}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		PowerShellScripts\TFSDeployerScripts\Config.xml = PowerShellScripts\TFSDeployerScripts\Config.xml
+		PowerShellScripts\TFSDeployerScripts\Create-Deployer.ps1 = PowerShellScripts\TFSDeployerScripts\Create-Deployer.ps1
+		PowerShellScripts\TFSDeployerScripts\Create-DeploymentReport.ps1 = PowerShellScripts\TFSDeployerScripts\Create-DeploymentReport.ps1
+		PowerShellScripts\TFSDeployerScripts\Deploy-Documaker.ps1 = PowerShellScripts\TFSDeployerScripts\Deploy-Documaker.ps1
+		PowerShellScripts\TFSDeployerScripts\Deploy-Ear.ps1 = PowerShellScripts\TFSDeployerScripts\Deploy-Ear.ps1
+		PowerShellScripts\TFSDeployerScripts\Deployer.ps1 = PowerShellScripts\TFSDeployerScripts\Deployer.ps1
+		PowerShellScripts\TFSDeployerScripts\Get-BuildPackageFromTFVC.ps1 = PowerShellScripts\TFSDeployerScripts\Get-BuildPackageFromTFVC.ps1
+		PowerShellScripts\TFSDeployerScripts\Get-RollbackBuildNumber.ps1 = PowerShellScripts\TFSDeployerScripts\Get-RollbackBuildNumber.ps1
+		PowerShellScripts\TFSDeployerScripts\Import-ReleaseChanges.ps1 = PowerShellScripts\TFSDeployerScripts\Import-ReleaseChanges.ps1
+		PowerShellScripts\TFSDeployerScripts\invoke-SqlDeploymentScripts.ps1 = PowerShellScripts\TFSDeployerScripts\invoke-SqlDeploymentScripts.ps1
+		PowerShellScripts\TFSDeployerScripts\Invoke-SqlSearchAndReplace.ps1 = PowerShellScripts\TFSDeployerScripts\Invoke-SqlSearchAndReplace.ps1
+		PowerShellScripts\TFSDeployerScripts\New-TSQLBackup.ps1 = PowerShellScripts\TFSDeployerScripts\New-TSQLBackup.ps1
+		PowerShellScripts\TFSDeployerScripts\Prepare4-Rollback.ps1 = PowerShellScripts\TFSDeployerScripts\Prepare4-Rollback.ps1
+		PowerShellScripts\TFSDeployerScripts\Push-Packages.ps1 = PowerShellScripts\TFSDeployerScripts\Push-Packages.ps1
+		PowerShellScripts\TFSDeployerScripts\Update-BatchFiles.ps1 = PowerShellScripts\TFSDeployerScripts\Update-BatchFiles.ps1
+		PowerShellScripts\TFSDeployerScripts\Update-EnvConfig.ps1 = PowerShellScripts\TFSDeployerScripts\Update-EnvConfig.ps1
+		PowerShellScripts\TFSDeployerScripts\Update-EnvironmentMapping.ps1 = PowerShellScripts\TFSDeployerScripts\Update-EnvironmentMapping.ps1
+		PowerShellScripts\TFSDeployerScripts\Update-EnvMapDB.ps1 = PowerShellScripts\TFSDeployerScripts\Update-EnvMapDB.ps1
+		PowerShellScripts\TFSDeployerScripts\Update-WorkItem.ps1 = PowerShellScripts\TFSDeployerScripts\Update-WorkItem.ps1
+		PowerShellScripts\TFSDeployerScripts\WAS_TFSBUILD.ps1 = PowerShellScripts\TFSDeployerScripts\WAS_TFSBUILD.ps1
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XSD", "XSD", "{7FEE20BE-EA76-4304-88F4-F046FE5D63BE}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		PowerShellScripts\TFSDeployerScripts\XSD\DBDeployScipts.xsd = PowerShellScripts\TFSDeployerScripts\XSD\DBDeployScipts.xsd
+		PowerShellScripts\TFSDeployerScripts\XSD\DBDeployScipts.xsx = PowerShellScripts\TFSDeployerScripts\XSD\DBDeployScipts.xsx
+		PowerShellScripts\TFSDeployerScripts\XSD\SearchAndReplace.xsd = PowerShellScripts\TFSDeployerScripts\XSD\SearchAndReplace.xsd
+		PowerShellScripts\TFSDeployerScripts\XSD\SearchAndReplace.xsx = PowerShellScripts\TFSDeployerScripts\XSD\SearchAndReplace.xsx
+		PowerShellScripts\TFSDeployerScripts\XSD\SRMEnvironmentMappings.xsd = PowerShellScripts\TFSDeployerScripts\XSD\SRMEnvironmentMappings.xsd
+		PowerShellScripts\TFSDeployerScripts\XSD\SRMEnvironmentMappings.xsx = PowerShellScripts\TFSDeployerScripts\XSD\SRMEnvironmentMappings.xsx
+		PowerShellScripts\TFSDeployerScripts\XSD\TFSDeployerConfigMapping.xsd = PowerShellScripts\TFSDeployerScripts\XSD\TFSDeployerConfigMapping.xsd
+		PowerShellScripts\TFSDeployerScripts\XSD\TFSDeployerConfigMapping.xsx = PowerShellScripts\TFSDeployerScripts\XSD\TFSDeployerConfigMapping.xsx
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildScripts", "BuildScripts", "{23678787-5EDB-4787-8226-91EFEFB452F0}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		PowerShellScripts\BuildScripts\Add-CloakedItem2WSMapping.ps1 = PowerShellScripts\BuildScripts\Add-CloakedItem2WSMapping.ps1
+		PowerShellScripts\BuildScripts\add-wMConfig.ps1 = PowerShellScripts\BuildScripts\add-wMConfig.ps1
+		PowerShellScripts\BuildScripts\Branch-IvanTeamBuild.ps1 = PowerShellScripts\BuildScripts\Branch-IvanTeamBuild.ps1
+		PowerShellScripts\BuildScripts\Generate-TfsEarBuildPackage.ps1 = PowerShellScripts\BuildScripts\Generate-TfsEarBuildPackage.ps1
+		PowerShellScripts\BuildScripts\Get-InfoPathBuildNumber.ps1 = PowerShellScripts\BuildScripts\Get-InfoPathBuildNumber.ps1
+		PowerShellScripts\BuildScripts\Import-EAR.ps1 = PowerShellScripts\BuildScripts\Import-EAR.ps1
+		PowerShellScripts\BuildScripts\IvansImporter.ps1 = PowerShellScripts\BuildScripts\IvansImporter.ps1
+		PowerShellScripts\BuildScripts\Label-ParentTFVCFolders.ps1 = PowerShellScripts\BuildScripts\Label-ParentTFVCFolders.ps1
+		PowerShellScripts\BuildScripts\New-wMBuildPackage.ps1 = PowerShellScripts\BuildScripts\New-wMBuildPackage.ps1
+		PowerShellScripts\BuildScripts\pop-EnvConfig.ps1 = PowerShellScripts\BuildScripts\pop-EnvConfig.ps1
+		PowerShellScripts\BuildScripts\Publish-Xsn.ps1 = PowerShellScripts\BuildScripts\Publish-Xsn.ps1
+		PowerShellScripts\BuildScripts\Start-TeamBuild.ps1 = PowerShellScripts\BuildScripts\Start-TeamBuild.ps1
+		PowerShellScripts\BuildScripts\Update-IvansRsp.ps1 = PowerShellScripts\BuildScripts\Update-IvansRsp.ps1
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "webMethodsScripts", "webMethodsScripts", "{4FF607CA-6C31-4168-B0FC-8921F5A7C44B}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		PowerShellScripts\webMethodsScripts\wM-Deployer.ps1 = PowerShellScripts\webMethodsScripts\wM-Deployer.ps1
+		PowerShellScripts\webMethodsScripts\wM_Deploy.ps1 = PowerShellScripts\webMethodsScripts\wM_Deploy.ps1
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestPartner", "TestPartner", "{98C32824-EF45-4E5C-B61C-546F3A27B8F1}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		PowerShellScripts\TestPartner\ImportAutomation.ps1 = PowerShellScripts\TestPartner\ImportAutomation.ps1
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NightlyScripts", "NightlyScripts", "{4DD1CE67-AF68-498C-9D24-7C59C2DE1FE0}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		PowerShellScripts\NightlyScripts\AgentPortalMerger.ps1 = PowerShellScripts\NightlyScripts\AgentPortalMerger.ps1
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ImportScripts", "ImportScripts", "{70998F91-4491-4DBD-A496-64FEF90CF8B9}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestScripts", "TestScripts", "{7AC87EE3-C63F-4D67-92E9-85D6BD7D694A}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		PowerShellScripts\TFSDeployerScripts\TestBed\DeploymentConfig.xml = PowerShellScripts\TFSDeployerScripts\TestBed\DeploymentConfig.xml
+		PowerShellScripts\TFSDeployerScripts\TestBed\Start-Deployer.ps1 = PowerShellScripts\TFSDeployerScripts\TestBed\Start-Deployer.ps1
+		PowerShellScripts\TFSDeployerScripts\TestBed\TfsDeployer-BuildData.xml = PowerShellScripts\TFSDeployerScripts\TestBed\TfsDeployer-BuildData.xml
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DevImporter", "DevImporter", "{CBD4CE2C-CDBC-43F3-899C-44278C491B2D}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		PowerShellScripts\ImportScripts\DevImporter\Config.xml = PowerShellScripts\ImportScripts\DevImporter\Config.xml
+		PowerShellScripts\ImportScripts\DevImporter\DevImporter.ps1 = PowerShellScripts\ImportScripts\DevImporter\DevImporter.ps1
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonOverrides", "CommonOverrides", "{81D7CE28-5952-45E7-9247-A416391B34AE}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LGBP", "LGBP", "{63FAB7E3-7706-4869-A406-50A444B007E5}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UDCX", "UDCX", "{82158A4E-7592-4133-B370-6E7C8F9DC632}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		PowerShellScripts\TFSDeployerScripts\CommonOverrides\LGBP\UDCX\Invoke-DeployUdcx.ps1 = PowerShellScripts\TFSDeployerScripts\CommonOverrides\LGBP\UDCX\Invoke-DeployUdcx.ps1
+		PowerShellScripts\TFSDeployerScripts\CommonOverrides\LGBP\UDCX\Invoke-OverridePush.ps1 = PowerShellScripts\TFSDeployerScripts\CommonOverrides\LGBP\UDCX\Invoke-OverridePush.ps1
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Env.Config", "Env.Config", "{CCF38C9F-6A99-4EED-9CB1-3D2386233B89}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "In-Dev", "In-Dev", "{5FEAADDC-A121-465F-A452-6DF369EBD8AF}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\TeamBuildTypes\SRM.PSH.Platform.Build\Env.Config\In-Dev\Config\Config.xml = ..\..\..\TeamBuildTypes\SRM.PSH.Platform.Build\Env.Config\In-Dev\Config\Config.xml
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WSP", "WSP", "{CDF3E122-F99A-47BD-94D8-2EBD79141282}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		PowerShellScripts\TFSDeployerScripts\CommonOverrides\LGBP\WSP\Invoke-AddSolutionWsp.ps1 = PowerShellScripts\TFSDeployerScripts\CommonOverrides\LGBP\WSP\Invoke-AddSolutionWsp.ps1
+		PowerShellScripts\TFSDeployerScripts\CommonOverrides\LGBP\WSP\Invoke-OverridePush.ps1 = PowerShellScripts\TFSDeployerScripts\CommonOverrides\LGBP\WSP\Invoke-OverridePush.ps1
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InfoPath", "InfoPath", "{1E295B34-D286-471E-BF05-8BBAFA007752}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		PowerShellScripts\TFSDeployerScripts\CommonOverrides\LGBP\InfoPath\Invoke-DeployInfoPath.ps1 = PowerShellScripts\TFSDeployerScripts\CommonOverrides\LGBP\InfoPath\Invoke-DeployInfoPath.ps1
+		PowerShellScripts\TFSDeployerScripts\CommonOverrides\LGBP\InfoPath\Invoke-OverridePush.ps1 = PowerShellScripts\TFSDeployerScripts\CommonOverrides\LGBP\InfoPath\Invoke-OverridePush.ps1
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InvokeScripts", "InvokeScripts", "{82886878-C5D8-4B6B-A08E-F04A40D9D8E5}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		PowerShellScripts\InvokeScripts\Invoke-TestPartner.ps1 = PowerShellScripts\InvokeScripts\Invoke-TestPartner.ps1
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://as73tfs01:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Harleysville.Deployment.SnapIn\\Harleysville.Deployment.SnapIn\\Harleysville.Deployment.SnapIn.csproj
+		SccProjectName1 = Harleysville.Deployment.SnapIn/Harleysville.Deployment.SnapIn
+		SccLocalPath1 = Harleysville.Deployment.SnapIn\\Harleysville.Deployment.SnapIn
+		SccProjectUniqueName2 = Harleysville.Deployment.Utilities\\Harleysville.Deployment.Utilities.csproj
+		SccProjectName2 = Harleysville.Deployment.Utilities
+		SccLocalPath2 = Harleysville.Deployment.Utilities
+		SccProjectUniqueName3 = Harleysville.Deployment.WebApp\\Harleysville.Deployment.WebApp.csproj
+		SccProjectName3 = Harleysville.Deployment.WebApp
+		SccLocalPath3 = Harleysville.Deployment.WebApp
+		SccProjectUniqueName4 = Harleysville.Deployment.WebServices\\Harleysville.Deployment.WebServices.csproj
+		SccProjectName4 = Harleysville.Deployment.WebServices
+		SccLocalPath4 = Harleysville.Deployment.WebServices
+	EndGlobalSection
+	GlobalSection(TextTemplating) = postSolution
+		TextTemplating = 1
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29F45531-4D50-43A4-88E1-6CEFD8746F3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29F45531-4D50-43A4-88E1-6CEFD8746F3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29F45531-4D50-43A4-88E1-6CEFD8746F3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29F45531-4D50-43A4-88E1-6CEFD8746F3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D4F3EA0-72C6-4244-BADD-BA4B1CAD02BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D4F3EA0-72C6-4244-BADD-BA4B1CAD02BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D4F3EA0-72C6-4244-BADD-BA4B1CAD02BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D4F3EA0-72C6-4244-BADD-BA4B1CAD02BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2B15FBF-7DA3-40DE-BE4F-E9DA2CED32FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2B15FBF-7DA3-40DE-BE4F-E9DA2CED32FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2B15FBF-7DA3-40DE-BE4F-E9DA2CED32FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2B15FBF-7DA3-40DE-BE4F-E9DA2CED32FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5383CC36-50EC-41B3-9008-F2E6CFB6EF7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5383CC36-50EC-41B3-9008-F2E6CFB6EF7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5383CC36-50EC-41B3-9008-F2E6CFB6EF7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5383CC36-50EC-41B3-9008-F2E6CFB6EF7F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{13A4E6C4-2EC9-4110-8456-2636FD1AFE91} = {81230FAF-0733-4B05-9113-EB4220BF077E}
+		{23678787-5EDB-4787-8226-91EFEFB452F0} = {81230FAF-0733-4B05-9113-EB4220BF077E}
+		{4FF607CA-6C31-4168-B0FC-8921F5A7C44B} = {81230FAF-0733-4B05-9113-EB4220BF077E}
+		{98C32824-EF45-4E5C-B61C-546F3A27B8F1} = {81230FAF-0733-4B05-9113-EB4220BF077E}
+		{4DD1CE67-AF68-498C-9D24-7C59C2DE1FE0} = {81230FAF-0733-4B05-9113-EB4220BF077E}
+		{70998F91-4491-4DBD-A496-64FEF90CF8B9} = {81230FAF-0733-4B05-9113-EB4220BF077E}
+		{82886878-C5D8-4B6B-A08E-F04A40D9D8E5} = {81230FAF-0733-4B05-9113-EB4220BF077E}
+		{7FEE20BE-EA76-4304-88F4-F046FE5D63BE} = {13A4E6C4-2EC9-4110-8456-2636FD1AFE91}
+		{7AC87EE3-C63F-4D67-92E9-85D6BD7D694A} = {13A4E6C4-2EC9-4110-8456-2636FD1AFE91}
+		{81D7CE28-5952-45E7-9247-A416391B34AE} = {13A4E6C4-2EC9-4110-8456-2636FD1AFE91}
+		{CCF38C9F-6A99-4EED-9CB1-3D2386233B89} = {13A4E6C4-2EC9-4110-8456-2636FD1AFE91}
+		{CBD4CE2C-CDBC-43F3-899C-44278C491B2D} = {70998F91-4491-4DBD-A496-64FEF90CF8B9}
+		{63FAB7E3-7706-4869-A406-50A444B007E5} = {81D7CE28-5952-45E7-9247-A416391B34AE}
+		{82158A4E-7592-4133-B370-6E7C8F9DC632} = {63FAB7E3-7706-4869-A406-50A444B007E5}
+		{CDF3E122-F99A-47BD-94D8-2EBD79141282} = {63FAB7E3-7706-4869-A406-50A444B007E5}
+		{1E295B34-D286-471E-BF05-8BBAFA007752} = {63FAB7E3-7706-4869-A406-50A444B007E5}
+		{5FEAADDC-A121-465F-A452-6DF369EBD8AF} = {CCF38C9F-6A99-4EED-9CB1-3D2386233B89}
+	EndGlobalSection
+EndGlobal

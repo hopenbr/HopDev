@@ -1,0 +1,155 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A2B15FBF-7DA3-40DE-BE4F-E9DA2CED32FF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Harleysville.Deployment.WebApp</RootNamespace>
+    <AssemblyName>Harleysville.Deployment.WebApp</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NewWMBuildPackage.aspx" />
+    <Content Include="NoAccess.htm" />
+    <Content Include="RCSDeploy.aspx" />
+    <Content Include="SQLBackupMonitor.aspx" />
+    <Content Include="UserControls\SQLBackupMonitorParams.ascx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Hpp.Master.cs">
+      <DependentUpon>Hpp.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Hpp.Master.designer.cs">
+      <DependentUpon>Hpp.Master</DependentUpon>
+    </Compile>
+    <Compile Include="NewWMBuildPackage.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>NewWMBuildPackage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewWMBuildPackage.aspx.designer.cs">
+      <DependentUpon>NewWMBuildPackage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RCSDeploy.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>RCSDeploy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RCSDeploy.aspx.designer.cs">
+      <DependentUpon>RCSDeploy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SQLBackupMonitor.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>SQLBackupMonitor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SQLBackupMonitor.aspx.designer.cs">
+      <DependentUpon>SQLBackupMonitor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\HppSubTile.ascx.cs">
+      <DependentUpon>HppSubTile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\HppSubTile.ascx.designer.cs">
+      <DependentUpon>HppSubTile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SQLBackupMonitorParams.ascx.cs">
+      <DependentUpon>SQLBackupMonitorParams.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\SQLBackupMonitorParams.ascx.designer.cs">
+      <DependentUpon>SQLBackupMonitorParams.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Harleysville.Deployment.Utilities\Harleysville.Deployment.Utilities.csproj">
+      <Project>{1D4F3EA0-72C6-4244-BADD-BA4B1CAD02BE}</Project>
+      <Name>Harleysville.Deployment.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Home.aspx" />
+    <Content Include="Hpp.css" />
+    <Content Include="Hpp.Master" />
+    <Content Include="Images\procbl_stars.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\WARN_LG.GIF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UserControls\HppSubTile.ascx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v8.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>10071</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8045</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

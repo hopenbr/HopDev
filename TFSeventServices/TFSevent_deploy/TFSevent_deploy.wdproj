@@ -1,0 +1,70 @@
+﻿<!-- 
+  Microsoft Visual Studio 2005 Web Deployment Project 
+  http://go.microsoft.com/fwlink/?LinkId=55111
+-->
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.51103</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9F2885FD-ED60-45B6-8127-B15A54D93F7B}</ProjectGuid>
+    <SourceWebPhysicalPath>..\TeamFoundationServer.Services.Extensibility1</SourceWebPhysicalPath>
+    <SourceWebProject>{E48AF59E-B3D5-4705-9B60-77E96FCA0925}|http://localhost:88/TeamFoundationServer.Services.Extensibility1</SourceWebProject>
+    <SourceWebVirtualPath>/TeamFoundationServer.Services.Extensibility1</SourceWebVirtualPath>
+    <SourceWebMetabasePath>/LM/W3SVC/423535479/ROOT/TeamFoundationServer.Services.Extensibility1/</SourceWebMetabasePath>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\..\..\..\..\Inetpub\wwwroot\TFSEventServices\</OutputPath>
+    <EnableUpdateable>false</EnableUpdateable>
+    <UseMerge>true</UseMerge>
+    <SingleAssemblyName>Harleysville.TFS.EventServices</SingleAssemblyName>
+    <UseWebConfigReplacement>true</UseWebConfigReplacement>
+    <DeleteAppDataFolder>true</DeleteAppDataFolder>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>.\Release</OutputPath>
+    <EnableUpdateable>true</EnableUpdateable>
+    <UseMerge>true</UseMerge>
+    <SingleAssemblyName>Harleysville.TFS.EventServices</SingleAssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\TFSeventClasses\TFSeventClasses.csproj">
+      <Project>{D96E17B9-072E-415B-A4CF-173FE5556845}</Project>
+      <Name>TFSeventClasses</Name>
+      <Package>Harleysville.TFS.EventClasses</Package>
+    </ProjectReference>
+	 <ProjectReference Include="..\..\..\..\..\Releases\SRM.Utility.PSH-1.0.0.1\Debug\Harleysville.Powershell.Utilities.dll">
+		  <Name>Harleysville.Powershell.Utilities</Name>
+		  <Package>Harleysville.Powershell.Utilities</Package>
+	</ProjectReference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <WebConfigReplacementFiles Include=".\AppSetting.config">
+      <Section>appSettings</Section>
+    </WebConfigReplacementFiles>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WebDeployment\v8.0\Microsoft.WebDeployment.targets" />
+  <Import Project="$(HarleysvilleBuildTasksImportPath)\Harleysville.WebDeployment.targets" />
+
+	<Target Name="BeforeBuild" >
+		<AddBuildStep BuildUri="$(BuildUri)" BuildStepName="WebDeploy" BuildStepText="Pre-compiling Website" />
+
+		<CreateItem Include="$(SolutionDir)\..\..\..\Releases\SRM.Utility.PSH-1.0.0.1\Debug\*.*" >
+			<Output TaskParameter="Include" ItemName="RefToCopy"/>
+		</CreateItem>
+
+		<Copy SourceFiles="@(RefToCopy)" DestinationFiles="@(RefToCopy -> '$(OutDir)\%(Filename)%(Extension)')" ContinueOnError="true" />
+
+		<CallTarget Targets="GetReferences"/>
+		
+	</Target>
+</Project>

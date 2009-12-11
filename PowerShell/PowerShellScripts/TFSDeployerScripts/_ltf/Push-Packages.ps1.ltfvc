@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<LizardFileInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <OverlayType>OutOfDate</OverlayType>
+  <Status>Same</Status>
+  <LocalVersion>25630</LocalVersion>
+  <ServerVersion>28521</ServerVersion>
+  <LockStatus>None</LockStatus>
+  <ChangeType>None</ChangeType>
+  <Itemid>0</Itemid>
+  <ServerPath>$/Software.Release.Management/Branches/DEVELOPMENT/PowerShell/PowerShellScripts/TFSDeployerScripts/Push-Packages.ps1</ServerPath>
+  <HasOtherPendingChange>false</HasOtherPendingChange>
+  <OtherUsers />
+  <LocalVersionChecksum>39642</LocalVersionChecksum>
+  <LocalVersionLength>14381</LocalVersionLength>
+  <WorkspaceVersionChecksum>39642</WorkspaceVersionChecksum>
+  <WorkspaceVersionChecksumDate>2008-05-08T12:33:57.9583086-04:00</WorkspaceVersionChecksumDate>
+  <FileCreatedDate>2008-04-17T09:28:44.2880976-04:00</FileCreatedDate>
+  <FileWrittenDate>2008-04-03T17:07:05.5102691-04:00</FileWrittenDate>
+  <ReadOnly>true</ReadOnly>
+</LizardFileInfo>

@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NightlyBuilder", "NightlyBuilder\NightlyBuilder.csproj", "{F998BE2F-15AA-4821-9D24-A485AFAB5F1D}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://as73tfs01:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = NightlyBuilder\\NightlyBuilder.csproj
+		SccProjectName1 = NightlyBuilder
+		SccLocalPath1 = NightlyBuilder
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Release|.NET = Release|.NET
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F998BE2F-15AA-4821-9D24-A485AFAB5F1D}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{F998BE2F-15AA-4821-9D24-A485AFAB5F1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F998BE2F-15AA-4821-9D24-A485AFAB5F1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F998BE2F-15AA-4821-9D24-A485AFAB5F1D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F998BE2F-15AA-4821-9D24-A485AFAB5F1D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F998BE2F-15AA-4821-9D24-A485AFAB5F1D}.Release|.NET.ActiveCfg = Release|Any CPU
+		{F998BE2F-15AA-4821-9D24-A485AFAB5F1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F998BE2F-15AA-4821-9D24-A485AFAB5F1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F998BE2F-15AA-4821-9D24-A485AFAB5F1D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F998BE2F-15AA-4821-9D24-A485AFAB5F1D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

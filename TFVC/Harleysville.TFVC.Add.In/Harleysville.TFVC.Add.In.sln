@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tab.Right.Click", "Tab.Right.Click\Tab.Right.Click.csproj", "{AFEE3D47-91E4-429A-9DA1-31501DC51C98}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://as73tfs01:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Tab.Right.Click\\Tab.Right.Click.csproj
+		SccProjectName1 = Tab.Right.Click
+		SccLocalPath1 = Tab.Right.Click
+	EndGlobalSection
+	GlobalSection(TextTemplating) = postSolution
+		TextTemplating = 1
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFEE3D47-91E4-429A-9DA1-31501DC51C98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFEE3D47-91E4-429A-9DA1-31501DC51C98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFEE3D47-91E4-429A-9DA1-31501DC51C98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFEE3D47-91E4-429A-9DA1-31501DC51C98}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

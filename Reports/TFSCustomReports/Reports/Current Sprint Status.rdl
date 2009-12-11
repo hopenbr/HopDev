@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="TfsReportDS">
+      <DataSourceReference>TfsReportDS</DataSourceReference>
+      <rd:DataSourceID>fe1fc838-4fc6-4e2e-8a0f-133469963e09</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>2.5cm</BottomMargin>
+  <RightMargin>2.5cm</RightMargin>
+  <PageWidth>27.9cm</PageWidth>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>21cm</InteractiveWidth>
+  <rd:GridSpacing>0.25cm</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <ReportItems>
+      <Table Name="table3">
+        <Footer>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox1">
+                      <rd:DefaultName>textbox1</rd:DefaultName>
+                      <ZIndex>1</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <BackgroundImage>
+                          <Value>thinbottom</Value>
+                          <Source>Embedded</Source>
+                        </BackgroundImage>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>1cm</Height>
+            </TableRow>
+          </TableRows>
+        </Footer>
+        <Left>4.6cm</Left>
+        <Top>0.5cm</Top>
+        <ZIndex>1</ZIndex>
+        <Width>4.3cm</Width>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox6">
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>46pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <BackgroundImage>
+                          <Value>=Fields!Image2.Value</Value>
+                          <Source>Embedded</Source>
+                        </BackgroundImage>
+                        <FontFamily>Verdana</FontFamily>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <Color>#333333</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!Text2.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>1.5cm</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox10">
+                      <ZIndex>2</ZIndex>
+                      <Style>
+                        <PaddingLeft>14pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <BackgroundImage>
+                          <Value>thintop</Value>
+                          <Source>Embedded</Source>
+                        </BackgroundImage>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <Color>#550d2a</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>10pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Weekly Trend</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>1cm</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>4.3cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Height>3.5cm</Height>
+      </Table>
+      <Table Name="table2">
+        <Footer>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox2">
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <ZIndex>1</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <BackgroundImage>
+                          <Value>thinbottom</Value>
+                          <Source>Embedded</Source>
+                        </BackgroundImage>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>1cm</Height>
+            </TableRow>
+          </TableRows>
+        </Footer>
+        <Left>0.1cm</Left>
+        <Top>0.5cm</Top>
+        <Width>4.3cm</Width>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox11">
+                      <rd:DefaultName>textbox11</rd:DefaultName>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>46pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <BackgroundImage>
+                          <Value>=Fields!Image1.Value</Value>
+                          <Source>Embedded</Source>
+                        </BackgroundImage>
+                        <FontFamily>Verdana</FontFamily>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <Color>#333333</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!Text1.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>1.5cm</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox5">
+                      <rd:DefaultName>textbox5</rd:DefaultName>
+                      <ZIndex>2</ZIndex>
+                      <Style>
+                        <PaddingLeft>14pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <BackgroundImage>
+                          <Value>thintop</Value>
+                          <Source>Embedded</Source>
+                        </BackgroundImage>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <Color>#550d2a</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>10pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Capacity</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>1cm</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>4.3cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Height>3.5cm</Height>
+      </Table>
+    </ReportItems>
+    <Height>8cm</Height>
+    <Style>
+      <BackgroundColor>White</BackgroundColor>
+    </Style>
+  </Body>
+  <rd:ReportID>8132fa88-ddeb-4eb3-8723-463ed52574a9</rd:ReportID>
+  <LeftMargin>2.5cm</LeftMargin>
+  <EmbeddedImages>
+    <EmbeddedImage Name="thintop">
+      <ImageData>/9j/4AAQSkZJRgABAQEAYABgAAD/4QBmRXhpZgAASUkqAAgAAAAEABoBBQABAAAAPgAAABsBBQABAAAARgAAACgBAwABAAAAAgDAwDEBAgAPAAAATgAAAAAAAABgAAAAAQAAAGAAAAABAAAAUGFpbnQuTkVUIHYyLjUAAP/bAEMAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAf/bAEMBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAf/AABEIACgApQMBIgACEQEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgv/xAC1EAACAQMDAgQDBQUEBAAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+fr/xAAfAQADAQEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv/xAC1EQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/AP7f/Dfhv/hIPtn+mfYxZ/Z/+Xf7Tv8A
+tPndf30P/PEdvzzz1P8Awrf/AKjH/kh/92UfDf8A5jH/AG4f+3leoUAeX/8ACt/+ox/5If8A3ZR/wrf/AKjH/kh/92V6hRQB5f8A8K3/AOox/wCSH/3ZR/wrf/qMf+SH/wB2V6hRQB5f/wAK3/6jH/kh/wDdlH/Ct/8AqMf+SH/3ZXqFFAHl/wDwrf8A6jH/AJIf/dlH/Ct/+ox/5If/AHZXqFFAHl//AArf/qMf+SH/AN2Uf8K3/wCox/5If/dleoUUAeX/APCt/wDqMf8Akh/92Uf8K3/6jH/kh/8AdleoUUAeX/8ACt/+ox/5If8A3ZR/wrf/AKjH/kh/92V6hRQB5f8A8K3/AOox/wCSH/3ZR/wrf/qMf+SH/wB2V6hRQB5f/wAK3/6jH/kh/wDdlH/Ct/8AqMf+SH/3ZXqFFAHzTfW32K9vLPf5n2S6uLbzNuzzPIleLft3Nt3bN23c23ONxxmirWuf8hrWP+wpqH/pXNRQB3nw3/5jH/bh/wC3leoV5f8ADf8A5jH/AG4f+3leoUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAfOeuf8hrWP+wpqH/pXNRRrn/Ia1j/ALCmof8ApXNRQB3nw3/5jH/bh/7eV6hRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQB8565/yGtY/wCwpqH/AKVzUUUUAf/Z</ImageData>
+      <MIMEType>image/jpeg</MIMEType>
+    </EmbeddedImage>
+    <EmbeddedImage Name="thinyellow_0">
+      <ImageData>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</ImageData>
+      <MIMEType>image/jpeg</MIMEType>
+    </EmbeddedImage>
+    <EmbeddedImage Name="thingreen_1">
+      <ImageData>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</ImageData>
+      <MIMEType>image/jpeg</MIMEType>
+    </EmbeddedImage>
+    <EmbeddedImage Name="thingreen_0">
+      <ImageData>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</ImageData>
+      <MIMEType>image/jpeg</MIMEType>
+    </EmbeddedImage>
+    <EmbeddedImage Name="thinred_0">
+      <ImageData>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</ImageData>
+      <MIMEType>image/jpeg</MIMEType>
+    </EmbeddedImage>
+    <EmbeddedImage Name="thinyellow_1">
+      <ImageData>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</ImageData>
+      <MIMEType>image/jpeg</MIMEType>
+    </EmbeddedImage>
+    <EmbeddedImage Name="thinred_1">
+      <ImageData>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</ImageData>
+      <MIMEType>image/jpeg</MIMEType>
+    </EmbeddedImage>
+    <EmbeddedImage Name="thinbottom">
+      <ImageData>/9j/4AAQSkZJRgABAQEAYABgAAD/4QBmRXhpZgAASUkqAAgAAAAEABoBBQABAAAAPgAAABsBBQABAAAARgAAACgBAwABAAAAAgDAwDEBAgAPAAAATgAAAAAAAABgAAAAAQAAAGAAAAABAAAAUGFpbnQuTkVUIHYyLjUAAP/bAEMAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAf/bAEMBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAf/AABEIACgApQMBIgACEQEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgv/xAC1EAACAQMDAgQDBQUEBAAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+fr/xAAfAQADAQEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv/xAC1EQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/AP7qPhv/AMxj/tw/9vK9Qry/4b/8xj/t
+w/8AbyvUKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAPnPXP+Q1rH/YU1D/0rmoo1z/kNax/2FNQ/9K5qKAO6+HDBf7YLMMH7BgHgj/j8/wA//Xr0/wAxP7wrwrw1qX9n/bfmx5/2frxnyvP9fTcemM55ziun/wCEjH98fpQB6d5if3hR5if3hXmP/CRj++P0o/4SMf3x+lAHp3mJ/eFHmJ/eFeY/8JGP74/Sj/hIx/fH6UAeneYn94UeYn94V5j/AMJGP74/Sj/hIx/fH6UAeneYn94UeYn94V5j/wAJGP74/Sj/AISMf3x+lAHp3mJ/eFHmJ/eFeY/8JGP74/Sj/hIx/fH6UAeneYn94UeYn94V5j/wkY/vj9KP+EjH98fpQB6d5if3hR5if3hXmP8AwkY/vj9KP+EjH98fpQB6d5if3hR5if3hXmP/AAkY/vj9KP8AhIx/fH6UAeneYn94UeYn94V5j/wkY/vj9KP+EjH98fpQBwmtnOtauR0OqagR/wCBctFVb6Tzr28mznzbq4kz675XbP60UAVCrkDYxXHXapcn73HDrz87ce49qZib/nt/44P/AIqiigAxN/z2/wDHB/8AFUYm/wCe3/jg/wDiqKKADE3/AD2/8cH/AMVRib/nt/44P/iqKKADE3/Pb/xwf/FUYm/57f8Ajg/+KoooAMTf89v/ABwf/FUYm/57f+OD/wCKoooAMTf89v8Axwf/ABVGJv8Ant/44P8A4qiigAxN/wA9v/HB/wDFUYm/57f+OD/4qiigAxN/z2/8cH/xVGJv+e3/AI4P/iqKKADE3/Pb/wAcH/xVGJv+e3/jg/8AiqKKADE3/Pb/AMcH/wAVRib/AJ7f+OD/AOKoooAkUNjkgnAyeBk9zye9FFFAH//Z</ImageData>
+      <MIMEType>image/jpeg</MIMEType>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <DataSets>
+    <DataSet Name="StatusData">
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText>---------------------------------------------------------- Test data
+--DECLARE @vProjectName AS varchar(20)
+--SET @vProjectName= '/Mark124';
+----------------------------------------------------------End of test data
+
+DECLARE @daysInWeek int
+SET @daysInWeek = 7;
+
+-- ----------------------------------------------------------
+-- Select history, ignoring negative WorkRemaining items.
+-- ----------------------------------------------------------
+WITH CTE1 AS
+(
+SELECT 
+                   h.Conchango_VSTS_Scrum_WorkRemaining AS WorkLeft,
+                   YEAR(h.Date) * 10000 + MONTH(h.Date) * 100 + DAY(h.Date)  AS StartDate,
+                   h.__TrackingId AS TrackingId,
+                   h.[Work Item] AS WorkId,
+                   w.System_Id AS BacklogId
+FROM          [Work Item History] AS h
+INNER JOIN [Work Item] AS w ON h.[Work Item] = w.__ID AND w.System_WorkItemType = 'Sprint Backlog Item'
+INNER JOIN [Team Project] AS t ON h.[Team Project] = t.__ID
+WHERE   h.Conchango_VSTS_Scrum_WorkRemaining &gt;= 0 AND '/'+t.[Team Project]+'/Portal Reports'  = @vProjectName
+),
+
+-- ----------------------------------------------------------
+-- From the data for each day, select the last entry.
+-- ----------------------------------------------------------
+CTE2 AS
+(
+SELECT BacklogId, StartDate, MAX(TrackingId) As TrackingId  FROM CTE1
+GROUP BY BacklogId, StartDate
+),
+
+-- ----------------------------------------------------------
+-- Join back to the history to pick out the Work Remaining
+-- ----------------------------------------------------------
+CTE3 AS
+(
+SELECT c.BacklogId AS WorkId, 
+             c.StartDate,
+             c.WorkLeft  FROM CTE1 AS c
+INNER JOIN CTE2 AS c1 ON c.TrackingId  =  c1.TrackingId  
+),
+
+-- ----------------------------------------------------------
+-- Join the table with itself to populate the EndDate
+-- ----------------------------------------------------------
+CTE4 AS
+(
+SELECT     c.WorkId,   
+                 c.WorkLeft,
+                 c.StartDate,
+                 c1.StartDate AS EndDate
+FROM CTE3 AS c  
+LEFT OUTER JOIN  CTE3 AS c1 ON c.WorkId = c1.WorkId AND c.StartDate &lt;  c1.StartDate
+),
+
+-- ----------------------------------------------------------
+-- Strip out duplicates, so there is only one record per work item per day
+-- ----------------------------------------------------------
+CTE5 AS 
+(
+SELECT WorkId, StartDate,WorkLeft, MIN(EndDate) As EndDate FROM CTE4 GROUP BY WorkId, StartDate, WorkLeft
+),
+
+-- ----------------------------------------------------------
+-- Fix up the EndDate (knock 1 off populated dates, set others to "end of time")
+-- ----------------------------------------------------------
+CTE6 AS
+(
+SELECT  WorkId, WorkLeft, StartDate, ISNULL(EndDate, 100000000) - 1 AS EndDate FROM CTE5
+),
+
+-- ----------------------------------------------------------
+-- Meanwhile, get the current Sprint(s)
+-- ----------------------------------------------------------
+CTE7 AS
+(
+SELECT     c.__ID AS ID,
+                 c.[Team Project] As TeamId,
+                 w.System_Title AS SprintName,
+                 c.Conchango_VSTS_Scrum_SprintNumber AS SprintNumber,
+                 c.Conchango_VSTS_Scrum_SprintStart As SprintStart,
+                 c.Conchango_VSTS_Scrum_SprintEnd As SprintEnd,
+                 DATEDIFF(day,  c.Conchango_VSTS_Scrum_SprintStart,
+                 c.Conchango_VSTS_Scrum_SprintEnd)+1 As Days,
+                 c.Conchango_VSTS_Scrum_Capacity As Capacity
+FROM       [Current Work Item] AS c
+                INNER JOIN [Team Project] AS t ON c.[Team Project] = t.__ID
+                INNER JOIN [Work Item] AS w ON c.[Work Item] = w.__ID
+WHERE    w.System_WorkItemType = 'Sprint' AND '/'+t.[Team Project]+'/Portal Reports'  = @vProjectName
+AND         c.Conchango_VSTS_Scrum_SprintStart &lt;= GetDate() AND  c.Conchango_VSTS_Scrum_SprintEnd &gt;= GetDate()
+AND         YEAR(c.Conchango_VSTS_Scrum_SprintStart )&gt;1753
+AND         w.System_State != 'Deleted'
+),
+
+-- ----------------------------------------------------------
+-- Select one of them (just in case, but there should only be one)
+-- ----------------------------------------------------------
+CTE7a AS
+(
+SELECT  Min(ID) AS ID FROM CTE7
+),
+
+-- ----------------------------------------------------------
+-- Join back to current sprints and add Backlogs
+-- ----------------------------------------------------------
+CTE8 AS
+(
+SELECT     c.TeamId, 
+                 c.SprintName,
+                 c.SprintStart,
+                 c.SprintEnd,
+                 w.System_Title AS BacklogName,
+                 w.System_Id AS WorkId
+FROM       CTE7 AS c
+                 INNER JOIN CTE7a As c1 ON c.ID = c1.ID
+                 INNER JOIN  [Current Work Item] AS c2 ON c.SprintNumber = c2.Conchango_VSTS_Scrum_SprintNumber AND c.ID != c2.__ID
+                 INNER JOIN [Work Item] AS w ON c2.[Work Item] = w.__ID
+                 INNER JOIN [Team Project] AS t ON c2.[Team Project] = t.__ID
+WHERE     w.System_WorkItemType = 'Sprint Backlog Item'  AND '/'+t.[Team Project]+'/Portal Reports'  = @vProjectName
+AND          w.System_State != 'Deleted'
+),
+
+-- ----------------------------------------------------------
+-- Join the Backlogs to the Date Ranges
+-- ----------------------------------------------------------
+CTE9 AS
+(
+SELECT TeamId, BacklogName, t2.* FROM CTE8 As t1
+INNER JOIN CTE6 AS t2 ON t1.WorkId = t2.WorkId
+),
+
+-- ----------------------------------------------------------
+-- The next two CTEs build a table of dates.
+-- ----------------------------------------------------------
+CTEDATEb AS
+(
+SELECT TOP(1) SprintStart, SprintEnd FROM CTE8
+),
+
+-- ----------------------------------------------------------
+-- Recursively build a set of dates from the sprint start to the sprint end
+-- ----------------------------------------------------------
+CTEDATEc AS
+(
+SELECT SprintStart As Date FROM CTEDATEb
+UNION ALL
+SELECT DATEADD(day,1,c.Date)
+FROM CTEDATEb AS b
+INNER JOIN CTEDATEc As c ON c.Date&lt;b.SprintEnd
+),
+
+-- ----------------------------------------------------------
+-- Get a range of date records
+-- ----------------------------------------------------------
+CTE10 AS
+(
+SELECT    TeamId,
+                Days,
+                Capacity,
+                Date,
+                YEAR(Date) * 10000 + MONTH(Date) * 100 + DAY(Date)  AS  DateNum
+FROM CTEDATEc As d 
+INNER JOIN CTE7 AS s ON d.Date BETWEEN s.SprintStart AND s.SprintEnd
+),
+
+-- ----------------------------------------------------------
+--Join the dates with the backlog/dateranges
+-- ----------------------------------------------------------
+CTE11 AS
+(
+SELECT d.TeamId,
+             Date, 
+             Days,
+             Capacity,
+             BacklogName,
+             WorkId,
+             WorkLeft,
+             StartDate,
+             EndDate 
+FROM CTE10 As d 
+LEFT OUTER JOIN CTE9 AS b
+ON d.DateNum BETWEEN b.StartDate AND b.EndDate AND d.TeamId=b.TeamId
+),
+
+-- ----------------------------------------------------------
+--Sum the results on a daily basis
+-- ----------------------------------------------------------
+CTE12 AS
+(
+SELECT TeamId,Date, Days, Capacity, SUM(WorkLeft) As WorkLeft FROM CTE11 GROUP BY TeamId,Date, Days, Capacity
+),
+
+-- ----------------------------------------------------------
+-- NULL out any data for dates after today
+-- ----------------------------------------------------------
+CTE13 AS
+(
+SELECT  TeamId, Date, Days, Capacity,
+CASE WHEN Date &gt; GetDate() THEN NULL ELSE WorkLeft END AS WorkLeft
+FROM CTE12
+),
+
+-- ----------------------------------------------------------
+-- Get the earliest and latest dates with data attached, for each sprint
+-- ----------------------------------------------------------
+CTE14 AS
+(
+SELECT TeamId, Min(Date) As MinDate, Max(Date) as MaxDate  FROM CTE13 WHERE WorkLeft IS NOT NULL GROUP BY TeamId
+),
+
+-- ----------------------------------------------------------
+-- Supplement this with the date 7 days before the latest date (use the earliest date if less than 7 days data)
+-- ----------------------------------------------------------
+CTE14a AS
+(
+SELECT TeamId,MinDate, MaxDate, 
+CASE WHEN DATEDIFF(day,MinDate,MaxDate) &gt;= @daysInWeek
+THEN DATEADD(day,-@daysInWeek,MaxDate)
+ELSE MinDate
+END AS WeekAgoDate
+FROM CTE14
+),
+
+-- ----------------------------------------------------------
+-- Join it back to the main data to retrieve the value for the latest date
+-- ----------------------------------------------------------
+CTE15 AS
+(
+SELECT a.TeamId, a.WorkLeft As Progress, a.Date As LastDate
+FROM CTE13 AS a 
+INNER JOIN CTE14a As b ON a.TeamId=b.TeamId AND a.Date = b.MaxDate
+),
+
+-- ----------------------------------------------------------
+-- Join it again to retrieve the value for "week ago" date
+-- ----------------------------------------------------------
+CTE15a AS
+(
+SELECT a.TeamId, a.WorkLeft As WeekAgoProgress, a.Date As WeekAgoDate
+FROM CTE13 AS a 
+INNER JOIN CTE14a As b ON a.TeamId=b.TeamId AND a.Date = b.WeekAgoDate
+),
+
+-- ----------------------------------------------------------
+-- Populate the Trend 1 values
+-- ----------------------------------------------------------
+CTE16 AS
+(
+SELECT a.TeamId,
+             a.Date, 
+             a.WorkLeft, 
+             b.Progress,
+             b.LastDate,
+             CASE WHEN a.Date &gt;= b.LastDate
+                       THEN b.Progress - DATEDIFF(day, b.LastDate, a.Date) * CAST(Capacity As float) / Days 
+                       ELSE NULL
+             END As Trend1,
+             NULL As Trend2,
+             CASE WHEN Capacity IS NULL
+                       THEN 0
+                       ELSE ROUND(CAST(Capacity As float) / Days,0)
+             END AS CutOff
+FROM CTE13  AS a INNER JOIN CTE15 AS b ON a.TeamId=b.TeamId
+),
+
+-- ----------------------------------------------------------
+-- Populate the Trend 2 values
+-- ----------------------------------------------------------
+CTE17 AS
+(
+SELECT a.Date, 
+             a.WorkLeft, 
+             a.Trend1,
+             CASE WHEN a.Date &gt;= a.LastDate AND DATEDIFF(day, b.WeekAgoDate, a.LastDate) = @daysInWeek
+                       THEN a.Progress - DATEDIFF(day, a.LastDate, a.Date) * CAST( (b.WeekAgoProgress-a.Progress) As float)/@daysInWeek
+                       ELSE NULL
+             END As Trend2,
+             a.CutOff
+FROM CTE16  AS a
+INNER JOIN CTE15a AS b ON a.TeamId=b.TeamId
+),
+
+-- ----------------------------------------------------------
+--Determine which traffic light is shown (0=none, 1=red, 2=yellow, 3=green)
+-- ----------------------------------------------------------
+CTE18 AS
+(
+SELECT Date,
+            Trend1,
+            Trend2,
+            CASE 
+                       WHEN Trend1 IS NULL THEN 0
+                       WHEN Trend1 &gt; Cutoff THEN 1
+                       WHEN Trend1 &gt; 0.5 THEN 2
+                       ELSE 3
+             END AS Status1,
+             CASE 
+                       WHEN Trend2 IS NULL THEN 0
+                       WHEN Trend2 &gt; Cutoff THEN 1
+                       WHEN Trend2 &gt; 0.5 THEN 2
+                       ELSE 3
+             END AS Status2
+FROM   CTE17 AS c
+INNER JOIN CTEDATEb AS d ON c.Date = d.SprintEnd
+),
+
+-- ----------------------------------------------------------
+-- Fix, in case there is no data
+-- ----------------------------------------------------------
+CTE19 AS
+(
+SELECT CASE WHEN COUNT(*) = 0
+                       THEN 0
+                       ELSE SUM(Trend1)
+                       END AS Trend1,
+             CASE WHEN COUNT(*) = 0
+                       THEN 0
+                       ELSE SUM(Trend2)
+                       END AS Trend2,
+             CASE WHEN COUNT(*) = 0
+                       THEN 3
+                       ELSE SUM(Status1)
+                       END AS Status1,
+             CASE WHEN COUNT(*) = 0
+                       THEN 3
+                       ELSE SUM(Status2)
+                       END AS Status2
+FROM CTE18
+),
+
+-- ----------------------------------------------------------
+-- Build a 3-record result set (red, yellow, green)
+-- ----------------------------------------------------------
+CTE20 AS
+(
+SELECT CASE WHEN Status1 = 1
+                       THEN 'thinred_1'
+                       ELSE 'thinred_0'
+             END AS Image1,
+             CASE WHEN Status1 = 1
+                       THEN CAST(ROUND(Trend1,0) AS VARCHAR) + ' hrs excess'
+                       ELSE NULL
+             END AS Text1,
+             CASE WHEN Status2 = 1
+                       THEN 'thinred_1'
+                       ELSE 'thinred_0'
+             END AS Image2,
+             CASE WHEN Status2 = 1
+                       THEN CAST(ROUND(Trend2,0) AS VARCHAR) + ' hrs excess'
+                       ELSE NULL
+             END AS Text2,
+             1 AS SortOrder
+FROM CTE19
+UNION
+SELECT CASE WHEN Status1 = 2
+                       THEN 'thinyellow_1'
+                       ELSE 'thinyellow_0'
+             END AS Image1,
+             CASE WHEN Status1 = 2
+                       THEN CAST(ROUND(Trend1,0) AS VARCHAR) + ' hrs excess'
+                       ELSE NULL
+             END AS Text1,
+             CASE WHEN Status2 = 2
+                       THEN 'thinyellow_1'
+                       ELSE 'thinyellow_0'
+             END AS Image2,
+             CASE WHEN Status2 = 2
+                       THEN CAST(ROUND(Trend2,0) AS VARCHAR) + ' hrs excess'
+                       ELSE NULL
+             END AS Text2,
+             2 AS SortOrder
+FROM CTE19
+UNION
+SELECT CASE WHEN Status1 =3
+                       THEN 'thingreen_1'
+                       ELSE 'thingreen_0'
+             END AS Image1,
+             CASE WHEN Status1 =3
+                       THEN 'On Track'
+                       ELSE NULL
+             END AS Text1,
+             CASE WHEN Status2 =3
+                       THEN 'thingreen_1'
+                       ELSE 'thingreen_0'
+             END AS Image2,
+             CASE WHEN Status2 = 3
+                       THEN 'On Track'
+                       ELSE NULL
+             END AS Text2,
+             3 AS SortOrder
+FROM CTE19
+)
+
+SELECT * FROM CTE20 ORDER BY SortOrder OPTION(MAXRECURSION 10000)</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@vProjectName">
+            <Value>=Globals!ReportFolder</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <DataSourceName>TfsReportDS</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="Image1">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Image1</DataField>
+        </Field>
+        <Field Name="Text1">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Text1</DataField>
+        </Field>
+        <Field Name="Image2">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Image2</DataField>
+        </Field>
+        <Field Name="Text2">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Text2</DataField>
+        </Field>
+        <Field Name="SortOrder">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SortOrder</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Width>9cm</Width>
+  <InteractiveHeight>29.7cm</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>2.5cm</TopMargin>
+  <PageHeight>21cm</PageHeight>
+</Report>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <BuildNumber Name="SRM.StsAdm.Service">
+    <Major>1</Major>
+    <Minor>0</Minor>
+    <Fix>0</Fix>
+    <Build>1</Build>
+  </BuildNumber>
+</project>

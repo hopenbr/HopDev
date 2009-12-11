@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- Customize the text in square brackets. 
+Remove brackets when filling in, e.g. 
+Name="[NAME]" ==> Name="MyWorkflow" -->
+
+
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Workflow
+	 Name="SRMSharePointWorkflow"
+	 Description="Five State workflow for SRM Reject Approval process"
+	 Id="d88246c7-9ac9-4147-b353-1abc01c2e235"
+	 CodeBesideClass="SRMSharePointWorkflow.SRM5Workflow"
+	 CodeBesideAssembly="SRMSharePointWorkflow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=70e24c20d71157b3" >
+
+		<Categories/>
+	 
+		<MetaData>
+		  <!-- Tags to specify InfoPath forms for the workflow; delete tags for forms that you do not have -->
+		  <!--<Association_FormURN>[URN FOR ASSOCIATION FORM]</Association_FormURN>
+		   <Instantiation_FormURN>[URN FOR INSTANTIATION FORM]</Instantiation_FormURN>
+		  <Task0_FormURN>[URN FOR TASK (type 0) FORM]</Task0_FormURN>
+		  <Task1_FormURN>[URN FOR TASK (type 1) FORM]</Task1_FormURN>-->
+		  <!-- Modification forms: create a unique guid for each modification form -->
+		  <!--<Modification_[UNIQUE GUID]_FormURN>[URN FOR MODIFICATION FORM]</Modification_[UNIQUE GUID]_FormURN>
+		  <Modification_[UNIQUE GUID]_Name>[NAME OF MODIFICATION TO BE DISPLAYED AS A LINK ON WORKFLOW STATUS PAGE</Modification_[UNIQUE GUID]_Name>
+		  -->
+		  <StatusPageUrl>_layouts/WrkStat.aspx</StatusPageUrl>
+		</MetaData>
+	</Workflow>
+
+	<Field ID="{f7de9712-bdfe-44ba-aa09-795802eb0724}"
+		   Type="Choice"
+		   BaseType="Text"
+		   Name="SRMRegionV1"
+		   DisplayName="SRM Region"
+		   StaticName="SRMRegion"
+		   Hidden="FALSE"
+		   Required="TRUE"
+		   Sealed="FALSE"
+		   EnableLookup="TRUE"
+		   ShowInDisplayForm="TRUE"
+		   ShowInEditForm="TRUE"
+		   ShowInNewForm="TRUE"
+		   ShowInViewForms="TRUE">
+		<CHOICES>
+			<CHOICE>MTE</CHOICE>
+			<CHOICE>MTT</CHOICE>
+			<CHOICE>REL</CHOICE>
+			<CHOICE>PRD</CHOICE>
+		</CHOICES>
+	</Field>
+
+	<Field ID="{d6db5d79-526d-454a-b552-d1099f83dcab}"
+		   Type="Choice"
+	       BaseType="Text"
+		   Name="SRMTypeV1"
+		   DisplayName="SRM Type"
+		   StaticName="SRMType"
+		   Hidden="FALSE"
+		   Required="TRUE"
+		   Sealed="FALSE"
+		   EnableLookup="TRUE"
+		   ShowInDisplayForm="TRUE"
+		   ShowInEditForm="TRUE"
+		   ShowInNewForm="TRUE"
+	   ShowInViewForms="TRUE">
+		
+		<CHOICES>
+			<CHOICE>Tip Build</CHOICE>
+			<CHOICE>Label</CHOICE>
+			<CHOICE>Starteam Access</CHOICE>
+			<CHOICE>STAB</CHOICE>
+		</CHOICES>
+		
+	</Field>
+
+	<Field ID="{864b47bf-25c5-4717-b309-1362b2b26657}"
+		   Name="SRMDialogV1" 
+		   Description="Dialog between this request and the workflow tasks"
+		   Type="Note" 
+		   NumLines="8" 
+		   DisplayName="Dialog"
+		   StaticName="SRMDialog"
+		   Hidden="FALSE"
+		   Required="TRUE"
+		   Sealed="FALSE"
+		   EnableLookup="TRUE"
+		   ShowInDisplayForm="TRUE"
+		   ShowInEditForm="TRUE"
+		   ShowInNewForm="TRUE" 
+		   RichText="TRUE" 
+		   AppendOnly="TRUE"/>
+
+	
+	<ContentType ID="0x01080100f8130d9db5d64ba6bd5c8a863ca9cfca"
+				 Name="SRM Base v1"
+				 Group="SRM"
+				 Description="This is the Base type for SRM types that will be used for SRM Tasks and Requests"
+				 Version="0">
+		<FieldRefs>
+			<FieldRef ID="{f7de9712-bdfe-44ba-aa09-795802eb0724}" Name="SRMRegionV1" />
+			<FieldRef ID="{d6db5d79-526d-454a-b552-d1099f83dcab}" Name="SRMTypeV1"/>
+			<FieldRef ID="{864b47bf-25c5-4717-b309-1362b2b26657}" Name="SRMDialogV1" />
+		</FieldRefs>
+	</ContentType>
+
+
+	<Field ID="{1e89d682-688f-44e6-bccd-99314d5c1ad3}"
+		   Name="SRMActivitiesV1"
+		   Description="Activities needed to be completed for the request"
+		   Type="Note"
+		   NumLines="8"
+		   DisplayName="Activities"
+		   StaticName="SRMActivitiesV1"
+		   Hidden="FALSE"
+		   Required="FALSE"
+		   Sealed="FALSE"
+		   EnableLookup="TRUE"
+		   ShowInDisplayForm="TRUE"
+		   ShowInEditForm="FALSE"
+		   ShowInNewForm="FALSE"
+		   RichText="TRUE"
+		   ReadOnlyEnforced="TRUE"/>
+
+
+	<Field ID="{2cc86268-e689-47d4-92d6-e681fd703eee}"
+		   Name="SRMRequestTaskTypeV1"
+		   Description="The Type of SRM task in the workflow"
+		   Type="Text"
+		   DisplayName="SRM Task Type"
+		   StaticName="SRMRequestTaskTypeV1"
+		   Hidden="FALSE"
+		   Required="FALSE"
+		   Sealed="FALSE"
+		   EnableLookup="TRUE"
+		   ShowInDisplayForm="TRUE"
+		   ShowInNewForm="FALSE" 
+		   ShowInEditForm="FALSE"
+		   ShowInViewForms="FALSE"/>
+
+	<ContentType ID="0x01080100f8130d9db5d64ba6bd5c8a863ca9cfca01"
+				 Name="SRM Task v1"
+				 Group="SRM"
+				 Description="SRM Tasks for SRM Workflow">
+		<FieldRefs>
+			<FieldRef ID="{2cc86268-e689-47d4-92d6-e681fd703eee}" Name="SRMRequestTaskTypeV1"/>
+			<FieldRef ID="{1e89d682-688f-44e6-bccd-99314d5c1ad3}" Name="SRMActivitiesV1"/>
+		</FieldRefs> 
+		
+	</ContentType>
+
+	<Field ID="{ba125bb8-3396-4756-b403-0421436ca954}"
+		   Name="SRMRequestAlertedV1"
+		   Description="Add users that will be alerts about this request"
+		   Type="UserMulti"
+		   DisplayName="Alerted Users"
+		   StaticName="SRMRequestAlertedV1"
+		   Hidden="FALSE"
+		   Required="FALSE"
+		   Sealed="FALSE"
+		   ShowInDisplayForm="FALSE"
+		   ShowInNewForm="TRUE"
+		   ShowInEditForm="TRUE"
+		   ShowInViewForms="FALSE" 
+		   EnableLookup="TRUE"/>
+
+	<ContentType ID="0x01080100f8130d9db5d64ba6bd5c8a863ca9cfca02"
+				 Name="SRM Request v1"
+				 Group="SRM"
+				 Description="SRM Request for SRM Workflow">
+		<FieldRefs>
+			<FieldRef ID="{ba125bb8-3396-4756-b403-0421436ca954}" Name="SRMRequestAlertedV1"/>
+		</FieldRefs>
+
+	</ContentType>
+
+	
+	
+</Elements>

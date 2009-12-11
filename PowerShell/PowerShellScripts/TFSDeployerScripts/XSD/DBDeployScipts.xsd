@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="urn:schema-Harleysvillegroup-com:DBDeployScipts" 
+           elementFormDefault="qualified" 
+           xmlns="urn:schema-Harleysvillegroup-com:DBDeployScipts"  
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:simpleType name="SQLScript">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\.\\\w+?\\(\w+?[\\|\w|\.|\-])+?\.sql" />
+			<xs:pattern value="\.\\\w+?[\\|\w|\.|\-]+?\.sql" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Scripts">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Script" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>SQL script to be run </xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+						</xs:sequence>
+						<xs:attribute name="Run" type="Bool" default="True">
+							<xs:annotation>
+								<xs:documentation>True if script should be executed for deployments of the next build</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="Path" type="SQLScript" use="required">
+							<xs:annotation>
+								<xs:documentation>The relative path to the script from this xml</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ContinueOnError" type="Bool" default="False">
+							<xs:annotation>
+								<xs:documentation>True if deployment should continue if script fails (Default=False)</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="Type" type="ScriptType" use="required" >
+							<xs:annotation>
+								<xs:documentation>Static typed scripts are run 'as is'. On the other hand, Dynamic typed scripts are updated before they are run; the updates are to replacement variables that can appear anywhere in the script.  These replacement variables are denoted by $[variableName] and are directly connected a list of aviable replacement variables i.e. $[HostName], $[DBName], $[Date], etc</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="DeployType" type="DeployType">
+				<xs:annotation>
+					<xs:documentation>The time when this scripts should be run either before (Pre) or after (Post) deployment (the Red Gate sync)</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="DeployType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Post-Deploy" />
+			<xs:enumeration value="Pre-Deploy" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Bool">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="True" />
+			<xs:enumeration value="False" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ScriptType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Dynamic" />
+			<xs:enumeration value="Static" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,119 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StsadmServices", "StsadmServices\StsadmServices.csproj", "{0D49BC85-2E25-4602-B17F-46582F772474}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{233AE625-8BDB-4142-9E47-2D8B6A0CD6D2}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		Scripts\Add-InfoPathForm.ps1 = Scripts\Add-InfoPathForm.ps1
+		Scripts\Add-WspSolution.ps1 = Scripts\Add-WspSolution.ps1
+		Scripts\Compare-FormSHA1.ps1 = Scripts\Compare-FormSHA1.ps1
+		Scripts\Get-DataConnectionLib.ps1 = Scripts\Get-DataConnectionLib.ps1
+		Scripts\Get-InfoPathForm.ps1 = Scripts\Get-InfoPathForm.ps1
+		Scripts\Invoke-Stsadm.ps1 = Scripts\Invoke-Stsadm.ps1
+		Scripts\New-DataConnectionLib.ps1 = Scripts\New-DataConnectionLib.ps1
+		Scripts\New-Execadmsvcjobs.ps1 = Scripts\New-Execadmsvcjobs.ps1
+		Scripts\Run-StsadmCmd.ps1 = Scripts\Run-StsadmCmd.ps1
+		Scripts\Set-FormProperty.ps1 = Scripts\Set-FormProperty.ps1
+		Scripts\Upload-Files2Lib.ps1 = Scripts\Upload-Files2Lib.ps1
+		Scripts\Upload-MossUdcx.ps1 = Scripts\Upload-MossUdcx.ps1
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harleysville.Utilities.Logger", "..\..\Common\Harleysville.Utilities.Logger\Harleysville.Utilities.Logger\Harleysville.Utilities.Logger.csproj", "{8F7B88E2-6A69-4BC5-A810-30520CE9B303}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EnvConfig-Dev", "EnvConfig-Dev", "{DFD300C7-581E-41AB-AD11-39EFB0AAC475}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\TeamBuildTypes\SRM.STSADMService.Build\Env.Config\In-Dev\Debug\_PublishedWebsites\StsadmServices\Web.config = ..\..\..\..\TeamBuildTypes\SRM.STSADMService.Build\Env.Config\In-Dev\Debug\_PublishedWebsites\StsadmServices\Web.config
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EnvConfig-Tst", "EnvConfig-Tst", "{1ABBA56A-C654-41FD-9D4D-89106D2188DA}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\TeamBuildTypes\SRM.STSADMService.Release\Env.Config\In-Test\Debug\_PublishedWebsites\StsadmServices\Web.config = ..\..\..\..\TeamBuildTypes\SRM.STSADMService.Release\Env.Config\In-Test\Debug\_PublishedWebsites\StsadmServices\Web.config
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EnvConfig-Prd", "EnvConfig-Prd", "{F85EBDA3-5149-458A-850D-91FA23EDA87B}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\TeamBuildTypes\SRM.STSADMService.Release\Env.Config\In-Production\Debug\_PublishedWebsites\StsadmServices\Web.config = ..\..\..\..\TeamBuildTypes\SRM.STSADMService.Release\Env.Config\In-Production\Debug\_PublishedWebsites\StsadmServices\Web.config
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EnvConfig-Stg", "EnvConfig-Stg", "{04845BC9-2089-47BB-8303-5F96CCC431B3}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\TeamBuildTypes\SRM.STSADMService.Release\Env.Config\In-Staging\Debug\_PublishedWebsites\StsadmServices\Web.config = ..\..\..\..\TeamBuildTypes\SRM.STSADMService.Release\Env.Config\In-Staging\Debug\_PublishedWebsites\StsadmServices\Web.config
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://as73tfs01:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = StsadmServices\\StsadmServices.csproj
+		SccProjectName1 = StsadmServices
+		SccLocalPath1 = StsadmServices
+		SccProjectUniqueName2 = ..\\..\\Common\\Harleysville.Utilities.Logger\\Harleysville.Utilities.Logger\\Harleysville.Utilities.Logger.csproj
+		SccProjectName2 = ../../Common/Harleysville.Utilities.Logger/Harleysville.Utilities.Logger
+		SccLocalPath2 = ..\\..\\Common\\Harleysville.Utilities.Logger\\Harleysville.Utilities.Logger
+	EndGlobalSection
+	GlobalSection(TextTemplating) = postSolution
+		TextTemplating = 1
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D49BC85-2E25-4602-B17F-46582F772474}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D49BC85-2E25-4602-B17F-46582F772474}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D49BC85-2E25-4602-B17F-46582F772474}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D49BC85-2E25-4602-B17F-46582F772474}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F7B88E2-6A69-4BC5-A810-30520CE9B303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F7B88E2-6A69-4BC5-A810-30520CE9B303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F7B88E2-6A69-4BC5-A810-30520CE9B303}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,2425 @@
+
+Sync 2.1   Copyright 2007 Zach Scrivena   2007-12-09
+
+DIRECTORY SYNCHRONIZATION
+
+Log file: "C:\TFSWorkspaces\VS2008\SRM\Branches\DEVELOPMENT\PowerShell\PowerShellScripts\References\Sync21\sync.20090508-101959.log"
+
+Source directory: "C:\TEMP\CognosTest\"
+Target directory: "C:\TEMP\CognosTest2\"
+
+File-matching attributes: (name,size,time,crc)
+
+
+SUBDIRECTORY: ".\"
+
+ No. of unmatched target files/directories to be deleted: 1
+ [D1] Skipping "adnd\"
+
+SUBDIRECTORY: "CognosTest\"
+
+ No. of source files matched: 2 of 2
+ [M1:nstc] "Class1.cs"
+ [M2:nstc] "CognosTest.csproj"
+
+ No. of unmatched target files/directories to be deleted: 1
+ [D2] Skipping "New Text Document.txt"
+
+SUBDIRECTORY: "CognosTest\20090223\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiAddressService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiAddressService\config\"
+
+ No. of source files matched: 1 of 1
+ [M3:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiAddressValidation\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiAddressValidation\Config\"
+
+ No. of source files matched: 1 of 1
+ [M4:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiAgencyService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiAgencyService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M5:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiAQSTokenManager\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiAQSTokenManager\Config\"
+
+ No. of source files matched: 1 of 1
+ [M6:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiAQSTransactionService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiAQSTransactionService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M7:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiBalancingReport\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiBalancingReport\Config\"
+
+ No. of source files matched: 1 of 1
+ [M8:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiBillingAutoRenewal\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiBillingAutoRenewal\Config\"
+
+ No. of source files matched: 1 of 1
+ [M9:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiBillingDctProcess\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiBillingDctProcess\Config\"
+
+ No. of source files matched: 1 of 1
+ [M10:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiChoicePointBatchReports\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiChoicePointBatchReports\Config\"
+
+ No. of source files matched: 1 of 1
+ [M11:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiChoicePointReport\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiChoicePointReport\Config\"
+
+ No. of source files matched: 1 of 1
+ [M12:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiClAccountProposal\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiClAccountProposal\Config\"
+
+ No. of source files matched: 1 of 1
+ [M13:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiClLegacy\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiClLegacy\Config\"
+
+ No. of source files matched: 1 of 1
+ [M14:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiClpolBillingStatus\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiClpolBillingStatus\Config\"
+
+ No. of source files matched: 1 of 1
+ [M15:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiClpolDetermineBindingAuthority\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiClpolDetermineBindingAuthority\Config\"
+
+ No. of source files matched: 1 of 1
+ [M16:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiClpolGlSic\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiClpolGlSic\Config\"
+
+ No. of source files matched: 1 of 1
+ [M17:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiClpolPredictiveModeling\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiClpolPredictiveModeling\Config\"
+
+ No. of source files matched: 1 of 1
+ [M18:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiClpolTransferBillingTransaction\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiClpolTransferBillingTransaction\Config\"
+
+ No. of source files matched: 1 of 1
+ [M19:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiClTip\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiClTip\Config\"
+
+ No. of source files matched: 1 of 1
+ [M20:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\hmiCommon\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\hmiCommon\Config\"
+
+ No. of source files matched: 1 of 1
+ [M21:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiCompanyAndPlanDetermination\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiCompanyAndPlanDetermination\Config\"
+
+ No. of source files matched: 1 of 1
+ [M22:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiConnectors\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiConnectors\Config\"
+
+ No. of source files matched: 1 of 1
+ [M23:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiDctDocuMaker\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiDctDocuMaker\Config\"
+
+ No. of source files matched: 1 of 1
+ [M24:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiDCTISOPPC\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiDCTISOPPC\Config\"
+
+ No. of source files matched: 1 of 1
+ [M25:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiDCTUWRefReport\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiDCTUWRefReport\Config\"
+
+ No. of source files matched: 1 of 1
+ [M26:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiDownStreamCommon\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiDownStreamCommon\Config\"
+
+ No. of source files matched: 2 of 2
+ [M27:nstc] "Config.cnf"
+ [M28:nstc] "templates.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiEnterpriseTables\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiEnterpriseTables\Config\"
+
+ No. of source files matched: 1 of 1
+ [M29:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiInsuredAccount\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiInsuredAccount\Config\"
+
+ No. of source files matched: 1 of 1
+ [M30:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiOrderMVR\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiOrderMVR\Config\"
+
+ No. of source files matched: 1 of 1
+ [M31:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiPLDownload\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiPLDownload\Config\"
+
+ No. of source files matched: 1 of 1
+ [M32:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiPolicyLockService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiPolicyLockService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M33:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiPolicyOutput\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiPolicyOutput\Config\"
+
+ No. of source files matched: 1 of 1
+ [M34:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiPolicyService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiPolicyService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M35:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiPolicySourceService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiPolicySourceService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M36:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiPolicyTransactionUpload\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiPolicyTransactionUpload\Config\"
+
+ No. of source files matched: 1 of 1
+ [M37:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiPolkVinLookup\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiPolkVinLookup\Config\"
+
+ No. of source files matched: 1 of 1
+ [M38:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiPortalDCTRedirect\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiPortalDCTRedirect\Config\"
+
+ No. of source files matched: 1 of 1
+ [M39:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiProxixGEOcode\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiProxixGEOcode\Config\"
+
+ No. of source files matched: 1 of 1
+ [M40:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiQuoteService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiQuoteService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M41:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiReinsuranceService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiReinsuranceService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M42:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiRenewal\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiRenewal\Config\"
+
+ No. of source files matched: 1 of 1
+ [M43:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiRenewalConversion\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiRenewalConversion\config\"
+
+ No. of source files matched: 1 of 1
+ [M44:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiRuleEngineServices\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiRuleEngineServices\Config\"
+
+ No. of source files matched: 1 of 1
+ [M45:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiSecurityLoad\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiSecurityLoad\Config\"
+
+ No. of source files matched: 1 of 1
+ [M46:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiSystemDetermination\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiSystemDetermination\Config\"
+
+ No. of source files matched: 1 of 1
+ [M47:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiUtilities\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiUtilities\Config\"
+
+ No. of source files matched: 1 of 1
+ [M48:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiVehicleService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\HmiVehicleService\config\"
+
+ No. of source files matched: 1 of 1
+ [M49:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\SRMTFSDeployTester\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\ASY\Packages\SRMTFSDeployTester\Config\"
+
+ No. of source files matched: 1 of 1
+ [M50:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiAddressService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiAddressService\config\"
+
+ No. of source files matched: 1 of 1
+ [M51:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiAddressValidation\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiAddressValidation\Config\"
+
+ No. of source files matched: 1 of 1
+ [M52:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiAgencyService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiAgencyService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M53:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiAQSTokenManager\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiAQSTokenManager\Config\"
+
+ No. of source files matched: 1 of 1
+ [M54:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiAQSTransactionService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiAQSTransactionService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M55:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiBalancingReport\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiBalancingReport\Config\"
+
+ No. of source files matched: 1 of 1
+ [M56:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiBillingAutoRenewal\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiBillingAutoRenewal\Config\"
+
+ No. of source files matched: 1 of 1
+ [M57:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiBillingDctProcess\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiBillingDctProcess\Config\"
+
+ No. of source files matched: 1 of 1
+ [M58:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiChoicePointBatchReports\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiChoicePointBatchReports\Config\"
+
+ No. of source files matched: 1 of 1
+ [M59:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiChoicePointReport\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiChoicePointReport\Config\"
+
+ No. of source files matched: 1 of 1
+ [M60:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiClAccountProposal\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiClAccountProposal\Config\"
+
+ No. of source files matched: 1 of 1
+ [M61:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiClLegacy\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiClLegacy\Config\"
+
+ No. of source files matched: 1 of 1
+ [M62:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiClpolBillingStatus\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiClpolBillingStatus\Config\"
+
+ No. of source files matched: 1 of 1
+ [M63:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiClpolDetermineBindingAuthority\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiClpolDetermineBindingAuthority\Config\"
+
+ No. of source files matched: 1 of 1
+ [M64:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiClpolGlSic\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiClpolGlSic\Config\"
+
+ No. of source files matched: 1 of 1
+ [M65:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiClpolPredictiveModeling\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiClpolPredictiveModeling\Config\"
+
+ No. of source files matched: 1 of 1
+ [M66:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiClpolTransferBillingTransaction\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiClpolTransferBillingTransaction\Config\"
+
+ No. of source files matched: 1 of 1
+ [M67:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiClTip\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiClTip\Config\"
+
+ No. of source files matched: 1 of 1
+ [M68:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\hmiCommon\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\hmiCommon\Config\"
+
+ No. of source files matched: 1 of 1
+ [M69:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiCompanyAndPlanDetermination\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiCompanyAndPlanDetermination\Config\"
+
+ No. of source files matched: 1 of 1
+ [M70:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiConnectors\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiConnectors\Config\"
+
+ No. of source files matched: 1 of 1
+ [M71:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiDctDocuMaker\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiDctDocuMaker\Config\"
+
+ No. of source files matched: 1 of 1
+ [M72:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiDCTISOPPC\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiDCTISOPPC\Config\"
+
+ No. of source files matched: 1 of 1
+ [M73:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiDCTUWRefReport\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiDCTUWRefReport\Config\"
+
+ No. of source files matched: 1 of 1
+ [M74:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiDownStreamCommon\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiDownStreamCommon\Config\"
+
+ No. of source files matched: 2 of 2
+ [M75:nstc] "Config.cnf"
+ [M76:nstc] "templates.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiEnterpriseTables\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiEnterpriseTables\Config\"
+
+ No. of source files matched: 1 of 1
+ [M77:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiInsuredAccount\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiInsuredAccount\Config\"
+
+ No. of source files matched: 1 of 1
+ [M78:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiOrderMVR\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiOrderMVR\Config\"
+
+ No. of source files matched: 1 of 1
+ [M79:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiPLDownload\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiPLDownload\Config\"
+
+ No. of source files matched: 1 of 1
+ [M80:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiPolicyLockService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiPolicyLockService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M81:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiPolicyOutput\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiPolicyOutput\Config\"
+
+ No. of source files matched: 1 of 1
+ [M82:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiPolicyService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiPolicyService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M83:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiPolicySourceService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiPolicySourceService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M84:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiPolicyTransactionUpload\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiPolicyTransactionUpload\Config\"
+
+ No. of source files matched: 1 of 1
+ [M85:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiPolkVinLookup\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiPolkVinLookup\Config\"
+
+ No. of source files matched: 1 of 1
+ [M86:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiPortalDCTRedirect\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiPortalDCTRedirect\Config\"
+
+ No. of source files matched: 1 of 1
+ [M87:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiProxixGEOcode\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiProxixGEOcode\Config\"
+
+ No. of source files matched: 1 of 1
+ [M88:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiQuoteService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiQuoteService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M89:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiReinsuranceService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiReinsuranceService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M90:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiRenewal\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiRenewal\Config\"
+
+ No. of source files matched: 1 of 1
+ [M91:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiRenewalConversion\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiRenewalConversion\config\"
+
+ No. of source files matched: 1 of 1
+ [M92:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiRuleEngineServices\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiRuleEngineServices\Config\"
+
+ No. of source files matched: 1 of 1
+ [M93:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiSecurityLoad\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiSecurityLoad\Config\"
+
+ No. of source files matched: 1 of 1
+ [M94:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiSystemDetermination\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiSystemDetermination\Config\"
+
+ No. of source files matched: 1 of 1
+ [M95:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiUtilities\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiUtilities\Config\"
+
+ No. of source files matched: 1 of 1
+ [M96:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiVehicleService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\HmiVehicleService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M97:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\SRMTFSDeployTester\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\E2E\Packages\SRMTFSDeployTester\Config\"
+
+ No. of source files matched: 1 of 1
+ [M98:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\HmiReinsuranceService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\HmiReinsuranceService\Packages\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\HmiReinsuranceService\Packages\HmiReinsuranceService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\HmiReinsuranceService\Packages\HmiReinsuranceService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M99:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\HmiReinsuranceService\Release\"
+
+ No. of source files matched: 2 of 2
+ [M100:nstc] "BuildNumber.xml"
+ [M101:nstc] "HmiReinsuranceService.zip"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiAddressService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiAddressService\config\"
+
+ No. of source files matched: 1 of 1
+ [M102:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiAddressValidation\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiAddressValidation\Config\"
+
+ No. of source files matched: 1 of 1
+ [M103:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiAgencyService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiAgencyService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M104:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiAQSTokenManager\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiAQSTokenManager\Config\"
+
+ No. of source files matched: 1 of 1
+ [M105:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiAQSTransactionService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiAQSTransactionService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M106:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiBalancingReport\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiBalancingReport\Config\"
+
+ No. of source files matched: 1 of 1
+ [M107:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiBillingAutoRenewal\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiBillingAutoRenewal\Config\"
+
+ No. of source files matched: 1 of 1
+ [M108:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiBillingDctProcess\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiBillingDctProcess\Config\"
+
+ No. of source files matched: 1 of 1
+ [M109:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiChoicePointBatchReports\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiChoicePointBatchReports\Config\"
+
+ No. of source files matched: 1 of 1
+ [M110:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiChoicePointReport\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiChoicePointReport\Config\"
+
+ No. of source files matched: 1 of 1
+ [M111:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiClAccountProposal\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiClAccountProposal\Config\"
+
+ No. of source files matched: 1 of 1
+ [M112:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiClLegacy\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiClLegacy\Config\"
+
+ No. of source files matched: 1 of 1
+ [M113:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiClpolBillingStatus\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiClpolBillingStatus\Config\"
+
+ No. of source files matched: 1 of 1
+ [M114:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiClpolDetermineBindingAuthority\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiClpolDetermineBindingAuthority\Config\"
+
+ No. of source files matched: 1 of 1
+ [M115:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiClpolGlSic\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiClpolGlSic\Config\"
+
+ No. of source files matched: 1 of 1
+ [M116:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiClpolPredictiveModeling\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiClpolPredictiveModeling\Config\"
+
+ No. of source files matched: 1 of 1
+ [M117:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiClpolTransferBillingTransaction\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiClpolTransferBillingTransaction\Config\"
+
+ No. of source files matched: 1 of 1
+ [M118:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiClTip\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiClTip\Config\"
+
+ No. of source files matched: 1 of 1
+ [M119:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\hmiCommon\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\hmiCommon\Config\"
+
+ No. of source files matched: 1 of 1
+ [M120:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiCompanyAndPlanDetermination\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiCompanyAndPlanDetermination\Config\"
+
+ No. of source files matched: 1 of 1
+ [M121:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiConnectors\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiConnectors\Config\"
+
+ No. of source files matched: 1 of 1
+ [M122:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiDctDocuMaker\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiDctDocuMaker\Config\"
+
+ No. of source files matched: 1 of 1
+ [M123:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiDCTISOPPC\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiDCTISOPPC\Config\"
+
+ No. of source files matched: 1 of 1
+ [M124:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiDCTUWRefReport\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiDCTUWRefReport\Config\"
+
+ No. of source files matched: 1 of 1
+ [M125:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiDownStreamCommon\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiDownStreamCommon\Config\"
+
+ No. of source files matched: 2 of 2
+ [M126:nstc] "Config.cnf"
+ [M127:nstc] "templates.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiEnterpriseTables\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiEnterpriseTables\Config\"
+
+ No. of source files matched: 1 of 1
+ [M128:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiInsuredAccount\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiInsuredAccount\Config\"
+
+ No. of source files matched: 1 of 1
+ [M129:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiOrderMVR\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiOrderMVR\Config\"
+
+ No. of source files matched: 1 of 1
+ [M130:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiPLDownload\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiPLDownload\Config\"
+
+ No. of source files matched: 1 of 1
+ [M131:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiPolicyLockService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiPolicyLockService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M132:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiPolicyOutput\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiPolicyOutput\Config\"
+
+ No. of source files matched: 1 of 1
+ [M133:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiPolicyService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiPolicyService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M134:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiPolicySourceService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiPolicySourceService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M135:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiPolicyTransactionUpload\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiPolicyTransactionUpload\Config\"
+
+ No. of source files matched: 1 of 1
+ [M136:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiPolkVinLookup\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiPolkVinLookup\Config\"
+
+ No. of source files matched: 1 of 1
+ [M137:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiPortalDCTRedirect\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiPortalDCTRedirect\Config\"
+
+ No. of source files matched: 1 of 1
+ [M138:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiProxixGEOcode\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiProxixGEOcode\Config\"
+
+ No. of source files matched: 1 of 1
+ [M139:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiQuoteService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiQuoteService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M140:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiReinsuranceService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiReinsuranceService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M141:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiRenewal\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiRenewal\Config\"
+
+ No. of source files matched: 1 of 1
+ [M142:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiRenewalConversion\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiRenewalConversion\config\"
+
+ No. of source files matched: 1 of 1
+ [M143:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiRuleEngineServices\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiRuleEngineServices\Config\"
+
+ No. of source files matched: 1 of 1
+ [M144:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiSecurityLoad\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiSecurityLoad\Config\"
+
+ No. of source files matched: 1 of 1
+ [M145:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiSystemDetermination\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiSystemDetermination\Config\"
+
+ No. of source files matched: 1 of 1
+ [M146:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiUtilities\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiUtilities\Config\"
+
+ No. of source files matched: 1 of 1
+ [M147:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiVehicleService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\HmiVehicleService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M148:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\SRMTFSDeployTester\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRD\Packages\SRMTFSDeployTester\Config\"
+
+ No. of source files matched: 1 of 1
+ [M149:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiAddressService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiAddressService\config\"
+
+ No. of source files matched: 1 of 1
+ [M150:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiAddressValidation\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiAddressValidation\Config\"
+
+ No. of source files matched: 1 of 1
+ [M151:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiAgencyService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiAgencyService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M152:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiAQSTokenManager\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiAQSTokenManager\Config\"
+
+ No. of source files matched: 1 of 1
+ [M153:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiAQSTransactionService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiAQSTransactionService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M154:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiBalancingReport\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiBalancingReport\Config\"
+
+ No. of source files matched: 1 of 1
+ [M155:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiBillingAutoRenewal\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiBillingAutoRenewal\Config\"
+
+ No. of source files matched: 1 of 1
+ [M156:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiBillingDctProcess\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiBillingDctProcess\Config\"
+
+ No. of source files matched: 1 of 1
+ [M157:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiChoicePointBatchReports\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiChoicePointBatchReports\Config\"
+
+ No. of source files matched: 1 of 1
+ [M158:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiChoicePointReport\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiChoicePointReport\Config\"
+
+ No. of source files matched: 1 of 1
+ [M159:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiClAccountProposal\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiClAccountProposal\Config\"
+
+ No. of source files matched: 1 of 1
+ [M160:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiClLegacy\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiClLegacy\Config\"
+
+ No. of source files matched: 1 of 1
+ [M161:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiClpolBillingStatus\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiClpolBillingStatus\Config\"
+
+ No. of source files matched: 1 of 1
+ [M162:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiClpolDetermineBindingAuthority\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiClpolDetermineBindingAuthority\Config\"
+
+ No. of source files matched: 1 of 1
+ [M163:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiClpolGlSic\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiClpolGlSic\Config\"
+
+ No. of source files matched: 1 of 1
+ [M164:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiClpolPredictiveModeling\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiClpolPredictiveModeling\Config\"
+
+ No. of source files matched: 1 of 1
+ [M165:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiClpolTransferBillingTransaction\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiClpolTransferBillingTransaction\Config\"
+
+ No. of source files matched: 1 of 1
+ [M166:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiClTip\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiClTip\Config\"
+
+ No. of source files matched: 1 of 1
+ [M167:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\hmiCommon\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\hmiCommon\Config\"
+
+ No. of source files matched: 1 of 1
+ [M168:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiCompanyAndPlanDetermination\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiCompanyAndPlanDetermination\Config\"
+
+ No. of source files matched: 1 of 1
+ [M169:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiConnectors\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiConnectors\Config\"
+
+ No. of source files matched: 1 of 1
+ [M170:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiDctDocuMaker\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiDctDocuMaker\Config\"
+
+ No. of source files matched: 1 of 1
+ [M171:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiDCTISOPPC\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiDCTISOPPC\Config\"
+
+ No. of source files matched: 1 of 1
+ [M172:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiDCTUWRefReport\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiDCTUWRefReport\Config\"
+
+ No. of source files matched: 1 of 1
+ [M173:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiDownStreamCommon\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiDownStreamCommon\Config\"
+
+ No. of source files matched: 2 of 2
+ [M174:nstc] "Config.cnf"
+ [M175:nstc] "templates.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiEnterpriseTables\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiEnterpriseTables\Config\"
+
+ No. of source files matched: 1 of 1
+ [M176:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiInsuredAccount\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiInsuredAccount\Config\"
+
+ No. of source files matched: 1 of 1
+ [M177:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiOrderMVR\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiOrderMVR\Config\"
+
+ No. of source files matched: 1 of 1
+ [M178:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiPLDownload\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiPLDownload\Config\"
+
+ No. of source files matched: 1 of 1
+ [M179:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiPolicyLockService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiPolicyLockService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M180:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiPolicyOutput\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiPolicyOutput\Config\"
+
+ No. of source files matched: 1 of 1
+ [M181:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiPolicyService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiPolicyService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M182:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiPolicySourceService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiPolicySourceService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M183:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiPolicyTransactionUpload\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiPolicyTransactionUpload\Config\"
+
+ No. of source files matched: 1 of 1
+ [M184:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiPolkVinLookup\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiPolkVinLookup\Config\"
+
+ No. of source files matched: 1 of 1
+ [M185:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiPortalDCTRedirect\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiPortalDCTRedirect\Config\"
+
+ No. of source files matched: 1 of 1
+ [M186:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiProxixGEOcode\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiProxixGEOcode\Config\"
+
+ No. of source files matched: 1 of 1
+ [M187:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiQuoteService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiQuoteService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M188:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiReinsuranceService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiReinsuranceService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M189:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiRenewal\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiRenewal\Config\"
+
+ No. of source files matched: 1 of 1
+ [M190:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiRenewalConversion\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiRenewalConversion\config\"
+
+ No. of source files matched: 1 of 1
+ [M191:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiRuleEngineServices\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiRuleEngineServices\Config\"
+
+ No. of source files matched: 1 of 1
+ [M192:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiSecurityLoad\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiSecurityLoad\Config\"
+
+ No. of source files matched: 1 of 1
+ [M193:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiSystemDetermination\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiSystemDetermination\Config\"
+
+ No. of source files matched: 1 of 1
+ [M194:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiUtilities\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiUtilities\Config\"
+
+ No. of source files matched: 1 of 1
+ [M195:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiVehicleService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\HmiVehicleService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M196:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\SRMTFSDeployTester\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\PRE\Packages\SRMTFSDeployTester\Config\"
+
+ No. of source files matched: 1 of 1
+ [M197:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiAddressService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiAddressService\config\"
+
+ No. of source files matched: 1 of 1
+ [M198:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiAddressValidation\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiAddressValidation\Config\"
+
+ No. of source files matched: 1 of 1
+ [M199:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiAgencyService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiAgencyService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M200:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiAQSTokenManager\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiAQSTokenManager\Config\"
+
+ No. of source files matched: 1 of 1
+ [M201:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiAQSTransactionService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiAQSTransactionService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M202:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiBalancingReport\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiBalancingReport\Config\"
+
+ No. of source files matched: 1 of 1
+ [M203:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiBillingAutoRenewal\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiBillingAutoRenewal\Config\"
+
+ No. of source files matched: 1 of 1
+ [M204:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiBillingDctProcess\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiBillingDctProcess\Config\"
+
+ No. of source files matched: 1 of 1
+ [M205:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiChoicePointBatchReports\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiChoicePointBatchReports\Config\"
+
+ No. of source files matched: 1 of 1
+ [M206:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiChoicePointReport\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiChoicePointReport\Config\"
+
+ No. of source files matched: 1 of 1
+ [M207:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiClAccountProposal\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiClAccountProposal\Config\"
+
+ No. of source files matched: 1 of 1
+ [M208:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiClLegacy\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiClLegacy\Config\"
+
+ No. of source files matched: 1 of 1
+ [M209:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiClpolBillingStatus\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiClpolBillingStatus\Config\"
+
+ No. of source files matched: 1 of 1
+ [M210:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiClpolDetermineBindingAuthority\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiClpolDetermineBindingAuthority\Config\"
+
+ No. of source files matched: 1 of 1
+ [M211:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiClpolGlSic\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiClpolGlSic\Config\"
+
+ No. of source files matched: 1 of 1
+ [M212:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiClpolPredictiveModeling\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiClpolPredictiveModeling\Config\"
+
+ No. of source files matched: 1 of 1
+ [M213:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiClpolTransferBillingTransaction\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiClpolTransferBillingTransaction\Config\"
+
+ No. of source files matched: 1 of 1
+ [M214:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiClTip\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiClTip\Config\"
+
+ No. of source files matched: 1 of 1
+ [M215:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\hmiCommon\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\hmiCommon\Config\"
+
+ No. of source files matched: 1 of 1
+ [M216:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiCompanyAndPlanDetermination\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiCompanyAndPlanDetermination\Config\"
+
+ No. of source files matched: 1 of 1
+ [M217:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiConnectors\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiConnectors\Config\"
+
+ No. of source files matched: 1 of 1
+ [M218:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiDctDocuMaker\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiDctDocuMaker\Config\"
+
+ No. of source files matched: 1 of 1
+ [M219:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiDCTISOPPC\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiDCTISOPPC\Config\"
+
+ No. of source files matched: 1 of 1
+ [M220:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiDCTUWRefReport\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiDCTUWRefReport\Config\"
+
+ No. of source files matched: 1 of 1
+ [M221:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiDownStreamCommon\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiDownStreamCommon\Config\"
+
+ No. of source files matched: 2 of 2
+ [M222:nstc] "Config.cnf"
+ [M223:nstc] "templates.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiEnterpriseTables\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiEnterpriseTables\Config\"
+
+ No. of source files matched: 1 of 1
+ [M224:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiInsuredAccount\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiInsuredAccount\Config\"
+
+ No. of source files matched: 1 of 1
+ [M225:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiOrderMVR\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiOrderMVR\Config\"
+
+ No. of source files matched: 1 of 1
+ [M226:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiPLDownload\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiPLDownload\Config\"
+
+ No. of source files matched: 1 of 1
+ [M227:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiPolicyLockService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiPolicyLockService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M228:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiPolicyOutput\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiPolicyOutput\Config\"
+
+ No. of source files matched: 1 of 1
+ [M229:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiPolicyService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiPolicyService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M230:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiPolicySourceService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiPolicySourceService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M231:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiPolicyTransactionUpload\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiPolicyTransactionUpload\Config\"
+
+ No. of source files matched: 1 of 1
+ [M232:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiPolkVinLookup\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiPolkVinLookup\Config\"
+
+ No. of source files matched: 1 of 1
+ [M233:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiPortalDCTRedirect\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiPortalDCTRedirect\Config\"
+
+ No. of source files matched: 1 of 1
+ [M234:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiProxixGEOcode\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiProxixGEOcode\Config\"
+
+ No. of source files matched: 1 of 1
+ [M235:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiQuoteService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiQuoteService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M236:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiReinsuranceService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiReinsuranceService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M237:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiRenewal\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiRenewal\Config\"
+
+ No. of source files matched: 1 of 1
+ [M238:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiRenewalConversion\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiRenewalConversion\config\"
+
+ No. of source files matched: 1 of 1
+ [M239:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiRuleEngineServices\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiRuleEngineServices\Config\"
+
+ No. of source files matched: 1 of 1
+ [M240:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiSecurityLoad\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiSecurityLoad\Config\"
+
+ No. of source files matched: 1 of 1
+ [M241:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiSystemDetermination\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiSystemDetermination\Config\"
+
+ No. of source files matched: 1 of 1
+ [M242:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiUtilities\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiUtilities\Config\"
+
+ No. of source files matched: 1 of 1
+ [M243:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiVehicleService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\HmiVehicleService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M244:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\SRMTFSDeployTester\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\QA2\Packages\SRMTFSDeployTester\Config\"
+
+ No. of source files matched: 1 of 1
+ [M245:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiAddressService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiAddressService\config\"
+
+ No. of source files matched: 1 of 1
+ [M246:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiAddressValidation\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiAddressValidation\Config\"
+
+ No. of source files matched: 1 of 1
+ [M247:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiAgencyService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiAgencyService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M248:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiAQSTokenManager\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiAQSTokenManager\Config\"
+
+ No. of source files matched: 1 of 1
+ [M249:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiAQSTransactionService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiAQSTransactionService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M250:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiBalancingReport\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiBalancingReport\Config\"
+
+ No. of source files matched: 1 of 1
+ [M251:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiBillingAutoRenewal\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiBillingAutoRenewal\Config\"
+
+ No. of source files matched: 1 of 1
+ [M252:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiBillingDctProcess\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiBillingDctProcess\Config\"
+
+ No. of source files matched: 1 of 1
+ [M253:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiChoicePointBatchReports\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiChoicePointBatchReports\Config\"
+
+ No. of source files matched: 1 of 1
+ [M254:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiChoicePointReport\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiChoicePointReport\Config\"
+
+ No. of source files matched: 1 of 1
+ [M255:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiClAccountProposal\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiClAccountProposal\Config\"
+
+ No. of source files matched: 1 of 1
+ [M256:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiClLegacy\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiClLegacy\Config\"
+
+ No. of source files matched: 1 of 1
+ [M257:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiClpolBillingStatus\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiClpolBillingStatus\Config\"
+
+ No. of source files matched: 1 of 1
+ [M258:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiClpolDetermineBindingAuthority\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiClpolDetermineBindingAuthority\Config\"
+
+ No. of source files matched: 1 of 1
+ [M259:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiClpolGlSic\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiClpolGlSic\Config\"
+
+ No. of source files matched: 1 of 1
+ [M260:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiClpolPredictiveModeling\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiClpolPredictiveModeling\Config\"
+
+ No. of source files matched: 1 of 1
+ [M261:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiClpolTransferBillingTransaction\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiClpolTransferBillingTransaction\Config\"
+
+ No. of source files matched: 1 of 1
+ [M262:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiClTip\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiClTip\Config\"
+
+ No. of source files matched: 1 of 1
+ [M263:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\hmiCommon\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\hmiCommon\Config\"
+
+ No. of source files matched: 1 of 1
+ [M264:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiCompanyAndPlanDetermination\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiCompanyAndPlanDetermination\Config\"
+
+ No. of source files matched: 1 of 1
+ [M265:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiConnectors\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiConnectors\Config\"
+
+ No. of source files matched: 1 of 1
+ [M266:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiDctDocuMaker\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiDctDocuMaker\Config\"
+
+ No. of source files matched: 1 of 1
+ [M267:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiDCTISOPPC\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiDCTISOPPC\Config\"
+
+ No. of source files matched: 1 of 1
+ [M268:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiDCTUWRefReport\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiDCTUWRefReport\Config\"
+
+ No. of source files matched: 1 of 1
+ [M269:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiDownStreamCommon\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiDownStreamCommon\Config\"
+
+ No. of source files matched: 2 of 2
+ [M270:nstc] "Config.cnf"
+ [M271:nstc] "templates.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiEnterpriseTables\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiEnterpriseTables\Config\"
+
+ No. of source files matched: 1 of 1
+ [M272:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiInsuredAccount\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiInsuredAccount\Config\"
+
+ No. of source files matched: 1 of 1
+ [M273:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiOrderMVR\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiOrderMVR\Config\"
+
+ No. of source files matched: 1 of 1
+ [M274:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiPLDownload\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiPLDownload\Config\"
+
+ No. of source files matched: 1 of 1
+ [M275:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiPolicyLockService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiPolicyLockService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M276:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiPolicyOutput\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiPolicyOutput\Config\"
+
+ No. of source files matched: 1 of 1
+ [M277:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiPolicyService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiPolicyService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M278:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiPolicySourceService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiPolicySourceService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M279:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiPolicyTransactionUpload\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiPolicyTransactionUpload\Config\"
+
+ No. of source files matched: 1 of 1
+ [M280:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiPolkVinLookup\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiPolkVinLookup\Config\"
+
+ No. of source files matched: 1 of 1
+ [M281:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiPortalDCTRedirect\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiPortalDCTRedirect\Config\"
+
+ No. of source files matched: 1 of 1
+ [M282:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiProxixGEOcode\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiProxixGEOcode\Config\"
+
+ No. of source files matched: 1 of 1
+ [M283:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiQuoteService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiQuoteService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M284:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiReinsuranceService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiReinsuranceService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M285:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiRenewal\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiRenewal\Config\"
+
+ No. of source files matched: 1 of 1
+ [M286:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiRenewalConversion\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiRenewalConversion\config\"
+
+ No. of source files matched: 1 of 1
+ [M287:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiRuleEngineServices\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiRuleEngineServices\Config\"
+
+ No. of source files matched: 1 of 1
+ [M288:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiSecurityLoad\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiSecurityLoad\Config\"
+
+ No. of source files matched: 1 of 1
+ [M289:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiSystemDetermination\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiSystemDetermination\Config\"
+
+ No. of source files matched: 1 of 1
+ [M290:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiUtilities\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiUtilities\Config\"
+
+ No. of source files matched: 1 of 1
+ [M291:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiVehicleService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\HmiVehicleService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M292:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\SRMTFSDeployTester\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TRN\Packages\SRMTFSDeployTester\Config\"
+
+ No. of source files matched: 1 of 1
+ [M293:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiAddressService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiAddressService\config\"
+
+ No. of source files matched: 1 of 1
+ [M294:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiAddressValidation\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiAddressValidation\Config\"
+
+ No. of source files matched: 1 of 1
+ [M295:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiAgencyService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiAgencyService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M296:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiAQSTokenManager\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiAQSTokenManager\Config\"
+
+ No. of source files matched: 1 of 1
+ [M297:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiAQSTransactionService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiAQSTransactionService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M298:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiBalancingReport\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiBalancingReport\Config\"
+
+ No. of source files matched: 1 of 1
+ [M299:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiBillingAutoRenewal\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiBillingAutoRenewal\Config\"
+
+ No. of source files matched: 1 of 1
+ [M300:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiBillingDctProcess\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiBillingDctProcess\Config\"
+
+ No. of source files matched: 1 of 1
+ [M301:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiChoicePointBatchReports\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiChoicePointBatchReports\Config\"
+
+ No. of source files matched: 1 of 1
+ [M302:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiChoicePointReport\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiChoicePointReport\Config\"
+
+ No. of source files matched: 1 of 1
+ [M303:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiClAccountProposal\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiClAccountProposal\Config\"
+
+ No. of source files matched: 1 of 1
+ [M304:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiClLegacy\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiClLegacy\Config\"
+
+ No. of source files matched: 1 of 1
+ [M305:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiClpolBillingStatus\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiClpolBillingStatus\Config\"
+
+ No. of source files matched: 1 of 1
+ [M306:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiClpolDetermineBindingAuthority\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiClpolDetermineBindingAuthority\Config\"
+
+ No. of source files matched: 1 of 1
+ [M307:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiClpolGlSic\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiClpolGlSic\Config\"
+
+ No. of source files matched: 1 of 1
+ [M308:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiClpolPredictiveModeling\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiClpolPredictiveModeling\Config\"
+
+ No. of source files matched: 1 of 1
+ [M309:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiClpolTransferBillingTransaction\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiClpolTransferBillingTransaction\Config\"
+
+ No. of source files matched: 1 of 1
+ [M310:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiClTip\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiClTip\Config\"
+
+ No. of source files matched: 1 of 1
+ [M311:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\hmiCommon\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\hmiCommon\Config\"
+
+ No. of source files matched: 1 of 1
+ [M312:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiCompanyAndPlanDetermination\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiCompanyAndPlanDetermination\Config\"
+
+ No. of source files matched: 1 of 1
+ [M313:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiConnectors\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiConnectors\Config\"
+
+ No. of source files matched: 1 of 1
+ [M314:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiDctDocuMaker\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiDctDocuMaker\Config\"
+
+ No. of source files matched: 1 of 1
+ [M315:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiDCTISOPPC\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiDCTISOPPC\Config\"
+
+ No. of source files matched: 1 of 1
+ [M316:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiDCTUWRefReport\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiDCTUWRefReport\Config\"
+
+ No. of source files matched: 1 of 1
+ [M317:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiDownStreamCommon\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiDownStreamCommon\Config\"
+
+ No. of source files matched: 2 of 2
+ [M318:nstc] "Config.cnf"
+ [M319:nstc] "templates.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiEnterpriseTables\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiEnterpriseTables\Config\"
+
+ No. of source files matched: 1 of 1
+ [M320:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiInsuredAccount\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiInsuredAccount\Config\"
+
+ No. of source files matched: 1 of 1
+ [M321:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiOrderMVR\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiOrderMVR\Config\"
+
+ No. of source files matched: 1 of 1
+ [M322:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiPLDownload\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiPLDownload\Config\"
+
+ No. of source files matched: 1 of 1
+ [M323:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiPolicyLockService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiPolicyLockService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M324:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiPolicyOutput\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiPolicyOutput\Config\"
+
+ No. of source files matched: 1 of 1
+ [M325:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiPolicyService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiPolicyService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M326:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiPolicySourceService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiPolicySourceService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M327:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiPolicyTransactionUpload\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiPolicyTransactionUpload\Config\"
+
+ No. of source files matched: 1 of 1
+ [M328:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiPolkVinLookup\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiPolkVinLookup\Config\"
+
+ No. of source files matched: 1 of 1
+ [M329:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiPortalDCTRedirect\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiPortalDCTRedirect\Config\"
+
+ No. of source files matched: 1 of 1
+ [M330:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiProxixGEOcode\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiProxixGEOcode\Config\"
+
+ No. of source files matched: 1 of 1
+ [M331:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiQuoteService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiQuoteService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M332:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiReinsuranceService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiReinsuranceService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M333:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiRenewal\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiRenewal\Config\"
+
+ No. of source files matched: 1 of 1
+ [M334:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiRenewalConversion\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiRenewalConversion\config\"
+
+ No. of source files matched: 1 of 1
+ [M335:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiRuleEngineServices\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiRuleEngineServices\Config\"
+
+ No. of source files matched: 1 of 1
+ [M336:nstc] "service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiSecurityLoad\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiSecurityLoad\Config\"
+
+ No. of source files matched: 1 of 1
+ [M337:nstc] "Config.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiSystemDetermination\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiSystemDetermination\Config\"
+
+ No. of source files matched: 1 of 1
+ [M338:nstc] "ws.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiUtilities\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiUtilities\Config\"
+
+ No. of source files matched: 1 of 1
+ [M339:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiVehicleService\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\HmiVehicleService\Config\"
+
+ No. of source files matched: 1 of 1
+ [M340:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\SRMTFSDeployTester\"
+
+SUBDIRECTORY: "CognosTest\20090223\wM\HmiReinsuranceService_20090223\TST1\Packages\SRMTFSDeployTester\Config\"
+
+ No. of source files matched: 1 of 1
+ [M341:nstc] "Service.cnf"
+
+SUBDIRECTORY: "CognosTest\bin\"
+
+SUBDIRECTORY: "CognosTest\bin\Debug\"
+
+SUBDIRECTORY: "CognosTest\obj\"
+
+SUBDIRECTORY: "CognosTest\obj\Debug\"
+
+SUBDIRECTORY: "CognosTest\obj\Debug\TempPE\"
+
+SUBDIRECTORY: "CognosTest\Properties\"
+
+ No. of source files matched: 1 of 1
+ [M342:nstc] "AssemblyInfo.cs"
+
+SUBDIRECTORY: "CognosTest\Service References\"
+
+WARNING: Failed to set last-modified time of target subdirectory "C:\TEMP\CognosTest2\CognosTest\":
+ 2009-05-08 10:16:03.284 ---> 2009-04-15 10:08:25.480.
+Press ENTER to continue...
+
+SUBDIRECTORY: "InfoPathFormTemplate1\"
+
+ No. of source files matched: 1 of 1
+ [M343:nstc] "New Text Document.txt"
+
+SYNCHRONIZATION REPORT
+ 1 warning encountered.
+ No. of source subdirectories scanned          : 690
+ No. of source files scanned                   : 343
+ No. of target files scanned                   : 344
+ No. of source files matched [M]               : 343
+ No. of unmatched source files [C]             : 0 (0 copied)
+ No. of unmatched target files/directories [D] : 2 (0 deleted)
+
+Sync is done!
+

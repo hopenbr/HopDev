@@ -1,0 +1,1442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="TfsReportDS">
+      <DataSourceReference>TfsReportDS</DataSourceReference>
+      <rd:DataSourceID>87d2e8e1-1753-4c53-8a75-cf05d5befd76</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>2.5cm</BottomMargin>
+  <RightMargin>2.5cm</RightMargin>
+  <PageWidth>27.9cm</PageWidth>
+  <ReportParameters>
+    <ReportParameter Name="SprintName">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>&lt;all&gt;</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Sprint Name</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>SprintList</DataSetName>
+          <ValueField>SprintName</ValueField>
+          <LabelField>SprintName</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="ItemTypeName">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>&lt;all&gt;</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Item Type</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>ItemTypeList</DataSetName>
+          <ValueField>TypeName</ValueField>
+          <LabelField>TypeName</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="PersonName">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>&lt;all&gt;</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Owned by</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>PersonList</DataSetName>
+          <ValueField>Person</ValueField>
+          <LabelField>Person</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="TeamName">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>&lt;all&gt;</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Owned by Team</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>TeamList</DataSetName>
+          <ValueField>OwnedBy</ValueField>
+          <LabelField>OwnedBy</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:GridSpacing>0.25cm</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <ReportItems>
+      <Image Name="image1">
+        <Sizing>AutoSize</Sizing>
+        <ZIndex>2</ZIndex>
+        <Width>21.56085cm</Width>
+        <Source>Embedded</Source>
+        <Style />
+        <Height>1.66667cm</Height>
+        <Value>banner_no_bevel_1</Value>
+      </Image>
+      <Table Name="table1">
+        <Footer>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox24">
+                      <rd:DefaultName>textbox24</rd:DefaultName>
+                      <ZIndex>19</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                        </BorderStyle>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <BorderWidth>
+                          <Default>3pt</Default>
+                        </BorderWidth>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Default>#909859</Default>
+                        </BorderColor>
+                        <BackgroundColor>#909859</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox4">
+                      <rd:DefaultName>textbox4</rd:DefaultName>
+                      <ZIndex>18</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Left>None</Left>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Default>White</Default>
+                        </BorderColor>
+                        <BackgroundColor>#909859</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox8">
+                      <rd:DefaultName>textbox8</rd:DefaultName>
+                      <ZIndex>17</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Left>None</Left>
+                        </BorderStyle>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Default>White</Default>
+                        </BorderColor>
+                        <BackgroundColor>#909859</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox11">
+                      <rd:DefaultName>textbox11</rd:DefaultName>
+                      <ZIndex>16</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Left>None</Left>
+                        </BorderStyle>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Default>White</Default>
+                        </BorderColor>
+                        <BackgroundColor>#909859</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox30">
+                      <rd:DefaultName>textbox30</rd:DefaultName>
+                      <ZIndex>15</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Left>None</Left>
+                        </BorderStyle>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Default>White</Default>
+                        </BorderColor>
+                        <BackgroundColor>#909859</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox14">
+                      <rd:DefaultName>textbox14</rd:DefaultName>
+                      <ZIndex>14</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Left>None</Left>
+                        </BorderStyle>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Default>White</Default>
+                        </BorderColor>
+                        <BackgroundColor>#909859</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox28">
+                      <rd:DefaultName>textbox28</rd:DefaultName>
+                      <ZIndex>13</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Left>None</Left>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Default>White</Default>
+                        </BorderColor>
+                        <BackgroundColor>#909859</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Totals</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox20">
+                      <rd:DefaultName>textbox20</rd:DefaultName>
+                      <ZIndex>12</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Default>White</Default>
+                        </BorderColor>
+                        <BackgroundColor>#909859</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Sum(Fields!Conchango_VSTS_Scrum_EstimatedEffort.Value)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox7">
+                      <rd:DefaultName>textbox7</rd:DefaultName>
+                      <ZIndex>11</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Default>White</Default>
+                        </BorderColor>
+                        <BackgroundColor>#909859</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Sum(Fields!Conchango_VSTS_Scrum_WorkRemaining.Value)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox23">
+                      <rd:DefaultName>textbox23</rd:DefaultName>
+                      <ZIndex>10</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <BorderWidth>
+                          <Right>4pt</Right>
+                        </BorderWidth>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Default>White</Default>
+                          <Right>#909859</Right>
+                        </BorderColor>
+                        <BackgroundColor>#909859</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.63492cm</Height>
+            </TableRow>
+          </TableRows>
+        </Footer>
+        <Left>1.25cm</Left>
+        <DataSetName>TfsReportDS</DataSetName>
+        <Top>3.5cm</Top>
+        <ZIndex>1</ZIndex>
+        <Width>20.32937cm</Width>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TrackingId">
+                      <rd:DefaultName>TrackingId</rd:DefaultName>
+                      <ZIndex>9</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <BorderWidth>
+                          <Default>3pt</Default>
+                        </BorderWidth>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Default>#909859</Default>
+                        </BorderColor>
+                        <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "#c7cbac", "#e6e7d9")</BackgroundColor>
+                        <Color>#333333</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!TrackingId.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox3">
+                      <rd:DefaultName>textbox3</rd:DefaultName>
+                      <ZIndex>8</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                        </BorderStyle>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Default>White</Default>
+                        </BorderColor>
+                        <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "#c7cbac", "#e6e7d9")</BackgroundColor>
+                        <Color>#333333</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!Conchango_VSTS_Scrum_SprintNumber.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="System_Title">
+                      <rd:DefaultName>System_Title</rd:DefaultName>
+                      <ZIndex>7</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                        </BorderStyle>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Default>White</Default>
+                        </BorderColor>
+                        <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "#c7cbac", "#e6e7d9")</BackgroundColor>
+                        <Color>#333333</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!BacklogName.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox10">
+                      <rd:DefaultName>textbox10</rd:DefaultName>
+                      <ZIndex>6</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                        </BorderStyle>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Default>White</Default>
+                        </BorderColor>
+                        <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "#c7cbac", "#e6e7d9")</BackgroundColor>
+                        <Color>#333333</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!Assigned_To.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox27">
+                      <rd:DefaultName>textbox27</rd:DefaultName>
+                      <ZIndex>5</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                        </BorderStyle>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Default>White</Default>
+                        </BorderColor>
+                        <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "#c7cbac", "#e6e7d9")</BackgroundColor>
+                        <Color>#333333</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!Team.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox13">
+                      <rd:DefaultName>textbox13</rd:DefaultName>
+                      <ZIndex>4</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                        </BorderStyle>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Default>White</Default>
+                        </BorderColor>
+                        <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "#c7cbac", "#e6e7d9")</BackgroundColor>
+                        <Color>#333333</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!System_Reason.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="State">
+                      <rd:DefaultName>State</rd:DefaultName>
+                      <ZIndex>3</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                        </BorderStyle>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Default>White</Default>
+                        </BorderColor>
+                        <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "#c7cbac", "#e6e7d9")</BackgroundColor>
+                        <Color>#333333</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!State.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox18">
+                      <rd:DefaultName>textbox18</rd:DefaultName>
+                      <ZIndex>2</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Default>White</Default>
+                        </BorderColor>
+                        <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "#c7cbac", "#e6e7d9")</BackgroundColor>
+                        <Color>#333333</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!Conchango_VSTS_Scrum_EstimatedEffort.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox6">
+                      <rd:DefaultName>textbox6</rd:DefaultName>
+                      <ZIndex>1</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Default>White</Default>
+                        </BorderColor>
+                        <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "#c7cbac", "#e6e7d9")</BackgroundColor>
+                        <Color>#333333</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!Conchango_VSTS_Scrum_WorkRemaining.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox22">
+                      <rd:DefaultName>textbox22</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <BorderWidth>
+                          <Right>4pt</Right>
+                        </BorderWidth>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Default>White</Default>
+                          <Right>#909859</Right>
+                        </BorderColor>
+                        <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "#c7cbac", "#e6e7d9")</BackgroundColor>
+                        <Color>#333333</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!TypeName.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.63492cm</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox19">
+                      <rd:DefaultName>textbox19</rd:DefaultName>
+                      <ZIndex>29</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Top>Solid</Top>
+                          <Left>Solid</Left>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <BorderWidth>
+                          <Top>1pt</Top>
+                          <Default>3pt</Default>
+                        </BorderWidth>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Top>#909859</Top>
+                          <Default>#909859</Default>
+                        </BorderColor>
+                        <BackgroundColor>#909859</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Id</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox2">
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <ZIndex>28</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Top>Solid</Top>
+                          <Left>Solid</Left>
+                        </BorderStyle>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Top>#909859</Top>
+                          <Default>White</Default>
+                        </BorderColor>
+                        <BackgroundColor>#909859</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Sprint</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox29">
+                      <rd:DefaultName>textbox29</rd:DefaultName>
+                      <ZIndex>27</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Top>Solid</Top>
+                          <Left>Solid</Left>
+                        </BorderStyle>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Top>#909859</Top>
+                          <Default>White</Default>
+                        </BorderColor>
+                        <BackgroundColor>#909859</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Title</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox9">
+                      <rd:DefaultName>textbox9</rd:DefaultName>
+                      <ZIndex>26</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Top>Solid</Top>
+                          <Left>Solid</Left>
+                        </BorderStyle>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Top>#909859</Top>
+                          <Default>White</Default>
+                        </BorderColor>
+                        <BackgroundColor>#909859</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Owned by</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox26">
+                      <rd:DefaultName>textbox26</rd:DefaultName>
+                      <ZIndex>25</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Top>Solid</Top>
+                          <Left>Solid</Left>
+                        </BorderStyle>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Top>#909859</Top>
+                          <Default>White</Default>
+                        </BorderColor>
+                        <BackgroundColor>#909859</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Team</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox12">
+                      <rd:DefaultName>textbox12</rd:DefaultName>
+                      <ZIndex>24</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Top>Solid</Top>
+                          <Left>Solid</Left>
+                        </BorderStyle>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Top>#909859</Top>
+                          <Default>White</Default>
+                        </BorderColor>
+                        <BackgroundColor>#909859</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Reason</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox25">
+                      <rd:DefaultName>textbox25</rd:DefaultName>
+                      <ZIndex>23</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Top>Solid</Top>
+                          <Left>Solid</Left>
+                        </BorderStyle>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Top>#909859</Top>
+                          <Default>White</Default>
+                        </BorderColor>
+                        <BackgroundColor>#909859</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>State</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox16">
+                      <rd:DefaultName>textbox16</rd:DefaultName>
+                      <ZIndex>22</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Top>Solid</Top>
+                          <Left>Solid</Left>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Top>#909859</Top>
+                          <Default>White</Default>
+                        </BorderColor>
+                        <BackgroundColor>#909859</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Estimated Effort</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox5">
+                      <rd:DefaultName>textbox5</rd:DefaultName>
+                      <ZIndex>21</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Top>Solid</Top>
+                          <Left>Solid</Left>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Top>#909859</Top>
+                          <Default>White</Default>
+                        </BorderColor>
+                        <BackgroundColor>#909859</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Work Left</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox21">
+                      <rd:DefaultName>textbox21</rd:DefaultName>
+                      <ZIndex>20</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Top>Solid</Top>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>4pt</PaddingLeft>
+                        <BorderWidth>
+                          <Right>4pt</Right>
+                        </BorderWidth>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <BorderColor>
+                          <Top>#909859</Top>
+                          <Default>White</Default>
+                          <Right>#909859</Right>
+                        </BorderColor>
+                        <BackgroundColor>#909859</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>4pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Item Type</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>1cm</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>1.25cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.75cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>3cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.25cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.07937cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.75cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.75cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.5cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Height>2.26984cm</Height>
+      </Table>
+      <Textbox Name="textbox1">
+        <Left>1.25cm</Left>
+        <Top>2.5cm</Top>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Width>20.25cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontFamily>Verdana</FontFamily>
+          <FontWeight>700</FontWeight>
+          <FontSize>16pt</FontSize>
+          <Color>#550d2a</Color>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.91429cm</Height>
+        <Value>=IIf(Parameters!SprintName.Value="&lt;all&gt;","All ","")
++ "Sprint Backlog Items for Project "+
+Globals!ReportFolder.Substring(1)+
+IIf(Parameters!SprintName.Value="&lt;all&gt;","",", "+Parameters!SprintName.Value)</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>6.5cm</Height>
+  </Body>
+  <rd:ReportID>d999e6e6-c92a-40d3-869d-49ad9bdfe49d</rd:ReportID>
+  <LeftMargin>2.5cm</LeftMargin>
+  <EmbeddedImages>
+    <EmbeddedImage Name="banner_no_bevel_1">
+      <ImageData>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</ImageData>
+      <MIMEType>image/jpeg</MIMEType>
+    </EmbeddedImage>
+    <EmbeddedImage Name="banner_no_bevel">
+      <ImageData>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
+EXCo3Q2F9JV4mXys4TD03Xj80YnlKSFtJXE1OT0pbXF1eX1VmZ2hpamtsbW5vY3R1dnd4eXp7fH1+f3EQACAgECBAQDBAUGBwcGBTUBAAIRAyExEgRBUWFxIhMFMoGRFKGxQiPBUtHwMyRi4XKCkkNTFWNzNPElBhaisoMHJjXC0kSTVKMXZEVVNnRl4vKzhMPTdePzRpSkhbSVxNTk9KW1xdXl9VZmdoaWprbG1ub2JzdHV2d3h5ent8f/2gAMAwEAAhEDEQA/APRH2knaz7xyVEU2HnT4lGo9LSP7XirTfSjTam6JaPoPHBE/EojPUg7xx+cjv9Cf/Ip6vTk7Z41lHRRQJKz+h/k/gl+h/k/gghkDIlOmERpx2TpylJJJJKUkkkkpSSSSSlLD6tl3Y32vPt6k3Dxen7XGlja3lzSGv/T+p7/VyXu9DGqb6X5n59i3Fzeb/wAxP+dFH237J/zhlnpb49TfA+z7/wDBfaduz7L636x/Neh/g02VVrf+Df8A3KRXVsv+sGYL7KGdOe7ZaamvLnhjotrxhY2z0HN2MZZ9pyf9FT/M/arGZHoBf9Z85zZx+lXPLW+8WF1fv273VV7qXOt2Wfot7PZ/o963T6EunZP53H/SSPozrtnSOPknapuP7v4uXkddyK8n0a8F7691QFxd7SLh7NvpMu91VjbvtP8A3Hrr9b/DI3Req39Sqe6/GOK+sVEglxBNlbL3hrrKqP5mx76Ht+n+j/MV0fZ+2zjtHCmzZHsiPJLVFitn/9kAOEJJTQQhAAAAAABTAAAAAQEAAAAPAEEAZABvAGIAZQAgAFAAaABvAHQAbwBzAGgAbwBwAAAAEgBBAGQAbwBiAGUAIABQAGgAbwB0AG8AcwBoAG8AcAAgAEMAUwAAAAEAOEJJTQQGAAAAAAAHAAQAAAABAQD/4RfzaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49J++7
+vycgaWQ9J1c1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCc/Pgo8eDp4bXBtZXRhIHhtbG5zOng9J2Fkb2JlOm5zOm1ldGEvJyB4OnhtcHRrPSdYTVAgdG9vbGtpdCAzLjAtMjgsIGZyYW1ld29yayAxLjYnPgo8cmRmOlJERiB4bWxuczpyZGY9J2h0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMnIHhtbG5zOmlYPSdodHRwOi8vbnMuYWRvYmUuY29tL2lYLzEuMC8nPgoKIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSd1dWlkOmYxMDk2YTIwLTcxN2YtMTFkYS05NmU2LWFmNGY3OTk1NzhjMycKICB4bWxuczpleGlmPSdodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyc+CiAgPGV4aWY6Q29sb3JTcGFjZT40Mjk0OTY3Mjk1PC9leGlmOkNvbG9yU3BhY2U+CiAgPGV4aWY6UGl4ZWxYRGltZW5zaW9uPjgxNTwvZXhpZjpQaXhlbFhEaW1lbnNpb24+CiAgPGV4aWY6UGl4ZWxZRGltZW5zaW9uPjYzPC9leGlmOlBpeGVsWURpbWVuc2lvbj4KIDwvcmRmOkRlc2NyaXB0aW9uPgoKIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSd1dWlkOmYxMDk2YTIwLTcxN2YtMTFkYS05NmU2LWFmNGY3OTk1NzhjMycKICB4bWxuczpwZGY9J2h0dHA6Ly9ucy5hZG9iZS5jb20vcGRmLzEuMy8nPgogPC9yZGY6RGVzY3JpcHRpb24+CgogPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9J3V1aWQ6ZjEwOTZhMjAtNzE3Zi0xMWRhLTk2ZTYtYWY0Zjc5OTU3OGMzJwogIHhtbG5zOnBob3Rvc2hvcD0naHR0cDovL25zLmF
+kb2JlLmNvbS9waG90b3Nob3AvMS4wLyc+CiAgPHBob3Rvc2hvcDpIaXN0b3J5PjwvcGhvdG9zaG9wOkhpc3Rvcnk+CiA8L3JkZjpEZXNjcmlwdGlvbj4KCiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0ndXVpZDpmMTA5NmEyMC03MTdmLTExZGEtOTZlNi1hZjRmNzk5NTc4YzMnCiAgeG1sbnM6dGlmZj0naHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8nPgogIDx0aWZmOk9yaWVudGF0aW9uPjE8L3RpZmY6T3JpZW50YXRpb24+CiAgPHRpZmY6WFJlc29sdXRpb24+NzIvMTwvdGlmZjpYUmVzb2x1dGlvbj4KICA8dGlmZjpZUmVzb2x1dGlvbj43Mi8xPC90aWZmOllSZXNvbHV0aW9uPgogIDx0aWZmOlJlc29sdXRpb25Vbml0PjI8L3RpZmY6UmVzb2x1dGlvblVuaXQ+CiA8L3JkZjpEZXNjcmlwdGlvbj4KCiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0ndXVpZDpmMTA5NmEyMC03MTdmLTExZGEtOTZlNi1hZjRmNzk5NTc4YzMnCiAgeG1sbnM6eGFwPSdodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvJz4KICA8eGFwOkNyZWF0ZURhdGU+MjAwNS0xMi0yMFQxNToyNjo0OFo8L3hhcDpDcmVhdGVEYXRlPgogIDx4YXA6TW9kaWZ5RGF0ZT4yMDA1LTEyLTIwVDE3OjQyOjIxWjwveGFwOk1vZGlmeURhdGU+CiAgPHhhcDpNZXRhZGF0YURhdGU+MjAwNS0xMi0yMFQxNzo0MjoyMVo8L3hhcDpNZXRhZGF0YURhdGU+CiAgPHhhcDpDcmVhdG9yVG9vbD5BZG9iZSBQaG90b3Nob3AgQ1MgV2luZG93czwveGFwOkNyZWF0b3
+JUb29sPgogPC9yZGY6RGVzY3JpcHRpb24+CgogPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9J3V1aWQ6ZjEwOTZhMjAtNzE3Zi0xMWRhLTk2ZTYtYWY0Zjc5OTU3OGMzJwogIHhtbG5zOnhhcE1NPSdodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vJz4KICA8eGFwTU06RG9jdW1lbnRJRD5hZG9iZTpkb2NpZDpwaG90b3Nob3A6ZjEwOTZhMWYtNzE3Zi0xMWRhLTk2ZTYtYWY0Zjc5OTU3OGMzPC94YXBNTTpEb2N1bWVudElEPgogPC9yZGY6RGVzY3JpcHRpb24+CgogPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9J3V1aWQ6ZjEwOTZhMjAtNzE3Zi0xMWRhLTk2ZTYtYWY0Zjc5OTU3OGMzJwogIHhtbG5zOmRjPSdodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyc+CiAgPGRjOmZvcm1hdD5pbWFnZS9qcGVnPC9kYzpmb3JtYXQ+CiA8L3JkZjpEZXNjcmlwdGlvbj4KCjwvcmRmOlJERj4KPC94OnhtcG1ldGE+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI
+CAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgIC
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAo8P3hwYWNrZXQgZW5kPSd3Jz8+/+4ADkFkb2JlAGQAAAAAAf/bAIQABgQEBAUEBgUFBgkGBQYJCwgGBggLDAoKCwoKDBAMDAwMDAwQDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAEHBwcNDA0YEBAYFA4ODhQUDg4ODhQRDAwMDAwREQwMDAwMDBEMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwM/8AAEQgAPwMvAwERAAIRAQMRAf/dAAQAZv/EAaIAAAAHAQEBAQEAAAAAAAAAAAQFAwIGAQAHCAkKCwEAAgIDAQEBAQEAAAAAAAAAAQACAwQFBgcICQoLEAACAQMDAgQCBgcDBAIGAnMBAgMRBAAFIRIxQVEGE2EicYEUMpGhBxWxQiPBUtHhMxZi8CRygvElQzRTkqKyY3PCNUQnk6OzNhdUZHTD0uIIJoMJChgZhJRFRqS0VtNVKBry4/PE1OT0ZXWFlaW1xdXl9WZ2hpamtsbW5vY3R1dnd4eXp7fH1+f3OEhYaHiImKi4yNjo+Ck5SVlpeYmZqbnJ2en5KjpKWmp6ipqqusra6voRAAICAQIDBQUEBQYECAMDbQEAAhEDBCESMUEFURNhIgZxgZEyobHwFMHR4SNCFVJicvEzJDRDghaSUyWiY7LCB3PSNeJEgxdUkwgJChgZJjZFGidkdFU38qOzwygp0+PzhJSktMTU5PRldYWVpbXF1eX1RlZmdoaWprbG1ub2R1dnd4eXp7fH1+f3OEhYaHiImKi4yNjo+DlJWWl5iZmpucnZ6fkqOkpaanqKmqq6ytrq+v/aAAwDAQACEQMRAD8A9J5UrsVdirsVUJLpE2HxH26YpAQz3Er9TQeAxZUp4q7FXYq7FXYq7FXYq4Eg1BofbFVeO7c
+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</ImageData>
+      <MIMEType>image/jpeg</MIMEType>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <DataSets>
+    <DataSet Name="TfsReportDS">
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText>---------------------------------------------------------- Test data
+--DECLARE @vProjectName AS varchar(20)
+--SET @vProjectName= '/Mark086';
+----------------------------------------------------------End of test data
+
+-- -----------------------------------
+-- Get the Sprint Backlog Items for this project
+-- -----------------------------------
+WITH CTE1 AS
+(
+SELECT    c.__TrackingId AS TrackingId, 
+                w.System_State AS State, 
+                w.System_Title AS BacklogName, 
+                c.Conchango_VSTS_Scrum_SprintNumber,
+                w.System_Reason,
+                p.Person AS [Assigned To], 
+                c.Conchango_VSTS_Scrum_EstimatedEffort, 
+                c.Conchango_VSTS_Scrum_WorkRemaining,
+                w.Conchango_VSTS_Scrum_SprintBacklogItemType AS TypeName
+FROM         [Current Work Item] AS c
+INNER JOIN  [Team Project] AS t ON c.[Team Project] = t.__ID
+INNER JOIN  [Work Item] AS w ON c.[Work Item] = w.__ID
+LEFT OUTER JOIN  Person AS p ON c.[Assigned To] = p.__ID
+WHERE    w.System_WorkItemType = N'Sprint Backlog Item' AND '/' + t.[Team Project]=@vProjectName
+AND         w.System_State != 'Deleted'
+),
+
+-- -----------------------------------
+-- Get the Product Backlog Items for this project
+-- -----------------------------------
+CTE2 AS
+(
+SELECT    c.__TrackingId AS TrackingId, 
+                c.Conchango_VSTS_Scrum_Team AS Team
+FROM         [Current Work Item] AS c
+INNER JOIN  [Team Project] AS t ON c.[Team Project] = t.__ID
+INNER JOIN  [Work Item] AS w ON c.[Work Item] = w.__ID
+WHERE    w.System_WorkItemType = N'Product Backlog Item' AND '/' + t.[Team Project]=@vProjectName
+AND         w.System_State != 'Deleted'
+),
+
+-- -----------------------------------
+-- Get the Sprints for this project
+-- -----------------------------------
+CTE3 AS
+(
+SELECT    w.System_Title AS SprintName, 
+                c.Conchango_VSTS_Scrum_SprintNumber
+FROM         [Current Work Item] AS c
+INNER JOIN  [Team Project] AS t ON c.[Team Project] = t.__ID
+INNER JOIN  [Work Item] AS w ON c.[Work Item] = w.__ID
+WHERE    w.System_WorkItemType = N'Sprint' AND '/' + t.[Team Project]=@vProjectName
+AND         w.System_State != 'Deleted'
+),
+
+-- -----------------------------------
+-- Join together and select on Sprint Name
+-- -----------------------------------
+CTE4 AS
+(
+SELECT    c.TrackingId, 
+                c1.SprintName,
+                c.State, 
+                c.BacklogName, 
+                c.Conchango_VSTS_Scrum_SprintNumber,
+                c.System_Reason,
+                c.[Assigned To], 
+                c.Conchango_VSTS_Scrum_EstimatedEffort, 
+                c.Conchango_VSTS_Scrum_WorkRemaining,
+                c.TypeName
+FROM CTE1 AS c
+LEFT OUTER JOIN CTE3 AS c1 ON c.Conchango_VSTS_Scrum_SprintNumber = c1.Conchango_VSTS_Scrum_SprintNumber
+WHERE  (c1.SprintName =@vSprintName OR @vSprintName='&lt;all&gt;')
+AND  (c.TypeName =@vItemTypeName OR @vItemTypeName='&lt;all&gt;')
+AND (c.[Assigned To] = @vPerson OR @vPerson='&lt;all&gt;')
+),
+
+-- -----------------------------------
+-- Where available, get the Team Name and Sprint Backlog Id for the Product Backlogs
+-- -----------------------------------
+CTE5 AS
+(
+SELECT r.[Current Work Item_TrackingIdLeft] AS SprintBacklogId,
+             p.Team
+FROM [Related Current Work Items] AS r
+INNER JOIN CTE2 AS p ON  r.[Current Work Item_TrackingIdRight]=p.TrackingId
+),
+
+-- -----------------------------------
+-- Join to the Sprint Backlogs, so as to avoid any non-sprint-backlog links
+-- -----------------------------------
+CTE6 AS
+(
+SELECT TrackingId AS SprintBacklogId,
+             Team
+FROM CTE4 AS c
+LEFT OUTER JOIN  CTE5 AS p ON p.SprintBacklogId  =  c.TrackingId
+),
+
+-- -----------------------------------
+-- Group by backlog id, so that each sprint backlog is linked to at most one product backlog
+-- -----------------------------------
+CTE7 AS
+(
+SELECT SprintBacklogId,
+             MIN(Team) AS Team
+FROM CTE6 GROUP BY SprintBacklogId
+),
+
+-- -----------------------------------
+-- Join to main dataset and select by Team Name if specified
+-- -----------------------------------
+CTE8 AS
+(
+SELECT c.*,
+            Team,
+            1 AS Temp
+FROM CTE4 AS c
+INNER JOIN CTE7 AS p ON c.TrackingId = p.SprintBacklogId             
+WHERE  (p.Team =@vTeamName OR @vTeamName='&lt;all&gt;')
+),
+
+CTE9 AS
+(
+SELECT CASE WHEN COUNT(*) = 0
+                       THEN 0
+                       ELSE 1
+             END AS Temp
+FROM CTE8
+),
+
+CTE10 AS
+(
+SELECT    NULL AS TrackingId, 
+                NULL AS SprintName,
+                NULL AS State, 
+                'No Items...' AS BacklogName, 
+                NULL AS Conchango_VSTS_Scrum_SprintNumber,
+                NULL AS System_Reason,
+                NULL AS [Assigned To], 
+                NULL AS Conchango_VSTS_Scrum_EstimatedEffort, 
+                NULL AS Conchango_VSTS_Scrum_WorkRemaining,
+                NULL AS TypeName,
+                NULL AS Team,
+                0 AS Temp
+UNION
+SELECT * 
+FROM CTE8
+),
+
+CTE11 AS
+(
+SELECT c.* 
+FROM CTE10 AS c
+INNER JOIN CTE9 AS k ON k.Temp=c.Temp
+)
+
+
+SELECT * FROM CTE11 ORDER BY SprintName,BacklogName</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@vProjectName">
+            <Value>=Globals!ReportFolder</Value>
+          </QueryParameter>
+          <QueryParameter Name="@vSprintName">
+            <Value>=Parameters!SprintName.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@vItemTypeName">
+            <Value>=Parameters!ItemTypeName.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@vPerson">
+            <Value>=Parameters!PersonName.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@vTeamName">
+            <Value>=Parameters!TeamName.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <DataSourceName>TfsReportDS</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="TrackingId">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>TrackingId</DataField>
+        </Field>
+        <Field Name="SprintName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SprintName</DataField>
+        </Field>
+        <Field Name="State">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>State</DataField>
+        </Field>
+        <Field Name="BacklogName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>BacklogName</DataField>
+        </Field>
+        <Field Name="Conchango_VSTS_Scrum_SprintNumber">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>Conchango_VSTS_Scrum_SprintNumber</DataField>
+        </Field>
+        <Field Name="System_Reason">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>System_Reason</DataField>
+        </Field>
+        <Field Name="Assigned_To">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Assigned To</DataField>
+        </Field>
+        <Field Name="Conchango_VSTS_Scrum_EstimatedEffort">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>Conchango_VSTS_Scrum_EstimatedEffort</DataField>
+        </Field>
+        <Field Name="Conchango_VSTS_Scrum_WorkRemaining">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>Conchango_VSTS_Scrum_WorkRemaining</DataField>
+        </Field>
+        <Field Name="TypeName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>TypeName</DataField>
+        </Field>
+        <Field Name="Team">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Team</DataField>
+        </Field>
+        <Field Name="Temp">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>Temp</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="SprintList">
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText>WITH CTE1 AS
+(
+SELECT   w.System_Title As SprintName
+FROM         [Current Work Item] AS c 
+INNER JOIN  [Team Project]  AS t ON c.[Team Project] =t.__ID
+INNER JOIN  [Work Item] AS w ON c.[Work Item] = w.__ID
+WHERE     w.System_WorkItemType = N'Sprint' AND '/' + t.[Team Project]=@vProjectName AND w.System_State != 'Deleted'
+)
+
+SELECT '&lt;all&gt;' AS SprintName
+UNION
+SELECT * FROM CTE1
+ORDER BY SprintName</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@vProjectName">
+            <Value>=Globals!ReportFolder</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <DataSourceName>TfsReportDS</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="SprintName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SprintName</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="ItemTypeList">
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText>SELECT '&lt;all&gt;' AS TypeName
+UNION
+SELECT 'Bug' AS TypeName
+UNION
+SELECT 'Task' AS TypeName
+UNION
+SELECT 'Impediment' AS TypeName
+ORDER BY TypeName</CommandText>
+        <DataSourceName>TfsReportDS</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="TypeName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>TypeName</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="PersonList">
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText>---------------------------------------------------------- Test data
+--DECLARE @vProjectName AS varchar(20)
+--SET @vProjectName= '/Mark085';
+----------------------------------------------------------End of test data
+
+WITH CTE1 AS
+(
+SELECT  DISTINCT  p.Person
+FROM         [Current Work Item] AS c
+INNER JOIN  [Team Project] AS t ON c.[Team Project] = t.__ID
+INNER JOIN  Person AS p ON c.[Assigned To] = p.__ID
+WHERE  '/' + t.[Team Project]=@vProjectName
+)
+
+SELECT '&lt;all&gt;' AS Person
+UNION
+SELECT * FROM CTE1
+ORDER BY Person</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@vProjectName">
+            <Value>=Globals!ReportFolder</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <DataSourceName>TfsReportDS</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="Person">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Person</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="TeamList">
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText>---------------------------------------------------------- Test data
+--DECLARE @vProjectName AS varchar(20)
+--SET @vProjectName= '/Mark085';
+----------------------------------------------------------End of test data
+
+WITH CTE1 AS
+(
+SELECT    c.Conchango_VSTS_Scrum_Team AS OwnedBy
+FROM         [Current Work Item] AS c
+INNER JOIN  [Team Project] AS t ON c.[Team Project] = t.__ID
+INNER JOIN  [Work Item] AS w ON c.[Work Item] = w.__ID
+WHERE     w.System_WorkItemType = N'Product Backlog Item' AND  '/' + t.[Team Project]=@vProjectName
+),
+
+CTE2 AS
+(
+SELECT '&lt;all&gt;' AS OwnedBy
+UNION
+SELECT DISTINCT OwnedBy FROM CTE1
+WHERE OwnedBy &gt; ''
+)
+
+SELECT * FROM CTE2 ORDER BY OwnedBy</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@vProjectName">
+            <Value>=Globals!ReportFolder</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <DataSourceName>TfsReportDS</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="OwnedBy">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>OwnedBy</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>21.82937cm</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>2.5cm</TopMargin>
+  <PageHeight>21cm</PageHeight>
+</Report>

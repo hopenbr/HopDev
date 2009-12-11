@@ -1,0 +1,54 @@
+
+Sync 2.1   Copyright 2007 Zach Scrivena   2007-12-09
+
+DIRECTORY SYNCHRONIZATION
+
+Source directory: "\\as73tfs01\BuildStore\SRM\TFSEventServices\Drops\Deployer.TST_20090513.1\Env.Config\In-End2End\Web\"
+Target directory: "\\as73tfstst01\TDA\E2E\"
+
+File-matching attributes: (name,size,crc)
+
+
+SUBDIRECTORY: ".\"
+
+ No. of source files matched: 0 of 1
+
+ No. of unmatched source files to be copied: 1
+ [C1] "Web.config" (22.5 kb)
+  Overwriting existing file "Web.config"
+
+ No. of unmatched target files/directories to be deleted: 22
+ [D1] Skipping "AclChangedEndpoint.asmx"
+ [D2] Skipping "AppSetting.config"
+ [D3] Skipping "BranchMovedEndpoint.asmx"
+ [D4] Skipping "BuildCompletionEndpoint.asmx"
+ [D5] Skipping "BuildStatusChangeEndpoint.asmx"
+ [D6] Skipping "CheckInEndpoint.asmx"
+ [D7] Skipping "CommonStructureChangedEndpoint.asmx"
+ [D8] Skipping "DataChangedEndpoint.asmx"
+ [D9] Skipping "Default.aspx"
+ [D10] Skipping "IdentityChangedEndpoint.asmx"
+ [D11] Skipping "IdentityCreatedEndpoint.asmx"
+ [D12] Skipping "IdentityDeletedEndpoint.asmx"
+ [D13] Skipping "MembershipChangedEndpoint.asmx"
+ [D14] Skipping "NodeCreatedEndpoint.asmx"
+ [D15] Skipping "NodeRenamedEndpoint.asmx"
+ [D16] Skipping "NodesDeletedEndpoint.asmx"
+ [D17] Skipping "PrecompiledApp.config"
+ [D18] Skipping "ProjectCreatedEndpoint.asmx"
+ [D19] Skipping "ProjectDeletedEndpoint.asmx"
+ [D20] Skipping "vwd.webinfo"
+ [D21] Skipping "WorkItemChangedEndpoint.asmx"
+ [D22] Skipping "bin\"
+
+SYNCHRONIZATION REPORT
+ 1 warning encountered.
+ No. of source subdirectories scanned          : 1
+ No. of source files scanned                   : 1
+ No. of target files scanned                   : 22
+ No. of source files matched [M]               : 0
+ No. of unmatched source files [C]             : 1 (1 copied)
+ No. of unmatched target files/directories [D] : 22 (0 deleted)
+
+Sync is done!
+

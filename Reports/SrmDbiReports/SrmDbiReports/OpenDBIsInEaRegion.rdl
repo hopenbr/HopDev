@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="TfsOlapReportDS">
+      <rd:DataSourceID>8c7d0462-fab3-45a6-8ded-3a6b55d2a8cd</rd:DataSourceID>
+      <DataSourceReference>TfsOlapReportDS</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="FromParameter">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=DateAdd("m",-1,Today())</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Start Date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ToParameter">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=Today()</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>End Date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FromSystemCreatedDateYearMonthDate">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>="[Date].[Date].&amp;[" + CDate(Parameters!FromParameter.Value).ToString("s") + "]"</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>From System_CreatedDate.Year Month Date</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="ToSystemCreatedDateYearMonthDate">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>="[Date].[Date].&amp;[" + CDate(Parameters!ToParameter.Value).ToString("s") + "]"</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>To System_CreatedDate.Year Month Date</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>1in</RightMargin>
+  <LeftMargin>1in</LeftMargin>
+  <BottomMargin>1in</BottomMargin>
+  <rd:ReportID>7ca901b7-d3ed-4825-8516-01c526eb8660</rd:ReportID>
+  <DataSets>
+    <DataSet Name="OpenDBI">
+      <Fields>
+        <Field Name="HIC_Test_Environment_New">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Work Item].[HIC_Test_Environment_New].[HIC_Test_Environment_New]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="System_State">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Work Item].[System_State].[System_State]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Current_Work_Item_Count">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Current Work Item Count]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>TfsOlapReportDS</DataSourceName>
+        <CommandText> SELECT { [Measures].[Current Work Item Count] } ON COLUMNS, { ([Work Item].[HIC_Test_Environment_New].[HIC_Test_Environment_New].ALLMEMBERS * [Work Item].[System_State].[System_State].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOMEMBER(@FromSystemCreatedDateYearMonthDate, CONSTRAINED) : STRTOMEMBER(@ToSystemCreatedDateYearMonthDate, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Team Project].[Team Project].&amp;[16] } ) ON COLUMNS FROM ( SELECT ( { [Work Item].[System_WorkItemType].&amp;[Deployment Backlog Item] } ) ON COLUMNS FROM ( SELECT ( { [Work Item].[HIC_Test_Environment_New].&amp;[End2End], [Work Item].[HIC_Test_Environment_New].&amp;[Pre-Prd], [Work Item].[HIC_Test_Environment_New].&amp;[Production], [Work Item].[HIC_Test_Environment_New].&amp;[QA2], [Work Item].[HIC_Test_Environment_New].&amp;[TST1], [Work Item].[HIC_Test_Environment_New].&amp;[Training] } ) ON COLUMNS FROM ( SELECT ( { [Work Item].[System_State].&amp;[Approved by IRB], [Work Item].[System_State].&amp;[Approved for Deployment], [Work Item].[System_State].&amp;[Not Done], [Work Item].[System_State].&amp;[Ready for IRB (Production Only)] } ) ON COLUMNS FROM [Team System]))))) WHERE ( [Work Item].[System_WorkItemType].&amp;[Deployment Backlog Item], [Team Project].[Team Project].&amp;[16] ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="FromSystemCreatedDateYearMonthDate">
+            <Value>=Parameters!FromSystemCreatedDateYearMonthDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="ToSystemCreatedDateYearMonthDate">
+            <Value>=Parameters!ToSystemCreatedDateYearMonthDate.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:MdxQuery><QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition"><CommandType>MDX</CommandType><QuerySpecification xsi:type="MDXQuerySpecification"><Select><Items><Item><ID xsi:type="Level"><DimensionName>Work Item</DimensionName><HierarchyName>HIC_Test_Environment_New</HierarchyName><HierarchyUniqueName>[Work Item].[HIC_Test_Environment_New]</HierarchyUniqueName><LevelName>HIC_Test_Environment_New</LevelName><UniqueName>[Work Item].[HIC_Test_Environment_New].[HIC_Test_Environment_New]</UniqueName></ID><ItemCaption>HIC_Test_Environment_New</ItemCaption><UniqueName>true</UniqueName></Item><Item><ID xsi:type="Level"><DimensionName>Work Item</DimensionName><HierarchyName>System_State</HierarchyName><HierarchyUniqueName>[Work Item].[System_State]</HierarchyUniqueName><LevelName>System_State</LevelName><UniqueName>[Work Item].[System_State].[System_State]</UniqueName></ID><ItemCaption>System_State</ItemCaption><UniqueName>true</UniqueName></Item><Item><ID xsi:type="Measure"><MeasureName>Current Work Item Count</MeasureName><UniqueName>[Measures].[Current Work Item Count]</UniqueName></ID><ItemCaption>Current Work Item Count</ItemCaption><BackColor>true</BackColor><ForeColor>true</ForeColor><FontFamily>true</FontFamily><FontSize>true</FontSize><FontWeight>true</FontWeight><FontStyle>true</FontStyle><FontDecoration>true</FontDecoration><FormattedValue>true</FormattedValue><FormatString>true</FormatString></Item></Items></Select><From>Team System</From><Filter><FilterItems><FilterItem><HierarchyUniqueName>[Work Item].[System_State]</HierarchyUniqueName><Condition xsi:type="EqualTo"><Members><Member><MemberUniqueName>[Work Item].[System_State].&amp;[Approved by IRB]</MemberUniqueName></Member><Member><MemberUniqueName>[Work Item].[System_State].&amp;[Approved for Deployment]</MemberUniqueName></Member><Member><MemberUniqueName>[Work Item].[System_State].&amp;[Not Done]</MemberUniqueName></Member><Member><MemberUniqueName>[Work Item].[System_State].&amp;[Ready for IRB (Production Only)]</MemberUniqueName></Member></Members></Condition></FilterItem><FilterItem><HierarchyUniqueName>[Work Item].[HIC_Test_Environment_New]</HierarchyUniqueName><Condition xsi:type="EqualTo"><Members><Member><MemberUniqueName>[Work Item].[HIC_Test_Environment_New].&amp;[End2End]</MemberUniqueName></Member><Member><MemberUniqueName>[Work Item].[HIC_Test_Environment_New].&amp;[Pre-Prd]</MemberUniqueName></Member><Member><MemberUniqueName>[Work Item].[HIC_Test_Environment_New].&amp;[Production]</MemberUniqueName></Member><Member><MemberUniqueName>[Work Item].[HIC_Test_Environment_New].&amp;[QA2]</MemberUniqueName></Member><Member><MemberUniqueName>[Work Item].[HIC_Test_Environment_New].&amp;[TST1]</MemberUniqueName></Member><Member><MemberUniqueName>[Work Item].[HIC_Test_Environment_New].&amp;[Training]</MemberUniqueName></Member></Members></Condition></FilterItem><FilterItem><HierarchyUniqueName>[Work Item].[System_WorkItemType]</HierarchyUniqueName><Condition xsi:type="EqualTo"><Members><Member><MemberUniqueName>[Work Item].[System_WorkItemType].&amp;[Deployment Backlog Item]</MemberUniqueName></Member></Members></Condition></FilterItem><FilterItem><HierarchyUniqueName>[Team Project].[Team Project]</HierarchyUniqueName><Condition xsi:type="EqualTo"><Members><Member><MemberUniqueName>[Team Project].[Team Project].&amp;[16]</MemberUniqueName></Member></Members></Condition></FilterItem><FilterItem><HierarchyUniqueName>[System_CreatedDate].[Year Month Date]</HierarchyUniqueName><Condition xsi:type="Range"><Basis>Member</Basis><From>[System_CreatedDate].[Year Month Date].[Month].&amp;[2008-05-01T00:00:00]</From><FromParametrized>true</FromParametrized><To>[System_CreatedDate].[Year Month Date].[Month].&amp;[2008-07-01T00:00:00]</To><ToParametrized>true</ToParametrized></Condition></FilterItem></FilterItems></Filter><Calculations /><Aggregates /><QueryProperties><IncludeEmptyData>true</IncludeEmptyData></QueryProperties></QuerySpecification><Query><Statement> SELECT { [Measures].[Current Work Item Count] } ON COLUMNS, { ([Work Item].[HIC_Test_Environment_New].[HIC_Test_Environment_New].ALLMEMBERS * [Work Item].[System_State].[System_State].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOMEMBER(@FromSystemCreatedDateYearMonthDate, CONSTRAINED) : STRTOMEMBER(@ToSystemCreatedDateYearMonthDate, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Team Project].[Team Project].&amp;[16] } ) ON COLUMNS FROM ( SELECT ( { [Work Item].[System_WorkItemType].&amp;[Deployment Backlog Item] } ) ON COLUMNS FROM ( SELECT ( { [Work Item].[HIC_Test_Environment_New].&amp;[End2End], [Work Item].[HIC_Test_Environment_New].&amp;[Pre-Prd], [Work Item].[HIC_Test_Environment_New].&amp;[Production], [Work Item].[HIC_Test_Environment_New].&amp;[QA2], [Work Item].[HIC_Test_Environment_New].&amp;[TST1], [Work Item].[HIC_Test_Environment_New].&amp;[Training] } ) ON COLUMNS FROM ( SELECT ( { [Work Item].[System_State].&amp;[Approved by IRB], [Work Item].[System_State].&amp;[Approved for Deployment], [Work Item].[System_State].&amp;[Not Done], [Work Item].[System_State].&amp;[Ready for IRB (Production Only)] } ) ON COLUMNS FROM [Team System]))))) WHERE ( [Work Item].[System_WorkItemType].&amp;[Deployment Backlog Item], [Team Project].[Team Project].&amp;[16] ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement><ParameterDefinitions><ParameterDefinition><Name>FromSystemCreatedDateYearMonthDate</Name><Usage>RangeFrom</Usage><DefaultValues><DefaultValue>[System_CreatedDate].[Year Month Date].[Month].&amp;[2008-05-01T00:00:00]</DefaultValue></DefaultValues><Caption>From System_CreatedDate.Year Month Date</Caption><HierarchyUniqueName>[System_CreatedDate].[Year Month Date]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS '[System_CreatedDate].[Year Month Date].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[System_CreatedDate].[Year Month Date].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[System_CreatedDate].[Year Month Date].CURRENTMEMBER.LEVEL.ORDINAL' SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [System_CreatedDate].[Year Month Date].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Team Project].[Team Project].&amp;[16] } ) ON COLUMNS FROM ( SELECT ( { [Work Item].[System_WorkItemType].&amp;[Deployment Backlog Item] } ) ON COLUMNS FROM ( SELECT ( { [Work Item].[HIC_Test_Environment_New].&amp;[End2End], [Work Item].[HIC_Test_Environment_New].&amp;[Pre-Prd], [Work Item].[HIC_Test_Environment_New].&amp;[Production], [Work Item].[HIC_Test_Environment_New].&amp;[QA2], [Work Item].[HIC_Test_Environment_New].&amp;[TST1], [Work Item].[HIC_Test_Environment_New].&amp;[Training] } ) ON COLUMNS FROM ( SELECT ( { [Work Item].[System_State].&amp;[Approved by IRB], [Work Item].[System_State].&amp;[Approved for Deployment], [Work Item].[System_State].&amp;[Not Done], [Work Item].[System_State].&amp;[Ready for IRB (Production Only)] } ) ON COLUMNS FROM [Team System]))))</Statement><ParameterizedStatement><ReferencedParameters /></ParameterizedStatement></ParameterValuesQuery></ParameterDefinition><ParameterDefinition><Name>ToSystemCreatedDateYearMonthDate</Name><Usage>RangeTo</Usage><DefaultValues><DefaultValue>[System_CreatedDate].[Year Month Date].[Month].&amp;[2008-07-01T00:00:00]</DefaultValue></DefaultValues><Caption>To System_CreatedDate.Year Month Date</Caption><HierarchyUniqueName>[System_CreatedDate].[Year Month Date]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS '[System_CreatedDate].[Year Month Date].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[System_CreatedDate].[Year Month Date].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[System_CreatedDate].[Year Month Date].CURRENTMEMBER.LEVEL.ORDINAL' SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [System_CreatedDate].[Year Month Date].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Team Project].[Team Project].&amp;[16] } ) ON COLUMNS FROM ( SELECT ( { [Work Item].[System_WorkItemType].&amp;[Deployment Backlog Item] } ) ON COLUMNS FROM ( SELECT ( { [Work Item].[HIC_Test_Environment_New].&amp;[End2End], [Work Item].[HIC_Test_Environment_New].&amp;[Pre-Prd], [Work Item].[HIC_Test_Environment_New].&amp;[Production], [Work Item].[HIC_Test_Environment_New].&amp;[QA2], [Work Item].[HIC_Test_Environment_New].&amp;[TST1], [Work Item].[HIC_Test_Environment_New].&amp;[Training] } ) ON COLUMNS FROM ( SELECT ( { [Work Item].[System_State].&amp;[Approved by IRB], [Work Item].[System_State].&amp;[Approved for Deployment], [Work Item].[System_State].&amp;[Not Done], [Work Item].[System_State].&amp;[Ready for IRB (Production Only)] } ) ON COLUMNS FROM [Team System]))))</Statement><ParameterizedStatement><ReferencedParameters /></ParameterizedStatement></ParameterValuesQuery></ParameterDefinition></ParameterDefinitions></Query></QueryDefinition></rd:MdxQuery>
+        <rd:SuppressAutoUpdate>true</rd:SuppressAutoUpdate>
+      </Query>
+    </DataSet>
+    <DataSet Name="FromRelatedDateYearMonthDate">
+      <Query>
+        <DataSourceName>TfsOlapReportDS</DataSourceName>
+        <CommandText> SELECT NON EMPTY { } ON COLUMNS FROM [Team System] CELL PROPERTIES VALUE</CommandText>
+        <rd:MdxQuery><QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition"><CommandType>MDX</CommandType><QuerySpecification xsi:type="MDXQuerySpecification"><Select><Items /></Select><From>Team System</From><Filter><FilterItems /></Filter><Calculations /><Aggregates /><QueryProperties /></QuerySpecification><Query><Statement> SELECT NON EMPTY { } ON COLUMNS FROM [Team System] CELL PROPERTIES VALUE</Statement><ParameterDefinitions /></Query></QueryDefinition></rd:MdxQuery>
+        <rd:AutoGenerated>true</rd:AutoGenerated>
+        <rd:Hidden>true</rd:Hidden>
+        <rd:SuppressAutoUpdate>true</rd:SuppressAutoUpdate>
+      </Query>
+    </DataSet>
+    <DataSet Name="ToRelatedDateYearMonthDate">
+      <Query>
+        <DataSourceName>TfsOlapReportDS</DataSourceName>
+        <CommandText> SELECT NON EMPTY { } ON COLUMNS FROM [Team System] CELL PROPERTIES VALUE</CommandText>
+        <rd:MdxQuery><QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition"><CommandType>MDX</CommandType><QuerySpecification xsi:type="MDXQuerySpecification"><Select><Items /></Select><From>Team System</From><Filter><FilterItems /></Filter><Calculations /><Aggregates /><QueryProperties /></QuerySpecification><Query><Statement> SELECT NON EMPTY { } ON COLUMNS FROM [Team System] CELL PROPERTIES VALUE</Statement><ParameterDefinitions /></Query></QueryDefinition></rd:MdxQuery>
+        <rd:AutoGenerated>true</rd:AutoGenerated>
+        <rd:Hidden>true</rd:Hidden>
+        <rd:SuppressAutoUpdate>true</rd:SuppressAutoUpdate>
+      </Query>
+    </DataSet>
+    <DataSet Name="FromRelatedDateYearMonthDate1">
+      <Fields>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+        </Field>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>TfsOlapReportDS</DataSourceName>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS '[Related Date].[Year Month Date].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[Related Date].[Year Month Date].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[Related Date].[Year Month Date].CURRENTMEMBER.LEVEL.ORDINAL' SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Related Date].[Year Month Date].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Related Team Project].[Team Project].&amp;[16] } ) ON COLUMNS FROM ( SELECT ( { [Work Item].[System_WorkItemType].&amp;[Deployment Backlog Item] } ) ON COLUMNS FROM ( SELECT ( { [Work Item].[HIC_Test_Environment_New].&amp;[End2End], [Work Item].[HIC_Test_Environment_New].&amp;[Pre-Prd], [Work Item].[HIC_Test_Environment_New].&amp;[Production], [Work Item].[HIC_Test_Environment_New].&amp;[QA2], [Work Item].[HIC_Test_Environment_New].&amp;[TST1], [Work Item].[HIC_Test_Environment_New].&amp;[Training] } ) ON COLUMNS FROM ( SELECT ( { [Work Item].[System_State].&amp;[Approved by IRB], [Work Item].[System_State].&amp;[Approved for Deployment], [Work Item].[System_State].&amp;[Not Done], [Work Item].[System_State].&amp;[Ready for IRB (Production Only)] } ) ON COLUMNS FROM [Team System]))))</CommandText>
+        <rd:AutoGenerated>true</rd:AutoGenerated>
+        <rd:Hidden>true</rd:Hidden>
+      </Query>
+    </DataSet>
+    <DataSet Name="ToRelatedDateYearMonthDate1">
+      <Fields>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+        </Field>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>TfsOlapReportDS</DataSourceName>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS '[Related Date].[Year Month Date].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[Related Date].[Year Month Date].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[Related Date].[Year Month Date].CURRENTMEMBER.LEVEL.ORDINAL' SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Related Date].[Year Month Date].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Related Team Project].[Team Project].&amp;[16] } ) ON COLUMNS FROM ( SELECT ( { [Work Item].[System_WorkItemType].&amp;[Deployment Backlog Item] } ) ON COLUMNS FROM ( SELECT ( { [Work Item].[HIC_Test_Environment_New].&amp;[End2End], [Work Item].[HIC_Test_Environment_New].&amp;[Pre-Prd], [Work Item].[HIC_Test_Environment_New].&amp;[Production], [Work Item].[HIC_Test_Environment_New].&amp;[QA2], [Work Item].[HIC_Test_Environment_New].&amp;[TST1], [Work Item].[HIC_Test_Environment_New].&amp;[Training] } ) ON COLUMNS FROM ( SELECT ( { [Work Item].[System_State].&amp;[Approved by IRB], [Work Item].[System_State].&amp;[Approved for Deployment], [Work Item].[System_State].&amp;[Not Done], [Work Item].[System_State].&amp;[Ready for IRB (Production Only)] } ) ON COLUMNS FROM [Team System]))))</CommandText>
+        <rd:AutoGenerated>true</rd:AutoGenerated>
+        <rd:Hidden>true</rd:Hidden>
+      </Query>
+    </DataSet>
+    <DataSet Name="FromSystemCreatedDateYearMonthDate">
+      <Fields>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+        </Field>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>TfsOlapReportDS</DataSourceName>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS '[System_CreatedDate].[Year Month Date].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[System_CreatedDate].[Year Month Date].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[System_CreatedDate].[Year Month Date].CURRENTMEMBER.LEVEL.ORDINAL' SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [System_CreatedDate].[Year Month Date].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Team Project].[Team Project].&amp;[16] } ) ON COLUMNS FROM ( SELECT ( { [Work Item].[System_WorkItemType].&amp;[Deployment Backlog Item] } ) ON COLUMNS FROM ( SELECT ( { [Work Item].[HIC_Test_Environment_New].&amp;[End2End], [Work Item].[HIC_Test_Environment_New].&amp;[Pre-Prd], [Work Item].[HIC_Test_Environment_New].&amp;[Production], [Work Item].[HIC_Test_Environment_New].&amp;[QA2], [Work Item].[HIC_Test_Environment_New].&amp;[TST1], [Work Item].[HIC_Test_Environment_New].&amp;[Training] } ) ON COLUMNS FROM ( SELECT ( { [Work Item].[System_State].&amp;[Approved by IRB], [Work Item].[System_State].&amp;[Approved for Deployment], [Work Item].[System_State].&amp;[Not Done], [Work Item].[System_State].&amp;[Ready for IRB (Production Only)] } ) ON COLUMNS FROM [Team System]))))</CommandText>
+        <rd:AutoGenerated>true</rd:AutoGenerated>
+        <rd:Hidden>true</rd:Hidden>
+      </Query>
+    </DataSet>
+    <DataSet Name="ToSystemCreatedDateYearMonthDate">
+      <Fields>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+        </Field>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>TfsOlapReportDS</DataSourceName>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS '[System_CreatedDate].[Year Month Date].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[System_CreatedDate].[Year Month Date].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[System_CreatedDate].[Year Month Date].CURRENTMEMBER.LEVEL.ORDINAL' SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [System_CreatedDate].[Year Month Date].ALLMEMBERS ON ROWS FROM ( SELECT ( { [Team Project].[Team Project].&amp;[16] } ) ON COLUMNS FROM ( SELECT ( { [Work Item].[System_WorkItemType].&amp;[Deployment Backlog Item] } ) ON COLUMNS FROM ( SELECT ( { [Work Item].[HIC_Test_Environment_New].&amp;[End2End], [Work Item].[HIC_Test_Environment_New].&amp;[Pre-Prd], [Work Item].[HIC_Test_Environment_New].&amp;[Production], [Work Item].[HIC_Test_Environment_New].&amp;[QA2], [Work Item].[HIC_Test_Environment_New].&amp;[TST1], [Work Item].[HIC_Test_Environment_New].&amp;[Training] } ) ON COLUMNS FROM ( SELECT ( { [Work Item].[System_State].&amp;[Approved by IRB], [Work Item].[System_State].&amp;[Approved for Deployment], [Work Item].[System_State].&amp;[Not Done], [Work Item].[System_State].&amp;[Ready for IRB (Production Only)] } ) ON COLUMNS FROM [Team System]))))</CommandText>
+        <rd:AutoGenerated>true</rd:AutoGenerated>
+        <rd:Hidden>true</rd:Hidden>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Width>7.75in</Width>
+  <Body>
+    <ReportItems>
+      <Subreport Name="subreport1">
+        <Top>4.75in</Top>
+        <ReportName>LastCubeProcessingTime</ReportName>
+        <Width>7.625in</Width>
+        <ZIndex>1</ZIndex>
+      </Subreport>
+      <Chart Name="OpenDbiPerRegion">
+        <Legend>
+          <Visible>true</Visible>
+          <Style>
+            <BorderStyle>
+              <Default>Solid</Default>
+            </BorderStyle>
+          </Style>
+          <Position>BottomCenter</Position>
+          <Layout>Table</Layout>
+        </Legend>
+        <CategoryAxis>
+          <Axis>
+            <Title />
+            <MajorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MajorGridLines>
+            <MinorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MinorGridLines>
+            <MajorTickMarks>Outside</MajorTickMarks>
+            <Min>0</Min>
+            <Visible>true</Visible>
+          </Axis>
+        </CategoryAxis>
+        <DataSetName>OpenDBI</DataSetName>
+        <PlotArea>
+          <Style>
+            <BackgroundColor>LightGrey</BackgroundColor>
+            <BorderStyle>
+              <Default>Solid</Default>
+            </BorderStyle>
+          </Style>
+        </PlotArea>
+        <ThreeDProperties>
+          <Rotation>30</Rotation>
+          <Inclination>30</Inclination>
+          <Shading>Simple</Shading>
+          <WallThickness>50</WallThickness>
+        </ThreeDProperties>
+        <PointWidth>0</PointWidth>
+        <SeriesGroupings>
+          <SeriesGrouping>
+            <DynamicSeries>
+              <Grouping Name="chart1_SeriesGroup1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!System_State.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Label>=Fields!System_State.Value</Label>
+            </DynamicSeries>
+          </SeriesGrouping>
+        </SeriesGroupings>
+        <Subtype>Stacked</Subtype>
+        <ValueAxis>
+          <Axis>
+            <Title>
+              <Caption>Total DBIs</Caption>
+            </Title>
+            <Style />
+            <MajorGridLines>
+              <ShowGridLines>true</ShowGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MajorGridLines>
+            <MinorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MinorGridLines>
+            <MajorTickMarks>Outside</MajorTickMarks>
+            <Min>0</Min>
+            <Margin>true</Margin>
+            <Visible>true</Visible>
+            <Scalar>true</Scalar>
+          </Axis>
+        </ValueAxis>
+        <Type>Column</Type>
+        <Width>7.625in</Width>
+        <CategoryGroupings>
+          <CategoryGrouping>
+            <DynamicCategories>
+              <Grouping Name="chart1_CategoryGroup1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!HIC_Test_Environment_New.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Label>=Fields!HIC_Test_Environment_New.Value</Label>
+            </DynamicCategories>
+          </CategoryGrouping>
+        </CategoryGroupings>
+        <Palette>Default</Palette>
+        <ChartData>
+          <ChartSeries>
+            <DataPoints>
+              <DataPoint>
+                <DataValues>
+                  <DataValue>
+                    <Value>=Sum(Fields!Current_Work_Item_Count.Value)</Value>
+                  </DataValue>
+                </DataValues>
+                <DataLabel>
+                  <Visible>true</Visible>
+                </DataLabel>
+                <Style />
+                <Marker>
+                  <Size>6pt</Size>
+                </Marker>
+              </DataPoint>
+            </DataPoints>
+          </ChartSeries>
+        </ChartData>
+        <Style>
+          <BackgroundColor>White</BackgroundColor>
+        </Style>
+        <Title>
+          <Caption>Open DBIs per Region</Caption>
+          <Style>
+            <FontSize>12pt</FontSize>
+            <FontWeight>700</FontWeight>
+          </Style>
+        </Title>
+        <Height>4.75in</Height>
+      </Chart>
+    </ReportItems>
+    <Height>5.25in</Height>
+  </Body>
+  <Language>en-US</Language>
+  <TopMargin>1in</TopMargin>
+</Report>

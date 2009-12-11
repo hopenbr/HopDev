@@ -1,0 +1,24 @@
+<?xml version="1.0"  encoding="utf-8" ?>
+<Settings>
+	<CommonScriptLocation>\\as73tfsbuild01\TFS\PowerShellScripts</CommonScriptLocation>
+	<CommonConsoleShell>Harleysville.Deployment.Console.psc1</CommonConsoleShell>
+	<CommonEmailAddress>@HarleysvilleGroup.com</CommonEmailAddress>
+	<Servers>
+		<Server Name="ws73prdportal03">
+			<AppPool>AgentPortalPool</AppPool>
+		</Server>
+		<Server Name="ws73prdportal04">
+			<AppPool>AgentPortalPool</AppPool>
+		</Server>
+		<Server Name="ws73prdportal05">
+			<AppPool>AgentPortalPool</AppPool>
+		</Server>
+		<Server Name="ws73prdportal06">
+			<AppPool>AgentPortalPool</AppPool>
+		</Server>
+    </Servers>
+	<Configs>
+		<config>\\ws73prdextra01\inetpub$\AgentPortalprdLogin\Web.Config</config>
+		<config>\\ws73prdextra02\inetpub$\AgentPortalprdLogin\Web.Config</config>
+	</Configs>
+</Settings>

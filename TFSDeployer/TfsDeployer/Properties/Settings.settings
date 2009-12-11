@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TfsDeployer.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ToAddress" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">release.manager@yourcompany.com</Value>
+    </Setting>
+    <Setting Name="KeyFile" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SignDeploymentMappingFile" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="FromAddress" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">release.manasger@yourcompany.com</Value>
+    </Setting>
+    <Setting Name="SmtpServer" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">mailserver</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

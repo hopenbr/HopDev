@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Feature  Id="a1c13a9b-62f4-49fe-abd4-75a0098f3f0b"
+      Title="SRMSharePointWorkflow feature"
+      Description="Simple Five State SRM workflow"
+      Version="12.0.0.0"
+      Scope="Site"
+      xmlns="http://schemas.microsoft.com/sharepoint/"
+	  Creator="Brian Hopnewasser">
+  <ElementManifests>
+    <ElementManifest Location="workflow.xml" />
+  </ElementManifests>
+  <Properties>
+    <Property Key="GloballyAvailable" Value="ture" />
+    <!-- Value for RegisterForms key indicates the path to the forms relative to feature file location -->
+    <!-- if you don't have forms, use *.xsn -->
+    <Property Key="RegisterForms" Value="*.xsn" />
+  </Properties>
+</Feature>
