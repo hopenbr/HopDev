@@ -1,5 +1,0 @@
-4/13/2009 5:04:31 PM  >> log verbose
-4/13/2009 5:04:31 PM  >> sync create-empty mirror:left->right
-4/13/2009 5:04:31 PM  Copied C:\TEMP\CognosTest\CognosTest\Properties\AssemblyInfo.cs to C:\TEMP\CognosTest2\CognosTest\Properties\AssemblyInfo.cs
-4/13/2009 5:04:31 PM  Elapsed time: 0.01 seconds
-4/13/2009 5:04:31 PM  Script completed in 0.03 seconds

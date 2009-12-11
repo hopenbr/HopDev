@@ -1,3 +1,0 @@
-load "C:\TEMP\CognosTest" "C:\TEMP\CognosTest2"
-Expand all
-sync create-empty mirror:left->right
