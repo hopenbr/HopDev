@@ -1,5 +1,5 @@
 ﻿param([string] $cmd = $(throw 'The stsadm cmd is required'),
-	  [string] $endPoint = $("http://as73mosstst01:9001/StsadmService.asmx"))
+	  [string] $endPoint = $(throw 'Endpoint Url is required'))
 
 $req = new-object -com "Microsoft.XMLHTTP"
 $req.open("POST", $endPoint, $false)
